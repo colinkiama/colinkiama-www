@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+{% for page in section.pages %}
+{{page.title}}
+<br>
+{{page.content | safe}}
+<br>
+<br>
+{% endfor %}
+{% endblock content %}
