@@ -11,18 +11,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="global.css" />    
     <link rel="icon" href="https://i.imgur.com/PDYGO4X.png" />
+    {% block head %}
+    {% endblock head %}
 </head>
 <body>
 <header>
  <h1>Colin Kiama</h1>
-      <h2>Developer</h2>
+      <h2>Software Developer</h2>
       <nav>
         <a href="/">Home</a>
         <a href="/portfolio">Portfolio</a>
+        <a href="/blog">Blog</a>
       </nav>
 </header>
 <main>
   NOTE: Ensure that you've added structured data schemas across the site deploying it and making it live. 
+  <br>
+  <br>
 	{% block content %}
 	{% endblock content %}
 </main>
