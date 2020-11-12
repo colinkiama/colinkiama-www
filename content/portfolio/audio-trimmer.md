@@ -1,5 +1,6 @@
 +++
 title = "Audio Trimmer"
+date = 2020-11-12T00:39:00Z
 +++
 A Windows 10 Application that gives users a simple, seamless way to trim audio files.
 

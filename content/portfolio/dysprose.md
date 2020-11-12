@@ -1,5 +1,6 @@
 +++
 title = "Dysprose"
+date = 2020-11-12T00:40:00Z
 +++
 A Windows 10 Application for times when your ideas aren't coming together/you need to focus.
 
