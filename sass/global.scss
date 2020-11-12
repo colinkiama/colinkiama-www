@@ -8,6 +8,20 @@ body{
 	font-size: 1.25rem;
 }
 
+a{
+	color: black;
+	&:visited{
+		color: initial;
+
+	}
+	
+	&:hover{
+		color: grey;
+	}
+}
+
+
+
 // Header styles
 header nav a{
 	font-size: 1.4rem;
@@ -20,14 +34,9 @@ header nav a{
  
 // Main styles
 main {
-	display: flex;
 	flex: 1 1 0%;
-	flex-direction: column;
-	margin-top: 0rem;
-	padding: 4rem 0;
-	align-items: center;
-	text-align: center;
-	justify-content: center;
+	padding: 2rem 0;
+	
 }
 
 
@@ -51,6 +60,26 @@ footer{
 	}
 }
 
+
+#footer-call-to-actions{
+	margin-top: 0.5rem;
+}
+
 #emailAddress{
 	display: block;
+}
+
+#footer-links{
+	list-style-type: none;
+	text-align: center;
+	padding:0;
+}
+
+#footer-links li{
+	display: inline-block;
+}
+
+.site-timestamp{
+	display: inline-block;
+	font-weight: 500;
 }
