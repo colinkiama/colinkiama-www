@@ -8,6 +8,7 @@ body{
 	font-size: 1.25rem;
 }
 
+// Header styles
 header nav a{
 	font-size: 1.4rem;
 	margin-right: 0.4rem;
@@ -17,7 +18,7 @@ header nav a{
 }
 
  
-
+// Main styles
 main {
 	display: flex;
 	flex: 1 1 0%;
@@ -29,6 +30,27 @@ main {
 	justify-content: center;
 }
 
+
+// Footer Styles
 footer{
 	text-align: center;
+	padding: 1rem 0;
+}
+
+.call-to-action-button{
+	border: solid 1px black;
+	border-radius: 0.25rem;
+	padding: 0.75rem 1rem;
+	display: inline-block;
+	text-decoration: none;
+	color: black;
+
+	&:hover{
+		color: white;
+		background-color: black;
+	}
+}
+
+#emailAddress{
+	display: block;
 }
