@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+{% set pager = paginator %}
+{% for blog_post in pager.pages %}
+<br>
+{{blog_post.title}}
+{{blog_post.description}}
+{% endfor %}
+{% endblock content %}
