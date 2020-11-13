@@ -1,4 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-{{page.content}} 
+<article>
+	<header>
+		<h3>{{page.title}}</h3>
+		{{page.date | date}}
+	</header>
+{{page.content | safe}} 
+</article>
 {% endblock content %}

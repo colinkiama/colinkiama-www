@@ -5,8 +5,13 @@
 {% block content %}
 {% set pager = paginator %}
 {% for blog_post in pager.pages %}
-<br>
-{{blog_post.title}}
+<div class="blog-post">
+<a href="{{blog_post.permalink}}">
+<div class="item-title">{{blog_post.title}}</div>
+<img src="{{blog_post.extra.thumbnail}}" alt="{{blog_post.extra.thumbnail_alt_text}}">
+</a>
+</div>
+
 {{blog_post.description}}
 {% endfor %}
 {% endblock content %}
