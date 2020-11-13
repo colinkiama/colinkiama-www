@@ -1,5 +1,6 @@
 img{
-	width: 500px;
+	max-width: 100%;
+	max-height: 100%;
 	display: block;
 }
 
@@ -7,3 +8,15 @@ img{
 	font-weight: 500;
 	display: block;
 }
+
+@media screen and (min-width: 600px){
+   
+    img{
+        width: 520px;
+    }
+
+   #main-container{
+        max-width: 600px;
+    }
+}
+
