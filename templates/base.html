@@ -9,35 +9,47 @@
       content="Developer with experience with .Net (C#, UWP), Java and HTML."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="global.css" />    
+    <link rel="stylesheet" href="/global.css" />    
     <link rel="icon" href="https://i.imgur.com/PDYGO4X.png" />
+    {% block head %}
+    {% endblock head %}
 </head>
 <body>
+  {% set portfolio_permalink = get_url(path="@/portfolio/_index.md") %}
+  {% set blog_permalink = get_url(path="@/blog/_index.md") %}
 <header>
  <h1>Colin Kiama</h1>
-      <h2>Developer</h2>
+      <h2>Software Developer</h2>
       <nav>
-        <div>Home</div>
-        <a href="portfolio.html">Portfolio</a>
+        <a href="/">Home</a>
+        <a href="{{portfolio_permalink}}">Portfolio</a>
+        <a href="{{blog_permalink}}">Blog</a>
       </nav>
 </header>
 <main>
+  NOTE: Ensure that you've added structured data schemas across the site deploying it and making it live. (Remove this message when you're done)
+  <br>
+  <br>
 	{% block content %}
 	{% endblock content %}
 </main>
 <footer>
-	 <div>Interested in working with me? Want to ask me anything?</div>
-      <div id="emailAddressDiv">Email: colinkiama@gmail.com</div>
-      <a href="mailto:colinkiama@gmail.com" id="contactMeButton">Email Me</a
-      ><br />
-      <span>
-        <a href="https://www.gitlab.com/colinkiama">GitLab</a>
-        <a href="https://www.linkedin.com/in/colin-kiama-11962988/">LinkedIn</a>
-        <a href="https://www.twitter.com/colinkiama">Twitter</a>
-        <a href="https://www.instagram.com/colinkiama.tech">Instagram</a>
-        <a href="https://www.producthunt.com/@colinkiama">Product Hunt</a>
-      </span>
-      <div>Colin Kiama - 2020</div>
+  <p>Interested in working with me? Want to ask me anything?</p>
+  <span id="emailAddress">Email: colinkiama@gmail.com</span>
+
+  <div id="footer-call-to-actions">
+  <a href="mailto:colinkiama@gmail.com" class="call-to-action-button">Email Me</a>
+  <a href="{{portfolio_permalink}}" class="call-to-action-button">View My CV</a>
+ </div>
+
+    <ul id="footer-links">
+    <li><a type="external" href="https://www.gitlab.com/colinkiama">GitLab</a></li>
+    <li><a type="external" href="https://www.linkedin.com/in/colin-kiama-11962988/">LinkedIn</a></li>
+    <li><a type="external" href="https://www.twitter.com/colinkiama">Twitter</a></li>
+    <li><a type="external" href="https://www.instagram.com/colinkiama.tech">Instagram</a></li>
+    <li><a type="external" href="https://www.producthunt.com/@colinkiama">Product Hunt</a></li>
+  </ul>
+<span class="site-timestamp">Colin Kiama - 2020</span>
 </footer>
 </body>
 </html>

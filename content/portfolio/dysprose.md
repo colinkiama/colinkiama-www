@@ -1,0 +1,11 @@
++++
+title = "Dysprose"
+date = 2020-11-12T00:40:00Z
+[extra]
+thumbnail= "https://i.imgur.com/I69AoYe.png"
+thumbnail_alt_text = "A program allowing the user to type in it, with a circular timer going down."
+link="https://www.microsoft.com/store/apps/9NNZQ38B48ZJ?cid=colinkiamaSite"
++++
+A Windows 10 Application for times when your ideas aren't coming together/you need to focus.
+
+Start a session where you have to keep typing within a regular interval or risk all your work fading away right in front of you then save your work at the end.
