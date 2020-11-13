@@ -1,9 +1,15 @@
 {% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="/section.css">
+{% endblock head %}
 {% block content %}
 {% for page in section.pages %}
-{{page.title}}
-<br>
+<div class="portfolio-item">
+<div class="item-title">{{page.title}}</div>
+<img src="{{page.extra.thumbnail}}" alt="{{page.extra.thumbnail_alt_text}}">
 {{page.content | safe}}
+<a href="{{page.extra.link}}">Check it out</a>	
+</div>
 <br>
 <br>
 {% endfor %}
