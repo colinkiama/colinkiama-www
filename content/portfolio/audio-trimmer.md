@@ -2,7 +2,7 @@
 title = "Audio Trimmer"
 date = 2020-11-12T00:39:00Z
 [extra]
-thumbnail = "https://i.imgur.com/kE0f04C.png"
+thumbnail = "https://ik.imagekit.io/mune/audio-trimmer_vrTCsM7fcU9-.png"
 thumbnail_alt_text = "A program allowing the user to select parts of audio to keep with trimming controls"
 link = "https://www.microsoft.com/store/apps/9P98V42MC8Z4?cid=colinkiamaSite"
 

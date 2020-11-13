@@ -6,7 +6,11 @@
 {% for page in section.pages %}
 <div class="portfolio-item">
 <div class="item-title">{{page.title}}</div>
-<a href="{{page.extra.link}}"><img src="{{page.extra.thumbnail}}" alt="{{page.extra.thumbnail_alt_text}}">
+<a href="{{page.extra.link}}">
+	<picture>
+		<source srcset="{{page.extra.thumbnail}}?tr=w-520" media="(min-width: 600px)">
+		<img src="{{page.extra.thumbnail}}?tr=w-400" alt="{{page.extra.thumbnail_alt_text}}">
+	</picture>
 </a>
 {{page.content | safe}}
 <a href="{{page.extra.link}}">Check it out</a>	

@@ -2,7 +2,7 @@
 title = "Dysprose"
 date = 2020-11-12T00:40:00Z
 [extra]
-thumbnail= "https://i.imgur.com/I69AoYe.png"
+thumbnail= "https://ik.imagekit.io/mune/dysprose_nXbwI-fnPCNS.png"
 thumbnail_alt_text = "A program allowing the user to type in it, with a circular timer going down."
 link="https://www.microsoft.com/store/apps/9NNZQ38B48ZJ?cid=colinkiamaSite"
 +++
