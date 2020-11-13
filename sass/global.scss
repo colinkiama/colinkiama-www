@@ -26,13 +26,13 @@ header nav a {
 }
 // Main styles
 main {
-    flex: 1;
+    flex: 1 1 0%;
     padding: 2rem 0;
 }
 // Footer Styles
 footer {
     text-align: center;
-    padding: 1rem 0;
+    padding-bottom: 1rem;
 }
 .call-to-action-button {
     border: solid 1px black;

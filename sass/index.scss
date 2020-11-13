@@ -1,9 +1,16 @@
-// Main styles
 main {
+	padding: 2rem 0;
+}
+
+// Main styles
+#main-container {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	text-align: center;
 	justify-content: center;
+	height: 100%;
+	width:100%;
 }
 
 
