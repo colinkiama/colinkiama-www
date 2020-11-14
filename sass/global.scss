@@ -14,7 +14,11 @@ a {
     }
     &:hover {
         color: grey;
+        *{
+            color: grey;
+        }
     }
+
 }
 // Header styles
 header nav a {
@@ -53,9 +57,7 @@ footer {
     display: block;
 }
 #footer-links {
-    list-style-type: none;
     text-align: center;
-    padding: 0;
 }
 #footer-links li {
     display: inline-block;
@@ -66,4 +68,9 @@ footer {
 }
 .surrounding-link{
     text-decoration:none;
+}
+.no-bullet-list{
+     list-style-type: none;
+     padding: 0;
+     margin: 0;
 }

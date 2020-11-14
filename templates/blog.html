@@ -1,18 +1,17 @@
 {% extends "base.html" %}
 {% block head %}
 <link rel="stylesheet" href="/section.css">
+<link rel="stylesheet" href="/blog.css">
 {% endblock head %}
 {% block content %}
 {% set pager = paginator %}
 {% for blog_post in pager.pages %}
-<div class="blog-post">
+
 <a class="surrounding-link" href="{{blog_post.permalink}}">
 <div class="item-title">{{blog_post.title}}</div>
-<div>{{blog_post.date | date}}</div>
-<img src="{{blog_post.extra.thumbnail}}" alt="{{blog_post.extra.thumbnail_alt_text}}">
+<div>{{blog_post.description}}</div>
+<time class="post-timestamp" datetime="{{blog_post.date}}">{{blog_post.date | date}}</time>
 </a>
-</div>
 
-{{blog_post.description}}
 {% endfor %}
 {% endblock content %}
