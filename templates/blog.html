@@ -5,13 +5,15 @@
 {% endblock head %}
 {% block content %}
 {% set pager = paginator %}
+<ul class="no-bullet-list">
 {% for blog_post in pager.pages %}
-
+<li class="post-item blog-item">
 <a class="surrounding-link" href="{{blog_post.permalink}}">
 <div class="item-title">{{blog_post.title}}</div>
 <div>{{blog_post.description}}</div>
 <time class="post-timestamp" datetime="{{blog_post.date}}">{{blog_post.date | date}}</time>
 </a>
-
+</li>
 {% endfor %}
+</ul>
 {% endblock content %}
