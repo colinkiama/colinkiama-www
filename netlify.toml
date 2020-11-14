@@ -13,3 +13,5 @@ ZOLA_VERSION = "0.9.0"
 # preview site.  We do this using the Netlify environment variable
 # `$DEPLOY_PRIME_URL`.
 
+[context.production]
+command = "zola build --base-url $URL"
