@@ -3,8 +3,9 @@
 <link rel="stylesheet" href="/section.css">
 {% endblock head %}
 {% block content %}
+<ul class="no-bullet-list">
 {% for page in section.pages %}
-<div class="portfolio-item">
+<li class="post-item">
 <div class="item-title">{{page.title}}</div>
 <a href="{{page.extra.link}}">
 	<picture>
@@ -14,8 +15,7 @@
 </a>
 {{page.content | safe}}
 <a href="{{page.extra.link}}">Check it out</a>	
-</div>
-<br>
-<br>
+</li>
 {% endfor %}
+</ul>
 {% endblock content %}
