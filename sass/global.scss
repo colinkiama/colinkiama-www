@@ -1,3 +1,4 @@
+@import 'variables.scss';
 body {
     margin: 0;
     display: flex;
@@ -6,27 +7,27 @@ body {
     height: 100vh;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 1.25rem;
+    color: $light-foreground;
+    background-color: $light-background;
 }
 a {
-    color: black;
+    color: inherit;
     &:visited {
-        color: initial;
+        color: inherit;
     }
     &:hover {
         color: grey;
-        *{
+        * {
             color: grey;
         }
     }
-
 }
 // Header styles
 header nav a {
     font-size: 1.4rem;
-    margin-right: 0.4rem;
-    &:visited {
-        color: initial;
-    }
+    margin-right: 0.4rem; // &:visited {
+    //     color: inherit;
+    // }
 }
 // Main styles
 main {
@@ -44,10 +45,10 @@ footer {
     padding: 0.75rem 1rem;
     display: inline-block;
     text-decoration: none;
-    color: black;
+    color: $light-foreground;
     &:hover {
-        color: white;
-        background-color: black;
+        color: $dark-foreground;
+        background-color: $dark-background;
     }
 }
 #footer-call-to-actions {
@@ -66,11 +67,27 @@ footer {
     display: inline-block;
     font-weight: 500;
 }
-.surrounding-link{
-    text-decoration:none;
+.surrounding-link {
+    text-decoration: none;
 }
-.no-bullet-list{
-     list-style-type: none;
-     padding: 0;
-     margin: 0;
+.no-bullet-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+// Dark Styles
+@media (prefers-color-scheme: dark) {
+    body {
+        color: $dark-foreground;
+        background-color: $dark-background;
+    }
+    .call-to-action-button {
+        border-color: $dark-foreground;
+        color: $dark-foreground;
+        &:hover {
+            color: $light-foreground;
+            background-color: $light-background;
+        }
+    }
 }

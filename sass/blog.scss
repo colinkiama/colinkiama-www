@@ -1,5 +1,12 @@
-.post-timestamp{
-	font-size: 0.8em;
-	color: #555555;
-	font-weight: 500;
+@import 'variables.scss';
+.post-timestamp {
+    font-size: 0.8em;
+    color: $light-foreground-secondary;
+    font-weight: 500;
+}
+// Dark Styles
+@media (prefers-color-scheme: dark) {
+    .post-timestamp {
+        color: $dark-foreground-secondary;
+    }
 }
