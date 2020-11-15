@@ -1,8 +1,14 @@
 {% extends "base.html" %}
 {% block head %}
+<title>Colin Kiama's Blog</title>
 <link rel="stylesheet" href="/section.css">
 <link rel="stylesheet" href="/blog.css">
 {% endblock head %}
+
+{% block blog_link_block %}
+	<a class="no-underline" href="/">Blog</a>
+{% endblock blog_link_block %}
+
 {% block content %}
 {% set pager = paginator %}
 <ul class="no-bullet-list">

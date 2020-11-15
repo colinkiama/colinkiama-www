@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% block head %}
+<title>Colin Kiama's Portfolio</title>
 <link rel="stylesheet" href="/section.css">
 {% endblock head %}
+
+{% block portfolio_link_block %}
+	<a class="no-underline" href="/">Portfolio</a>
+{% endblock portfolio_link_block %}
+
 {% block content %}
 <ul class="no-bullet-list">
 {% for page in section.pages %}

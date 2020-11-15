@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home</title>
 	<meta charset="UTF-8" />
     <meta name="title" content="Colin Kiama" />
     <meta
@@ -17,13 +16,22 @@
 <body>
   {% set portfolio_permalink = get_url(path="@/portfolio/_index.md") %}
   {% set blog_permalink = get_url(path="@/blog/_index.md") %}
+
 <header>
  <h1>Colin Kiama</h1>
       <h2>Software Developer</h2>
       <nav>
+        {% block home_link_block -%}
         <a href="/">Home</a>
+        {%- endblock home_link_block %}
+
+        {% block portfolio_link_block -%}
         <a href="{{portfolio_permalink}}">Portfolio</a>
+        {% endblock portfolio_link_block -%}
+
+        {% block blog_link_block -%}
         <a href="{{blog_permalink}}">Blog</a>
+        {% endblock blog_link_block -%}
       </nav>
 </header>
 <main>
@@ -54,4 +62,3 @@
 <script src="/prefetch.js"></script>
 </body>
 </html>
-
