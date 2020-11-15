@@ -5,15 +5,15 @@
 {% endblock head %}
 
 {% block portfolio_link_block %}
-	<a class="no-underline" href="/">Portfolio</a>
+	<span class="no-underline" href="/">Portfolio</span>
 {% endblock portfolio_link_block %}
 
 {% block content %}
 <ul class="no-bullet-list">
 {% for page in section.pages %}
 <li class="post-item">
-<div class="item-title">{{page.title}}</div>
-<a href="{{page.extra.link}}">
+<h3 class="item-title">{{page.title}}</h3>
+<a class="image-link" href="{{page.extra.link}}">
 	<picture>
 		<source srcset="{{page.extra.thumbnail}}?tr=w-520" media="(min-width: 600px)">
 		<img src="{{page.extra.thumbnail}}?tr=w-400" alt="{{page.extra.thumbnail_alt_text}}">

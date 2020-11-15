@@ -3,18 +3,17 @@ img{
 	display: block;
 }
 
-.item-title{
-	font-weight: 500;
-	font-size: 1.5rem;
-	display: block;
-	margin-bottom: 0.5rem;
-}
+
 
 .post-item{
 	margin-bottom: 4rem;
 	&:last-child{
 		margin-bottom: 0;
 	}
+}
+
+.post-item .image-link:hover ~ a{
+	color: gray;	
 }
 
 @media screen and (min-width: 600px){
