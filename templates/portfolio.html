@@ -14,10 +14,7 @@
 <li class="post-item">
 <h3 class="item-title">{{page.title}}</h3>
 <a class="image-link" href="{{page.extra.link}}">
-	<picture>
-		<source srcset="{{page.extra.thumbnail}}?tr=w-520" media="(min-width: 600px)">
-		<img src="{{page.extra.thumbnail}}?tr=w-400" alt="{{page.extra.thumbnail_alt_text}}">
-	</picture>
+	<img src="{{page.extra.thumbnail}}?tr=w-900" alt="{{page.extra.thumbnail_alt_text}}">
 </a>
 {{page.content | safe}}
 <a href="{{page.extra.link}}">Check it out</a>	
