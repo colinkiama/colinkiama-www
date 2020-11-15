@@ -30,7 +30,7 @@ body>header {
     margin-top: 1rem;
 }
 // Header styles
-header nav a {
+header nav * {
     font-size: 1.4rem;
     margin-right: 0.4rem; // &:visited {
     //     color: inherit;
