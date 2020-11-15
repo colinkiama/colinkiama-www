@@ -1,19 +1,27 @@
+// Animations
+@keyframes waving-hand {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(75deg);
+    }
+}
 main {
-	padding: 2rem 0;
-}
-
-// Main styles
+    padding: 2rem 0;
+} // Main styles
 #main-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	justify-content: center;
-	height: 100%;
-	width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
 }
-
-
 .waving-hand-emoji {
-	font-size: 3.2rem;
+    display: inline-block;
+    font-size: 3.2rem;
+    animation:0.6s 6 alternate waving-hand;
+    animation-timing-function: ease-in-out;
 }
