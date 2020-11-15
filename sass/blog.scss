@@ -1,6 +1,7 @@
 @import 'variables.scss';
 .post-timestamp {
     font-size: 0.8em;
+    transition: color 0.5s ease-in-out;
     color: $light-foreground-secondary;
     font-weight: 500;
 }
