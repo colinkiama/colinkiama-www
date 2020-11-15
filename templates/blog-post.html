@@ -1,9 +1,12 @@
 {% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="/blog.css">
+{% endblock head %}
 {% block content %}
 <article>
 	<header>
 		<h3>{{page.title}}</h3>
-		{{page.date | date}}
+		<time class="post-timestamp" datetime="{{page.date}}">{{page.date | date}}</time>
 	</header>
 {{page.content | safe}} 
 </article>

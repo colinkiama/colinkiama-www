@@ -22,6 +22,12 @@ a {
         }
     }
 }
+
+
+body > header{
+    margin-top: 1rem;
+}
+
 // Header styles
 header nav a {
     font-size: 1.4rem;
@@ -29,11 +35,23 @@ header nav a {
     //     color: inherit;
     // }
 }
+
+h1, h2{
+    margin: 1.2rem 0;
+}
+
+h3{
+    margin:0;
+    margin-bottom: 0.25rem;
+}
+
+
 // Main styles
 main {
     flex: 1 1 0%;
     padding: 2rem 0;
 }
+
 // Footer Styles
 footer {
     text-align: center;
@@ -58,13 +76,16 @@ footer {
     display: block;
 }
 #footer-links {
+    margin-top: 1rem;
     text-align: center;
 }
 #footer-links li {
     display: inline-block;
+    margin: 0 0.1rem;
 }
 .site-timestamp {
     display: inline-block;
+    margin-top: 1.5rem;
     font-weight: 500;
 }
 .surrounding-link {
