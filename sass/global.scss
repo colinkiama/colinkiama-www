@@ -13,6 +13,7 @@ body {
     background-color: $light-background;
 }
 a {
+    transition: color 0.5s ease-in-out;
     color: inherit;
     &:visited {
         color: inherit;
