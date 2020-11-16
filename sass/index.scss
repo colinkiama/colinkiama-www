@@ -24,3 +24,10 @@ main {
     font-size: 3.2rem;
     animation:0.4s ease-in-out 6 alternate waving-hand;
 }
+
+// Reduced Motion styles (Remove animations)
+@media (prefers-reduced-motion: reduce) {
+    .waving-hand-emoji{
+        animation: none;
+    }
+  }
