@@ -5,7 +5,7 @@
 {% endblock head %}
 
 {% block portfolio_link_block %}
-	<span class="no-underline" href="/">Portfolio</span>
+	<span class="no-underline">Portfolio</span>
 {% endblock portfolio_link_block %}
 
 {% block content %}
@@ -19,9 +19,7 @@
 <a class="image-link" href="{{project["link"]}}">
 	<img src="{{project["thumbnail"]}}?tr=w-900" alt="{{project["thumbnail_alt_text"]}}">
 </a>
-<p>
 {{project.content | safe}}
-</p>
 <a href="{{project["link"]}}">Check it out</a>	
 </li>
 {% endfor %}
