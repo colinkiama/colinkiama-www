@@ -9,18 +9,20 @@
 {% endblock portfolio_link_block %}
 
 {% block content %}
+{% set portfolio = load_data(path="generators/portfolio.json", format="json") %}
+
 <ul class="no-bullet-list">
-{% for page in section.pages %}
+{% for project in portfolio["list"] %}
 <li class="post-item">
-<h3 class="item-title">{{page.title}}</h3>
-<a class="image-link" href="{{page.extra.link}}">
-	<picture>
-		<source srcset="{{page.extra.thumbnail}}?tr=w-520" media="(min-width: 600px)">
-		<img src="{{page.extra.thumbnail}}?tr=w-400" alt="{{page.extra.thumbnail_alt_text}}">
-	</picture>
+
+<h3 class="item-title">{{project.title}}</h3>
+<a class="image-link" href="{{project["link"]}}">
+	<img src="{{project["thumbnail"]}}?tr=w-900" alt="{{project["thumbnail_alt_text"]}}">
 </a>
-{{page.content | safe}}
-<a href="{{page.extra.link}}">Check it out</a>	
+<p>
+{{project.content | safe}}
+</p>
+<a href="{{project["link"]}}">Check it out</a>	
 </li>
 {% endfor %}
 </ul>

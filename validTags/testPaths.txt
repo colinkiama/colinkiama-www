@@ -1,0 +1,9 @@
+localhost:1111/404.html
+localhost:1111/blog/hello-again/index.html
+localhost:1111/blog/index.html
+localhost:1111/blog/page/1/index.html
+localhost:1111/index.html
+localhost:1111/portfolio/audio-trimmer/index.html
+localhost:1111/portfolio/dysprose/index.html
+localhost:1111/portfolio/index.html
+localhost:1111/portfolio/pomodoro-timer/index.html

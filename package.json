@@ -1,0 +1,25 @@
+{
+  "name": "colinkiama-new",
+  "version": "1.0.0",
+  "description": "",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "a11y-tests": "zola build && npx run pa11y-ci",
+    "validity-tests": "npx run site-validator-cli",
+    "generate:a11ytestpaths": "node ./scripts/generateA11yTestPaths.js",
+    "test:forvalidtags": "npm run generate:a11ytestpaths && npx site-validator --path testPaths.txt --verbose --local --cache 0",
+    "test:fora11ycompliance": "npm run generate:a11ytestpaths && npx run pa11y-ci",
+    "test:a11y": "npm run generate:a11ytestpaths && npx site-validator --path testPaths.txt --verbose --local --cache 0 && npx run pa11y-ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/colinkiama/colinkiama-new.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/colinkiama/colinkiama-new/issues"
+  },
+  "homepage": "https://gitlab.com/colinkiama/colinkiama-new#readme"
+}
