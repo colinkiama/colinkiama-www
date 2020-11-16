@@ -11,13 +11,15 @@
 
 {% block content %}
 {% set pager = paginator %}
+<ul class="no-bullet-list">
 {% for blog_post in pager.pages %}
-
+<li class="post-item blog-item">
 <a class="surrounding-link" href="{{blog_post.permalink}}">
 <h3 class="item-title">{{blog_post.title}}</h3>
 <div>{{blog_post.description}}</div>
 <time class="post-timestamp" datetime="{{blog_post.date}}">{{blog_post.date | date}}</time>
 </a>
-
+</li>
 {% endfor %}
+</ul>
 {% endblock content %}

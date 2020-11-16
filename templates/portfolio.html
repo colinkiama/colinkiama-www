@@ -14,10 +14,9 @@
 <ul class="no-bullet-list">
 {% for project in portfolio["list"] %}
 <li class="post-item">
-
-<h3 class="item-title">{{project.title}}</h3>
-<a class="image-link" href="{{project["link"]}}">
-	<img src="{{project["thumbnail"]}}?tr=w-900" alt="{{project["thumbnail_alt_text"]}}">
+<h3 class="item-title">{{page.title}}</h3>
+<a class="image-link" href="{{page.extra.link}}">
+	<img src="{{page.extra.thumbnail}}?tr=w-900" alt="{{page.extra.thumbnail_alt_text}}">
 </a>
 {{project.content | safe}}
 <a href="{{project["link"]}}">Check it out</a>	
