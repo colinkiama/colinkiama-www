@@ -1,13 +1,19 @@
-@import 'variables.scss';
+@import "variables.scss";
 .post-timestamp {
-    font-size: 0.8em;
-    transition: color 0.5s ease-in-out;
-    color: $light-foreground-secondary;
-    font-weight: 500;
+  font-size: 0.8em;
+  transition: color 0.5s ease-in-out;
+  color: $light-foreground-secondary;
+  font-weight: 500;
 }
 // Dark Styles
 @media (prefers-color-scheme: dark) {
-    .post-timestamp {
-        color: $dark-foreground-secondary;
-    }
+  .post-timestamp {
+    color: $dark-foreground-secondary;
+  }
+}
+// Reduced Motion styles (Remove animations)
+@media (prefers-reduced-motion: reduce) {
+ .post-timestamp{
+     transition: none;
+ }
 }

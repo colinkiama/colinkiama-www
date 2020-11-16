@@ -135,5 +135,14 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   a{
       transition: none;
+      &:hover {
+       
+        * {
+         transition: none;
+        }
+      }
+  }
+  .call-to-action-button{
+      transition: none;
   }
 }
