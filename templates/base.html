@@ -1,65 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8" />
+  <head>
+    <meta charset="UTF-8" />
     <meta name="title" content="Colin Kiama" />
     <meta
       name="description"
       content="Developer with experience with .Net (C#, UWP), Java and HTML."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/global.css" />    
+    <link rel="stylesheet" href="/global.css" />
     <link rel="icon" href="{{config.extra.favicon_link}}" />
-    {% block head %}
-    {% endblock head %}
-</head>
-<body>
-  {% set portfolio_permalink = get_url(path="@/portfolio/_index.md") %}
-  {% set blog_permalink = get_url(path="@/blog/_index.md") %}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "name": "Colin Kiama",
+        "@type": "Person",
+        "email": "colinkiama@gmail.com",
+        "image": "https://ik.imagekit.io/mune/mune-portrait_2Uy7ATEsei_PG.jpeg",
+        "jobTitle": "Front-End Developer",
+        "url": "http://www.colinkiama.com"
+      }
+    </script>
+    {% block head %} {% endblock head %}
+  </head>
+  <body>
+    {% set portfolio_permalink = get_url(path="@/portfolio/_index.md") %} {% set
+    blog_permalink = get_url(path="@/blog/_index.md") %}
 
-<a id="bypass-block" href="#main-container">Skip to main content</a>
-<header>
- <h1>Colin Kiama</h1>
+    <a id="bypass-block" href="#main-container">Skip to main content</a>
+    <header>
+      <h1>Colin Kiama</h1>
       <h2>Software Developer</h2>
       <nav>
         {% block home_link_block -%}
         <a href="/">Home</a>
-        {%- endblock home_link_block %}
-
-        {% block portfolio_link_block -%}
+        {%- endblock home_link_block %} {% block portfolio_link_block -%}
         <a href="{{portfolio_permalink}}">Portfolio</a>
-        {% endblock portfolio_link_block -%}
-
-        {% block blog_link_block -%}
+        {% endblock portfolio_link_block -%} {% block blog_link_block -%}
         <a href="{{blog_permalink}}">Blog</a>
         {% endblock blog_link_block -%}
       </nav>
-</header>
-<main>
-  <!--iOS won't let you put a flexbox directly inside a flexbox-->
-  <div id="main-container">
-	{% block content %}
-	{% endblock content %}
-</div>
-</main>
-<footer>
-  <p>Interested in working with me? Want to ask me anything?</p>
-  <span id="emailAddress">Email: colinkiama@gmail.com</span>
+    </header>
+    <main>
+      <!--iOS won't let you put a flexbox directly inside a flexbox-->
+      <div id="main-container">{% block content %} {% endblock content %}</div>
+    </main>
+    <footer>
+      <p>Interested in working with me? Want to ask me anything?</p>
+      <span id="emailAddress">Email: colinkiama@gmail.com</span>
 
-  <div id="footer-call-to-actions">
-  <a href="mailto:colinkiama@gmail.com" class="call-to-action-button">Email Me</a>
-  <a href="{{config.extra.cv_link}}" class="call-to-action-button">View My CV</a>
- </div>
+      <div id="footer-call-to-actions">
+        <a href="mailto:colinkiama@gmail.com" class="call-to-action-button"
+          >Email Me</a
+        >
+        <a href="{{config.extra.cv_link}}" class="call-to-action-button"
+          >View My CV</a
+        >
+      </div>
 
-    <ul id="footer-links" class="no-bullet-list">
-    <li><a rel="external" href="https://www.gitlab.com/colinkiama">GitLab</a></li>
-    <li><a rel="external" href="https://www.linkedin.com/in/colin-kiama-11962988/">LinkedIn</a></li>
-    <li><a rel="external" href="https://www.twitter.com/colinkiama">Twitter</a></li>
-    <li><a rel="external" href="https://www.instagram.com/colinkiama.tech">Instagram</a></li>
-    <li><a rel="external" href="https://www.producthunt.com/@colinkiama">Product Hunt</a></li>
-  </ul>
-<span class="site-timestamp">Colin Kiama - 2020</span>
-</footer>
-<script src="/prefetch.js"></script>
-</body>
+      <ul id="footer-links" class="no-bullet-list">
+        <li>
+          <a rel="external" href="https://www.gitlab.com/colinkiama">GitLab</a>
+        </li>
+        <li>
+          <a
+            rel="external"
+            href="https://www.linkedin.com/in/colin-kiama-11962988/"
+            >LinkedIn</a
+          >
+        </li>
+        <li>
+          <a rel="external" href="https://www.twitter.com/colinkiama"
+            >Twitter</a
+          >
+        </li>
+        <li>
+          <a rel="external" href="https://www.instagram.com/colinkiama.tech"
+            >Instagram</a
+          >
+        </li>
+        <li>
+          <a rel="external" href="https://www.producthunt.com/@colinkiama"
+            >Product Hunt</a
+          >
+        </li>
+      </ul>
+      <span class="site-timestamp">Colin Kiama - 2020</span>
+    </footer>
+    <script src="/prefetch.js"></script>
+  </body>
 </html>
