@@ -1,7 +1,34 @@
 {% extends "base.html" %}
 {% block head %}
+{% set portfolio = load_data(path="generators/portfolio.json", format="json") %}
 <title>Colin Kiama's Portfolio</title>
 <link rel="stylesheet" href="/section.css">
+{% for project in portfolio["list"] %}
+ <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "{{project["title"]}}",
+      "operatingSystem": "{{project["operatingSystem"]}}",
+      "applicationCategory": "{{project["applicationCategory"]}}",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "{{project["aggregateRating"]["ratingValue"]}}",
+        "ratingCount": "{{project["aggregateRating"]["ratingCount"]}}"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "{{project["offers"]["price"]}}",
+        "priceCurrency": "{{project["offers"]["priceCurrency"]}}"
+      },
+      "url":"{{project["link"]}}",
+      "Creator": {
+        "@type": "Person",
+        "sameAs": "https://www.colinkiama.com"
+      }
+    }
+  </script>
+{% endfor %}
 {% endblock head %}
 
 {% block portfolio_link_block %}
@@ -10,7 +37,6 @@
 
 {% block content %}
 {% set portfolio = load_data(path="generators/portfolio.json", format="json") %}
-
 <ul class="no-bullet-list">
 {% for project in portfolio["list"] %}
 <li class="post-item">

@@ -1,33 +1,33 @@
 // Animations
 @keyframes waving-hand {
-    from {
-        transform: rotate(0);
-    }
-    to {
-        transform: rotate(75deg);
-    }
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(75deg);
+  }
 }
 main {
-    padding: 2rem 0;
+  padding: 2rem 0;
 } // Main styles
 #main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 .waving-hand-emoji {
-    display: inline-block;
-    font-size: 3.2rem;
-    animation:0.4s ease-in-out 6 alternate waving-hand;
+  display: inline-block;
+  font-size: 3.2rem;
+  animation: 0.4s ease-in-out 6 alternate waving-hand;
 }
 
 // Reduced Motion styles (Remove animations)
 @media (prefers-reduced-motion: reduce) {
-    .waving-hand-emoji{
-        animation: none;
-    }
+  .waving-hand-emoji {
+    animation: none;
   }
+}
