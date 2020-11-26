@@ -7,9 +7,20 @@
     transform: rotate(75deg);
   }
 }
+// Main styles
 main {
-  padding: 2rem 0;
-} // Main styles
+  align-self: center;
+  padding: 2rem 1rem;
+}
+
+// // Desktop Styles
+@media only screen and (min-width: 600px) {
+  main {
+    width: 500px;
+    padding: 2rem 0;
+  }
+}
+
 #main-container {
   display: flex;
   flex-direction: column;

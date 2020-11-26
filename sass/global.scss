@@ -111,6 +111,14 @@ footer {
 .surrounding-link {
   text-decoration: none;
 }
+
+// // Desktop Styles
+@media only screen and (min-width: 600px) {
+  body {
+    padding: 0rem 2rem;
+  }
+}
+
 // Dark Styles
 @media (prefers-color-scheme: dark) {
   body {
@@ -133,16 +141,15 @@ footer {
 
 // Reduced Motion styles (Remove animations)
 @media (prefers-reduced-motion: reduce) {
-  a{
-      transition: none;
-      &:hover {
-       
-        * {
-         transition: none;
-        }
+  a {
+    transition: none;
+    &:hover {
+      * {
+        transition: none;
       }
+    }
   }
-  .call-to-action-button{
-      transition: none;
+  .call-to-action-button {
+    transition: none;
   }
 }
