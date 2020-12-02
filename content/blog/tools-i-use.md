@@ -12,14 +12,13 @@ I run [Pop!\_OS 20.10](https://pop.system76.com/) on my main laptop.
 
 It's based on Ubuntu and it's the fastest and most productive Linux distribution that I've ever used!
 
-### Programs I Use
+<!-- ### Programs I Use
 
 #### Development Tools
 
-#### Design Tools
+#### Design Tools -->
 
 <br>
-<hr>
 <br>
 I hope you've found some tools that help you with your work.
 
