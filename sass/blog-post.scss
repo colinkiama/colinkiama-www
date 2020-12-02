@@ -1,0 +1,45 @@
+@import "variables.scss";
+
+// article{
+//     max-width: $max-content-width;
+// }
+
+.blog-content {
+    margin-top: 1rem;
+}
+
+
+.flex-center * {
+    max-width: $max-content-width;
+}
+
+article  {
+    font-size: 1.25rem;
+    h1{
+        font-size: 1.8em;
+        margin-top: 1rem;
+        margin-bottom: 0.1em;
+    }
+
+    h2 {
+        
+        font-size: 1.4em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    h4 {
+        font-size: 1.1em;
+    }
+
+    h5 {
+        font-size: 1.0em;
+    }
+
+    h6 {
+        font-size: 0.85em;
+    }
+
+}
