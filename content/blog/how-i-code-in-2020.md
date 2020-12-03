@@ -51,9 +51,3 @@ Also, it's one of the only browsers that reads that gets the "prefers-color-sche
 I make mockups and protoypes here before I start writign code that involves a UI.
 
 By the way, it's **free** and works on all operating systems since it's browser-based!
-
-<br>
-
-I hope you've found some tools that help you with your work.
-
-If you liked this post, feel free to follow me on the accounts listed below.
