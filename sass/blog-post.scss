@@ -9,11 +9,16 @@
 }
 
 
-.flex-center * {
-    max-width: $max-content-width;
+.flex-center {
+    display: flex;
+    flex-direction: column;
 }
 
+
+
 article  {
+    align-self: center;
+    max-width: 700px;
     h1{
         font-size: 2.2rem;
         margin-top: 1rem;
