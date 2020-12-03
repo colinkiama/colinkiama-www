@@ -1,7 +1,18 @@
 {
   "list": [
+    
+    {
+      "title": "colinkiama.com (This website 😏)",
+      "type":"wesbite",
+      "date": "2020-12-03T01:12:00Z",
+      "thumbnail": "https://ik.imagekit.io/mune/colinkiama-site_AtFibFk4VMgCV.png",
+      "thumbnail_alt_text": "A hand over a gray background",
+      "link": "https://gitlab.com/colinkiama/colinkiama-new/",
+      "content": "<p>Take a look at how this site was made</p>"
+    },
     {
       "title": "Pomodoro Timer UWP",
+      "type": "app",
       "date": "2020-11-12T00:41:00Z",
       "thumbnail": "https://ik.imagekit.io/mune/pomodoro-timer_GDR4r4_faNPO.png",
       "thumbnail_alt_text": "A program with a timer showing the current time left in minutes and seconds.",
@@ -22,6 +33,7 @@
     },
     {
       "title": "Dysprose",
+      "type": "app",
       "date": "2020-11-12T00:40:00Z",
       "thumbnail": "https://ik.imagekit.io/mune/dysprose_nXbwI-fnPCNS.png",
       "thumbnail_alt_text": "A program allowing the user to type in it, with a circular timer going down.",
@@ -42,6 +54,7 @@
     },
     {
       "title": "Audio Trimmer",
+      "type": "app",
       "date": "2020-11-12T00:39:00Z",
       "thumbnail": "https://ik.imagekit.io/mune/audio-trimmer_vrTCsM7fcU9-.png",
       "thumbnail_alt_text": "A program allowing the user to select parts of audio to keep with trimming controls",

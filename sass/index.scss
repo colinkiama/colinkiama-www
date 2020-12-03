@@ -13,7 +13,11 @@ main {
   padding: 2rem 1rem;
 }
 
-// // Desktop Styles
+main header {
+  margin: 1rem 0;
+}
+
+// Desktop Styles
 @media only screen and (min-width: 600px) {
   main {
     width: 500px;

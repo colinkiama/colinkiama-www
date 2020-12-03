@@ -3,7 +3,9 @@
 {% set portfolio = load_data(path="generators/portfolio.json", format="json") %}
 <title>Colin Kiama's Portfolio</title>
 <link rel="stylesheet" href="/section.css">
+<link rel="stylesheet" href="/portfolio.css">
 {% for project in portfolio["list"] %}
+{% if project.type == "app"%}
  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -28,6 +30,7 @@
       }
     }
   </script>
+  {% endif %}
 {% endfor %}
 {% endblock head %}
 
