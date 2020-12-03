@@ -11,7 +11,11 @@ highlight_code = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
+generate_feed = true
+
+feed_filename = "rss.xml"
+
 [extra]
 # Put all your custom variables here
-cv_link="https://mune-cdn.azureedge.net/downloads/ColinKiamaCV-no-addr.pdf"
-favicon_link="https://ik.imagekit.io/mune/mune-favicon_BOoehMPQtVAo.png"
+cv_link = "https://mune-cdn.azureedge.net/downloads/ColinKiamaCV-no-addr.pdf"
+favicon_link = "https://ik.imagekit.io/mune/mune-favicon_BOoehMPQtVAo.png"
