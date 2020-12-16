@@ -1,15 +1,5 @@
 {
   "list": [
-    
-    {
-      "title": "colinkiama.com (This website 😏)",
-      "type":"wesbite",
-      "date": "2020-12-03T01:12:00Z",
-      "thumbnail": "https://ik.imagekit.io/mune/colinkiama-site-logo_2m8Nvn90o34T.png",
-      "thumbnail_alt_text": "A hand over a gray background",
-      "link": "https://gitlab.com/colinkiama/colinkiama-new/",
-      "content": "<p>Take a look at how this site was made.</p>"
-    },
     {
       "title": "Pomodoro Timer UWP",
       "type": "app",
