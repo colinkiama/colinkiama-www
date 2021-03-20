@@ -17,5 +17,4 @@ feed_filename = "rss.xml"
 
 [extra]
 # Put all your custom variables here
-cv_link = "https://mune-cdn.azureedge.net/downloads/ColinKiamaCV-no-addr.pdf"
 favicon_link = "https://ik.imagekit.io/mune/mune-favicon_BOoehMPQtVAo.png"
