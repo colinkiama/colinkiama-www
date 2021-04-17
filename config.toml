@@ -1,5 +1,9 @@
 # The URL the site will be built for
-base_url = "https://www.colinkiama.com"
+base_url = "colinkiama.com"
+
+# The site title and description; used in feeds by default.
+title = "Colin Kiama"
+description = "Ayyy, you made it to my blog! I'll talk about my experiences with software development and things that I find interesting here."
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
