@@ -111,6 +111,11 @@ footer {
   text-decoration: none;
 }
 
+// Make code block scrollable
+pre {
+  overflow: auto;
+}
+
 // // Desktop Styles
 @media only screen and (min-width: 600px) {
   body {
