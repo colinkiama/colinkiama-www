@@ -23,6 +23,10 @@ feed_filename = "rss.xml"
 highlight_code = true
 
 
+# The theme to use for code highlighting.
+# See below for list of allowed values.
+highlight_theme = "visual-studio-dark"
+
 [extra]
 # Put all your custom variables here
 favicon_link = "https://ik.imagekit.io/mune/mune-favicon_BOoehMPQtVAo.png"
