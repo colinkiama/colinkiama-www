@@ -2,6 +2,12 @@
 {% block head %}
 {% set portfolio = load_data(path="generators/portfolio.json", format="json") %}
 <title>Colin Kiama's Portfolio</title>
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{page.permalink}}"
+<meta property="og:title" content="Colin Kiama - Portfolio"> 
+<meta property="og:image" content="https://ik.imagekit.io/mune/colinkiama-site-logo_2m8Nvn90o34T.png?updatedAt=1606960170047&tr=w-1200,h-675,fo-auto"> 
+<meta property="og:description" content="Projects that I've worked on.">
+
 <link rel="stylesheet" href="/section.css">
 <link rel="stylesheet" href="/portfolio.css">
 {% for project in portfolio["list"] %}
