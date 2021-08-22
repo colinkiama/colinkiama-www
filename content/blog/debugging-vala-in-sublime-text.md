@@ -12,7 +12,6 @@ Install Sublime Debugger
 
 Install the lldb adapter for it: Debugger > Install Adapters
 
-## Step 3
 ## Step 3 (Optional)
 
 Set up build system. This one assumes that your project using meson.
@@ -47,6 +46,27 @@ At the time of writing this, these were the following options:
 - LLDB: Custom Launch
 - LLDB: Debug Cargo Output
 - LLDB: Debug Cargo Tests
+
+For this project , we'll pick `LLDB: Launch`.
+
+Now the project configuration file should open up with the configuration template added.
+
+Customise the `debugger_configurations` field so that it looks something like this:
+
+```json
+
+    "debugger_configurations":
+    [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Launch (LLDB)",
+            "program": "${workspaceFolder}/build/<your_program_name_here>",
+            "args": [""],
+            "cwd": "${workspaceFolder}"
+        },
+    ]
+```
 
 ## Step 6
 
