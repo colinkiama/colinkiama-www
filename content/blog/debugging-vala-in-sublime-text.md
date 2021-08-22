@@ -4,19 +4,50 @@ date = 2021-08-21T11:36:00Z
 description="Using Sublime Debugger package, we can have IDE-level debugging for Vala on Sublime Text!"
 +++
 
-
 ## Step 1
 
 Install Sublime Debugger
 
 ## Step 2
 
-Use the lldb configuration they have provided
+Install the lldb adapter for it: Debugger > Install Adapters
 
 ## Step 3
+## Step 3 (Optional)
 
-WIth the args field in the debugger configuration, include the `-g` flag to include Vala line number information. You might also need to add `--save-temps` too to keep around the temporary C source files: [https://wiki.gnome.org/Projects/Vala/Tutorial#Debugging](https://wiki.gnome.org/Projects/Vala/Tutorial#Debugging)
+Set up build system. This one assumes that your project using meson.
+
+Tools > Build System > New Build System.
+
+Debug build command:
+
+```json
+{
+    "shell_cmd": "meson build && ninja -C build",
+    "working_dir": "${project_path}",
+}
+```
+Note: Meson Debug Build. The setup command use the 'debug' build flag by default. It also inserts debug build flag args too like `-g`.
 
 ## Step 4
+
+Ensure that you've opened a sublime text project. If not, create one. It's necessary for the debugger to work.
+
+## Step 5
+
+Add debugger configuration project settings
+
+You can also add debugger configuration templates in Debugger > Add or Select Configuration then select the type of configuration you want to add. For this project, we'll pick `lldb`.
+
+At the time of writing this, these were the following options:
+
+- LLDB: Launch
+- LLDB: Attach by PID
+- LLDB: Attach by Name
+- LLDB: Custom Launch
+- LLDB: Debug Cargo Output
+- LLDB: Debug Cargo Tests
+
+## Step 6
 
 Start debugging! 😉
