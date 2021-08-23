@@ -1,36 +1,37 @@
 +++
-title = "Debugging Vala programs in Sublime Text"
-date = 2021-08-21T11:36:00Z  
-description="Using Sublime Debugger package, we can have IDE-level debugging for Vala on Sublime Text!"
+title = "Get started with debugging Vala programs in Sublime Text"
+date = 2021-08-23T10:51:00Z  
+description="Achieving IDE-level debugging for Vala in Sublime Text"
 +++
+
+## Prerequisites
+This tutorial assumes that you have a Vala program setup with Meson Build project structure. 
+
+Vala is pretty underrated programming language in my opinion (but I'll probably get into that in another post). Find out more about it here: https://wiki.gnome.org/Projects/Vala
+
+Find out more about meson here: https://mesonbuild.com
 
 ## Step 1
 
-Install Sublime Debugger
+Install the Sublime Debugger package: https://packagecontrol.io/packages/Debugger
 
 ## Step 2
 
-Install the lldb adapter for it: Debugger > Install Adapters
+Install the LLDB adapter for it: Debugger > Install Adapters
 
-## Step 3 (Optional)
+## Step 3
 
-Set up build system. This one assumes that your project using meson.
-
-Tools > Build System > New Build System.
-
-Debug build command:
-
-```json
-{
-    "shell_cmd": "meson build && ninja -C build",
-    "working_dir": "${project_path}",
-}
+Build your program if you haven't already. In the code's root directory, run this command:
+```sh
+meson build && ninja -C build
 ```
-Note: Meson Debug Build. The setup command use the 'debug' build flag by default. It also inserts debug build flag args too like `-g`.
+_Note: Meson Debug Build. The setup command use the 'debug' build flag by default. It also inserts debug build flag arguments too like `-g`._
 
 ## Step 4
 
-Ensure that you've opened a sublime text project. If not, create one. It's necessary for the debugger to work.
+Ensure that you've opened a sublime text project. If not, create one. It's necessary for the debugger to work. You can do so by selecting: Project > Save Project As..
+
+Save the project file to the root directory of your code.
 
 ## Step 5
 
@@ -70,4 +71,19 @@ Customise the `debugger_configurations` field so that it looks something like th
 
 ## Step 6
 
-Start debugging! 😉
+Start debugging.
+Select: Debugger > Open, to reveal the debugger's UI. You'll be able to press the play button to get started. 
+
+You can place breakpoints by clicking left of line numbers in the editor.
+
+In the Debugger UI, the down arrow is for stepping over and the left and right arrows are for stepping out and in your code respectively.
+
+This is just a small taste of what the debugger pakcage offers. You can find out more about it in the project's readme: https://github.com/daveleroy/sublime_debugger
+
+Happy debugging! :smile:
+
+
+
+
+
+
