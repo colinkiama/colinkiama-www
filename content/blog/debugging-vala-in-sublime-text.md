@@ -7,13 +7,13 @@ description="Achieving IDE-level debugging for Vala in Sublime Text"
 ## Prerequisites
 This tutorial assumes that you have a Vala program setup with Meson Build project structure. 
 
-Vala is pretty underrated programming language in my opinion (but I'll probably get into that in another post). Find out more about it here: https://wiki.gnome.org/Projects/Vala
+Vala is pretty underrated programming language in my opinion (but I'll probably get into that in another post). Find out more about it here: [https://wiki.gnome.org/Projects/Vala](https://wiki.gnome.org/Projects/Vala)
 
-Find out more about meson here: https://mesonbuild.com
+Find out more about meson here: [https://mesonbuild.com](https://mesonbuild.com)
 
 ## Step 1
 
-Install the Sublime Debugger package: https://packagecontrol.io/packages/Debugger
+Install the Sublime Debugger package: [https://packagecontrol.io/packages/Debugger](https://packagecontrol.io/packages/Debugger)
 
 ## Step 2
 
@@ -78,9 +78,9 @@ You can place breakpoints by clicking left of line numbers in the editor.
 
 In the Debugger UI, the down arrow is for stepping over and the left and right arrows are for stepping out and in your code respectively.
 
-This is just a small taste of what the debugger pakcage offers. You can find out more about it in the project's readme: https://github.com/daveleroy/sublime_debugger
+This is just a small taste of what the debugger pakcage offers. You can find out more about it in the project's readme: [https://github.com/daveleroy/sublime_debugger](https://github.com/daveleroy/sublime_debugger)
 
-Happy debugging! :smile:
+Happy debugging!
 
 
 
