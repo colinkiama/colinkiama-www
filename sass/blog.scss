@@ -5,6 +5,28 @@
   color: $light-foreground-secondary;
   font-weight: 500;
 }
+
+// Embedded youtube video
+.youtube {
+  display: relative;
+  width: 100%;
+}
+
+.youtube iframe {
+ width: 100%;
+ height: 100%;
+}
+
+// // Tablet YouTube Embed Styles
+@media only screen and (min-width: 480px) {
+  .youtube {
+    // The max width of content on the blog is 700px so
+    // the final result is a 16:9 ratio video embed.
+    height: 393.75px;
+
+  }
+}
+
 // Dark Styles
 @media (prefers-color-scheme: dark) {
   .post-timestamp {

@@ -72,10 +72,24 @@
             >Product Hunt</a
           >
         </li>
+        <li>
+          <a rel="me" href="https://fosstodon.org/@colinkiama">Mastodon</a>
+        </li>
       </ul>
       <span>Made with <a href="https://www.getzola.org">Zola</a></span>
       <br>
       <span class="site-timestamp">Colin Kiama - {{ now() | date(format="%Y") }}</span>
+      <div class="webring-widget">
+        <div>
+          <a href="https://hotlinewebring.club/{{ config.extra.webring_slug }}/previous"><- Previous</a>
+        </div>
+        
+        <span>Hotline Webring</span>
+        <div>
+          <a href="https://hotlinewebring.club/{{ config.extra.webring_slug }}/next">Next -></a>
+        </div>
+        
+      </div>
     </footer>
     <script src="/prefetch.js"></script>
   </body>

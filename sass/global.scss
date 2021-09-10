@@ -64,22 +64,24 @@ header nav * {
   //     color: inherit;
   // }
 }
+
 h1,
 h2 {
   margin: 1.2rem 0;
 }
-
 
 // Main styles
 main {
   flex: 1 1 0%;
   padding: 2rem 0;
 }
+
 // Footer Styles
 footer {
   text-align: center;
   padding-bottom: 1rem;
 }
+
 .call-to-action-button {
   @include button-transitions;
   border: solid 1px black;
@@ -97,6 +99,7 @@ footer {
     background-color: $light-background-secondary;
   }
 }
+
 #bypass-block {
   position: absolute;
   top: 0;
@@ -128,6 +131,35 @@ footer {
   display: inline-block;
   margin: 0 0.3rem 0.5rem 0.3rem;
 }
+
+.webring-widget {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.webring-widget span {
+  // margin: 0 0.25rem;
+  flex: 0 1 auto;
+  margin: 0 1rem;
+  font-weight: 500;
+  text-emphasis: center
+}
+
+.webring-widget div {
+  flex: 1 1 0%;
+  display: flex;
+}
+
+.webring-widget div:first-child {
+  justify-content: flex-end;
+}
+
+.webring-widget div:last-child {
+  justify-content: flex-start;
+}
+
 .site-timestamp {
   display: inline-block;
   margin-top: 1.5rem;
@@ -156,6 +188,7 @@ code {
     padding: 0rem 2rem;
   }
 }
+
 
 // Dark Styles
 @media (prefers-color-scheme: dark) {
