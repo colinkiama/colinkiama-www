@@ -1,6 +1,6 @@
 +++
 title = "For whenever I feel down and/or unproductive"
-date = 2021-09-10T21:09:00Z  
+date = 2021-09-10T21:09:23Z  
 description="Here's are the things I personally use to help me get work done!"
 +++
 
@@ -18,7 +18,8 @@ You’re overwhelmed and you’re probably blaming yourself for “not being goo
 
 Take it one step at a time, just go for it, make your mistakes and overcome them one by one 😏!
 
-Never forget (emebed this with Zola’s built in youtube plugin thing): [https://youtu.be/X8YVLMuasGQ](https://youtu.be/X8YVLMuasGQ)
+Never forget (emebed this with Zola’s built in youtube shortcode thing):
+{{ youtube(id="X8YVLMuasGQ", class="youtube") }}
 
 ## You aware of your issues now
 
