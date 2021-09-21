@@ -18,7 +18,7 @@ You’re overwhelmed and you’re probably blaming yourself for “not being goo
 
 Take it one step at a time, just go for it, make your mistakes and overcome them one by one 😏!
 
-Never forget (emebed this with Zola’s built in youtube shortcode thing):
+Never forget:
 {{ youtube(id="X8YVLMuasGQ", class="youtube") }}
 
 ## You aware of your issues now
