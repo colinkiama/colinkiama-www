@@ -64,7 +64,8 @@ Customise the `debugger_configurations` field so that it looks something like th
             "name": "Launch (LLDB)",
             "program": "${workspaceFolder}/build/<your_program_name_here>",
             "args": [""],
-            "cwd": "${workspaceFolder}"
+            "cwd": "${workspaceFolder}",
+            "terminal": "console"
         },
     ]
 ```
