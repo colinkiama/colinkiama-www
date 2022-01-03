@@ -6,7 +6,7 @@ description="Some thoughts I have about forums"
 
 I feel like we could explore forums more
 
-Reddit lets anybody create a community around a topic
+Reddit lets anybody create a community around a topic.
 
 Discourse added a lot of dynamic social media-like interactions to the experience and allows you to host the whole experience yourself
 
@@ -16,4 +16,4 @@ However, I haven’t really seen a balance of user freedom and monetisation oppo
 
 Any thoughts? 👀 - send me an email with your response (there's email info below).
 
-P.S. This was originally a tweet thread. You can view it here: https://twitter.com/colinkiama/status/1478139022908268546?s=21
+P.S. This was originally a tweet thread. You can view it here: [https://twitter.com/colinkiama/status/1478139022908268546?s=21](https://twitter.com/colinkiama/status/1478139022908268546?)
