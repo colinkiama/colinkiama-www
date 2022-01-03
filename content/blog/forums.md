@@ -4,6 +4,8 @@ date = 2022-01-03T23:12:00Z
 description="Some thoughts I have about forums"
 +++
 
+## My thoughts
+
 I feel like we could explore forums more
 
 Reddit lets anybody create a community around a topic.
