@@ -9,7 +9,6 @@
 }
 // Main styles
 main {
-  align-self: center;
   padding: 2rem 1rem;
 }
 
@@ -20,7 +19,6 @@ main header {
 // Desktop Styles
 @media only screen and (min-width: 600px) {
   main {
-    width: 500px;
     padding: 2rem 0;
   }
 }
