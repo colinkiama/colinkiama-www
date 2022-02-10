@@ -1,9 +1,13 @@
 @import "variables.scss";
-.post-timestamp {
+.post-timestamp, .reading-time {
   font-size: 0.8em;
   transition: color 0.5s ease-in-out;
   color: $light-foreground-secondary;
   font-weight: 500;
+}
+
+.reading-time {
+  display: block;
 }
 
 // Embedded youtube video
@@ -29,13 +33,13 @@
 
 // Dark Styles
 @media (prefers-color-scheme: dark) {
-  .post-timestamp {
+  .post-timestamp, .reading-time {
     color: $dark-foreground-secondary;
   }
 }
 // Reduced Motion styles (Remove animations)
 @media (prefers-reduced-motion: reduce) {
- .post-timestamp{
+ .post-timestamp, .reading-time {
      transition: none;
  }
 }

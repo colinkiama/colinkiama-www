@@ -132,6 +132,22 @@ footer {
   margin: 0 0.3rem 0.5rem 0.3rem;
 }
 
+.pagination {
+  display: flex;
+  flex: 1 1 0%;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.pagination a {
+  padding: 0 0.5rem;
+}
+
+.zola-credit {
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
 .webring-widget {
   margin-top: 2rem;
   display: flex;
