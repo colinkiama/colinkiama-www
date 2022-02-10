@@ -21,7 +21,7 @@ Take it one step at a time, just go for it, make your mistakes and overcome them
 Never forget:
 {{ youtube(id="X8YVLMuasGQ", class="youtube") }}
 
-## You aware of your issues now
+## You are aware of your issues now
 
 Great! Now as long as you avoid the two issues above, you’ll make mistakes, you’ll face challenges but you’ll have the strength to overcome these challenges and shape the world in any way you want 🌍.
 
