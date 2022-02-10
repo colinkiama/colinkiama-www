@@ -15,9 +15,9 @@ My requirements were:
 - Speed - I need the site to be generated as fast as possible
 - Frictionless setup - I just want something that is simple to download install. I don’t want to deal with potentially complex prerequisites
 
-Zola fits my requirements the best. [It’s typically distributed as a executable binary file](https://www.getzola.org/documentation/getting-started/installation/). The program several MBs large which is awesome considering everything it does.
+Zola fits my requirements the best. [It’s typically distributed as a executable binary file](https://www.getzola.org/documentation/getting-started/installation/). The program is several MBs large which is awesome considering everything it does.
 
-In November 2020, when I was deciding which static-site generator to use, the alternatives were mostly [Node.js](https://nodejs.org/en/)-based programs (and still are  [https://jamstack.org/generators/](https://jamstack.org/generators/) 😆).
+In November 2020, when I was deciding which static-site generator to use, the alternatives were mostly [Node.js](https://nodejs.org/en/)-based programs (and still are [https://jamstack.org/generators/](https://jamstack.org/generators/) 😆).
 
 So, while these generators provide so many useful, cool features, the issues are that:
 
