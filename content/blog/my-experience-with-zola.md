@@ -13,7 +13,7 @@ Around the time this article was written, this website was generated using Zola 
 My requirements were:
 
 - Speed - I need the site to be generated as fast as possible
-- Frictionless setup - I just want something that is simple to download install. I don’t want to deal with potentially complex prerequisites
+- Frictionless setup - I just want something that is simple to download and install. I don’t want to deal with potentially complex prerequisites
 
 Zola fits my requirements the best. [It’s typically distributed as a executable binary file](https://www.getzola.org/documentation/getting-started/installation/). The program is several MBs large which is awesome considering everything it does.
 
