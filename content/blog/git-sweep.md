@@ -1,5 +1,5 @@
 +++
-title = "Git Sweep Alis - Deleting stale local remote-tracking branches"
+title = "Git Sweep Alias - Deleting stale local remote-tracking branches"
 date = 2022-02-17
 description = "Git cleaner repositories with one simple alias 😉"
 +++
