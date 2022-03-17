@@ -82,7 +82,7 @@ footer {
   padding-bottom: 1rem;
 }
 
-.call-to-action-button {
+.call-to-action-button, input[type="submit"] {
   @include button-transitions;
   border: solid 1px black;
   border-radius: 0.25rem;
@@ -98,6 +98,11 @@ footer {
     color: $light-foreground;
     background-color: $light-background-secondary;
   }
+}
+
+input[type="submit"] {
+  background: none;
+  padding: 0.125rem 1rem;
 }
 
 #bypass-block {
@@ -123,6 +128,27 @@ footer {
 #emailAddress {
   display: block;
 }
+
+.embeddable-buttondown-form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.embeddable-buttondown-form span:first-child {
+  font-weight: 600;
+}
+
+.embeddable-buttondown-form div {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.embeddable-buttondown-form input[type="email"] {
+  border-radius: 0.25rem;
+}
+
 #footer-links {
   margin-top: 1rem;
   text-align: center;
@@ -211,7 +237,7 @@ code {
     color: $dark-foreground;
     background-color: $dark-background;
   }
-  .call-to-action-button {
+  .call-to-action-button, input[type="submit"] {
     border-color: $dark-foreground;
     color: $dark-foreground;
     &:hover {
