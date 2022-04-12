@@ -1,42 +1,22 @@
-{% extends "base.html" %}
-{% block head %}
-<title>Colin Kiama's Blog</title>
+{% extends "base.html" %} {% block head %}
+<title>{{section.title}}</title>
+<link rel="stylesheet" href="/blog.css">
+<link rel="stylesheet" href="/blog-post.css">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@colinkiama">
-<meta property="og:type" content="website">
-<meta property="og:url" content="{{section.permalink}}">
-<meta property="og:title" content="Colin Kiama - Blog"> 
+<meta property="og:title" content="{{section.title}}">
 <meta property="og:site_name" content="colinkiama.com">
-<meta property="og:description" content="Blog posts I've written.">
-<meta property="og:image" content="https://ik.imagekit.io/mune/colinkiama-site-logo_2m8Nvn90o34T.png?updatedAt=1606960170047&tr=w-1200,h-675,fo-auto"> 
-<link rel="stylesheet" href="/section.css">
-<link rel="stylesheet" href="/blog.css">
-{% endblock head %}
-
-{% block content %}
-<div class="content-title">
-	Privacy Policy
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{section.permalink}}">
+<meta property="og:image" content="https://ik.imagekit.io/mune/colinkiama-site-logo_2m8Nvn90o34T.png?updatedAt=1606960170047&tr=w-1200,h-675,fo-auto">
+{% endblock head %} {% block content %}
+<div class="flex-center">
+  <article>
+    <header>
+      <h1>{{section.title}}</h1>
+    </header>
+    <div class="flex-center blog-content">{{section.content | safe}}</div>
+    <br />
+  </article>
 </div>
-<ul class="no-bullet-list">
-{% for blog_post in paginator.pages %}
-<li class="post-item blog-item">
-<a class="surrounding-link" href="{{blog_post.permalink}}">
-<h3 class="item-title">{{blog_post.title}}</h3>
-<div>{{blog_post.description}}</div>
-<time class="post-timestamp" datetime="{{blog_post.date}}">{{blog_post.date | date}}</time>
-</a>
-</li>
-{% endfor %}
-</ul>
 {% endblock content %}
-
-{% block pagination %}
-<nav class="pagination">
-    {% if paginator.previous %}
-        <a class="previous" href="{{ paginator.previous }}">‹ Previous</a>
-    {% endif %}
-    {% if paginator.next %}
-        <a class="next" href="{{ paginator.next }}">Next ›</a>
-    {% endif %}
-</nav>
-{% endblock pagination %}
