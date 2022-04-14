@@ -1,8 +1,16 @@
 {
   "list": [
     {
+      "title": "Jailtime",
+      "type": "Browser extension",
+      "date": "2022-04-10T20:31:00Z",
+      "thumbnail_alt_text": "Jailtime branding",
+      "link": "https://chrome.google.com/webstore/detail/jailtime/ffkepigdcjmnioppkooocmpgndoiopjd",
+      "content": "<p>A browser extension that blocks Websites and keeps you focused.</p>",
+    },
+    {
       "title": "Yachting Partners International (2021 Redesign)",
-      "type":"wesbite",
+      "type":"website",
       "date": "2021-03-25T00:00:00Z",
       "thumbnail": "https://ik.imagekit.io/mune/ypi-yachts_iqKpffMvif.png",
       "thumbnail_alt_text": "Yachting Partners Inernational home page",
