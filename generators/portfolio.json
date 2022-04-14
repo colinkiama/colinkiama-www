@@ -2,11 +2,12 @@
   "list": [
     {
       "title": "Jailtime",
-      "type": "Browser extension",
+      "type": "browser-extension",
       "date": "2022-04-10T20:31:00Z",
+      "thumbnail": "https://ik.imagekit.io/mune/jailtime-portfolio-image_nmSI6BHbB.png",
       "thumbnail_alt_text": "Jailtime branding",
       "link": "https://chrome.google.com/webstore/detail/jailtime/ffkepigdcjmnioppkooocmpgndoiopjd",
-      "content": "<p>A browser extension that blocks Websites and keeps you focused.</p>",
+      "content": "<p>A browser extension that blocks Websites and keeps you focused.</p><p> Available on both Google Chrome and Mozilla Firefox.</p>"
     },
     {
       "title": "Yachting Partners International (2021 Redesign)",
