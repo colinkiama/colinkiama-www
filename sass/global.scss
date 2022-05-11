@@ -40,6 +40,8 @@ body {
 
 a {
   @include link-transitions;
+
+  word-wrap: break-word;
   color: inherit;
   &:visited {
     color: inherit;
