@@ -40,6 +40,8 @@ body {
 
 a {
   @include link-transitions;
+
+  word-wrap: break-word;
   color: inherit;
   &:visited {
     color: inherit;
@@ -240,6 +242,10 @@ code {
 .content-title {
   font-size: 2rem;
   font-weight: 600;
+}
+
+.financial-support{
+  margin-top: 1rem;
 }
 
 // // Desktop Styles
