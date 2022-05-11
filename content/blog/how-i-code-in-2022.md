@@ -66,7 +66,7 @@ Not only is it an excellent browser, I'm also a big fan of the developer tool se
 
 - Accessibility: Makes it much easier to test for [WCAG requirements](https://www.w3.org/WAI/standards-guidelines/wcag/)
 - (Web) Console: There's an option to open a side bar that let's you easily write multi-line JavaScript code.
-- Also one of the only browsers that actually implements.
+- Also one of the only browsers that has actually implemented the [freedesktop color scheme preference](https://bugzilla.mozilla.org/show_bug.cgi?id=1734934).
 
 ## Design Tools
 
