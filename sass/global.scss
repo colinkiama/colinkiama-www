@@ -124,18 +124,25 @@ input[type="submit"] {
 #bypass-block {
   position: absolute;
   top: 0;
-  left: auto;
-  display: block;
+  left: -999px;
+  width: 1px;
+  height: 1px;
   text-align: center;
   font-size: 2rem;
-  margin-top: 1rem;
   z-index: -2;
-  background-color: gray;
-  opacity: 0;
-  &:focus {
-    opacity: 1;
-    z-index: 1;
-  }
+  background: gray;
+  padding: 1rem 0;
+}
+
+#bypass-block:focus,
+#bypass-block:focus-visible {
+  opacity: 1;
+  z-index: 999;
+  display: block;
+  width: 100%;
+  height: auto;
+  left: 0;
+  right: 0;
 }
 
 #footer-call-to-actions {
