@@ -1,7 +1,7 @@
 +++
 title = "How I code in 2022"
 date = 2022-05-11  
-description="2 years later, here's the things I personally use to help me get work done!"
+description="2 years later, here are the things I personally use to help me get work done!"
 +++
 
 ## My System
