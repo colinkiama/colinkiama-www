@@ -85,7 +85,7 @@ By the way, it's **free** and works on all operating systems since it's browser-
 I'm exteremely grateful to live in a time when such a resource exists.
 New things are being added to the web constantly. This website is a great way
 of learing about what APIs are out there, what's possible and also,
-what browsers support what features.
+which browsers support certain features.
 
 ### [Can I use](https://caniuse.com/)
 
