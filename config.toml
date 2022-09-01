@@ -27,3 +27,13 @@ highlight_theme = "visual-studio-dark"
 # Put all your custom variables here
 favicon_link = "https://ik.imagekit.io/mune/mune-favicon_BOoehMPQtVAo.png"
 webring_slug = "colinkiama"
+
+[extra.socials]
+email = "mailto:colinkiama@gmail.com"
+linkedin = "https://www.linkedin.com/in/colin-kiama-11962988/"
+mastodon = "https://merveilles.town/@colinkiama"
+product_hunt = "https://www.producthunt.com/@colinkiama"
+dev_to = "https://dev.to/colinkiama"
+
+[extra.portfolio]
+github = "https://www.github.com/colinkiama"
