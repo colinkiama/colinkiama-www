@@ -1,30 +1,30 @@
 <ul>
 	<li>
-		<a rel="author" href="{{ config.extra.socials.email }}">
+		<a rel="author" href="{{ config.extra.socials.email|safe }}">
 			<!-- <svg></svg> --> <!-- Logo --> Email
 		</a>
 	</li>
 	<li>
 		<!-- <svg></svg> -->
-		<a rel="author" href="{{ config.extra.socials.linkedin }}">LinkedIn</a>
+		<a rel="author" href="{{ config.extra.socials.linkedin|safe }}">LinkedIn</a>
 	</li>
 	<li>
 		<!-- <svg></svg> -->
-		<a rel="author" href="{{ config.extra.socials.twitter }}">Twitter</a>
-	</li>
-	
-	<li>
-		<!-- <svg></svg> -->
-		<a rel="me" href="{{ config.extra.socials.mastodon }}">Mastodon</a>
+		<a rel="author" href="{{ config.extra.socials.twitter|safe }}">Twitter</a>
 	</li>
 	
 	<li>
 		<!-- <svg></svg> -->
-		<a rel="author" href="{{ config.extra.socials.product_hunt }}">Product Hunt</a>
+		<a rel="me" href="{{ config.extra.socials.mastodon|safe }}">Mastodon</a>
 	</li>
 	
 	<li>
 		<!-- <svg></svg> -->
-		<a rel="author" href="{{ config.extra.socials.dev_to }}">Dev.to</a>
+		<a rel="author" href="{{ config.extra.socials.product_hunt|safe }}">Product Hunt</a>
+	</li>
+	
+	<li>
+		<!-- <svg></svg> -->
+		<a rel="author" href="{{ config.extra.socials.dev_to|safe }}">Dev.to</a>
 	</li>
 </ul>

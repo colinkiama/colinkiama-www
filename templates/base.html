@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,7 +28,7 @@
 		</nav>
 	</header>
 
-{% block main_content %} {% endblock main_content %}
+	{% block main_content %} {% endblock main_content %}
 
 	<footer>
 		<a class="back-to-top" href="#">Back to top</a>
@@ -50,7 +50,7 @@
 
      <div class="financial-support">
       <script src="https://liberapay.com/colinkiama/widgets/button.js"></script>
-      <noscript><a href="https:// liberapay.com/colinkiama/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
+      <noscript><a href="https://liberapay.com/colinkiama/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
     </div>
 
     <div class="zola-credit">Made with <a href="https://www.getzola.org">Zola</a></div>
@@ -59,17 +59,18 @@
     <div class="webring-widget">      
     	<div>
 		    <a href="https://hotlinewebring.club/{{ config.extra.webring_slug }}/previous">
-	          <- Previous</a>
+	          &lt;- Previous</a>
 
 	      <a href="https://hotlinewebring.club/">Hotline Webring</a>
 
-	        <a href="https://hotlinewebring.club/{{ config.extra.webring_slug }}/next">Next -></a>
+	        <a href="https://hotlinewebring.club/{{ config.extra.webring_slug }}/next">Next -&gt;</a>
     	</div>
     </div>
 
     <div class="site-timestamp">Colin Kiama - {{ now() | date(format="%Y") }}</div>
 
 	</footer>
+	
 	{% block body_end %} {% endblock body_end %}
 </body>
 </html>
