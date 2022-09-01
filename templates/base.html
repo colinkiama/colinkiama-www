@@ -8,75 +8,36 @@
 	{% block head %} {% endblock head%}
 </head>
 <body>
-	<header>
-		<nav>
-			<div>Colin Kiama</div>
-			<ul>
-				<li>
-					<a href="{{ get_url(path='/') }}">Home</a>
-				</li>
-
-				<li>
-					<a href="{{ get_url(path='@/portfolio/index.md') }}">Portfolio</a>
-				</li>
-
-				<li>
-					<a href="{{ get_url(path='@/blog/_index.md') }}">Blog</a>
-				</li>
-
-				<li>
-					<a href="{{ get_url(path='@/contact-me/index.md') }}">Contact Me</a>
-				</li>
-			</ul>
-		</nav>
-	</header>
-
-	<main>
-		{% block main_content %} {% endblock main_content %}
-	</main>
-		
-
-	<footer>
-		<a class="back-to-top" href="#">Back to top</a>
-
-		<a href="#">RSS Feed</a>
-		<form action="https://buttondown.email/api/emails/embed-subscribe/colinkiama" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.email/colinkiama', 'popupwindow')" class="embeddable-buttondown-form">
-      <span>Subscribe to my newsletter</span>
-      <br>
-      <div>
-        <label for="bd-email">Email:</label>
-        <br>
-        <input type="email" name="email" id="bd-email" autocomplete="email">
-        <input type="submit" value="Subscribe">
-      </div>
-      <p>
-        <a href="https://buttondown.email" target="_blank">Powered by Buttondown.</a>
-      </p>
-    </form>
-
-     <div class="financial-support">
-      <script src="https://liberapay.com/colinkiama/widgets/button.js"></script>
-      <noscript><a href="https://liberapay.com/colinkiama/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
-    </div>
-
-    <div class="zola-credit">Made with <a href="https://www.getzola.org">Zola</a></div>
-
-
-    <div class="webring-widget">      
-    	<div>
-		    <a href="https://hotlinewebring.club/{{ config.extra.webring_slug }}/previous">
-	          &lt;- Previous</a>
-
-	      <a href="https://hotlinewebring.club/">Hotline Webring</a>
-
-	        <a href="https://hotlinewebring.club/{{ config.extra.webring_slug }}/next">Next -&gt;</a>
-    	</div>
-    </div>
-
-    <div class="site-timestamp">Colin Kiama - {{ now() | date(format="%Y") }}</div>
-
-	</footer>
 	
-	{% block body_end %} {% endblock body_end %}
+	{% include "partials/header.html" %}
+
+<main>
+	<div class="container">
+	{% block main_content %} {% endblock main_content %}
+	</div>
+</main>
+	
+
+<footer>
+
+<div class="container">	<a class="back-to-top" href="#">Back to top</a>
+
+	<a href="#">RSS Feed</a>
+	
+	{% include "partials/newsletter.html" %}
+
+	{% include "partials/donations.html" %}
+
+  <div class="zola-credit">Made with <a href="https://www.getzola.org">Zola</a></div>
+
+
+	{% include "partials/webring.html" %}
+ 
+
+  <div class="site-timestamp">Colin Kiama - {{ now() | date(format="%Y") }}</div>
+</div>
+</footer>
+		
+{% block body_end %} {% endblock body_end %}
 </body>
 </html>

@@ -1,4 +1,4 @@
-/* || Reset */
+/* || RESET */
 
 /* From Digital Ocean: https://www.digitalocean.com/community/tutorials/css-minimal-css-reset */
 
@@ -26,7 +26,7 @@ img {
   height: auto;
 }
 
-/* || General Styles */
+/* || GENERAL STYLES */
 
 html {
   scroll-behavior: smooth;
@@ -44,4 +44,15 @@ main {
 
 footer {
 	background: hsl(180, 20%, 85%);
+}
+
+
+/* || UTILITIES */
+
+/* || SITEWIDE */
+
+.container {
+  max-width: 740px;
+  width: 100%;
+  margin: 0 auto;
 }
