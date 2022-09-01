@@ -1,6 +1,15 @@
 {
   "list": [
     {
+      "title": "Vala Website (2022)",
+      "date": "2022-07-15T18:00:00Z",
+      "type": "website",
+      "thumbnail": "https://ik.imagekit.io/mune/vala-www-capture_ahfD-0S9X.png?ik-sdk-version=javascript-1.4.3&updatedAt=1660585703482",
+      "thumbnail_alt_text": "Vala Hero Image",
+      "link": "https://vala.dev",
+      "content": "<p>I created a website for a programming language called Vala.</p><p>It replaces an old set of wiki pages with a website that: <ul><li>Showcases Vala projects and features</li><li>Shows off the language's branding</li> <li>Is optimised for speed</li><li>Has improved accessibility (especially regarding navigation and colour contrast).</li></ul><p/>"
+    },
+    {
       "title": "Jailtime",
       "type": "browser-extension",
       "date": "2022-04-10T20:31:00Z",
