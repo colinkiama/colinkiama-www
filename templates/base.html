@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Colin Kiama</title>
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
 	{% block head %} {% endblock head%}
 </head>
 <body>
@@ -13,22 +13,28 @@
 			<div>Colin Kiama</div>
 			<ul>
 				<li>
-					<a href="#">Home</a>
+					<a href="{{ get_url(path='/') }}">Home</a>
 				</li>
+
 				<li>
-					<a href="#">Portfolio</a>
+					<a href="{{ get_url(path='@/portfolio/index.md') }}">Portfolio</a>
 				</li>
+
 				<li>
-					<a href="#">Blog</a>
+					<a href="{{ get_url(path='@/blog/_index.md') }}">Blog</a>
 				</li>
+
 				<li>
-					<a href="#">Contact Me</a>
+					<a href="{{ get_url(path='@/contact-me/index.md') }}">Contact Me</a>
 				</li>
 			</ul>
 		</nav>
 	</header>
 
-	{% block main_content %} {% endblock main_content %}
+	<main>
+		{% block main_content %} {% endblock main_content %}
+	</main>
+		
 
 	<footer>
 		<a class="back-to-top" href="#">Back to top</a>

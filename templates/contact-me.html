@@ -1,59 +1,15 @@
 {% extends "base.html" %}
 
 {% block main_content %}
-	<main>
-		<header>
-			<h1>Contact me</h1>
-		</header>
+	<header>
+		<h1>Contact me</h1>
+	</header>
 
-		<header>
-			<h2>Want to work with me?</h2>
-		</header>
+	<header>
+		<h2>Want to work with me?</h2>
+	</header>
 
-		<p>Here are ways that you can contact me:</p>
+	<p>Here are ways that you can contact me:</p>
 
-		<ul>
-			<li>
-				<a href="#">
-					<!-- <svg></svg> --> <!-- Logo --> Email
-				</a>
-			</li>
-			<li>
-				<!-- <svg></svg> -->
-				<a href="#">LinkedIn</a>
-			</li>
-			<li>
-				<!-- <svg></svg> -->
-				<a href="#">Twitter</a>
-			</li>
-			
-			<li>
-				<!-- <svg></svg> -->
-				<a href="#">LinkedIn</a>
-			</li>
-			
-			<li>
-				<!-- <svg></svg> -->
-				<a href="#">Mastodon</a>
-			</li>
-			
-			<li>
-				<!-- <svg></svg> -->
-				<a href="#">Product Hunt</a>
-			</li>
-			
-			<li>
-				<!-- <svg></svg> -->
-				<a href="#">Dev.to</a>
-			</li>
-			<li>
-				<!-- <svg></svg> -->
-				<a href="#"></a>
-			</li>
-			<li>
-				<!-- <svg></svg> -->
-				<a href="#"></a>
-			</li>
-		</ul>
-	</main>
+	{% include "partials/social-links.html" %}
 {% endblock main_content %}
