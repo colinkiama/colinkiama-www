@@ -3,11 +3,7 @@ base_url = "colinkiama.com"
 
 # The site title and description; used in feeds by default.
 title = "Colin Kiama"
-description = "Ayyy, you made it to my blog! I'll talk about my experiences with software development and things that I find interesting here."
-
-# Whether to automatically compile all Sass files in the sass directory
-compile_sass = true
-
+description = "Welcome to the blog!"
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
