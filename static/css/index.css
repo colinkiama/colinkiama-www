@@ -1,3 +1,95 @@
+/* || ROOT VARIABLES */
+
+:root {
+  --font-weight-thin: 100;
+  --font-weight-extra-light: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  --font-weight-black: 900;  
+}
+
+/* || FONTS */
+
+/*
+ * TODO: Reduce to only font-weights and files actually being used in the site.
+ */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: var(--font-weight-thin);
+  font-display: swap;
+  src: url("/fonts/Inter-Thin.woff2") format("woff2"),
+       url("/fonts/Inter-Thin.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: var(--font-weight-extra-light);
+  font-display: swap;
+  src: url("/fonts/Inter-ExtraLight.woff2") format("woff2"),
+       url("/fonts/Inter-ExtraLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: var(--font-weight-light);
+  font-display: swap;
+  src: url("/fonts/Inter-Light.woff2") format("woff2"),
+       url("/fonts/Inter-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: var(--font-weight-regular);
+  font-display: swap;
+  src: url("/fonts/Inter-Regular.woff2") format("woff2"),
+       url("/fonts/Inter-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: var(--font-weight-medium);
+  font-display: swap;
+  src: url("/fonts/Inter-Medium.woff2") format("woff2"),
+       url("/fonts/Inter-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: var(--font-weight-semi-bold);
+  font-display: swap;
+  src: url("/fonts/Inter-SemiBold.woff2") format("woff2"),
+       url("/fonts/Inter-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: var(--font-weight-bold);
+  font-display: swap;
+  src: url("/fonts/Inter-Bold.woff2") format("woff2"),
+       url("/fonts/Inter-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter Variable';
+  font-weight: var(--font-weight-thin) var(--font-weight-black);
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url("/fonts/Inter-roman.var.woff2") format("woff2");
+}
+
 /* || RESET */
 
 /* From Digital Ocean: https://www.digitalocean.com/community/tutorials/css-minimal-css-reset */
@@ -36,6 +128,15 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+@supports (font-variation-settings: normal) {
+  body {
+    font-family: "Inter Variable", Arial, Helvetica, sans-serif;
+  }
 }
 
 main {
