@@ -9,14 +9,25 @@
   --font-weight-semi-bold: 600;
   --font-weight-bold: 700;
   --font-weight-extra-bold: 800;
-  --font-weight-black: 900;  
+  --font-weight-black: 900;
+
+  --base-font-size: 16px;
+  --max-container-width: 720px;
+  --mobile-padding: 1.25rem;
+  --desktop-padding: 2.5rem;
+
+  --accent-color: #1071CB;
+  --accent-color-dark: #CD9EF7;
+  --accent-color-dark-alt: #7239B3;
+
+  --button-color: #0A4276;;
+  --button-color-dark: #3C0A76;
+
+  --input-placeholder-text-color: #7E7E7E;
+  --section-border-color: #AAB4BE;
 }
 
 /* || FONTS */
-
-/*
- * TODO: Reduce to only font-weights and files actually being used in the site.
- */
 
 @font-face {
   font-family: 'Inter';
@@ -96,7 +107,6 @@
 
 html {
   box-sizing: border-box;
-  font-size: 16px;
 }
 
 *, *:before, *:after {
@@ -124,13 +134,17 @@ html {
   scroll-behavior: smooth;
 }
 
+body, ul, ol, p {
+  font-weight: var(--font-weight-light);
+}
+
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   line-height: 1.5;
-  font-size: 16px;
+  font-size: var(--base-font-size);
 }
 
 @supports (font-variation-settings: normal) {
@@ -139,21 +153,91 @@ body {
   }
 }
 
+/* || TYPOGRAPHY */
+
+h1, h2, h3, h4, h5, h6, #site-name {
+  font-weight: var(--font-weight-regular);
+  font-variation-settings: 'wght' var(--font-weight-regular);
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3, #site-name {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+
+h5 {
+  font-size: 0.9375rem;
+}
+
+h6 {
+  font-size: 0.75rem;
+}
+
+/* || UTILITIES */
+  
+.container {
+  transition-property: padding, width, margin;
+  transition-duration: 0.75s;
+  transition-timing-function: ease;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--mobile-padding);
+}
+
+@media (min-width: 600px) {
+  .container {
+    padding: var(--mobile-padding) var(--desktop-padding);
+  }
+}
+
+@media (min-width: 800px) {
+  .container {
+    max-width: 720px;
+    padding: var(--mobile-padding) 0;
+  }
+}
+
+/* || SITEWIDE */
+
+a {
+  color: var(--accent-color);
+}
+
+header nav {
+  border-bottom: 1px solid var(--section-border-color);
+  padding-bottom: 0.75rem;
+}
+
+header nav ul {
+  margin-top: 0.75rem;
+} 
+
+header nav ul li {
+  display: inline-block;
+  padding-right: 0.75rem;
+  padding-bottom: 0.5rem;
+}
+
 main {
   flex: 1 1 0%;
 }
 
 footer {
-	background: hsl(180, 20%, 85%);
+	background: var(--accent-color);
+  color: white;
 }
 
-
-/* || UTILITIES */
-
-/* || SITEWIDE */
-
-.container {
-  max-width: 740px;
-  width: 100%;
-  margin: 0 auto;
+footer a {
+  color: white;
 }
