@@ -195,6 +195,15 @@ h6 {
   padding: var(--mobile-padding);
 }
 
+.stand-out {
+  color: var(--accent-color);
+}
+
+.bullet-points {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
 @media (min-width: 600px) {
   .container {
     padding: var(--mobile-padding) var(--desktop-padding);
@@ -231,6 +240,10 @@ header nav ul li {
 
 main {
   flex: 1 1 0%;
+}
+
+header + ul {
+  margin-top: 1rem;
 }
 
 footer {
