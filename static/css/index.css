@@ -432,14 +432,13 @@ input[type="submit"] {
   margin-top: 0.5rem;
 }
 
-.financial-support {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+.zola-credit {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .webring-widget {
-  margin-top: 0.75rem;
-  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -463,6 +462,13 @@ input[type="submit"] {
 
 .webring-widget a:last-child svg {
   margin-left: 0.5rem;
+}
+
+.financial-support {
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--footer-section-border-color);
+  padding-top: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 @supports (font-variation-settings: normal) {

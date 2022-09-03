@@ -4,23 +4,23 @@
 			Back to top			
 		</a>
 
-	<ul class="extra-site-links">
-		<li>
-			<a href="#">RSS Feed</a>
-		</li>
-		<li>
-			<a href="#">Privacy Policy</a>
-		</li>
-	</ul>
+		<ul class="extra-site-links">
+			<li>
+				<a href="#">RSS Feed</a>
+			</li>
+			<li>
+				<a href="#">Privacy Policy</a>
+			</li>
+		</ul>
 
-	{% include "partials/newsletter.html" %}
+		{% include "partials/newsletter.html" %}
 
-	{% include "partials/donations.html" %}
 
-	<div class="zola-credit">Made with <a href="https://www.getzola.org">Zola</a></div>
+		<div class="zola-credit">Made with <a href="https://www.getzola.org">Zola</a></div>
+		{% include "partials/webring.html" %}
 
-	{% include "partials/webring.html" %}
-
-	<div class="site-timestamp">&copy; Colin Kiama - {{ now() | date(format="%Y") }}</div>
+		
+		{% include "partials/donations.html" %}
+		<div class="site-timestamp">&copy; Colin Kiama - {{ now() | date(format="%Y") }}</div>
 	</div>
 </footer>
