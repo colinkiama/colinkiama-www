@@ -241,6 +241,10 @@ header nav {
   padding-bottom: 0.75rem;
 }
 
+#site-name {
+  margin-top: 0;
+}
+
 header nav ul {
   margin-top: 0.75rem;
 } 
