@@ -98,6 +98,15 @@
 }
 
 @font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: var(--font-weight-black);
+  font-display: swap;
+  src: url("/fonts/Inter-Black.woff2") format("woff2"),
+       url("/fonts/Inter-Black.woff") format("woff");
+}
+
+@font-face {
   font-family: 'Inter Variable';
   font-weight: var(--font-weight-thin) var(--font-weight-black);
   font-display: swap;
@@ -146,7 +155,7 @@ html {
 }
 
 body, ul, ol, p {
-  font-weight: var(--font-weight-light);
+  font-weight: var(--font-weight-regular);
 }
 
 body {
@@ -161,7 +170,7 @@ body {
 
 @supports (font-variation-settings: normal) {
   body, ul, ol, p {
-    font-variation-settings: 'wght' var(--font-weight-light);
+    font-variation-settings: 'wght' var(--font-weight-regular);
   }
 
   body {
