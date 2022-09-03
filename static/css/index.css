@@ -161,7 +161,8 @@ body {
 
 h1, h2, h3, h4, h5, h6, #site-name, #back-to-top {
   font-weight: var(--font-weight-regular);
-  margin: 0.72em 0;
+  margin-top: 0.72em;
+  margin-bottom: 0.5em;
 }
 
 @supports (font-variation-settings: normal) {
@@ -195,7 +196,7 @@ h6 {
 }
 
 p {
-  margin-bottom: 0.72em;
+  margin-bottom: 0.5em;
 }
 
 /* || UTILITIES */
