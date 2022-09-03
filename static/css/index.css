@@ -438,8 +438,8 @@ input[type="submit"] {
 }
 
 .webring-widget {
-  margin-top: 0.5rem;
-  margin-bottom: 1.25rem;
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
