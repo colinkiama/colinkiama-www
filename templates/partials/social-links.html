@@ -1,30 +1,39 @@
-<ul>
+<ul class="social-links">
 	<li>
 		<a rel="author" href="{{ config.extra.socials.email|safe }}">
-			<!-- <svg></svg> --> <!-- Logo --> Email
+			{{ icon_macros::sprite_icon(name="mail") }}  Email
 		</a>
 	</li>
 	<li>
-		<!-- <svg></svg> -->
-		<a rel="author" href="{{ config.extra.socials.linkedin|safe }}">LinkedIn</a>
+		<a rel="author" href="{{ config.extra.socials.linkedin|safe }}">
+		{{ icon_macros::sprite_icon(name="linkedin") }}  
+		LinkedIn
+	</a>
 	</li>
 	<li>
-		<!-- <svg></svg> -->
-		<a rel="author" href="{{ config.extra.socials.twitter|safe }}">Twitter</a>
-	</li>
-	
-	<li>
-		<!-- <svg></svg> -->
-		<a rel="me" href="{{ config.extra.socials.mastodon|safe }}">Mastodon</a>
+		<a rel="author" href="{{ config.extra.socials.twitter|safe }}">
+		{{ icon_macros::sprite_icon(name="twitter") }}  
+		Twitter</a>
 	</li>
 	
 	<li>
-		<!-- <svg></svg> -->
-		<a rel="author" href="{{ config.extra.socials.product_hunt|safe }}">Product Hunt</a>
+		<a rel="me" href="{{ config.extra.socials.mastodon|safe }}">
+
+		{{ icon_macros::sprite_icon(name="mastodon") }}  
+		Mastodon</a>
 	</li>
 	
 	<li>
-		<!-- <svg></svg> -->
-		<a rel="author" href="{{ config.extra.socials.dev_to|safe }}">Dev Community</a>
+		<a rel="author" href="{{ config.extra.socials.product_hunt|safe }}">
+
+		{{ icon_macros::sprite_icon(name="product-hunt") }}  
+		Product Hunt</a>
+	</li>
+	
+	<li>
+		<a rel="author" href="{{ config.extra.socials.dev_to|safe }}">
+		{{ icon_macros::sprite_icon(name="dev-community") }}  
+
+		Dev Community</a>
 	</li>
 </ul>
