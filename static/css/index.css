@@ -253,6 +253,16 @@ a {
   color: var(--accent-color);
 }
 
+a:focus,
+input:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 0.25rem;
+}
+
+/*a:focus {
+
+}
+*/
 header .container,
 footer .container {
   padding-top: var(--mobile-padding);
@@ -329,6 +339,11 @@ footer a {
   color: white;
 }
 
+footer a:focus,
+footer input:focus {
+  outline-color: white;
+}
+
 footer svg.icon {
   fill: white;
 }
@@ -381,13 +396,16 @@ input::placeholder {
 }
 
 input[type="email"] {
-  width: 250px;
+  width: 100%;
+  max-width: 250px;
 }
 
 input[type="submit"] {
   display: block;
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
   padding: 0.4375rem 1rem;
+  background-color: var(--button-color);
+  color: white;
 }
 
 @supports (font-variation-settings: normal) {
@@ -399,5 +417,17 @@ input[type="submit"] {
 
   input {
     font-family: "Inter Variable", Arial, Helvetica, sans-serif;
+  }
+}
+
+@media (min-width: 30rem) {
+  #newsletter-form input[type="email"],
+  #newsletter-form input[type="submit"] {
+    display: inline-block;
+    margin-top: 0;
+  }
+
+  #newsletter-form input[type="submit"] {
+    margin-left: 0.25rem;
   }
 }
