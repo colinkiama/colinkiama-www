@@ -251,6 +251,7 @@ p {
 
 a {
   color: var(--accent-color);
+  display: inline-block;
 }
 
 a:focus,
@@ -417,6 +418,10 @@ input[type="submit"] {
   padding: 0.4375rem 2rem;
   background-color: var(--button-color);
   color: white;
+}
+
+.newsletter-provider {
+  margin-top: 0.5rem;
 }
 
 @supports (font-variation-settings: normal) {
