@@ -161,6 +161,10 @@ img {
   opacity: 1;
 }
 
+img {
+  width: 100%;
+}
+
 /* || GENERAL STYLES */
 
 html {
@@ -241,9 +245,6 @@ p {
 /* || UTILITIES */
   
 .container {
-  transition-property: padding, width, margin;
-  transition-duration: 0.75s;
-  transition-timing-function: ease;
   width: 100%;
   margin: 0 auto;
   padding: 0 var(--mobile-padding);
