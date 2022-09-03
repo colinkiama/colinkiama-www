@@ -33,7 +33,10 @@
   --accent-color-dark-alt: #7239B3;
 
   --button-color: #0A4276;;
+  --button-hover-color: #000000;
+
   --button-color-dark: #3C0A76;
+  --button-hover-color-dark: #000000;
 
   --input-placeholder-text-color: #7E7E7E;
 
@@ -446,11 +449,20 @@ input[type="email"]:focus {
 }
 
 input[type="submit"] {
-  display: block;
+  transition-property: background-color, outline-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+    display: block;
   margin-top: 0.5rem;
   padding: 0.4375rem 2rem;
   background-color: var(--button-color);
   color: white;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  cursor: pointer;
+  background-color: var(--button-hover-color);
 }
 
 .newsletter-provider {
