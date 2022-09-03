@@ -255,14 +255,15 @@ a {
 
 a:focus,
 input:focus {
-  outline: 2px solid var(--accent-color);
+  outline-width: 2px;
+  outline-color: var(--accent-color);
+  outline-style: solid;
+}
+
+a:focus {
   outline-offset: 0.25rem;
 }
 
-/*a:focus {
-
-}
-*/
 header .container,
 footer .container {
   padding-top: var(--mobile-padding);
@@ -349,7 +350,7 @@ footer svg.icon {
 }
 
 #back-to-top {
-  display: flex;
+  display: inline-flex;
   justify-content: flex-start;
   font-weight: var(--font-weight-regular);
   align-items: center;
@@ -385,6 +386,11 @@ input {
   font-size: var(--base-font-size);
   border-radius: 0.25rem;
   padding: 0.4375rem 0.75rem;
+  outline-width: 0;
+}
+
+input:focus {
+  outline-offset: 0;
 }
 
 input::placeholder {
@@ -400,10 +406,15 @@ input[type="email"] {
   max-width: 250px;
 }
 
+input[type="email"]:focus {
+  outline-color: #060606;
+  outline-width: 2px;
+}
+
 input[type="submit"] {
   display: block;
   margin-top: 0.5rem;
-  padding: 0.4375rem 1rem;
+  padding: 0.4375rem 2rem;
   background-color: var(--button-color);
   color: white;
 }
