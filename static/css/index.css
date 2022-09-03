@@ -384,11 +384,6 @@ footer svg.icon {
   display: block;
 }
 
-.financial-support {
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
-}
-
 input, label {
   display: block;
   font-weight: var(--font-weight-regular);
@@ -435,6 +430,39 @@ input[type="submit"] {
 
 .newsletter-provider {
   margin-top: 0.5rem;
+}
+
+.financial-support {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.webring-widget {
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.webring-widget a {
+  display: inline-flex;
+  align-items: center;
+  padding-right: 0.75rem;
+  padding-bottom: 0.5rem;
+}
+
+.webring-widget a svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.webring-widget a:first-child svg {
+  margin-right: 0.5rem;
+}
+
+.webring-widget a:last-child svg {
+  margin-left: 0.5rem;
 }
 
 @supports (font-variation-settings: normal) {
