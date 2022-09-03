@@ -16,6 +16,8 @@
   --mobile-padding: 1.25rem;
   --desktop-padding: 2.5rem;
 
+  --foreground-color: #060606;
+
   --accent-color: #1071CB;
   --accent-color-dark: #CD9EF7;
   --accent-color-dark-alt: #7239B3;
@@ -24,7 +26,10 @@
   --button-color-dark: #3C0A76;
 
   --input-placeholder-text-color: #7E7E7E;
-  --section-border-color: #AAB4BE;
+
+  --section-border-color: #B4B4B4;
+  --footer-section-border-color: #6DB3F3 ;
+  --footer-section-border-color-dark: #B593DD;
 }
 
 /* || FONTS */
@@ -128,6 +133,12 @@ img {
   height: auto;
 }
 
+/* || CUSTOM RESETS */
+
+::-moz-placeholder {
+  opacity: 1;
+}
+
 /* || GENERAL STYLES */
 
 html {
@@ -145,6 +156,7 @@ body {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   line-height: 1.5;
   font-size: var(--base-font-size);
+  color: var(--foreground-color);
 }
 
 @supports (font-variation-settings: normal) {
@@ -159,14 +171,14 @@ body {
 
 /* || TYPOGRAPHY */
 
-h1, h2, h3, h4, h5, h6, #site-name, #back-to-top {
+h1, h2, h3, h4, h5, h6, #site-name, #back-to-top, #newsletter-form .form-title {
   font-weight: var(--font-weight-regular);
   margin-top: 0.72em;
   margin-bottom: 0.65em;
 }
 
 @supports (font-variation-settings: normal) {
-  h1, h2, h3, h4, h5, h6, #site-name, #back-to-top  {
+  h1, h2, h3, h4, h5, h6, #site-name, #back-to-top, #newsletter-form .form-title {
     font-variation-settings: 'wght' var(--font-weight-regular);
   }
 }
@@ -183,7 +195,7 @@ h3, #site-name, #back-to-top {
   font-size: 1.25rem;
 }
 
-h4 {
+h4, #newsletter-form .form-title {
   font-size: 1.125rem;
 }
 
@@ -289,6 +301,7 @@ svg.icon {
   fill: var(--accent-color);
 }
 
+
 .social-links li {
   display: flex;
   margin-top: 0.5rem;
@@ -336,8 +349,55 @@ footer svg.icon {
   margin-left: 0.75rem;
 }
 
+.extra-site-links {
+  border-bottom: 1px solid var(--footer-section-border-color);
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+#newsletter-form {
+  display: block;
+}
+
+input, label {
+  display: block;
+  font-weight: var(--font-weight-regular);
+}
+
+input {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  font-size: var(--base-font-size);
+  border-radius: 0.25rem;
+  padding: 0.4375rem 0.75rem;
+}
+
+input::placeholder {
+  color: var(--input-placeholder-text-color);
+}
+
+#newsletter-form input {
+  border: 0;
+}
+
+input[type="email"] {
+  width: 250px;
+}
+
+input[type="submit"] {
+  display: block;
+  margin-top: 0.75rem;
+  padding: 0.4375rem 1rem;
+}
+
 @supports (font-variation-settings: normal) {
-  #back-to-top {
+  #back-to-top,
+  label,
+  input {
     font-variation-settings: 'wght' var(--font-weight-regular);
+  }
+
+  input {
+    font-family: "Inter Variable", Arial, Helvetica, sans-serif;
   }
 }
