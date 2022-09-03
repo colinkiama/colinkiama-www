@@ -322,7 +322,6 @@ svg.icon {
   fill: var(--accent-color);
 }
 
-
 .social-links li {
   display: flex;
   margin-top: 0.5rem;
@@ -383,6 +382,11 @@ footer svg.icon {
 
 #newsletter-form {
   display: block;
+}
+
+.financial-support {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 input, label {
