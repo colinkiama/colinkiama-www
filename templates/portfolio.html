@@ -1,5 +1,53 @@
 {% extends "base.html" %}
 
+{% block head %}
+<link rel="stylesheet" href="/css/portfolio.css">
+{% endblock head%}
+
 {% block main_content %}
-Portfolio
+<main>
+	<header>
+		<h1>Portfolio</h1>
+	</header>
+
+	<section>
+		<ul class="portfolio">
+
+			<li>
+				<picture>
+					<img src="https://ik.imagekit.io/mune/vala-www-capture_ahfD-0S9X.png?tr=w-900" alt="Vala Hero Image">
+				</picture>
+				<a href="https://vala.dev">Vala Website (2022)</a>
+				<p>I created a website for a programming language called Vala.</p>
+				<p>It replaces an old set of wiki pages with a website that:</p>
+				<ul class="bullet-points">
+					<li>Showcases Vala projects and features</li>
+					<li>Shows off the language's branding</li>
+					<li>Is optimised for speed</li>
+					<li>Has improved accessibility (especially regarding navigation and colour contrast).
+					</li>
+				</ul>
+			</li>
+			<li>
+				<picture>
+					<img src="https://ik.imagekit.io/mune/jailtime-portfolio-image_nmSI6BHbB.png?tr=w-900" alt="Jailtime - Blocks websites and helps keep you focused">
+				</picture>
+				<a href="https://chrome.google.com/webstore/detail/jailtime/ffkepigdcjmnioppkooocmpgndoiopjd">Jailtime</a>
+			</li>
+			<li>
+				<picture>
+					<img src="https://ik.imagekit.io/mune/ypi-yachts_iqKpffMvif.png?tr=w-900" alt="Yachting Partners Inernational home page">
+				</picture>
+				<a href="https://wwww.ypiyachts.com">YPI Yachts Website (2021 Redesign)</a>
+			</li>
+		</ul>
+	</section>
+
+	<section>
+		<header>
+			<h2>Want to work with me?</h2>
+		</header>
+		<a href="{{ get_url(path='@/contact-me/index.md') }}">Contact me</a>
+	</section>
+</main>
 {% endblock main_content %}

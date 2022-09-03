@@ -1,0 +1,7 @@
+.portfolio > li {
+	margin-top: 2.5rem;
+}
+
+.portfolio > li:first-child {
+	margin-top: 0;
+}
