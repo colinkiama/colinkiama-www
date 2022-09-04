@@ -1,29 +1,42 @@
 {% extends "base.html" %}
+
+{% block title %}{{ section.title }}{% endblock %}
+
 {% block head %}
-<title>Colin Kiama</title>
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:creator" content="@colinkiama">
-<meta property="og:type" content="website">
-<meta property="og:url" content="{{section.permalink}}">
-<meta property="og:title" content="Colin Kiama"> 
-<meta property="og:description" content="Personal website of Colin Kiama, a front-end developer.">
-<meta property="og:site_name" content="colinkiama.com">
-<meta property="og:image" content="https://ik.imagekit.io/mune/colinkiama-site-logo_2m8Nvn90o34T.png?updatedAt=1606960170047&tr=w-1200,h-675,fo-auto"> 
-<link rel="stylesheet" href="/index.css">
-{% endblock head %}
+{{ head_macros::og_data(title=section.title, description=section.description) }}
+{% endblock %}
 
-{% block home_link_block %}
-	<span>Home</span>
-{% endblock home_link_block %}
-
-
-{% block content %}
+{% block main_content %}
 <header>
-<span aria-label="Hi!" class="waving-hand-emoji">👋</span>
+	<h1>I code, design, write blog posts and more...</h1>
 </header>
 
-<p>I write code for projects that I feel passionate about.</p>
+<section>
+	<header>
+		<h2>Hi I'm Colin and <span class="stand-out">I can:</span></h2>
+	</header>
 
-<p>Feel free to <a class="prefetch" href="{{portfolio_permalink}}">see what I've made. </a>
-</p> 
-{% endblock content %}
+	<ul>
+		<li>Make your next website</li>
+		<li>Create your next app</li>
+		<li>Write documentation for you</li>
+		<li>Create designs for you</li>			
+		<li>...and other tech-related tasks too</li>
+	</ul>
+
+	<div class="call-out">
+		<a href="{{ get_url(path='@/portfolio/index.md')|safe }}" class="-cta">See what I've made</a>
+	</div>
+</section>
+
+<section>
+	<header>
+		<h2>Want to work with me?</h2>
+	</header>
+
+	<p>Here are ways that you can contact me:</p>
+
+	{% include "partials/social-links.html" %}
+
+</section>
+{% endblock main_content %}

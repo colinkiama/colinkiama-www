@@ -1,0 +1,58 @@
+{
+  "items": [
+    {
+      "title": "Vala Website (2022)",
+      "date": "2022-07-15T18:00:00Z",
+      "type": "website",
+      "thumbnail": "https://ik.imagekit.io/mune/vala-www-capture_ahfD-0S9X.png",
+      "thumbnail_alt_text": "Vala Hero Image",
+      "link": "https://vala.dev",
+      "content": "<p>I created a website for a programming language called Vala.</p><p>It replaces an old set of wiki pages with a website that: <ul><li>Showcases Vala projects and features</li><li>Shows off the language's branding</li> <li>Is optimised for speed</li><li>Has improved accessibility (especially regarding navigation and colour contrast).</li></ul>"
+    },
+    {
+      "title": "Jailtime",
+      "type": "browser-extension",
+      "date": "2022-04-10T20:31:00Z",
+      "thumbnail": "https://ik.imagekit.io/mune/jailtime-portfolio-image_nmSI6BHbB.png",
+      "thumbnail_alt_text": "Jailtime - Blocks websites and helps keep you focused",
+      "link": "https://chrome.google.com/webstore/detail/jailtime/ffkepigdcjmnioppkooocmpgndoiopjd",
+      "content": "<p>A browser extension that blocks websites by allowing you to add sites to a block list, making you more productive!</p><p> Available on both Google Chrome and Mozilla Firefox.</p>"
+    },
+    {
+      "title": "Yachting Partners International (2021 Redesign)",
+      "type":"website",
+      "date": "2021-03-25T00:00:00Z",
+      "thumbnail": "https://ik.imagekit.io/mune/ypi-yachts_iqKpffMvif.png",
+      "thumbnail_alt_text": "Yachting Partners Inernational home page",
+      "link": "https://www.ypiyachts.com",
+      "content": "<p>Covers all aspects of yacht services such as brokerage, chartering and management. I was the front-end developer for this project.</p>"
+    },
+    {
+      "title": "Pomodoro Timer UWP",
+      "type": "app",
+      "date": "2020-11-12T00:41:00Z",
+      "thumbnail": "https://ik.imagekit.io/mune/pomodoro-timer_GDR4r4_faNPO.png",
+      "thumbnail_alt_text": "A program with a timer showing the current time left in minutes and seconds.",
+      "link": "https://www.microsoft.com/store/apps/9PJSR2QK1V1V?cid=colinkiamaSite",
+      "content": "<p>A pomodoro timer app with features like \"always-on-top\" mode, background support and the ability to customise your each interval and how many sessions you'll have.</p><a href=\"https://www.producthunt.com/posts/pomodoro-timer-uwp?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-pomodoro&#0045;timer&#0045;uwp\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=136007&theme=light\" alt=\"Pomodoro&#0032;Timer&#0032;UWP - Be&#0032;more&#0032;productive&#0032;with&#0032;your&#0032;time | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>"
+    },
+    {
+      "title": "Dysprose",
+      "type": "app",
+      "date": "2020-11-12T00:40:00Z",
+      "thumbnail": "https://ik.imagekit.io/mune/dysprose_nXbwI-fnPCNS.png",
+      "thumbnail_alt_text": "A program allowing the user to type in it, with a circular timer going down.",
+      "link": "https://www.microsoft.com/store/apps/9NNZQ38B48ZJ?cid=colinkiamaSite",
+  	  "content": "<p>A Windows 10 Application for times when your ideas aren't coming together/you need to focus.</p><p>Start a session where you have to keep typing within a regular interval or risk all your work fading away right in front of you then save your work at the end.</p><a href=\"https://www.producthunt.com/posts/dysprose-2-0?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-dysprose&#0045;2&#0045;0\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=174828&theme=light\" alt=\"Dysprose&#0032;2&#0046;0 - Keep&#0032;writing&#0032;or&#0032;else&#0044;&#0032;all&#0032;your&#0032;work&#0032;fades&#0032;away&#0046;&#0032;Forever&#0046; | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>"
+    },
+    {
+      "title": "Audio Trimmer",
+      "type": "app",
+      "date": "2020-11-12T00:39:00Z",
+      "thumbnail": "https://ik.imagekit.io/mune/audio-trimmer_vrTCsM7fcU9-.png",
+      "thumbnail_alt_text": "A program allowing the user to select parts of audio to keep with trimming controls",
+      "link": "https://www.microsoft.com/store/apps/9P98V42MC8Z4?cid=colinkiamaSite",
+  	  "content": "<p>A Windows 10 Application that gives users a simple, seamless way to trim audio files.</p><p>The app takes care of copying metadata and supporting file formats so all the user has to worry about is keeping the parts of an audio file that they want!</p><a href=\"https:\/\/www.producthunt.com\/posts\/audio-trimmer?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-audio&#0045;trimmer\" target=\"_blank\"><img src=\"https:\/\/api.producthunt.com\/widgets\/embed-image\/v1\/featured.svg?post_id=158686&theme=light\" alt=\"Audio&#0032;Trimmer - The&#0032;simplest&#0032;way&#0032;to&#0032;trim&#0032;your&#0032;audio&#0032;files | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" \/><\/a>"
+    }
+  ]
+}

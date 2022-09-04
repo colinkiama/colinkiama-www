@@ -1,120 +1,49 @@
+{% import "macros/head.html" as head_macros %}
+{% import "macros/icon.html" as icon_macros %}
+{% import "macros/image.html" as image_macros %}
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/global.css">
-  <link rel="icon" href="{{config.extra.favicon_link}}">
-  {% block rss %}
-  <link rel="alternate" type="application/rss+xml" title="Colin Kiama - RSS" href="{{ get_url(path=" rss.xml",
-    trailing_slash=false) }}">
-  {% endblock %}
-  <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "name": "Colin Kiama",
-        "@type": "Person",
-        "email": "colinkiama@gmail.com",
-        "image": "https://ik.imagekit.io/mune/mune-portrait_2Uy7ATEsei_PG.jpeg",
-        "jobTitle": "Front-End Developer",
-        "url": "http://www.colinkiama.com"
-      }
-    </script>
-  {% block head %} {% endblock head %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}{% endblock %} - Colin Kiama</title>
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
+	<link rel="alternate" type="application/rss+xml" title="Colin Kiama - RSS Feed" href="{{ get_url(path='rss.xml', trailing_slash=false) }}">
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#1071CB">
+	{% block head %} {% endblock head %}
 </head>
-
 <body>
-  {% set portfolio_permalink = get_url(path="@/portfolio/_index.md") %} {% set
-  blog_permalink = get_url(path="@/blog/_index.md") %}
+	<a id="bypass-block" href="#main-content">Skip to main content</a>
 
-  <a id="bypass-block" href="#main-container">Skip to main content</a>
-  <header>
-    <h1>Colin Kiama</h1>
-    <h2>Software Developer</h2>
-    <nav>
-      {% block home_link_block -%}
-      <a href="/">Home</a>
-      {%- endblock home_link_block %} {% block portfolio_link_block -%}
-      <a href="{{portfolio_permalink}}">Portfolio</a>
-      {% endblock portfolio_link_block -%} {% block blog_link_block -%}
-      <a href="{{blog_permalink}}">Blog</a>
-      {% endblock blog_link_block -%}
-    </nav>
-  </header>
-  <main>
-    <div id="main-container">{% block content %} {% endblock content %}</div>
-    {% block pagination %} {% endblock pagination %}
-  </main>
-  <footer>
-    <p>Interested in working with me? Want to ask me anything?</p>
-    <span id="emailAddress">Email: colinkiama@gmail.com</span>
+	{% include "partials/header.html" %}
 
-    <div id="footer-call-to-actions">
-      <a href="mailto:colinkiama@gmail.com" class="call-to-action-button">Email Me</a>
-    </div>
+	<main>
+		<div class="container">
+		{% block main_content %} {% endblock main_content %}
+		</div>
+	</main>
+		
 
-    <form action="https://buttondown.email/api/emails/embed-subscribe/colinkiama" method="post" target="popupwindow"
-      onsubmit="window.open('https://buttondown.email/colinkiama', 'popupwindow')" class="embeddable-buttondown-form">
-      <span>Subscribe to my newsletter</span>
-      <br>
-      <div>
-        <label for="bd-email">Email:</label>
-        <br>
-        <input type="email" name="email" id="bd-email" autocomplete="email">
-        <input type="submit" value="Subscribe">
-      </div>
-      <p>
-        <a href="https://buttondown.email" target="_blank">Powered by Buttondown.</a>
-      </p>
-    </form>
+	{% include "partials/footer.html" %}
 
-
-    <ul id="footer-links" class="no-bullet-list">
-      <li>
-        <a rel="author" href="https://www.github.com/colinkiama">GitHub</a>
-      </li>
-      <li>
-        <a rel="author" href="https://www.gitlab.com/colinkiama">GitLab</a>
-      </li>
-      <li>
-        <a rel="author" href="https://www.linkedin.com/in/colin-kiama-11962988/">LinkedIn</a>
-      </li>
-      <li>
-        <a rel="author" href="https://www.twitter.com/colinkiama">Twitter</a>
-      </li>
-      <li>
-        <a rel="author" href="https://www.producthunt.com/@colinkiama">Product Hunt</a>
-      </li>
-      <li>
-        <a rel="me" href="https://merveilles.town/@colinkiama">Mastodon</a>
-      </li>
-      <li>
-        <a href="/rss.xml">RSS Feed</a>
-      </li>
-    </ul>
-    <span class="zola-credit">Made with <a href="https://www.getzola.org">Zola</a></span>
-    <br>
-    <span class="site-timestamp">Colin Kiama - {{ now() | date(format="%Y") }}</span>
-    <div class="webring-widget">
-      <div>
-        <a href="https://hotlinewebring.club/{{ config.extra.webring_slug }}/previous">
-          <- Previous</a>
-      </div>
-
-      <a href="https://hotlinewebring.club/">Hotline Webring</a>
-
-      <div>
-        <a href="https://hotlinewebring.club/{{ config.extra.webring_slug }}/next">Next -></a>
-      </div>
-    </div>
-
-    <div class="financial-support">
-      <script src="https://liberapay.com/colinkiama/widgets/button.js"></script>
-      <noscript><a href="https:// liberapay.com/colinkiama/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
-    </div>
-  </footer>
-  <script src="/prefetch.js"></script>
+<script src="/js/global.js"></script>
+{% block body_end %} {% endblock body_end %}
 </body>
-
 </html>

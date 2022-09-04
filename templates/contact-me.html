@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ head_macros::og_data(title=page.title, description=page.description) }}
+{% endblock %}
+
+{% block main_content %}
+<header>
+	<h1>Contact me</h1>
+</header>
+
+<section>
+	<header>
+		<h2>Want to work with me?</h2>
+	</header>
+
+	<p>Here are ways that you can contact me:</p>
+
+	{% include "partials/social-links.html" %}
+</section>
+{% endblock main_content %}

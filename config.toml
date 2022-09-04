@@ -3,11 +3,7 @@ base_url = "colinkiama.com"
 
 # The site title and description; used in feeds by default.
 title = "Colin Kiama"
-description = "Ayyy, you made it to my blog! I'll talk about my experiences with software development and things that I find interesting here."
-
-# Whether to automatically compile all Sass files in the sass directory
-compile_sass = true
-
+description = "Welcome to the blog!"
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
@@ -22,12 +18,32 @@ feed_filename = "rss.xml"
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
 
+highlight_theme = "css"
+highlight_themes_css = [
+  { theme = "visual-studio-dark", filename = "css/syntax-theme-dark.css" },
+  { theme = "base16-ocean-light", filename = "css/syntax-theme-light.css" },
+]
+
 
 # The theme to use for code highlighting.
 # See below for list of allowed values.
-highlight_theme = "visual-studio-dark"
+# highlight_theme = "visual-studio-dark"
 
 [extra]
 # Put all your custom variables here
 favicon_link = "https://ik.imagekit.io/mune/mune-favicon_BOoehMPQtVAo.png"
 webring_slug = "colinkiama"
+
+[extra.socials]
+email = "mailto:colinkiama@gmail.com"
+twitter = "https://twitter.com/colinkiama"
+linkedin = "https://www.linkedin.com/in/colin-kiama-11962988/"
+mastodon = "https://merveilles.town/@colinkiama"
+product_hunt = "https://www.producthunt.com/@colinkiama"
+dev_to = "https://dev.to/colinkiama"
+
+[extra.portfolio]
+github = "https://www.github.com/colinkiama"
+
+[extra.blog]
+email = "colinkiama@gmail.com"

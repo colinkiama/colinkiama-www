@@ -1,44 +1,48 @@
 {% extends "base.html" %}
+
+{% set portfolio_data = load_data(path="data/portfolio.json", format="json") %}
+
+
+{% block title %}{{ section.title }}{% endblock %}
+
 {% block head %}
-<title>Colin Kiama's Blog</title>
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:creator" content="@colinkiama">
-<meta property="og:type" content="website">
-<meta property="og:url" content="{{section.permalink}}">
-<meta property="og:title" content="Colin Kiama - Blog"> 
-<meta property="og:site_name" content="colinkiama.com">
-<meta property="og:description" content="Blog posts I've written.">
-<meta property="og:image" content="https://ik.imagekit.io/mune/colinkiama-site-logo_2m8Nvn90o34T.png?updatedAt=1606960170047&tr=w-1200,h-675,fo-auto"> 
-<link rel="stylesheet" href="/section.css">
-<link rel="stylesheet" href="/blog.css">
-{% endblock head %}
+{{ head_macros::og_data(title=section.title, description=section.description) }}
+<link rel="stylesheet" href="/css/blog.css">
+{% endblock head%}
 
-{% block blog_link_block %}
-	<span class="no-underline">Blog</span>
-{% endblock blog_link_block %}
+{% block main_content %}
+<header>
+	<h1>Blog</h1>
+</header>
 
-{% block content %}
-<ul class="no-bullet-list">
-{% for blog_post in paginator.pages %}
-<li class="post-item blog-item">
-<a class="surrounding-link" href="{{blog_post.permalink}}">
-<h3 class="item-title">{{blog_post.title}}</h3>
-<div>{{blog_post.description}}</div>
-<time class="post-timestamp" datetime="{{blog_post.date}}">{{blog_post.date | date}}</time>
-<span class="reading-time">Reading time: {{blog_post.reading_time}} {% if blog_post.reading_time == 1 %}Minute{% else %} Minutes{% endif %}</span>
-</a>
-</li>
-{% endfor %}
-</ul>
-{% endblock content %}
+<section>
+	<ul class="blog">
+		{% for blog_post in paginator.pages %}
+		<li class="post-item blog-item">
+			<h2 class="item-title">
+				<a class="surrounding-link" href="{{ blog_post.permalink }}">{{blog_post.title}}</a>
+			</h2>
+			<div>{{blog_post.description}}</div>
+			<time class="post-timestamp" datetime="{{ blog_post.date }}">{{blog_post.date | date}}
+			</time>
+			<div class="reading-time">Reading time: {{blog_post.reading_time}} {% if blog_post.reading_time ==
+				1 %}Minute{% else %} Minutes{% endif %}</div>
+		</li>
+		{% endfor %}
+	</ul>
 
-{% block pagination %}
-<nav class="pagination">
-    {% if paginator.previous %}
-        <a class="previous" href="{{ paginator.previous }}">‹ Previous</a>
-    {% endif %}
-    {% if paginator.next %}
-        <a class="next" href="{{ paginator.next }}">Next ›</a>
-    {% endif %}
-</nav>
-{% endblock pagination %}
+	<footer>
+		<nav class="pagination">
+			{% if paginator.previous %}
+			<a class="previous" href="{{ paginator.previous }}">
+			{{ icon_macros::sprite_icon(name="left-arrow") }} Previous
+			</a>
+			{% endif %}
+			{% if paginator.next %}
+			<a class="next" href="{{ paginator.next }}">Next {{ icon_macros::sprite_icon(name="right-arrow") }}</a>
+			{% endif %}
+		</nav>
+	</footer>
+</section>
+
+{% endblock main_content %}
