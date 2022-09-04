@@ -356,6 +356,10 @@ section:last-child {
   border: 0;
 }
 
+section footer {
+  margin-top: 2rem;
+}
+
 article a {
   display: inline;
 }
