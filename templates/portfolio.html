@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block head %}
+{{ head_macros::og_data(title=page.title, description=page.description) }}
 <link rel="stylesheet" href="/css/portfolio.css">
 {% endblock head%}
 

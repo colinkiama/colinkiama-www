@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block head %}
+{{ head_macros::og_data(title=page.title, description=page.description) }}
+{% endblock %}
+
 {% block main_content %}
 	<header>
 		<h1>Contact me</h1>
