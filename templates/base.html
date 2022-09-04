@@ -1,3 +1,4 @@
+{% import "macros/head.html" as head_macros %}
 {% import "macros/icon.html" as icon_macros %}
 {% import "macros/image.html" as image_macros %}
 
@@ -8,6 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Colin Kiama</title>
 	<link rel="stylesheet" type="text/css" href="/css/index.css">
+	<link rel="alternate" type="application/rss+xml" title="Colin Kiama - RSS Feed" href="{{ get_url(path='rss.xml', trailing_slash=false) }}">
 	{% block head %} {% endblock head%}
 </head>
 <body>

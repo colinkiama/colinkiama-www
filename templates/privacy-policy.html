@@ -1,0 +1,25 @@
+{% extends "base.html" %} 
+
+{% block head %}
+<title>{{ page.title }}</title>
+<link rel="stylesheet" href="/blog.css">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@colinkiama">
+<meta property="og:title" content="{{page.title}}">
+<meta property="og:site_name" content="colinkiama.com">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{page.permalink}}">
+<meta property="og:image" content="https://ik.imagekit.io/mune/colinkiama-site-logo_2m8Nvn90o34T.png?updatedAt=1606960170047&tr=w-1200,h-675,fo-auto">
+{% endblock head %} 
+
+{% block main_content %}
+<div class="flex-center">
+  <article>
+    <header>
+      <h1>{{ page.title }}</h1>
+    </header>
+    <div class="flex-center blog-content">{{ page.content|safe }}</div>
+    <br />
+  </article>
+</div>
+{% endblock main_content %}
