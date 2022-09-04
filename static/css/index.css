@@ -223,12 +223,6 @@ h1, h2, h3, h4, h5, h6, #site-name, #back-to-top, #newsletter-form .form-title {
   margin-bottom: 0.65em;
 }
 
-@supports (font-variation-settings: normal) {
-  h1, h2, h3, h4, h5, h6, #site-name, #back-to-top, #newsletter-form .form-title {
-    font-variation-settings: 'wght' var(--font-weight-regular);
-  }
-}
-
 h1 {
   font-size: 1.75rem;
 }
@@ -255,6 +249,21 @@ h6 {
 
 p {
   margin-bottom: 0.85em;
+}
+
+strong {
+  font-weight: var(--font-weight-bold);
+}
+
+
+@supports (font-variation-settings: normal) {
+  h1, h2, h3, h4, h5, h6, #site-name, #back-to-top, #newsletter-form .form-title {
+    font-variation-settings: 'wght' var(--font-weight-regular);
+  }
+
+  strong {
+    font-variation-settings: 'wghr' var(--font-weight-bold);
+  }
 }
 
 /* || UTILITIES */
@@ -578,8 +587,8 @@ input[type="submit"]:focus {
 
 @supports (font-variation-settings: normal) {
   #back-to-top,
-  label,
-  input {
+  input, 
+  label {
     font-variation-settings: 'wght' var(--font-weight-regular);
   }
 
