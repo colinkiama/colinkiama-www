@@ -287,6 +287,35 @@ p {
 
 /* || SITEWIDE */
 
+#bypass-block {
+  --focus-outline-color: white;
+  transition: none;
+  position: absolute;
+  word-wrap: normal;
+  top: 0;
+  left: -999px;
+  width: 1px;
+  height: 1px;
+  text-align: center;
+  font-size: 2rem;
+  z-index: -2;
+  background: var(--vala-gradient);
+  color: black; /* When off-screen, it contrasts with the body background */
+  padding: 1rem;
+}
+
+#bypass-block:focus,
+#bypass-block:focus-visible {
+  opacity: 1;
+  z-index: 999;
+  display: block;
+  width: 100%;
+  height: auto;
+  left:auto;
+  background: var(--accent-color-dark-1);
+  color: white; /* To create contrast with the background */
+}
+
 a {
   transition: color 0.3s ease;
   color: var(--accent-color);
@@ -358,6 +387,10 @@ section:last-child {
 
 section footer {
   margin-top: 2rem;
+}
+
+article {
+  padding-bottom: 1.5rem;
 }
 
 article a {

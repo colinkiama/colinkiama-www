@@ -1,5 +1,23 @@
+:root {
+  --inline-code-background-color: #d4d4d4;
+  --inline-code-background-color-dark: #333333;
+  
+  --code-block-copy-button-color: #1a1a1a;
+  --code-block-copy-button-color-dark: #fafafa;
+}
+
 section footer {
   margin-top: 2rem;
+}
+
+article img,
+iframe {
+  width: 100%;
+  height: auto;
+}
+
+iframe {
+  min-height: 200px;
 }
 
 article footer {
@@ -12,6 +30,81 @@ article footer {
 .blog {
   list-style-type: none;
   list-style-position: outside;
+}
+
+.reading-time {
+  display: block;
+}
+
+pre {
+  padding: 1rem;
+  border-radius: 4px;
+  overflow: auto;
+  text-align: left;
+  border: 1px solid #d4d4d4;
+}
+
+
+pre table td {
+  padding: 0;
+}
+
+pre mark {
+  /* If you want your highlights to take the full width. */
+  display: block;
+  /* The default background colour of a mark is bright yellow */
+  background-color: rgba(254, 252, 232, 0.9);
+}
+
+pre table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+code {
+  border-radius: 4px;
+  background-color: var(--inline-code-background-color);
+  padding: 0.125rem 0.25rem;
+}
+
+pre code {
+  border-radius: 0;
+  background: none;
+  padding: 0;
+}
+
+.code-block-wrapper {
+  position: relative;
+}
+
+.code-copier {
+  display: flex;
+  border: 0;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  padding: 1rem;
+  bottom: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+  background: transparent;
+}
+
+.code-copier svg {
+  transition: opacity 0.3s ease;
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--code-block-copy-button-color);
+  opacity: 0.3;
+}
+
+.code-copier:hover svg {
+  opacity: 1;
+}
+
+.code-copier:active svg {
+  opacity: 0.3;
 }
 
 .pagination {
@@ -41,37 +134,19 @@ article footer {
   margin-left: 0.5rem;
 }
 
-.reading-time {
-  display: block;
-}
-
-/* Embedded youtube video */
-.youtube {
-  display: relative;
-  width: 100%;
-}
-
-.youtube iframe {
-  width: 100%;
-  height: 100%;
-}
-
-/* Tablet YouTube Embed Styles */
-@media only screen and (min-width: 480px) {
-  .youtube {
-    /* The max width of content on the blog is 700px so
-     the final result is a 16:9 ratio video embed. 
-    */
-    height: 393.75px;
+@media (min-width: 500px) {
+  iframe {
+    min-height: 300px;
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --inline-code-background-color: var(--inline-code-background-color-dark);
+    --code-block-copy-button-color: var(--code-block-copy-button-color-dark);    
+  }
 
-/* Reduced Motion styles (Remove animations) */
-@media (prefers-reduced-motion: reduce) {
-
-  .post-timestamp,
-  .reading-time {
-    transition: none;
+  pre {
+    border: 1px solid #333333;
   }
 }

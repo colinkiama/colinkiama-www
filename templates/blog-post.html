@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 
 {% set portfolio_data = load_data(path="data/portfolio.json", format="json") %}
+{% block title %}{{ page.title }}{% endblock %}
 
 {% block head %}
+{{ head_macros::article_og_data(article=page) }}
 <link rel="stylesheet" href="/css/blog.css">
-{% endblock head%}
+{% endblock head %}
 
 {% block main_content %}
 <main>

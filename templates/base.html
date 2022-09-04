@@ -7,7 +7,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Colin Kiama</title>
+	<title>{% block title %}{% endblock %} - Colin Kiama</title>
 	<link rel="stylesheet" type="text/css" href="/css/index.css">
 	<link rel="alternate" type="application/rss+xml" title="Colin Kiama - RSS Feed" href="{{ get_url(path='rss.xml', trailing_slash=false) }}">
 	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -27,11 +27,11 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 	<meta name="theme-color" content="#1071CB">
-	{% block head %} {% endblock head%}
+	{% block head %} {% endblock head %}
 </head>
 <body>
 	
-	{% include "partials/header.html" %}
+{% include "partials/header.html" %}
 
 <main>
 	<div class="container">
@@ -42,6 +42,7 @@
 
 {% include "partials/footer.html" %}
 
+<script src="/js/global.js"></script>
 {% block body_end %} {% endblock body_end %}
 </body>
 </html>

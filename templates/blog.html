@@ -2,7 +2,11 @@
 
 {% set portfolio_data = load_data(path="data/portfolio.json", format="json") %}
 
+
+{% block title %}{{ section.title }}{% endblock %}
+
 {% block head %}
+{{ head_macros::og_data(title=section.title, description=section.description) }}
 <link rel="stylesheet" href="/css/blog.css">
 {% endblock head%}
 

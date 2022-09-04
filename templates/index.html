@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
+{% block title %}{{ section.title }}{% endblock %}
+
+{% block head %}
+{{ head_macros::og_data(title=section.title, description=section.description) }}
+{% endblock %}
+
 {% block main_content %}
 <main>
 	<header>

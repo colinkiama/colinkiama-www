@@ -1,25 +1,21 @@
 {% extends "base.html" %} 
 
+
+{% block title %}{{ page.title }}{% endblock %}
+
 {% block head %}
-<title>{{ page.title }}</title>
-<link rel="stylesheet" href="/blog.css">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:creator" content="@colinkiama">
-<meta property="og:title" content="{{page.title}}">
-<meta property="og:site_name" content="colinkiama.com">
-<meta property="og:type" content="article">
-<meta property="og:url" content="{{page.permalink}}">
-<meta property="og:image" content="https://ik.imagekit.io/mune/colinkiama-site-logo_2m8Nvn90o34T.png?updatedAt=1606960170047&tr=w-1200,h-675,fo-auto">
+{{ head_macros::og_data(title=page.title, description=page.description) }}
+<link rel="stylesheet" href="/css/blog.css">
+<link rel="stylesheet" href="/css/privacy-policy.css">
 {% endblock head %} 
 
 {% block main_content %}
-<div class="flex-center">
+<main>
   <article>
     <header>
-      <h1>{{ page.title }}</h1>
+      <h1>{{page.title}}</h1>
     </header>
-    <div class="flex-center blog-content">{{ page.content|safe }}</div>
-    <br />
+    {{ page.content | safe }}
   </article>
-</div>
+</main>
 {% endblock main_content %}
