@@ -11,40 +11,38 @@
 {% endblock head%}
 
 {% block main_content %}
-<main>
-	<header>
-		<h1>Blog</h1>
-	</header>
+<header>
+	<h1>Blog</h1>
+</header>
 
-	<section>
-		<ul class="blog">
-			{% for blog_post in paginator.pages %}
-			<li class="post-item blog-item">
-				<h2 class="item-title">
-					<a class="surrounding-link" href="{{ blog_post.permalink }}">{{blog_post.title}}</a>
-				</h2>
-				<div>{{blog_post.description}}</div>
-				<time class="post-timestamp" datetime="{{ blog_post.date }}">{{blog_post.date | date}}
-				</time>
-				<div class="reading-time">Reading time: {{blog_post.reading_time}} {% if blog_post.reading_time ==
-					1 %}Minute{% else %} Minutes{% endif %}</div>
-			</li>
-			{% endfor %}
-		</ul>
+<section>
+	<ul class="blog">
+		{% for blog_post in paginator.pages %}
+		<li class="post-item blog-item">
+			<h2 class="item-title">
+				<a class="surrounding-link" href="{{ blog_post.permalink }}">{{blog_post.title}}</a>
+			</h2>
+			<div>{{blog_post.description}}</div>
+			<time class="post-timestamp" datetime="{{ blog_post.date }}">{{blog_post.date | date}}
+			</time>
+			<div class="reading-time">Reading time: {{blog_post.reading_time}} {% if blog_post.reading_time ==
+				1 %}Minute{% else %} Minutes{% endif %}</div>
+		</li>
+		{% endfor %}
+	</ul>
 
-		<footer>
-			<nav class="pagination">
-				{% if paginator.previous %}
-				<a class="previous" href="{{ paginator.previous }}">
-				{{ icon_macros::sprite_icon(name="left-arrow") }} Previous
-				</a>
-				{% endif %}
-				{% if paginator.next %}
-				<a class="next" href="{{ paginator.next }}">Next {{ icon_macros::sprite_icon(name="right-arrow") }}</a>
-				{% endif %}
-			</nav>
-		</footer>
-	</section>
+	<footer>
+		<nav class="pagination">
+			{% if paginator.previous %}
+			<a class="previous" href="{{ paginator.previous }}">
+			{{ icon_macros::sprite_icon(name="left-arrow") }} Previous
+			</a>
+			{% endif %}
+			{% if paginator.next %}
+			<a class="next" href="{{ paginator.next }}">Next {{ icon_macros::sprite_icon(name="right-arrow") }}</a>
+			{% endif %}
+		</nav>
+	</footer>
+</section>
 
-</main>
 {% endblock main_content %}

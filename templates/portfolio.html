@@ -7,37 +7,38 @@
 
 {% block main_content %}
 {% set portfolio_data = load_data(path="data/portfolio.json", format="json") %}
-<main>
+<header>
+	<h1>Portfolio</h1>
+</header>
+
+<section>
 	<header>
-		<h1>Portfolio</h1>
+		<h2>Notable Projects</h2>
 	</header>
+	<ul class="portfolio">
+		{% for item in portfolio_data.items %}
+			<li>
+				<a href="{{ item.link }}">
+					{{ image_macros::portfolio_image(src=item.thumbnail, alt=item.thumbnail_alt_text) }}
+					{{ item.title }}
+				</a>					
+				{{ item.content|safe }}
+			</li>
+		{% endfor %}
+	</ul>
+</section>
 
-	<section>
-		<ul class="portfolio">
-			{% for item in portfolio_data.items %}
-				<li>
-					<a href="{{ item.link }}">
-						{{ image_macros::portfolio_image(src=item.thumbnail, alt=item.thumbnail_alt_text) }}
-						{{ item.title }}
-					</a>					
-					{{ item.content|safe }}
-				</li>
-			{% endfor %}
-		</ul>
-	</section>
+<section>
+	<header>
+		<h2>Looking for source code?</h2>
+	</header>
+	<a href="{{ config.extra.portfolio.github }}">View more projects on GitHub</a>
+</section>
 
-	<section>
-		<header>
-			<h2>Looking for source code?</h2>
-		</header>
-		<a href="{{ config.extra.portfolio.github }}">View more projects on GitHub</a>
-	</section>
-
-	<section>
-		<header>
-			<h2>Want to work with me?</h2>
-		</header>
-		<a href="{{ get_url(path='@/contact-me/index.md') }}">Contact me</a>
-	</section>
-</main>
+<section>
+	<header>
+		<h2>Want to work with me?</h2>
+	</header>
+	<a href="{{ get_url(path='@/contact-me/index.md') }}">Contact me</a>
+</section>
 {% endblock main_content %}
