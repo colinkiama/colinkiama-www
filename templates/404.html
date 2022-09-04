@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 
+{% block title %}Page Not Found{% endblock %}
+
+{% block head %}
+ <meta name="description" content="The URL may be misspelled or the page you requested no longer exists.">
+{% endblock %}
+
 {% block main_content %}
-	<main>
+	<main class="page-not-found-error">
 		<header>
 			<h1>Page not found</h1>
 		</header>

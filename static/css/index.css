@@ -630,6 +630,11 @@ h6:focus .zola-anchor {
   visibility: visible;
 }
 
+/* || ERROR 404 PAGE NOT FOUND */
+.page-not-found-error {
+  padding-bottom: 1.5rem;
+}
+
 
 /* || DARK THEME STYLING */
 
