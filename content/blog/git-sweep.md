@@ -27,11 +27,8 @@ git config --global alias.sweep "! git fetch -p && git for-each-ref --format '%(
 Here's what the config file should look like the aliases added:
 
 ```ini
-...
 [alias]
-...
-        sweep = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
-...
+sweep = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
 ```
 
 ## Special Thanks
