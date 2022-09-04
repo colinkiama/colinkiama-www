@@ -288,7 +288,7 @@ p {
 /* || SITEWIDE */
 
 #bypass-block {
-  --focus-outline-color: white;
+  outline: none;
   transition: none;
   position: absolute;
   word-wrap: normal;
@@ -299,7 +299,7 @@ p {
   text-align: center;
   font-size: 2rem;
   z-index: -2;
-  background: var(--vala-gradient);
+  background: var(--background-color);
   color: black; /* When off-screen, it contrasts with the body background */
   padding: 1rem;
 }
@@ -312,7 +312,7 @@ p {
   width: 100%;
   height: auto;
   left:auto;
-  background: var(--accent-color-dark-1);
+  background: var(--accent-color);
   color: white; /* To create contrast with the background */
 }
 
@@ -328,14 +328,18 @@ a:focus {
   color: var(--link-hover-color);
 }
 
-a:focus,
-input:focus {
+a:focus {
+  outline: none;
+}
+
+a:focus-visible,
+input:focus-visible {
   outline-width: 2px;
   outline-color: var(--accent-color);
   outline-style: solid;
 }
 
-a:focus {
+a:focus-visible {
   outline-offset: 0.25rem;
 }
 
@@ -440,8 +444,8 @@ body > footer a:focus {
   color: var(--footer-link-hover-color);
 }
 
-body > footer a:focus,
-body > footer input:focus {    
+body > footer a:focus-visible,
+body > footer input:focus-visible {    
   outline-color: white;
 }
 
@@ -640,5 +644,14 @@ h6:focus .zola-anchor {
     --button-hover-color: var(--button-hover-color-dark);
     --footer-background-color: var(--footer-background-color-dark);
     --footer-section-border-color: var(--footer-section-border-color-dark) ;
+  }
+
+  #bypass-block {
+    color: white; /* When off-screen, it contrasts with the body background */
+  }
+
+  #bypass-block:focus,
+  #bypass-block:focus-visible {
+    background: var(--accent-color-dark-alt);
   }
 }

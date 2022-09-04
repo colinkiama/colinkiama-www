@@ -30,17 +30,18 @@
 	{% block head %} {% endblock head %}
 </head>
 <body>
-	
-{% include "partials/header.html" %}
+	<a id="bypass-block" href="#main-content">Skip to main content</a>
 
-<main>
-	<div class="container">
-	{% block main_content %} {% endblock main_content %}
-	</div>
-</main>
-	
+	{% include "partials/header.html" %}
 
-{% include "partials/footer.html" %}
+	<main>
+		<div class="container">
+		{% block main_content %} {% endblock main_content %}
+		</div>
+	</main>
+		
+
+	{% include "partials/footer.html" %}
 
 <script src="/js/global.js"></script>
 {% block body_end %} {% endblock body_end %}

@@ -99,7 +99,8 @@ pre code {
   opacity: 0.3;
 }
 
-.code-copier:hover svg {
+.code-copier:hover svg, 
+.code-copier:focus svg {
   opacity: 1;
 }
 
