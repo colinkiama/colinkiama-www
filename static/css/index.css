@@ -219,7 +219,7 @@ ol {
 
 h1, h2, h3, h4, h5, h6, #site-name, #back-to-top, #newsletter-form .form-title {
   font-weight: var(--font-weight-regular);
-  margin-top: 0.72em;
+  margin-top: 1em;
   margin-bottom: 0.65em;
 }
 
@@ -254,7 +254,7 @@ h6 {
 }
 
 p {
-  margin-bottom: 0.65em;
+  margin-bottom: 0.85em;
 }
 
 /* || UTILITIES */
@@ -310,11 +310,11 @@ a:focus {
 }
 
 header .container,
-footer .container {
+body > footer .container {
   padding-top: var(--mobile-padding);
 }
 
-footer .container {
+body > footer .container {
   padding-bottom: var(--mobile-padding);
 }
 
@@ -356,6 +356,10 @@ section:last-child {
   border: 0;
 }
 
+article a {
+  display: inline;
+}
+
 svg.icon {
   width: 1.5rem; 
   height: 1.5rem;
@@ -383,23 +387,23 @@ a svg {
   fill: currentColor;
 }
 
-footer {
+body > footer {
   transition: background 0.5s ease;
 	background: var(--footer-background-color);
   color: white;
 }
 
-footer a {
+body > footer a {
   color: white;
 }
 
-footer a:hover,
-footer a:focus {
+body > footer a:hover,
+body > footer a:focus {
   color: var(--footer-link-hover-color);
 }
 
-footer a:focus,
-footer input:focus {    
+body > footer a:focus,
+body > footer input:focus {    
   outline-color: white;
 }
 

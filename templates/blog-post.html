@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% set portfolio_data = load_data(path="data/portfolio.json", format="json") %}
+
+{% block head %}
+<link rel="stylesheet" href="/css/blog.css">
+{% endblock head%}
+
+{% block main_content %}
+<main>
+	<article>
+	  <header>
+	    <h1>{{page.title}}</h1>
+	    <time class="post-timestamp" datetime="{{page.date}}">{{ page.date | date }}</time>
+	    <div class="reading-time">Reading time: {{ page.reading_time }} {% if page.reading_time == 1 %}Minute{% else %} Minutes{% endif %}</div>
+	  </header>
+	  {{ page.content | safe }}
+
+	  <footer>
+	    <p><i>Thanks for reading!</i></p>
+	    <p><i>See you in the next post! 👋</i></p>
+	  </footer>
+	</article>
+</main>
+{% endblock main_content %}
+
+{% block pagination %}
+<nav class="pagination">
+	{% if paginator.previous %}
+	<a class="previous" href="{{ paginator.previous }}">‹ Previous</a>
+	{% endif %}
+	{% if paginator.next %}
+	<a class="next" href="{{ paginator.next }}">Next ›</a>
+	{% endif %}
+</nav>
+{% endblock pagination %}

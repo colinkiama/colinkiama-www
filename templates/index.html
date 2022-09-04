@@ -1,38 +1,38 @@
 {% extends "base.html" %}
 
 {% block main_content %}
-	<main>
+<main>
+	<header>
+		<h1>I code, design, write blog posts and more...</h1>
+	</header>
+
+	<section>
 		<header>
-			<h1>I code, design, write blog posts and more...</h1>
+			<h2>Hi I'm Colin and <span class="stand-out">I can:</span></h2>
 		</header>
 
-		<section>
-			<header>
-				<h2>Hi I'm Colin and <span class="stand-out">I can:</span></h2>
-			</header>
+		<ul>
+			<li>Make your next website</li>
+			<li>Create your next app</li>
+			<li>Write documentation for you</li>
+			<li>Create designs for you</li>			
+			<li>...and other tech-related tasks too</li>
+		</ul>
 
-			<ul>
-				<li>Make your next website</li>
-				<li>Create your next app</li>
-				<li>Write documentation for you</li>
-				<li>Create designs for you</li>			
-				<li>...and other tech-related tasks too</li>
-			</ul>
+		<div class="call-out">
+			<a href="{{ get_url(path='@/portfolio/index.md')|safe }}" class="-cta">See what I've made</a>
+		</div>
+	</section>
 
-			<div class="call-out">
-				<a href="{{ get_url(path='@/portfolio/index.md')|safe }}" class="-cta">See what I've made</a>
-			</div>
-		</section>
+	<section>
+		<header>
+			<h2>Want to work with me?</h2>
+		</header>
 
-		<section>
-			<header>
-				<h2>Want to work with me?</h2>
-			</header>
+		<p>Here are ways that you can contact me:</p>
 
-			<p>Here are ways that you can contact me:</p>
+		{% include "partials/social-links.html" %}
 
-			{% include "partials/social-links.html" %}
-
-		</section>
-	</main>
+	</section>
+</main>
 {% endblock main_content %}
