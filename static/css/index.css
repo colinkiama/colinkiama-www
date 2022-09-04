@@ -140,7 +140,7 @@ html {
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
@@ -166,6 +166,20 @@ img {
 
 img {
   width: 100%;
+}
+
+/* Remove default iOS Form Styling */
+textarea,
+input.text,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+input[type=”search”],
+input[type=”email”],
+input[type=”tel”],
+input[type=”number”],
+.input-checkbox {
+  -webkit-appearance: none;
 }
 
 /* || GENERAL STYLES */
@@ -341,14 +355,10 @@ a:focus {
   outline: none;
 }
 
-a:focus-visible,
-input:focus-visible {
+a:focus-visible {
   outline-width: 2px;
   outline-color: var(--accent-color);
   outline-style: solid;
-}
-
-a:focus-visible {
   outline-offset: 0.25rem;
 }
 
@@ -453,8 +463,7 @@ body > footer a:focus {
   color: var(--footer-link-hover-color);
 }
 
-body > footer a:focus-visible,
-body > footer input:focus-visible {    
+body > footer a:focus-visible {    
   outline-color: white;
 }
 
@@ -484,6 +493,7 @@ body > footer input:focus-visible {
   display: block;
 }
 
+
 input, label {
   display: block;
   font-weight: var(--font-weight-regular);
@@ -495,11 +505,6 @@ input {
   font-size: var(--base-font-size);
   border-radius: 0.25rem;
   padding: 0.4375rem 0.75rem;
-  outline-width: 0;
-}
-
-input:focus {
-  outline-offset: 0;
 }
 
 input::placeholder {
@@ -507,17 +512,19 @@ input::placeholder {
 }
 
 #newsletter-form input {
-  border: 0;
+  transition: border-color 0.3s ease;
+  border: 2px solid transparent;
+  outline: none;
 }
 
 input[type="email"] {
   width: 100%;
   max-width: 250px;
+  margin-left: 0;
 }
 
-input[type="email"]:focus {
-  outline-color: #060606;
-  outline-width: 2px;
+#newsletter-form  input[type="email"]:focus {
+  border: 2px solid #060606;
 }
 
 input[type="submit"] {
@@ -529,12 +536,19 @@ input[type="submit"] {
   padding: 0.4375rem 2rem;
   background-color: var(--button-color);
   color: white;
+  margin-left: 0rem;
+
 }
 
 input[type="submit"]:hover,
 input[type="submit"]:focus {
   cursor: pointer;
   background-color: var(--button-hover-color);
+}
+
+#newsletter-form input[type="submit"]:focus {
+  border: 2px solid white;
+  outline: none;
 }
 
 .newsletter-provider {
@@ -605,7 +619,7 @@ input[type="submit"]:focus {
   }
 
   #newsletter-form input[type="submit"] {
-    margin-left: 0.25rem;
+    margin-left: 0.75rem;
   }
 }
 
