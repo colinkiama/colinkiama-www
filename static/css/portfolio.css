@@ -1,3 +1,8 @@
+.portfolio {
+	list-style-type: none;
+	list-style-position: outside;
+}
+
 .portfolio > li {
 	margin-top: 2.5rem;
 }
