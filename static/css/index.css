@@ -190,6 +190,18 @@ body {
   background-color: var(--background-color);
 }
 
+ul, ol {
+  list-style-position: inside;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
 @supports (font-variation-settings: normal) {
   body, ul, ol, p {
     font-variation-settings: 'wght' var(--font-weight-regular);
@@ -258,11 +270,6 @@ p {
   margin-top: 1.75rem;
 }
 
-.bullet-points {
-  list-style-type: disc;
-  list-style-position: inside;
-}
-
 @media (min-width: 600px) {
   .container {
     padding: 0 var(--desktop-padding);
@@ -315,6 +322,11 @@ header nav {
 
 #site-name {
   margin-top: 0;
+}
+
+header nav ul, .social-links, .extra-site-links {
+  list-style-type: none;
+  list-style-position: outside;
 }
 
 header nav ul {
