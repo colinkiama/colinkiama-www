@@ -20,7 +20,7 @@
   --foreground-color-dark: #FFFFFF;
 
   --background-color: #FFFFFF;
-  --background-color-dark: #2A2A2A;
+  --background-color-dark: #1A1A1A;
 
   --link-hover-color: #062847;
   --link-hover-color-dark: #a56de2;
@@ -39,6 +39,9 @@
   --button-hover-color-dark: #000000;
 
   --input-placeholder-text-color: #7E7E7E;
+
+  --footer-background-color: var(--accent-color);
+  --footer-background-color-dark: var(--accent-color-dark-alt);
 
   --section-border-color: #B4B4B4;
   --footer-section-border-color: #6DB3F3 ;
@@ -176,7 +179,7 @@ body, ul, ol, p {
 }
 
 body {
-  transition-property: color;
+  transition-property: color, background-color;
   transition-duration: 0.5s;
   transition-timing-function: ease;
   display: flex;
@@ -381,7 +384,8 @@ a svg {
 }
 
 footer {
-	background: var(--accent-color);
+  transition: background 0.5s ease;
+	background: var(--footer-background-color);
   color: white;
 }
 
@@ -542,5 +546,21 @@ input[type="submit"]:focus {
 
   #newsletter-form input[type="submit"] {
     margin-left: 0.25rem;
+  }
+}
+
+/* || DARK THEME STYLING */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-color: var(--foreground-color-dark);
+    --background-color: var(--background-color-dark);
+    --link-hover-color: var(--link-hover-color-dark);
+    --footer-link-hover-color: var(--footer-link-hover-color-dark);
+    --accent-color: var(--accent-color-dark);
+    --button-color: var(--button-color-dark);;
+    --button-hover-color: var(--button-hover-color-dark);
+    --footer-background-color: var(--footer-background-color-dark);
+    --footer-section-border-color: var(--footer-section-border-color-dark) ;
   }
 }
