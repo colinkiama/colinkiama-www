@@ -5,6 +5,7 @@
 {% endblock head%}
 
 {% block main_content %}
+{% set portfolio_data = load_data(path="data/portfolio.json", format="json") %}
 <main>
 	<header>
 		<h1>Portfolio</h1>
@@ -12,28 +13,15 @@
 
 	<section>
 		<ul class="portfolio">
-
-			<li>
-				{{ image_macros::portfolio_image(src="https://ik.imagekit.io/mune/vala-www-capture_ahfD-0S9X.png", alt="Vala Hero Image") }}
-				<a href="https://vala.dev">Vala Website (2022)</a>
-				<p>I created a website for a programming language called Vala.</p>
-				<p>It replaces an old set of wiki pages with a website that:</p>
-				<ul class="bullet-points">
-					<li>Showcases Vala projects and features</li>
-					<li>Shows off the language's branding</li>
-					<li>Is optimised for speed</li>
-					<li>Has improved accessibility (especially regarding navigation and colour contrast).
-					</li>
-				</ul>
-			</li>
-			<li>
-				{{ image_macros::portfolio_image(src="https://ik.imagekit.io/mune/jailtime-portfolio-image_nmSI6BHbB.png", alt="Jailtime - Blocks websites and helps keep you focused") }}
-				<a href="https://chrome.google.com/webstore/detail/jailtime/ffkepigdcjmnioppkooocmpgndoiopjd">Jailtime</a>
-			</li>
-			<li>
-				{{ image_macros::portfolio_image(src="https://ik.imagekit.io/mune/ypi-yachts_iqKpffMvif.png", alt="Yachting Partners Inernational home page") }}
-				<a href="https://wwww.ypiyachts.com">YPI Yachts Website (2021 Redesign)</a>
-			</li>
+			{% for item in portfolio_data.items %}
+				<li>
+					<a href="{{ item.link }}">
+						{{ image_macros::portfolio_image(src=item.thumbnail, alt=item.thumbnail_alt_text) }}
+						{{ item.title }}
+					</a>					
+					{{ item.content|safe }}
+				</li>
+			{% endfor %}
 		</ul>
 	</section>
 
