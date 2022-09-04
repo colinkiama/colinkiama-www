@@ -38,3 +38,6 @@ dev_to = "https://dev.to/colinkiama"
 
 [extra.portfolio]
 github = "https://www.github.com/colinkiama"
+
+[extra.blog]
+email = "colinkiama@gmail.com"
