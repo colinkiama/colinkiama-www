@@ -31,10 +31,12 @@
 		<footer>
 			<nav class="pagination">
 				{% if paginator.previous %}
-				<a class="previous" href="{{ paginator.previous }}">‹ Previous</a>
+				<a class="previous" href="{{ paginator.previous }}">
+				{{ icon_macros::sprite_icon(name="left-arrow") }} Previous
+				</a>
 				{% endif %}
 				{% if paginator.next %}
-				<a class="next" href="{{ paginator.next }}">Next ›</a>
+				<a class="next" href="{{ paginator.next }}">Next {{ icon_macros::sprite_icon(name="right-arrow") }}</a>
 				{% endif %}
 			</nav>
 		</footer>

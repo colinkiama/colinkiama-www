@@ -529,6 +529,12 @@ input[type="submit"]:focus {
   margin-bottom: 1rem;
 }
 
+.liberapay-btn:hover {
+  color: initial;
+}
+
+
+
 @supports (font-variation-settings: normal) {
   #back-to-top,
   label,

@@ -7,13 +7,32 @@ section footer {
   list-style-position: outside;
 }
 
-/*.post-timestamp,
-.reading-time {
-  font-size: 0.8em;
-  transition: color 0.5s ease-in-out;
-  color: $light-foreground-secondary;
-  font-weight: 500;
-}*/
+.pagination {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pagination a {
+  display: inline-flex;
+  align-items: center;
+  padding-right: 0.75rem;
+  padding-bottom: 0.5rem;
+}
+
+.pagination a svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.pagination a:first-child svg {
+  margin-right: 0.5rem;
+}
+
+.pagination a:last-child svg {
+  margin-left: 0.5rem;
+}
 
 .reading-time {
   display: block;
@@ -40,14 +59,6 @@ section footer {
   }
 }
 
-/* Dark Styles */
-/*@media (prefers-color-scheme: dark) {
-
-  .post-timestamp,
-  .reading-time {
-    color: $dark-foreground-secondary;
-  }
-}*/
 
 /* Reduced Motion styles (Remove animations) */
 @media (prefers-reduced-motion: reduce) {
