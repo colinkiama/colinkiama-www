@@ -32,7 +32,8 @@
   --accent-color-dark: #CD9EF7;
   --accent-color-dark-alt: #7239B3;
 
-  --button-color: #0A4276;;
+  --button-color: #0A4276;
+  
   --button-hover-color: #000000;
 
   --button-color-dark: #3C0A76;
@@ -44,7 +45,7 @@
   --footer-background-color-dark: var(--accent-color-dark-alt);
 
   --section-border-color: #B4B4B4;
-  --footer-section-border-color: #6DB3F3 ;
+  --footer-section-border-color: #6DB3F3;
   --footer-section-border-color-dark: #B593DD;
 }
 
@@ -53,78 +54,78 @@
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: var(--font-weight-thin);
+  font-weight: 100;
   font-display: swap;
   src: url("/fonts/Inter-Thin.woff2") format("woff2"),
-       url("/fonts/Inter-Thin.woff") format("woff");
+    url("/fonts/Inter-Thin.woff") format("woff");
 }
 
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: var(--font-weight-extra-light);
+  font-weight: 200;
   font-display: swap;
   src: url("/fonts/Inter-ExtraLight.woff2") format("woff2"),
-       url("/fonts/Inter-ExtraLight.woff") format("woff");
+    url("/fonts/Inter-ExtraLight.woff") format("woff");
 }
 
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: var(--font-weight-light);
+  font-weight: 300;
   font-display: swap;
   src: url("/fonts/Inter-Light.woff2") format("woff2"),
-       url("/fonts/Inter-Light.woff") format("woff");
+    url("/fonts/Inter-Light.woff") format("woff");
 }
 
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: var(--font-weight-regular);
+  font-weight: 400;
   font-display: swap;
   src: url("/fonts/Inter-Regular.woff2") format("woff2"),
-       url("/fonts/Inter-Regular.woff") format("woff");
+    url("/fonts/Inter-Regular.woff") format("woff");
 }
 
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: var(--font-weight-medium);
+  font-weight: 500;
   font-display: swap;
   src: url("/fonts/Inter-Medium.woff2") format("woff2"),
-       url("/fonts/Inter-Medium.woff") format("woff");
+    url("/fonts/Inter-Medium.woff") format("woff");
 }
 
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: var(--font-weight-semi-bold);
+  font-weight: 600;
   font-display: swap;
   src: url("/fonts/Inter-SemiBold.woff2") format("woff2"),
-       url("/fonts/Inter-SemiBold.woff") format("woff");
+    url("/fonts/Inter-SemiBold.woff") format("woff");
 }
 
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: var(--font-weight-bold);
+  font-weight: 700;
   font-display: swap;
   src: url("/fonts/Inter-Bold.woff2") format("woff2"),
-       url("/fonts/Inter-Bold.woff") format("woff");
+    url("/fonts/Inter-Bold.woff") format("woff");
 }
 
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: var(--font-weight-black);
+  font-weight: 800;
   font-display: swap;
   src: url("/fonts/Inter-Black.woff2") format("woff2"),
-       url("/fonts/Inter-Black.woff") format("woff");
+    url("/fonts/Inter-Black.woff") format("woff");
 }
 
 @font-face {
   font-family: 'Inter Variable';
-  font-weight: var(--font-weight-thin) var(--font-weight-black);
+  font-weight: 100 800;
   font-display: swap;
   font-style: normal;
   font-named-instance: 'Regular';
@@ -139,17 +140,29 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
   margin: 0;
   padding: 0;
   font-weight: normal;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
@@ -184,8 +197,8 @@ input[type=”number”],
 
 button::-moz-focus-inner,
 input[type="submit"]::-moz-focus-inner {
-    padding: 0px;
-    border: 0;
+  padding: 0px;
+  border: 0;
 }
 
 /* || GENERAL STYLES */
@@ -194,7 +207,10 @@ html {
   scroll-behavior: smooth;
 }
 
-body, ul, ol, p {
+body,
+ul,
+ol,
+p {
   font-weight: var(--font-weight-regular);
 }
 
@@ -213,7 +229,8 @@ body {
   background-color: var(--background-color);
 }
 
-ul, ol {
+ul,
+ol {
   list-style-position: inside;
 }
 
@@ -226,7 +243,11 @@ ol {
 }
 
 @supports (font-variation-settings: normal) {
-  body, ul, ol, p {
+
+  body,
+  ul,
+  ol,
+  p {
     font-variation-settings: 'wght' var(--font-weight-regular);
   }
 
@@ -237,7 +258,15 @@ ol {
 
 /* || TYPOGRAPHY */
 
-h1, h2, h3, h4, h5, h6, #site-name, #back-to-top, #newsletter-form .form-title {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+#site-name,
+#back-to-top,
+#newsletter-form .form-title {
   font-weight: var(--font-weight-regular);
   margin-top: 1em;
   margin-bottom: 0.65em;
@@ -251,11 +280,14 @@ h2 {
   font-size: 1.5rem;
 }
 
-h3, #site-name, #back-to-top {
+h3,
+#site-name,
+#back-to-top {
   font-size: 1.25rem;
 }
 
-h4, #newsletter-form .form-title {
+h4,
+#newsletter-form .form-title {
   font-size: 1.125rem;
 }
 
@@ -277,7 +309,16 @@ strong {
 
 
 @supports (font-variation-settings: normal) {
-  h1, h2, h3, h4, h5, h6, #site-name, #back-to-top, #newsletter-form .form-title {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  #site-name,
+  #back-to-top,
+  #newsletter-form .form-title {
     font-variation-settings: 'wght' var(--font-weight-regular);
   }
 
@@ -287,7 +328,7 @@ strong {
 }
 
 /* || UTILITIES */
-  
+
 .container {
   width: 100%;
   margin: 0 auto;
@@ -329,7 +370,8 @@ strong {
   font-size: 2rem;
   z-index: -2;
   background: var(--background-color);
-  color: black; /* When off-screen, it contrasts with the body background */
+  color: black;
+  /* When off-screen, it contrasts with the body background */
   padding: 1rem;
 }
 
@@ -340,9 +382,10 @@ strong {
   display: block;
   width: 100%;
   height: auto;
-  left:auto;
+  left: auto;
   background: var(--accent-color);
-  color: white; /* To create contrast with the background */
+  color: white;
+  /* To create contrast with the background */
 }
 
 a {
@@ -369,11 +412,11 @@ a:focus-visible {
 }
 
 header .container,
-body > footer .container {
+body>footer .container {
   padding-top: var(--mobile-padding);
 }
 
-body > footer .container {
+body>footer .container {
   padding-bottom: var(--mobile-padding);
 }
 
@@ -386,14 +429,16 @@ header nav {
   margin-top: 0;
 }
 
-header nav ul, .social-links, .extra-site-links {
+header nav ul,
+.social-links,
+.extra-site-links {
   list-style-type: none;
   list-style-position: outside;
 }
 
 header nav ul {
   margin-top: 0.75rem;
-} 
+}
 
 header nav ul li {
   display: inline-block;
@@ -428,7 +473,7 @@ article a {
 }
 
 svg.icon {
-  width: 1.5rem; 
+  width: 1.5rem;
   height: 1.5rem;
 }
 
@@ -454,22 +499,22 @@ a svg {
   fill: currentColor;
 }
 
-body > footer {
+body>footer {
   transition: background 0.5s ease;
-	background: var(--footer-background-color);
+  background: var(--footer-background-color);
   color: white;
 }
 
-body > footer a {
+body>footer a {
   color: white;
 }
 
-body > footer a:hover,
-body > footer a:focus {
+body>footer a:hover,
+body>footer a:focus {
   color: var(--footer-link-hover-color);
 }
 
-body > footer a:focus-visible {    
+body>footer a:focus-visible {
   outline-color: white;
 }
 
@@ -499,8 +544,8 @@ body > footer a:focus-visible {
   display: block;
 }
 
-
-input, label {
+input,
+label {
   display: block;
   font-weight: var(--font-weight-regular);
 }
@@ -529,7 +574,7 @@ input[type="email"] {
   margin-left: 0;
 }
 
-#newsletter-form  input[type="email"]:focus {
+#newsletter-form input[type="email"]:focus {
   border: 2px solid #060606;
 }
 
@@ -550,6 +595,11 @@ input[type="submit"]:hover,
 input[type="submit"]:focus {
   cursor: pointer;
   background-color: var(--button-hover-color);
+}
+
+#newsletter-form input[type="submit"] {
+  font-weight: var(--font-weight-medium);
+  transition: background-color 0.5s ease
 }
 
 #newsletter-form input[type="submit"]:focus {
@@ -606,8 +656,9 @@ input[type="submit"]:focus {
 }
 
 @supports (font-variation-settings: normal) {
+
   #back-to-top,
-  input, 
+  input,
   label {
     font-variation-settings: 'wght' var(--font-weight-regular);
   }
@@ -615,9 +666,14 @@ input[type="submit"]:focus {
   input {
     font-family: "Inter Variable", Arial, Helvetica, sans-serif;
   }
+  
+  #newsletter-form input[type="submit"] {
+    font-variation-settings: 'wght' var(--font-weight-medium);
+  }
 }
 
 @media (min-width: 30rem) {
+
   #newsletter-form input[type="email"],
   #newsletter-form input[type="submit"] {
     display: inline-block;
@@ -640,7 +696,7 @@ h2 .zola-anchor,
 h3 .zola-anchor,
 h4 .zola-anchor,
 h5 .zola-anchor,
-h6 .zola-anchor{
+h6 .zola-anchor {
   visibility: hidden;
 }
 
@@ -674,14 +730,15 @@ h6:focus .zola-anchor {
     --link-hover-color: var(--link-hover-color-dark);
     --footer-link-hover-color: var(--footer-link-hover-color-dark);
     --accent-color: var(--accent-color-dark);
-    --button-color: var(--button-color-dark);;
+    --button-color: var(--button-color-dark);
     --button-hover-color: var(--button-hover-color-dark);
     --footer-background-color: var(--footer-background-color-dark);
-    --footer-section-border-color: var(--footer-section-border-color-dark) ;
+    --footer-section-border-color: var(--footer-section-border-color-dark);
   }
 
   #bypass-block {
-    color: white; /* When off-screen, it contrasts with the body background */
+    color: white;
+    /* When off-screen, it contrasts with the body background */
   }
 
   #bypass-block:focus,
