@@ -544,7 +544,6 @@ body>footer a:focus-visible {
   display: block;
 }
 
-
 input,
 label {
   display: block;
@@ -666,6 +665,10 @@ input[type="submit"]:focus {
 
   input {
     font-family: "Inter Variable", Arial, Helvetica, sans-serif;
+  }
+  
+  #newsletter-form input[type="submit"] {
+    font-variation-settings: 'wght' var(--font-weight-medium);
   }
 }
 
