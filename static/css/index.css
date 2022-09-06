@@ -140,6 +140,7 @@ html {
   box-sizing: border-box;
 }
 
+
 *,
 *:before,
 *:after {
@@ -309,7 +310,6 @@ strong {
 
 
 @supports (font-variation-settings: normal) {
-
   h1,
   h2,
   h3,
@@ -370,8 +370,8 @@ strong {
   font-size: 2rem;
   z-index: -2;
   background: var(--background-color);
-  color: black;
   /* When off-screen, it contrasts with the body background */
+  color: black;
   padding: 1rem;
 }
 
@@ -384,8 +384,8 @@ strong {
   height: auto;
   left: auto;
   background: var(--accent-color);
-  color: white;
   /* To create contrast with the background */
+  color: white;
 }
 
 a {
@@ -412,11 +412,11 @@ a:focus-visible {
 }
 
 header .container,
-body>footer .container {
+body > footer .container {
   padding-top: var(--mobile-padding);
 }
 
-body>footer .container {
+body > footer .container {
   padding-bottom: var(--mobile-padding);
 }
 
@@ -499,22 +499,22 @@ a svg {
   fill: currentColor;
 }
 
-body>footer {
+body > footer {
   transition: background 0.5s ease;
   background: var(--footer-background-color);
   color: white;
 }
 
-body>footer a {
+body > footer a {
   color: white;
 }
 
-body>footer a:hover,
-body>footer a:focus {
+body > footer a:hover,
+body > footer a:focus {
   color: var(--footer-link-hover-color);
 }
-
-body>footer a:focus-visible {
+  
+body > footer a:focus-visible {
   outline-color: white;
 }
 
