@@ -2,6 +2,7 @@
 title = "Working on Vala Flatpak apps with Gnome Builder"
 date = 2022-10-01 
 description = "There are a few key differences to be aware of."
+draft = true
 +++
 
 ## Looks familiar in the beginning
