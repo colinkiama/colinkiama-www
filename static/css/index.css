@@ -518,6 +518,14 @@ body > footer a:focus-visible {
   outline-color: white;
 }
 
+.icon-link {
+  display: inline-flex;
+}
+
+.icon-link svg {
+  margin-right: 0.75rem;
+}
+
 #back-to-top {
   display: inline-flex;
   justify-content: flex-start;
