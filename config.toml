@@ -41,8 +41,6 @@ linkedin = "https://www.linkedin.com/in/colin-kiama-11962988/"
 mastodon = "https://merveilles.town/@colinkiama"
 product_hunt = "https://www.producthunt.com/@colinkiama"
 dev_to = "https://dev.to/colinkiama"
-
-[extra.portfolio]
 github = "https://www.github.com/colinkiama"
 
 [extra.blog]
