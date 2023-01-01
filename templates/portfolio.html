@@ -15,17 +15,34 @@
 
 <section>
 	<header>
-		<h2>Notable Projects</h2>
+		<h2>Games</h2>
 	</header>
 	<ul class="portfolio">
-		{% for item in portfolio_data.items %}
-			<li>
-				<a href="{{ item.link }}">
-					{{ image_macros::portfolio_image(src=item.thumbnail, alt=item.thumbnail_alt_text) }}
-					{{ item.title }}
-				</a>					
-				{{ item.content|safe }}
-			</li>
+		{% for item in portfolio_data.games.items %}
+		<li>
+			<a href="{{ item.link }}">
+				{{ image_macros::portfolio_image(src=item.thumbnail, alt=item.thumbnail_alt_text) }}
+				{{ item.title }}
+			</a>
+			{{ item.content|safe }}
+		</li>
+		{% endfor %}
+	</ul>
+</section>
+
+<section>
+	<header>
+		<h2>Apps and Wesbites</h2>
+	</header>
+	<ul class="portfolio">
+		{% for item in portfolio_data.apps_and_websites.items %}
+		<li>
+			<a href="{{ item.link }}">
+				{{ image_macros::portfolio_image(src=item.thumbnail, alt=item.thumbnail_alt_text) }}
+				{{ item.title }}
+			</a>
+			{{ item.content|safe }}
+		</li>
 		{% endfor %}
 	</ul>
 </section>
@@ -35,7 +52,7 @@
 		<h2>Looking for source code?</h2>
 	</header>
 	<a class="icon-link" href="{{ config.extra.socials.github }}">
-		{{ icon_macros::sprite_icon(name="github") }} 
+		{{ icon_macros::sprite_icon(name="github") }}
 		View more projects on GitHub
 	</a>
 </section>
