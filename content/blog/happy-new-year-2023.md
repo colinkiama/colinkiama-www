@@ -1,6 +1,6 @@
 +++
 title = "Happy New Year 2023! - What's new?"
-date = 2023-01-11  
+date = 2023-01-11T12:00:00Z
 description="My New Year’s resolution is to get into the games industry!"
 +++
 
