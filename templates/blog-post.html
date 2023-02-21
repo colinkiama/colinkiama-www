@@ -15,14 +15,17 @@
   <header>
     <h1>{{page.title}}</h1>
     <time class="post-timestamp" datetime="{{page.date}}">{{ page.date | date }}</time>
-    <div class="reading-time">Reading time: {{ page.reading_time }} {% if page.reading_time == 1 %}Minute{% else %} Minutes{% endif %}</div>
+    <div class="reading-time">Reading time: {{ page.reading_time }} {% if page.reading_time == 1 %}Minute{% else %}
+      Minutes{% endif %}</div>
   </header>
   {{ page.content | safe }}
 
   <footer>
     <p><i>Thanks for reading!</i></p>
     <p><i>See you in the next post! 👋</i></p>
-    <a href="mailto:{{ config.extra.blog.email }}?subject=Comment on '{{ page.title }}'&body=Post link:%20{{ page.permalink }}">Comment via email</a>.
+    <a
+      href="mailto:{{ config.extra.blog.email }}?subject=Comment on '{{ page.title }}'&body=%0A%0APost link:%20{{ page.permalink }}">Comment
+      via email</a>.
   </footer>
 </article>
 {% endblock main_content %}
