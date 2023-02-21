@@ -64,6 +64,11 @@ pre table {
   border-collapse: collapse;
 }
 
+ul + p,
+ol + p {
+  margin-top: 1em;
+}
+
 code {
   border-radius: 4px;
   background-color: var(--inline-code-background-color);
