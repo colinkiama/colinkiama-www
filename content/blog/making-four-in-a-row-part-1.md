@@ -44,5 +44,68 @@ changes that you've made!
 
 ## Setup
 
+### Diretory Structure
+
 First, create a directory where you'll write the code the game. I suggest naming
 it "four-in-a-row".
+
+Then, create this directory structure in the "four-in-a-row" project:
+
+```
+/src
+   /constants
+```
+
+### The HTML File
+
+Now let's set up the HTML file.
+
+Create a file called `index.html` in the root of the project directory.
+
+Add this to the file's contents:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Four in a row</title>
+  </head>
+
+  <body>
+    <script src="src/index.js" type="module"></script>
+  </body>
+</html>
+```
+
+The code above, sets the title of our page to "Four in a row", matches the page's
+width and scale to the device's screen width and scale and, references a JavaScript file called `index.js`. This will be the entry point for our code for the game.
+
+### Entry point
+
+Now let's create the file `src/index.js`.
+
+Now we'll do a quick check to see if the script file has been referenced correctly.
+
+Add the following to `src/index.js`:
+
+```js
+console.log("Hello world");
+```
+
+Now start a http server in the root of your project directory.
+
+When you visit the address of the server, you'll see an empty page. This is normal, we haven't added any controls or styling.
+However, if you open the developer tools in your web browser and select the console, you should see the the following message:
+
+```
+Hello world
+```
+
+If you don't see the message above, you probably didn't follow the instructions properly. Please go back over the previous
+steps and ensure that you've completed them.
+
+Otherwise, congratulations! You've completed the first part of this tutorial! 🥳
+
+In the next post, we'll begin the creation of the backend of the by creating a four-in-a-row state machine!

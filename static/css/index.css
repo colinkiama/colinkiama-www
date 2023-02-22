@@ -17,42 +17,42 @@
   --desktop-padding: 2.5rem;
 
   --foreground-color: #060606;
-  --foreground-color-dark: #FFFFFF;
+  --foreground-color-dark: #ffffff;
 
-  --background-color: #FFFFFF;
-  --background-color-dark: #1A1A1A;
+  --background-color: #ffffff;
+  --background-color-dark: #1a1a1a;
 
   --link-hover-color: #062847;
   --link-hover-color-dark: #a56de2;
 
-  --footer-link-hover-color: #8EC4F6;
+  --footer-link-hover-color: #8ec4f6;
   --footer-link-hover-color-dark: #cd9ef7;
 
-  --accent-color: #1071CB;
-  --accent-color-dark: #CD9EF7;
-  --accent-color-dark-alt: #7239B3;
+  --accent-color: #1071cb;
+  --accent-color-dark: #cd9ef7;
+  --accent-color-dark-alt: #7239b3;
 
-  --button-color: #0A4276;
-  
+  --button-color: #0a4276;
+
   --button-hover-color: #000000;
 
-  --button-color-dark: #3C0A76;
+  --button-color-dark: #3c0a76;
   --button-hover-color-dark: #000000;
 
-  --input-placeholder-text-color: #7E7E7E;
+  --input-placeholder-text-color: #7e7e7e;
 
   --footer-background-color: var(--accent-color);
   --footer-background-color-dark: var(--accent-color-dark-alt);
 
-  --section-border-color: #B4B4B4;
-  --footer-section-border-color: #6DB3F3;
-  --footer-section-border-color-dark: #B593DD;
+  --section-border-color: #b4b4b4;
+  --footer-section-border-color: #6db3f3;
+  --footer-section-border-color-dark: #b593dd;
 }
 
 /* || FONTS */
 
 @font-face {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 100;
   font-display: swap;
@@ -60,8 +60,8 @@
     url("/fonts/Inter-Thin.woff") format("woff");
 }
 
-@font-face {  
-  font-family: 'Inter';
+@font-face {
+  font-family: "Inter";
   font-style: normal;
   font-weight: 200;
   font-display: swap;
@@ -70,7 +70,7 @@
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -79,7 +79,7 @@
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -88,7 +88,7 @@
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -97,7 +97,7 @@
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -106,7 +106,7 @@
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -115,7 +115,7 @@
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 800;
   font-display: swap;
@@ -124,11 +124,11 @@
 }
 
 @font-face {
-  font-family: 'Inter Variable';
+  font-family: "Inter Variable";
   font-weight: 100 800;
   font-display: swap;
   font-style: normal;
-  font-named-instance: 'Regular';
+  font-named-instance: "Regular";
   src: url("/fonts/Inter-roman.var.woff2") format("woff2");
 }
 
@@ -139,7 +139,6 @@
 html {
   box-sizing: border-box;
 }
-
 
 *,
 *:before,
@@ -188,10 +187,10 @@ input.text,
 input[type="text"],
 input[type="button"],
 input[type="submit"],
-input[type=”search”],
-input[type=”email”],
-input[type=”tel”],
-input[type=”number”],
+input[type="”search”"],
+input[type="”email”"],
+input[type="”tel”"],
+input[type="”number”"],
 .input-checkbox {
   -webkit-appearance: none;
 }
@@ -243,13 +242,21 @@ ol {
   list-style-type: decimal;
 }
 
-@supports (font-variation-settings: normal) {
+ul + p,
+ol + p {
+  margin-top: 1em;
+}
 
+li > ul {
+  margin-left: 1em;
+}
+
+@supports (font-variation-settings: normal) {
   body,
   ul,
   ol,
   p {
-    font-variation-settings: 'wght' var(--font-weight-regular);
+    font-variation-settings: "wght" var(--font-weight-regular);
   }
 
   body {
@@ -308,7 +315,6 @@ strong {
   font-weight: var(--font-weight-bold);
 }
 
-
 @supports (font-variation-settings: normal) {
   h1,
   h2,
@@ -319,11 +325,11 @@ strong {
   #site-name,
   #back-to-top,
   #newsletter-form .form-title {
-    font-variation-settings: 'wght' var(--font-weight-regular);
+    font-variation-settings: "wght" var(--font-weight-regular);
   }
 
   strong {
-    font-variation-settings: 'wghr' var(--font-weight-bold);
+    font-variation-settings: "wghr" var(--font-weight-bold);
   }
 }
 
@@ -513,7 +519,7 @@ body > footer a:hover,
 body > footer a:focus {
   color: var(--footer-link-hover-color);
 }
-  
+
 body > footer a:focus-visible {
   outline-color: white;
 }
@@ -596,7 +602,6 @@ input[type="submit"] {
   background-color: var(--button-color);
   color: white;
   margin-left: 0rem;
-
 }
 
 input[type="submit"]:hover,
@@ -607,7 +612,7 @@ input[type="submit"]:focus {
 
 #newsletter-form input[type="submit"] {
   font-weight: var(--font-weight-medium);
-  transition: background-color 0.5s ease
+  transition: background-color 0.5s ease;
 }
 
 #newsletter-form input[type="submit"]:focus {
@@ -664,24 +669,22 @@ input[type="submit"]:focus {
 }
 
 @supports (font-variation-settings: normal) {
-
   #back-to-top,
   input,
   label {
-    font-variation-settings: 'wght' var(--font-weight-regular);
+    font-variation-settings: "wght" var(--font-weight-regular);
   }
 
   input {
     font-family: "Inter Variable", Arial, Helvetica, sans-serif;
   }
-  
+
   #newsletter-form input[type="submit"] {
-    font-variation-settings: 'wght' var(--font-weight-medium);
+    font-variation-settings: "wght" var(--font-weight-medium);
   }
 }
 
 @media (min-width: 30rem) {
-
   #newsletter-form input[type="email"],
   #newsletter-form input[type="submit"] {
     display: inline-block;
@@ -727,7 +730,6 @@ h6:focus .zola-anchor {
 .page-not-found-error {
   padding-bottom: 1.5rem;
 }
-
 
 /* || DARK THEME STYLING */
 
