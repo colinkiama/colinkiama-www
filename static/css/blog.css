@@ -1,7 +1,7 @@
 :root {
   --inline-code-background-color: #d4d4d4;
   --inline-code-background-color-dark: #333333;
-  
+
   --code-block-copy-button-color: #1a1a1a;
   --code-block-copy-button-color-dark: #fafafa;
 }
@@ -47,7 +47,6 @@ pre {
   text-align: left;
   border: 1px solid #d4d4d4;
 }
-
 
 pre table td {
   padding: 0;
@@ -103,7 +102,7 @@ pre code {
   opacity: 0.3;
 }
 
-.code-copier:hover svg, 
+.code-copier:hover svg,
 .code-copier:focus svg {
   opacity: 1;
 }
@@ -148,7 +147,7 @@ pre code {
 @media (prefers-color-scheme: dark) {
   :root {
     --inline-code-background-color: var(--inline-code-background-color-dark);
-    --code-block-copy-button-color: var(--code-block-copy-button-color-dark);    
+    --code-block-copy-button-color: var(--code-block-copy-button-color-dark);
   }
 
   pre {
