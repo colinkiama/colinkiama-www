@@ -83,7 +83,6 @@ export default class FourInARowGame {
 #### Simple Fields
 
 These lines reference the constants we wrote in `src/constants/index.js`, making them available to use in `FourInARowGame.js`. It also creates a class called
-
 `FourInARowGame`.
 
 To get the game going, what we'll need to track the following:
@@ -179,6 +178,4 @@ export default class FourInARowGame {
 
 We are now ready to implement the logic that runs when a player makes a move.
 
-# We'll do this in the next post! See you then! 👋
-
-> > > > > > > 80a4b3a (Begin writing code for state machine)
+We'll do this in the next post! See you then! 👋
