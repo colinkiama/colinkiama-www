@@ -44,7 +44,7 @@ changes that you've made!
 
 ## Setup
 
-### Diretory Structure
+### Directory Structure
 
 First, create a directory where you'll write the code the game. I suggest naming
 it "four-in-a-row".
