@@ -32,7 +32,7 @@ You'll need the following to be able to complete this tutorial:
 1. A text editor (I recommend using Visual Studio Code if you're unsure) -
    This is where you'll be writing your code.
 2. A Web Browser with access to developer tools - We'll be interacting with the browser console throughout the tutorial, especially at the start since the game
-   won't have a front-end around this point
+   won't have a front-end around this point. I'll be using Google Chrome throughout this tutorial.
 3. A HTTP Server (I recommend using the
    [Live Server Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)). This is required because we'll be using
    [ECMAScript Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) without any JavaScript build tools. Attempting to try this without a HTTP
