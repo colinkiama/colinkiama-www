@@ -149,11 +149,11 @@ export default class FourInARowGame {
   // ..
 
   static createBoard() {
-    let board = new Array(BoardDimensions.ROWS);
+    let board = new Array(Constants.BoardDimensions.ROWS);
 
-    for (let i = 0; i < BoardDimensions.ROWS; i++) {
-      board[i] = new Uint8Array(BoardDimensions.COLUMNS);
-      board[i].fill(BoardToken.NONE);
+    for (let i = 0; i < Constants.BoardDimensions.ROWS; i++) {
+      board[i] = new Uint8Array(Constants.BoardDimensions.COLUMNS);
+      board[i].fill(Constants.BoardToken.NONE);
     }
 
     return board;
