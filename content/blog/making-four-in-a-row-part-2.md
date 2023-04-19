@@ -70,7 +70,7 @@ export const BoardToken = {
 
 Now we will create a state machine which represents a four-in-a-row-game.
 
-Create a new JavaScript file called `FourInARowGame.js` and add the following to it:
+Create a new JavaScript file called `FourInARowGame.js` in `/src` and add the following to it:
 
 ```js
 import * as Constants from "./constants/index.js";
