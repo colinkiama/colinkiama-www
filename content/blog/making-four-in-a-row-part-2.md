@@ -70,7 +70,7 @@ export const BoardToken = {
 
 Now we will create a state machine which represents a four-in-a-row-game.
 
-Create a new JavaScript file called `FourInARowGame.js` and add the following to it:
+Create a new JavaScript file called `FourInARowGame.js` in `/src` and add the following to it:
 
 ```js
 import * as Constants from "./constants/index.js";
@@ -90,9 +90,7 @@ To get the game going, what we'll need to track the following:
 - The current game's status in order to know whether the game has ended or not and if it has ended, how it ended.
 - The current turn in order to figure out which player's token to put down when a move is next played
 - The starting colour player token to help determine who gets to gets to start of the game and to figure out the which player's turn it is over time.
-
-We'll also be tracking the history of the board over time in order to help figure
-out which player's turn it is over time and to keep the last move played in case the next move played is invalid.
+- The state of the board
 
 Let's add these fields to our `FourInARowGame` class:
 
@@ -101,7 +99,7 @@ export default class FourInARowGame {
   startingColor;
   currentTurn;
   status;
-  history;
+  currentBoard;
 
   // More to come...
 }
@@ -123,7 +121,7 @@ export default class FourInARowGame {
 Next up is the `currentTurn` and `status`. Since the game has just started, we'll make the value of `currentTurn` the same value of
 `startingColor` and `status` to `GameStatus.START`:
 
-#### Initialising the History Field
+#### Initialising the board Field
 
 ```js
 export default class FourInARowGame {
@@ -137,10 +135,8 @@ export default class FourInARowGame {
 }
 ```
 
-Now with the `history` field, we want an array of boards; a single board in a game of Four-In-A-Row has 6 rows and 7 columns (42 positions in total).
+Now with the `currentBoard` field, we want initially set it's value to an empty board; a single board in a game of Four-In-A-Row has 6 rows and 7 columns (42 positions in total).
 We'll use an array of arrays to represent this structure in JavaScript.
-
-Unlike the other fields, the code to set up the `history` field will be a bit involved.
 
 The first step is creating a static method in the `FourInARowGame` class that creates an empty board for us:
 
@@ -149,11 +145,11 @@ export default class FourInARowGame {
   // ..
 
   static createBoard() {
-    let board = new Array(BoardDimensions.ROWS);
+    let board = new Array(Constants.BoardDimensions.ROWS);
 
-    for (let i = 0; i < BoardDimensions.ROWS; i++) {
-      board[i] = new Uint8Array(BoardDimensions.COLUMNS);
-      board[i].fill(BoardToken.NONE);
+    for (let i = 0; i < Constants.BoardDimensions.ROWS; i++) {
+      board[i] = new Uint8Array(Constants.BoardDimensions.COLUMNS);
+      board[i].fill(Constants.BoardToken.NONE);
     }
 
     return board;
@@ -166,22 +162,19 @@ stored as the `Number` data type by default, which stores 64-bit floating point 
 using 3 possible numbers in each board position so `Uint8` makes more sense which is the smallest numeric data type that
 our range of possible numbers fits in.
 
-This ends up saving a lot of memory over time when you consider that there are 42 positions per board and that entire
-boards are added to the history over time.
+This saves memory considering that there are 42 positions in a board.
 
-Now we can finish of initialising the `history` field:
+Now we can finish of initialising the `currentBoard` field:
 
 ```js
 export default class FourInARowGame {
   constructor() {
     // ..
 
-    this.history = [FourInARowGame.createBoard()];
+    this.currentBoard = FourInARowGame.createBoard();
   }
 }
 ```
-
-Notice that history is an array of boards.
 
 We are now ready to implement the logic that runs when a player makes a move.
 
