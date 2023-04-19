@@ -26,7 +26,7 @@ export default class FourInARowGame {
 
   playMove(columnIndex) {
     return {
-      board: this.history[0],
+      board: this.currentBoard,
       winner: Constants.PlayerColor.NONE,
       status: {
         value: Constants.MoveStatus.SUCCESS,
@@ -72,7 +72,7 @@ Open up your the console window in your web browser then enter in: `window.fourI
 of the `FourInARowGame` instance object. In Google Chrome it looks like this:
 
 ```js
-FourInARowGame {startingColor: 'yellow', currentTurn: 'yellow', status: 'start', history: Array(1)}
+FourInARowGame {startingColor: 'yellow', currentTurn: 'yellow', status: 'start', board: Array(6)}
 ```
 
 There is also the options to expand the object so you can view more details about the object.
