@@ -121,7 +121,7 @@ export default class FourInARowGame {
 Next up is the `currentTurn` and `status`. Since the game has just started, we'll make the value of `currentTurn` the same value of
 `startingColor` and `status` to `GameStatus.START`:
 
-#### Initialising the History Field
+#### Initialising the board Field
 
 ```js
 export default class FourInARowGame {
@@ -164,7 +164,7 @@ our range of possible numbers fits in.
 
 This saves memory considering that there are 42 positions in a board.
 
-Now we can finish of initialising the `history` field:
+Now we can finish of initialising the `currentBoard` field:
 
 ```js
 export default class FourInARowGame {
@@ -175,6 +175,7 @@ export default class FourInARowGame {
   }
 }
 ```
+
 We are now ready to implement the logic that runs when a player makes a move.
 
 We'll do this in the next post! See you then! 👋
