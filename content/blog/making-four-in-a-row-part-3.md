@@ -226,7 +226,7 @@ It then returns the result.
 There is a static method here called `playerColorToBoardToken` that was used, this sets the set's the value in the board position
 to a numeric value that is associated with the current player's colour.
 
-Add it to the `FourInARowGame class too.
+Add it to the `FourInARowGame` class too.
 
 ```js
   static createBoard() {
@@ -345,7 +345,7 @@ Now call the `playMove` method with the `columnIndex` parameter set to `1` inste
 column on the game board:
 
 ```js
-game.playMove(0);
+game.playMove(1);
 ```
 
 Now you'll should see a `MoveResult` object returned. If you expand the object then expand the `board` field, you'll see that
