@@ -6,7 +6,7 @@ description="Allow players to make moves in your Four-In-A-Row game!"
 
 ## Intro
 
-In this [previous blog](@/blog/making-four-in-a-row-part-2) post, we set up our `FourInARowGame` class's fields.
+In this [previous blog](@/blog/making-four-in-a-row-part-2.md) post, we set up our `FourInARowGame` class's fields.
 
 Now we're ready to start implementing player moves and updating the state of
 the game accordingly.

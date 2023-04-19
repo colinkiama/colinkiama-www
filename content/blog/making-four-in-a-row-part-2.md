@@ -6,7 +6,7 @@ description="Start implementing the logic of your Four-In-A-Row game!"
 
 ## Intro
 
-In the [last blog post](@/blog/making-four-in-a-row-part-1), you set up the prerequisites of the project created
+In the [last blog post](@/blog/making-four-in-a-row-part-1.md), you set up the prerequisites of the project created
 the file structure of the project.
 
 Now let's start implementing the logic of the game.
@@ -180,4 +180,4 @@ We are now ready to implement the logic that runs when a player makes a move.
 
 We'll do this in the next post! See you then! 👋
 
-[Next Post](@/blog/making-four-in-a-row-part-3)
+[Next Post](@/blog/making-four-in-a-row-part-3.md)
