@@ -109,3 +109,5 @@ steps and ensure that you've completed them.
 Otherwise, congratulations! You've completed the first part of this tutorial! 🥳
 
 In the next post, we'll begin the creation of the backend of the by creating a four-in-a-row state machine!
+
+[Next Post](@/blog/making-four-in-a-row-part-2)
