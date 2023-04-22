@@ -1,12 +1,13 @@
 +++
 title = "Making Four-In-A-Row - Part 3: Making Moves"
 date = 2023-04-19T23:00:00Z
+updated = 2023-04-22T18:30:00Z
 description = "Allow players to make moves in your Four-In-A-Row game!"
 +++
 
 ## Intro
 
-In this [previous blog](@/blog/making-four-in-a-row-part-2.md) post, you set up your `FourInARowGame` class's fields.
+In the [previous blog](@/blog/making-four-in-a-row-part-2.md) post, you set up your `FourInARowGame` class's fields.
 
 Now you're ready to start implementing player moves and updating the state of the game accordingly.
 
@@ -35,9 +36,9 @@ export default class FourInARowGame {
 }
 ```
 
-Note: You're just just returning mock data for now. You'll properly implement this method later on.
+Note: You're just returning mock data for now. You'll properly implement this method later on.
 
-The `playMove` method actually takes in a `columnIndex` argument. From this input, a move will be attempted and the result of the attempted move will be evaluated and returned. The code example above shows the a `MoveResult` object being returned. It can contain:
+The `playMove()` method actually takes in a `columnIndex` argument. From this input, a move will be attempted and the result of the move will be evaluated and returned. The code example above shows a `MoveResult` object being returned in the `playMove()` method. A `MoveResult` can contain:
 
 - The current state of the board after a move has been played
 - The winner
@@ -48,7 +49,7 @@ The `playMove` method actually takes in a `columnIndex` argument. From this inpu
 
 ### Exposing your state machine object
 
-Now, to try out your code, you'll try interacting with your Four-In-A-Row state machine with the browser.
+Now, to try out your code, you'll interact with your Four-In-A-Row state machine in your browser.
 
 First, you'll need to expose the object so that the browser's console can access it. One way you can do this is by adding an instance of the `FourInARowGame` class to the `window` object. Let's do that right now. Replace the contents of `src/index.js` with the following:
 
@@ -58,9 +59,9 @@ import FourInARowGame from "./FourInARowGame.js";
 window.fourInARowGame = new FourInARowGame();
 ```
 
-Now, ensure that the a http server is running in the root of project and navigate to the server's address in your web browser.
+Now, ensure that the a HTTP server is running in the root of project and navigate to the server's address in your web browser.
 
-Open up your the console window in your web browser then enter in: `window.fourInARowGame`. You should see an output of the `FourInARowGame` instance object. In Google Chrome it looks like this:
+Open up the console your browser's developer tools (The keyboard shortcut to open in it Google Chrome is `CTRL` + `Shift` + `J`) in your web browser then enter in: `window.fourInARowGame`. You should see an output of the `FourInARowGame` instance object. In Google Chrome it looks like this:
 
 ```js
 FourInARowGame {startingColor: 'yellow', currentTurn: 'yellow', status: 'start', board: Array(6)}
@@ -72,21 +73,21 @@ If you don't see some sort of representation of an `FourInARow` instance object 
 
 ### Play a (fake) move
 
-Now let's call the `playMove` method from the `FourInARow` instance, in the browser console window.
+Now, call the `playMove` method from the `FourInARow` instance, in the browser console window.
 
-First let's store the state machine in an easier to reference variable called `game`:
+First, store the state machine in an easier to reference variable called `game`:
 
 ```js
 let game = window.fourInARowGame;
 ```
 
-Now call the `playMove` method with the `columnIndex` parameter set to `0`:
+Then, call the `playMove` method with the `columnIndex` parameter set to `0`:
 
 ```js
 game.playMove(0);
 ```
 
-Your browser console window should output something resembling the `MoveResult` object you discussed earlier:
+Your browser's console window should output something resembling the `MoveResult` object you discussed earlier:
 
 ```js
 {board: Array(6), winner: 'none', status: {…}, winLine: Array(0)}
@@ -111,7 +112,7 @@ Firstly, you'll update the `playMove()` method in your `FourInARowGame` class so
 
 It wouldn't make sense for a player to be able to perform a move when the game has already ended in a win or a draw.
 
-It also is a good opportunity to update the current status of the game from it's "start" to being "in progress".
+You'll also update the current status of the game from `GameStatus.START` to being `GameStatus.IN_PROGRESS`.
 
 ```js
 playMove(columnIndex) {
@@ -135,7 +136,7 @@ playMove(columnIndex) {
 
 You'll re-evaluate the latest game state when a win or draw happens later.
 
-For now let's continue focusing on allowing a player to make a move that changes the game's state.
+For now, let's continue focusing on allowing a player to make a move that changes the game's state.
 
 You will first create a method called `performMove()`:
 
@@ -164,7 +165,7 @@ static deepBoardCopy(oldBoard) {
 }
 ```
 
-Now store the board copy in a variable called `nextBoard`.
+Now store the board copy in a variable called `nextBoard`:
 
 ```js
 performMove(columnIndex) {
@@ -172,7 +173,7 @@ performMove(columnIndex) {
 }
 ```
 
-The next thing you need to do is to actually perform the move on the board, to do this you'll create a method called `tryPerformMove()`.
+The next thing you need to do is to actually perform the move on the board, to do this you'll create a method called `tryPerformMove()`:
 
 ```js
     tryPerformMove(columnIndex, nextBoard) {
@@ -204,13 +205,11 @@ The next thing you need to do is to actually perform the move on the board, to d
     }
 ```
 
-The method above checks the column in the board the player specified from the bottom to the top for an empty position then attempts to add the the current player's token to the board position.
-
-It then returns the result.
+The method above checks the column in the board the player specified from the bottom to the top for an empty position then attempts to add the current player's token to the board position. Later it returns the result.
 
 There is a static method here called `playerColorToBoardToken` that was used, this sets the set's the value in the board position to a numeric value that is associated with the current player's colour.
 
-Add it to the `FourInARowGame` class too.
+Add it to the `FourInARowGame` class too:
 
 ```js
   static createBoard() {
@@ -229,7 +228,7 @@ Add it to the `FourInARowGame` class too.
   }
 ```
 
-Now you'll go back to the `performMove()` method and set the current game board to the board in the object returned from the `tryPerformMove()` method.
+Now you'll go back to the `performMove()` method and set the current game board to the board in the object returned from the `tryPerformMove()` method:
 
 ```js
 performMove(columnIndex) {
@@ -256,9 +255,9 @@ performMove(columnIndex) {
 
 If the value of the `moveAttemptResult.status` is `MoveStatus.Invalid` then you return a `MoveResult` which has the same structure as the move data you returned in your fake `playMove()` method implementation.
 
-Lastly, you need create a method called `evaluateGame` which will be used to check if the status of the game has changed then returns a `MoveResult`.
+Lastly, you need create a method called `evaluateGame()` which will be used to check if the status of the game has changed then returns a `MoveResult`.
 
-For now, you'll just return a `MoveResult` of a successful move that also indicates that the game is still in progress.
+For now, you'll just return the `MoveResult` of a successful move, that also indicates that the game is still in progress.
 
 ```js
 evaluateGame(board) {
@@ -275,9 +274,9 @@ evaluateGame(board) {
 }
 ```
 
-Now the `MoveResult` show an updated board value based on the column the player placed their token in.
+Now the `MoveResult` will show an updated board value based on the column the player placed their token in.
 
-To finish with your initial proper `playMove()` method implementation, you'll add a few more lines to your `playMove()` method.
+To complete your updates to the `playMove()` method, you'll add a few more lines to it:
 
 ```js
 playMove(columnIndex) {
@@ -312,9 +311,9 @@ You perform a move, update the current turn to the opposing player's turn then r
 
 You added quite a few changes, let's test them out.
 
-Assuming your have a local http server running at the root of the project, navigate to the server's address in your web browser and open the browser console window again.
+Assuming your have a local HTTP server running at the root of the project, navigate to the server's address in your web browser and open the browser console window again.
 
-Now enter the following two lines in the browser console.
+First, enter the following line in your browser's console:
 
 ```js
 let game = window.fourInARowGame;
@@ -326,7 +325,7 @@ Now call the `playMove` method with the `columnIndex` parameter set to `1` inste
 game.playMove(1);
 ```
 
-Now you'll should see a `MoveResult` object returned. If you expand the object then expand the `board` field, you'll see that the value `1` has been added to the bottom of the second column on the board.
+You should see a `MoveResult` object returned. If you expand the object then expand the `board` field, you'll see that the value `1` has been added to the bottom of the second column on the board.
 
 If you do, congratulations!
 

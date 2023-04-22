@@ -1,6 +1,7 @@
 +++
 title = "Making Four-In-A-Row - Part 1: Setup"
 date = 2023-04-19T23:00:00Z
+updated = 2023-04-22T18:30:00Z
 description = "Your first step towards creating your own Four-In-A-Row game!"
 +++
 
