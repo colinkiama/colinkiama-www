@@ -94,6 +94,6 @@ If you don't see the message above, you probably didn't follow the instructions 
 
 Otherwise, congratulations! You've completed the first part of this tutorial! 🥳
 
-In the next post, you'll begin the creation of the backend of the by creating a four-in-a-row state machine!
+In the next post, you'll begin the creation of the back-end by creating a four-in-a-row state machine!
 
 [Next Post](@/blog/making-four-in-a-row-part-2.md)
