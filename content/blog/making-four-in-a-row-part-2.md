@@ -1,7 +1,7 @@
 +++
 title = "Making Four-In-A-Row - Part 2: Beginning"
 date = 2023-04-19T23:00:00Z
-description="Start implementing the logic of your Four-In-A-Row game!"
+description = "Start implementing the logic of your Four-In-A-Row game!"
 +++
 
 ## Intro
@@ -78,8 +78,7 @@ export default class FourInARowGame {
 
 #### Simple Fields
 
-These lines reference the constants you wrote in `src/constants/index.js`, making them available to use in `FourInARowGame.js`. It also creates a class called
-`FourInARowGame`.
+These lines reference the constants you wrote in `src/constants/index.js`, making them available to use in `FourInARowGame.js`. It also creates a class called `FourInARowGame`.
 
 To get the game going, what you'll need to track the following:
 
@@ -101,8 +100,7 @@ export default class FourInARowGame {
 }
 ```
 
-Regarding the starting colour, there isn't any rule about which colour should start but you'll set it to `yellow` by default
-to keep things simple:
+Regarding the starting colour, there isn't any rule about which colour should start but you'll set it to `yellow` by default to keep things simple:
 
 ```js
 export default class FourInARowGame {
@@ -114,8 +112,7 @@ export default class FourInARowGame {
 }
 ```
 
-Next up is the `currentTurn` and `status`. Since the game has just started, you'll make the value of `currentTurn` the same value of
-`startingColor` and `status` to `GameStatus.START`:
+Next up is the `currentTurn` and `status`. Since the game has just started, you'll make the value of `currentTurn` the same value of `startingColor` and `status` to `GameStatus.START`:
 
 #### Initialising the board Field
 
@@ -131,8 +128,7 @@ export default class FourInARowGame {
 }
 ```
 
-Now with the `currentBoard` field, you will initially set its value to an empty board; a single board in a game of Four-In-A-Row has 6 rows and 7 columns (42 positions in total).
-you'll use an array of arrays to represent this structure in JavaScript.
+Now with the `currentBoard` field, you will initially set its value to an empty board; a single board in a game of Four-In-A-Row has 6 rows and 7 columns (42 positions in total). You'll use an array of arrays to represent this structure in JavaScript.
 
 The first step is creating a static method in the `FourInARowGame` class that creates an empty board for you:
 
@@ -153,10 +149,7 @@ export default class FourInARowGame {
 }
 ```
 
-Notice that `Uint8Array` was used instead of `Array` in the enclosed loop. This is because numbers in JavaScript are
-stored as the `Number` data type by default, which stores 64-bit floating point numbers. You will only be
-using 3 possible numbers in each board position so `Uint8` makes more sense which is the smallest numeric data type that
-your range of possible numbers fits in.
+Notice that `Uint8Array` was used instead of `Array` in the enclosed loop. This is because numbers in JavaScript are stored as the `Number` data type by default, which stores 64-bit floating point numbers. You will only be using 3 possible numbers in each board position so `Uint8` makes more sense which is the smallest numeric data type that your range of possible numbers fits in.
 
 This saves memory considering that there are 42 positions in a board.
 
