@@ -80,11 +80,11 @@ export default class FourInARowGame {
 
 These lines reference the constants you wrote in `src/constants/index.js`, making them available to use in `FourInARowGame.js`. It also creates a class called `FourInARowGame`.
 
-To get the game going, what you'll need to track the following:
+To get the game going, you'll need to be aware of the following:
 
-- The current game's status in order to know whether the game has ended or not and if it has ended, how it ended.
-- The current turn in order to figure out which player's token to put down when a move is next played
-- The starting colour player token to help determine who gets to gets to start of the game and to figure out the which player's turn it is over time.
+- The current game's status - to know whether the game has ended or not and if it has ended, how it ended.
+- The current turn - to figure out which player's token to put down when a move is next played
+- The starting colour player token - to determine who starts the game
 - The state of the board
 
 Let's add these fields to your `FourInARowGame` class:
