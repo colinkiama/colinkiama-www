@@ -1,6 +1,6 @@
 +++
 title = "Making Four-In-A-Row - Part 2: Beginning"
-date = 2023-02-23T22:00:00Z
+date = 2023-04-19T23:00:00Z
 description="Start implementing the logic of your Four-In-A-Row game!"
 +++
 
