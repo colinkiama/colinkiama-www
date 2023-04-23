@@ -113,4 +113,86 @@ checkIfOutOfBounds(row, column) {
 }
 ```
 
-The other method is the a static one called `FourInARow.boardTokenToPlayerColor`
+The other method is the a static one called `FourInARow.boardTokenToPlayerColor.` which turns board token values to player colour values.
+
+Add it to the `FourInARowGame` class:
+
+```js
+static boardTokenToPlayerColor(boardToken) {
+    switch (boardToken) {
+        case BoardToken.YELLOW:
+            return PlayerColor.YELLOW;
+        case BoardToken.RED:
+            return PlayerColor.RED;
+        default:
+            return PlayerColor.NONE;
+    }
+}
+```
+
+### Checking for wins in all directions
+
+Now that you've created find win lines on the board, you're now ready to start checking if a player has won the game.
+
+Create a new method to the `FourInARowGame` class called `checkForWin()`:
+
+```js
+// Each win line is an array of board position coordinates:
+// e.g: winLine = [{row: 0, column: 0}, {row: 0, column: 1}, {row: 0, column : 2}, {row: 0, column: 3}]
+checkForWin(board) {
+    // Starts from bottom left of the board and ends on top right of board
+    for (let columnIndex = 0; columnIndex < BoardDimensions.COLUMNS; columnIndex++) {
+        for (let rowIndex = BoardDimensions.ROWS - 1; rowIndex > -1; rowIndex--) {
+            // Check for vertical win
+            let verticalWinCheckResult = this.tryFindWinningLine(board, {
+                startRowIndex: rowIndex,
+                startColumnIndex: columnIndex,
+                rowCountStep: -1,
+            });
+
+            if (verticalWinCheckResult.winner) {
+                return verticalWinCheckResult;
+            }
+
+            let horizontalWinCheckResult = this.tryFindWinningLine(board, {
+                startRowIndex: rowIndex,
+                startColumnIndex: columnIndex,
+                columnCountStep: -1,
+            });
+
+            if (horizontalWinCheckResult.winner) {
+                return horizontalWinCheckResult;
+            }
+
+            let leftDiagonalWinCheck = this.tryFindWinningLine(board, {
+                startRowIndex: rowIndex,
+                startColumnIndex: columnIndex,
+                rowCountStep: -1,
+                columnCountStep: -1
+            });
+
+            if (leftDiagonalWinCheck.winner) {
+                return leftDiagonalWinCheck;
+            }
+
+            let rightDiagonalWinCheck = this.tryFindWinningLine(board, {
+                startRowIndex: rowIndex,
+                startColumnIndex: columnIndex,
+                rowCountStep: -1,
+                columnCountStep: 1
+            });
+
+            if (rightDiagonalWinCheck.winner) {
+                return rightDiagonalWinCheck;
+            }
+        }
+    }
+
+    return {
+        winLine: [],
+        winner: PlayerColor.NONE
+    };
+}
+```
+
+This method above checks for win lines in all directions from each board position. It then returns a `WinCheckResult` which is made up of the a `winLine` which is a list of consecutive board positions and `winner`, which contains the who won the game.
