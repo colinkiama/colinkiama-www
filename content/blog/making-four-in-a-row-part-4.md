@@ -90,4 +90,27 @@ tryFindWinningLine(board, options) {
 }
 ```
 
-TODO: Brief explanation of method, introduce the `checkIfOutOfBounds()` method and the `boardTOkenToPlayerColor()` method, then move onto to creation of `checkWin()` method (different section)
+TODO: Brief explanation of method, introduce the `checkIfOutOfBounds()` method and the `boardTokenToPlayerColor()` method, then move onto to creation of `checkWin()` method (different section).
+
+The method above counts checks for consecutive tokens from a starting position. The behaviour of this method is controlled by the `options` object that is passed in.
+
+`startRowIndex` and `startColumnIndex` sets the start position.
+
+The `rowCountStep` and `columnCountStep` controls the direction win lines will be checked in. For example: A `rowCountStep` of `0` and a `columnCountStep` of `1` will check for a win line horizontally from the start position.
+
+There two other methods that are called in `checkForWinLine()`.
+
+`checkIfOutBounds()` checks if a specified position is out of bounds. This allows us to stop checking for a win line early.
+
+Add the method to the `FourInARowGame` class:
+
+```js
+checkIfOutOfBounds(row, column) {
+    return row < 0
+        || row > Constants.BoardDimensions.ROWS
+        || column < 0
+        || column > Constants.BoardDimensions.COLUMNS;
+}
+```
+
+The other method is the a static one called `FourInARow.boardTokenToPlayerColor`
