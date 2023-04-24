@@ -196,3 +196,52 @@ checkForWin(board) {
 ```
 
 This method above checks for win lines in all directions from each board position. It then returns a `WinCheckResult` which is made up of the a `winLine` which is a list of consecutive board positions and `winner`, which contains the who won the game.
+
+Notice how the `rowCountStep` and `columnCountStep` values are set for each direction.
+
+### Allowing players to win
+
+Now that you have created a method that checks for wins, you can now detect wins and update the status of the game accordingly.
+
+Update the `evaluateGame()` method so that it handles wins being detected:
+
+```js
+evaluateGame(board) {
+    let winCheckResult = this.checkForWin(board);
+
+    if (winCheckResult.winner !== PlayerColor.NONE) {
+        this.status = GameStatus.WIN;
+        return {
+            board: board,
+            winner: winCheckResult.winner,
+            status: {
+                value: MoveStatus.WIN
+            },
+            winLine: winCheckResult.winLine
+        };
+    }
+
+    // From this point, we can assume that a successful move was made and the game will
+    // continue on.
+    return {
+        board: board,
+        winner: PlayerColor.NONE,
+        status: {
+            value: MoveStatus.SUCCESS
+        },
+        winLine: []
+    };
+
+```
+
+Feel free to test this out in your browser's console.
+
+When a move results in a win, the move result object in the output will have a `winner` set to either `Red` or `Yellow` and `winLine` will be filled with positions
+
+TODO: Show an example of the `MoveResult` object when a player wins
+
+Subsequent calls to `playMove()` will produce the same output every time. The game is already over after all 😉.
+
+## Checking for a draw
+
+Not every four-in-row game concludes with a winner however, some
