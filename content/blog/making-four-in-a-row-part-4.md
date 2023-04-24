@@ -236,12 +236,10 @@ evaluateGame(board) {
 
 Feel free to test this out in your browser's console.
 
-When a move results in a win, the move result object in the output will have a `winner` set to either `Red` or `Yellow` and `winLine` will be filled with positions
-
-TODO: Show an example of the `MoveResult` object when a player wins
+When a move results in a win, the move result object in the output will have the `status` field with a value of `win`, `winner` will be set to either `Red` or `Yellow` and `winLine` will be filled with positions/
 
 Subsequent calls to `playMove()` will produce the same output every time. The game is already over after all 😉.
 
 ## Checking for a draw
 
-Not every four-in-row game concludes with a winner however, some
+Not every four-in-a-row game concludes with a winner however,
