@@ -1,6 +1,6 @@
 +++
 title = "Making Four-In-A-Row - Part 4: Winning Ways and Tedious Ties"
-date = 2023-04-30T01:30:00Z
+date = 2023-04-30T12:00:00Z
 description = "Detecting wins and draws in your Four-In-A-Row game!"
 +++
 
