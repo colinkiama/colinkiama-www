@@ -274,6 +274,32 @@ evaluateGame(board) {
 }
 ```
 
+Make sure that you return the result of this method in `performMove()`:
+
+```js
+performMove(columnIndex) {
+  let nextBoard = FourInARowGame.deepBoardCopy(this.currentBoard);
+
+  let moveAttemptResult = this.tryPerformMove(columnIndex, nextBoard);
+
+  if (moveAttemptResult.status === Constants.MoveStatus.INVALID) {
+    return {
+        board: nextBoard,
+        winner: Constants.PlayerColor.NONE,
+        status: {
+            message: "Returned column is filled",
+            value: Constants.MoveStatus.INVALID
+        },
+        winLine: []
+    }
+  }
+
+  // From this point, the board move was successful.
+  this.currentBoard = moveAttemptResult.board;
+  return this.evaluateGame(moveAttemptResult.board);
+}
+```
+
 Now the `MoveResult` will show an updated board value based on the column the player placed their token in.
 
 To complete your updates to the `playMove()` method, you'll add a few more lines to it:
@@ -330,3 +356,5 @@ You should see a `MoveResult` object returned. If you expand the object then exp
 If you do, congratulations!
 
 If not, please go over this post carefully to check for mistakes you may have made.
+
+[Next Post](@/blog/making-four-in-a-row-part-4.md)
