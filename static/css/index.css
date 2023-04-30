@@ -23,20 +23,20 @@
   --background-color-dark: #1a1a1a;
 
   --link-hover-color: #062847;
-  --link-hover-color-dark: #a56de2;
+  --link-hover-color-dark: #9ccefc;
 
   --footer-link-hover-color: #8ec4f6;
-  --footer-link-hover-color-dark: #cd9ef7;
+  --footer-link-hover-color-dark: #8ec4f6;
 
   --accent-color: #1071cb;
-  --accent-color-dark: #cd9ef7;
-  --accent-color-dark-alt: #7239b3;
+  --accent-color-dark: #6ab5fb;
+  --accent-color-dark-alt: #1071cb;
 
   --button-color: #0a4276;
 
   --button-hover-color: #000000;
 
-  --button-color-dark: #3c0a76;
+  --button-color-dark: #0a4276;
   --button-hover-color-dark: #000000;
 
   --input-placeholder-text-color: #7e7e7e;
@@ -46,7 +46,7 @@
 
   --section-border-color: #b4b4b4;
   --footer-section-border-color: #6db3f3;
-  --footer-section-border-color-dark: #b593dd;
+  --footer-section-border-color-dark: #6db3f3;
 }
 
 /* || FONTS */
