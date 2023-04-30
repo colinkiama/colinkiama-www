@@ -1,6 +1,6 @@
 +++
 title = "Making Four-In-A-Row - Part 4: Winning Ways and Tedious Ties"
-date = 2023-04-22T23:00:00Z
+date = 2023-04-30T01:30:00Z
 description = "Detecting wins and draws in your Four-In-A-Row game!"
 +++
 
@@ -62,11 +62,11 @@ tryFindWinningLine(board, options) {
         }
 
         let currentToken = board[row][column];
-        if (currentToken === BoardToken.NONE) {
+        if (currentToken === Constants.BoardToken.NONE) {
             break;
         }
 
-        if (tokenToCheck === BoardToken.NONE) {
+        if (tokenToCheck === Constants.BoardToken.NONE) {
             tokenToCheck = currentToken;
         }
 
@@ -90,8 +90,6 @@ tryFindWinningLine(board, options) {
 }
 ```
 
-TODO: Brief explanation of method, introduce the `checkIfOutOfBounds()` method and the `boardTokenToPlayerColor()` method, then move onto to creation of `checkWin()` method (different section).
-
 The method above counts checks for consecutive tokens from a starting position. The behaviour of this method is controlled by the `options` object that is passed in.
 
 `startRowIndex` and `startColumnIndex` sets the start position.
@@ -113,7 +111,7 @@ checkIfOutOfBounds(row, column) {
 }
 ```
 
-The other method is the a static one called `FourInARow.boardTokenToPlayerColor.` which turns board token values to player colour values.
+The other method is the a static one called `FourInARow.boardTokenToPlayerColor()` which turns board token values to player colour values.
 
 Add it to the `FourInARowGame` class:
 
@@ -141,8 +139,8 @@ Create a new method to the `FourInARowGame` class called `checkForWin()`:
 // e.g: winLine = [{row: 0, column: 0}, {row: 0, column: 1}, {row: 0, column : 2}, {row: 0, column: 3}]
 checkForWin(board) {
     // Starts from bottom left of the board and ends on top right of board
-    for (let columnIndex = 0; columnIndex < BoardDimensions.COLUMNS; columnIndex++) {
-        for (let rowIndex = BoardDimensions.ROWS - 1; rowIndex > -1; rowIndex--) {
+    for (let columnIndex = 0; columnIndex < Constants.BoardDimensions.COLUMNS; columnIndex++) {
+        for (let rowIndex = Constants.BoardDimensions.ROWS - 1; rowIndex > -1; rowIndex--) {
             // Check for vertical win
             let verticalWinCheckResult = this.tryFindWinningLine(board, {
                 startRowIndex: rowIndex,
@@ -190,7 +188,7 @@ checkForWin(board) {
 
     return {
         winLine: [],
-        winner: PlayerColor.NONE
+        winner: Constants.PlayerColor.NONE
     };
 }
 ```
@@ -209,13 +207,13 @@ Update the `evaluateGame()` method so that it handles wins being detected:
 evaluateGame(board) {
     let winCheckResult = this.checkForWin(board);
 
-    if (winCheckResult.winner !== PlayerColor.NONE) {
-        this.status = GameStatus.WIN;
+    if (winCheckResult.winner !== Constants.PlayerColor.NONE) {
+        this.status = Constants.GameStatus.WIN;
         return {
             board: board,
             winner: winCheckResult.winner,
             status: {
-                value: MoveStatus.WIN
+                value: Constants.MoveStatus.WIN
             },
             winLine: winCheckResult.winLine
         };
@@ -225,9 +223,9 @@ evaluateGame(board) {
     // continue on.
     return {
         board: board,
-        winner: PlayerColor.NONE,
+        winner: Constants.PlayerColor.NONE,
         status: {
-            value: MoveStatus.SUCCESS
+            value: Constants.MoveStatus.SUCCESS
         },
         winLine: []
     };
@@ -236,10 +234,84 @@ evaluateGame(board) {
 
 Feel free to test this out in your browser's console.
 
-When a move results in a win, the move result object in the output will have the `status` field with a value of `win`, `winner` will be set to either `Red` or `Yellow` and `winLine` will be filled with positions/
+When a move results in a win, the move result object in the output will have the `status` field with a value of `win`, `winner` will be set to either `Red` or `Yellow` and `winLine` will be filled with positions.
 
 Subsequent calls to `playMove()` will produce the same output every time. The game is already over after all 😉.
 
 ## Checking for a draw
 
-Not every four-in-a-row game concludes with a winner however,
+Not every four-in-a-row game concludes with a win. There are cases where the board is filled with no winner. In these cases, the game ends in a draw.
+
+You're now going to add the ability to detect a draw.
+
+First, add a method called `checkForFilledBoard()`:
+
+```js
+checkForFilledBoard(board) {
+    for (let j = 0; j < board.length; j++) {
+        let boardColumn = board[j];
+        for (let i = 0; i < boardColumn.length; i++) {
+            let boardPosition = boardColumn[i];
+            if (boardPosition === Constants.BoardToken.NONE) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+```
+
+Now, make another update to the `evaluateGame()` method so that it checks for a draw and if true, returns an `MoveResult` object that indicates that the game has ended with a draw:
+
+```js
+let winCheckResult = this.checkForWin(board);
+
+if (winCheckResult.winner !== Constants.PlayerColor.NONE) {
+  this.status = Constants.GameStatus.WIN;
+  return {
+    board: board,
+    winner: winCheckResult.winner,
+    status: {
+      value: Constants.MoveStatus.WIN,
+    },
+    winLine: winCheckResult.winLine,
+  };
+}
+
+// If board is full right now, we can assume the game to be a draw
+// since there weren't any winning lines detected.
+if (this.checkForFilledBoard(board)) {
+  this.status = Constants.GameStatus.DRAW;
+
+  return {
+    board: board,
+    winner: Constants.PlayerColor.NONE,
+    status: {
+      value: Constants.MoveStatus.DRAW,
+    },
+    winLine: [],
+  };
+}
+
+// From this point, we can assume that a successful move was made and the game will
+// continue on.
+return {
+  board: board,
+  winner: Constants.PlayerColor.NONE,
+  status: {
+    value: Constants.MoveStatus.SUCCESS,
+  },
+  winLine: [],
+};
+```
+
+Feel free to test out these changes out your self in your browser's console. The `MoveResult` object returned in the output will have a `status` field with a value of `draw`.
+
+If you encounter any errors or unexpected behaviour then please go over the code you've written so far and read over this post again.
+
+Otherwise, congratulations! You've now implemented the core logic of a four-in-a-row game in JavaScript.
+
+In the upcoming posts in this blog series, you'll be working on the HTML5 Canvas front-end for your game and integrating the state machine object you've created into it!
+
+That's all for now 👋!
