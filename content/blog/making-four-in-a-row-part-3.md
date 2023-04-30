@@ -212,20 +212,20 @@ There is a static method here called `playerColorToBoardToken` that was used, th
 Add it to the `FourInARowGame` class too:
 
 ```js
-  static createBoard() {
+static createBoard() {
     // ...
-  }
+}
 
-  static playerColorToBoardToken(playerColor) {
-      switch (playerColor) {
-          case Constants.PlayerColor.YELLOW:
-              return Constants.BoardToken.YELLOW;
-          case Constants.PlayerColor.RED:
-              return Constants.BoardToken.RED;
-          default:
-              return Constants.BoardToken.NONE;
-      }
-  }
+static playerColorToBoardToken(playerColor) {
+    switch (playerColor) {
+        case Constants.PlayerColor.YELLOW:
+            return Constants.BoardToken.YELLOW;
+        case Constants.PlayerColor.RED:
+            return Constants.BoardToken.RED;
+        default:
+            return Constants.BoardToken.NONE;
+    }
+}
 ```
 
 Now you'll go back to the `performMove()` method and set the current game board to the board in the object returned from the `tryPerformMove()` method:
@@ -274,6 +274,32 @@ evaluateGame(board) {
 }
 ```
 
+Make sure that you return the result of this method in `performMove()`:
+
+```js
+performMove(columnIndex) {
+  let nextBoard = FourInARowGame.deepBoardCopy(this.currentBoard);
+
+  let moveAttemptResult = this.tryPerformMove(columnIndex, nextBoard);
+
+  if (moveAttemptResult.status === Constants.MoveStatus.INVALID) {
+    return {
+        board: nextBoard,
+        winner: Constants.PlayerColor.NONE,
+        status: {
+            message: "Returned column is filled",
+            value: Constants.MoveStatus.INVALID
+        },
+        winLine: []
+    }
+  }
+
+  // From this point, the board move was successful.
+  this.currentBoard = moveAttemptResult.board;
+  return this.evaluateGame(moveAttemptResult.board);
+}
+```
+
 Now the `MoveResult` will show an updated board value based on the column the player placed their token in.
 
 To complete your updates to the `playMove()` method, you'll add a few more lines to it:
@@ -291,15 +317,19 @@ playMove(columnIndex) {
             // and board details.
 
             // TODO: Implement this properly
-            console.log("Game already ended in win or draw. re-evaluating latest game state);
+            console.log("Game already ended in win or draw. re-evaluating latest game state");
         default:
             break;
     }
 
     let moveResults = this.performMove(columnIndex);
-    this.currentTurn = this.currentTurn === Constants.PlayerColor.YELLOW
-        ? Constants.PlayerColor.RED
-        : Constants.PlayerColor.YELLOW;
+
+    // Do not change player turn if move is invalid
+    if (moveResults.status !== Constants.MoveStatus.INVALID && moveResults.status.value !== Constants.MoveStatus.INVALID) {
+        this.currentTurn = this.currentTurn === Constants.PlayerColor.YELLOW
+            ? Constants.PlayerColor.RED
+            : Constants.PlayerColor.YELLOW;
+    }
 
     return moveResults;
 }
@@ -330,3 +360,5 @@ You should see a `MoveResult` object returned. If you expand the object then exp
 If you do, congratulations!
 
 If not, please go over this post carefully to check for mistakes you may have made.
+
+[Next Post](@/blog/making-four-in-a-row-part-4.md)
