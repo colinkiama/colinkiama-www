@@ -291,7 +291,7 @@ playMove(columnIndex) {
             // and board details.
 
             // TODO: Implement this properly
-            console.log("Game already ended in win or draw. re-evaluating latest game state);
+            console.log("Game already ended in win or draw. re-evaluating latest game state");
         default:
             break;
     }
