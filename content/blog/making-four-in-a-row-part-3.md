@@ -212,20 +212,20 @@ There is a static method here called `playerColorToBoardToken` that was used, th
 Add it to the `FourInARowGame` class too:
 
 ```js
-  static createBoard() {
+static createBoard() {
     // ...
-  }
+}
 
-  static playerColorToBoardToken(playerColor) {
-      switch (playerColor) {
-          case Constants.PlayerColor.YELLOW:
-              return Constants.BoardToken.YELLOW;
-          case Constants.PlayerColor.RED:
-              return Constants.BoardToken.RED;
-          default:
-              return Constants.BoardToken.NONE;
-      }
-  }
+static playerColorToBoardToken(playerColor) {
+    switch (playerColor) {
+        case Constants.PlayerColor.YELLOW:
+            return Constants.BoardToken.YELLOW;
+        case Constants.PlayerColor.RED:
+            return Constants.BoardToken.RED;
+        default:
+            return Constants.BoardToken.NONE;
+    }
+}
 ```
 
 Now you'll go back to the `performMove()` method and set the current game board to the board in the object returned from the `tryPerformMove()` method:

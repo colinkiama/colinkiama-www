@@ -1,6 +1,6 @@
 +++
 title = "Making Four-In-A-Row - Part 4: Winning Ways and Tedious Ties"
-date = 2023-04-30T12:00:00Z
+date = 2023-04-30T05:17:00Z
 description = "Detecting wins and draws in your Four-In-A-Row game!"
 +++
 
@@ -205,7 +205,7 @@ Update the `evaluateGame()` method so that it handles wins being detected:
 
 ```js
 evaluateGame(board) {
-    let winCheckResult = this.checkForWin(board);
+    let winCheckResult = FourInARowGame.checkForWin(board);
 
     if (winCheckResult.winner !== Constants.PlayerColor.NONE) {
         this.status = Constants.GameStatus.WIN;
@@ -251,10 +251,13 @@ playMove(columnIndex) {
     }
 
     let moveResults = this.performMove(columnIndex);
-    this.currentTurn = this.currentTurn === Constants.PlayerColor.YELLOW
-        ? Constants.PlayerColor.RED
-        : Constants.PlayerColor.YELLOW;
 
+    // Do not change player turn if move is invalid
+    if (moveResults.status !== Constants.MoveStatus.INVALID && moveResults.status.value !== Constants.MoveStatus.INVALID) {
+        this.currentTurn = this.currentTurn === Constants.PlayerColor.YELLOW
+            ? Constants.PlayerColor.RED
+            : Constants.PlayerColor.YELLOW;
+    }
     return moveResults;
 }
 ```
@@ -293,7 +296,7 @@ Now, make another update to the `evaluateGame()` method so that it checks for a 
 
 ```js
 evaluateGame(board) {
-    let winCheckResult = this.checkForWin(board);
+    let winCheckResult = FourInARowGame.checkForWin(board);
 
     if (winCheckResult.winner !== Constants.PlayerColor.NONE) {
         this.status = Constants.GameStatus.WIN;
@@ -309,7 +312,7 @@ evaluateGame(board) {
 
     // If board is full right now, we can assume the game to be a draw
     // since there weren't any winning lines detected.
-    if (this.checkForFilledBoard(board)) {
+    if (FourInARowGame.checkForFilledBoard(board)) {
         this.status = Constants.GameStatus.DRAW;
 
         return {
