@@ -176,33 +176,33 @@ performMove(columnIndex) {
 The next thing you need to do is to actually perform the move on the board, to do this you'll create a method called `tryPerformMove()`:
 
 ```js
-    tryPerformMove(columnIndex, nextBoard) {
-        let isMoveValid = false;
+tryPerformMove(columnIndex, nextBoard) {
+    let isMoveValid = false;
 
-        for (let i = nextBoard.length - 1; i > -1; i--) {
-            let boardRow = nextBoard[i];
-            let boardPosition = boardRow[columnIndex];
+    for (let i = nextBoard.length - 1; i > -1; i--) {
+        let boardRow = nextBoard[i];
+        let boardPosition = boardRow[columnIndex];
 
-            if (boardPosition !== Constants.BoardToken.NONE) {
-                continue;
-            }
-
-            boardRow[columnIndex] = FourInARowGame.playerColorToBoardToken(this.currentTurn);
-            isMoveValid = true;
-            break;
+        if (boardPosition !== Constants.BoardToken.NONE) {
+            continue;
         }
 
-        if (!isMoveValid) {
-            return {
-                status: Constants.MoveStatus.INVALID,
-            };
-        }
+        boardRow[columnIndex] = FourInARowGame.playerColorToBoardToken(this.currentTurn);
+        isMoveValid = true;
+        break;
+    }
 
+    if (!isMoveValid) {
         return {
-            status: Constants.MoveStatus.SUCCESS,
-            board: nextBoard
+            status: Constants.MoveStatus.INVALID,
         };
     }
+
+    return {
+        status: Constants.MoveStatus.SUCCESS,
+        board: nextBoard
+    };
+}
 ```
 
 The method above checks the column in the board the player specified from the bottom to the top for an empty position then attempts to add the current player's token to the board position. Later it returns the result.
