@@ -324,7 +324,7 @@ playMove(columnIndex) {
 
     let moveResult = this.performMove(columnIndex);
 
-    // Only change current turn when while the game is still in progress.
+    // Only change current turn while the game is still in progress.
     if (moveResult.status.value === Constants.MoveStatus.SUCCESS) {
         this.currentTurn = this.currentTurn === Constants.PlayerColor.YELLOW
             ? Constants.PlayerColor.RED
