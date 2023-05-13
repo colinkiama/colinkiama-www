@@ -7,7 +7,7 @@ description = "Allow players to make moves in your Four-In-A-Row game!"
 
 ## Intro
 
-In the [previous blog](@/blog/making-four-in-a-row-part-2.md) post, you set up your `FourInARowGame` class's fields.
+In the [previous blog post](@/blog/making-four-in-a-row-part-2.md), you set up your `FourInARowGame` class's fields.
 
 Now you're ready to start implementing player moves and updating the state of the game accordingly.
 
@@ -322,16 +322,16 @@ playMove(columnIndex) {
             break;
     }
 
-    let moveResults = this.performMove(columnIndex);
+    let moveResult = this.performMove(columnIndex);
 
-    // Do not change player turn if move is invalid
-    if (moveResults.status !== Constants.MoveStatus.INVALID && moveResults.status.value !== Constants.MoveStatus.INVALID) {
+    // Only change player turn when on a successful while the game is still in progress.
+    if (moveResult.status.value === Constants.MoveStatus.SUCCESS) {
         this.currentTurn = this.currentTurn === Constants.PlayerColor.YELLOW
             ? Constants.PlayerColor.RED
             : Constants.PlayerColor.YELLOW;
     }
 
-    return moveResults;
+    return moveResult;
 }
 ```
 

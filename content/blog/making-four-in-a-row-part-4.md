@@ -6,7 +6,7 @@ description = "Detecting wins and draws in your Four-In-A-Row game!"
 
 ## Intro
 
-In the [previous blog](@/blog/making-four-in-a-row-part-3.md) post, you implemented player moves.
+In the [previous blog post](@/blog/making-four-in-a-row-part-3.md), you implemented player moves.
 
 Now you're ready to check for wins and draws in the game.
 
