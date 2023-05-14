@@ -31,7 +31,7 @@ From now on the core game logic will be stored in and referenced from `src/gameL
 
 You're now exporting your core game logic as a module from `src/gameLogic/index.js`. You'll now need to fix outdated imports of the `FourInARowGame` class.
 
-To do this, fix the import statement in `src/index.js` so that you import the `FourInARowGame` class like from the game logic module:
+To do this, fix the import statement in `src/index.js` so that you import the `FourInARowGame` class from the game logic module:
 
 ```js
 import { FourInARowGame } from "./gameLogic/index.js";
