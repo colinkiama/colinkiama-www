@@ -6,7 +6,7 @@ description = "Making changes to the work you've done so far in preparation for 
 
 ## Intro
 
-In the [previous blog](@/blog/making-four-in-a-row-part-4.md) post, you checked for wins and draws in `FourInARowGame`.
+In the [previous blog post](@/blog/making-four-in-a-row-part-4.md), you checked for wins and draws in `FourInARowGame`.
 
 Now you'll be reorganising the work you've done so far in preparation the the HTML5 Canvas front-end that you'll be creating for the game.
 
