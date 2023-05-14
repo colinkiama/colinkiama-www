@@ -347,3 +347,5 @@ Otherwise, congratulations! You've now implemented the core logic of a four-in-a
 In the upcoming posts in this blog series, you'll be working on the HTML5 Canvas front-end for your game and integrating the state machine object you've created into it!
 
 That's all for now 👋!
+
+[Next Post](@/blog/making-four-in-a-row-part-5.md)
