@@ -44,3 +44,5 @@ If you test the code in your web browser's console, you should still be able to 
 If not, please make sure that you've followed the instructions in this post correctly!
 
 Great! Now, you're ready to start working on the front-end in the next post.
+
+[Next Post](@/blog/making-four-in-a-row-part-6.md)
