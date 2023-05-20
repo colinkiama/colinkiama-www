@@ -22,11 +22,9 @@ Here's a breakdown of the image above:
 
 This post will be focused on setting up the canvas where each part of the game will be displayed on.
 
-## Getting Started
+## Setting up constants (again)
 
-### Adding Front-End Constants
-
-The same way you created a constants file for the game logic, you'll need to also create one for the front-end
+The same way you created a constants file for the game logic, you'll need to also create one for the front-end.
 
 Create a new directory in `src` called `constants` then, inside the directory you've just created (`src/constants`), create a called `index.js` with these contents:
 
@@ -78,4 +76,70 @@ export const PlayAgainButtonConfig = {
   BACKGROUND_START_COLOR: "#225FFD",
   BACKGROUND_END_COLOR: "#1D48B8",
 };
+```
+
+## Setting up the canvas
+
+### Adding canvas to the body
+
+First you'll need to add the `<canvas>` element to the `<body>` of the page. It'll need to have a `width` of 320, a `height` of 480 and and an `id` of "canvas". You do this in `index.html`. It should look like this:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Four in a row</title>
+  </head>
+
+  <body>
+    <canvas id="canvas" width="320" height="480"></canvas>
+    <script src="src/index.js" type="module"></script>
+  </body>
+</html>
+```
+
+### Referencing the canvas in Javascript
+
+Next, you'll reference the `<canvas>` element that you've added to the page from JavaScript.
+
+Create a new fie called in the `src` directory called `FrontEnd.js`. This is where the majority of the logic of the front-end of the game will be handled from.
+
+Add the following code to the file you've just created:
+
+```js
+import { Constants } from "./gameLogic/index.js";
+import { Board, StatusArea, PlayAgainButton } from "./components/index.js";
+import {
+  BoardConfig,
+  FrontEndConfig,
+  PlayAgainButtonConfig,
+  StatusAreaConfig,
+  StatusMessages,
+} from "./constants/index.js";
+
+export default class FrontEnd {
+  constructor(game) {
+    this.game = game;
+  }
+}
+```
+
+The constructor of the `FrontEnd` class has a parameter called "game" which is for an instance of the `FourInARowGame` class. A reference to the `FourInARowGame` instance will be stored in the `FrontEnd`class as one of its fields called `game`. This will be used to update and retrieve the core game's state.
+
+Next you'll set up the canvas.
+
+First, in the `FrontEnd` class's constructor, obtain a reference to the canvas element on the page and store it in a class field called `canvas`:
+
+```js
+export default class FrontEnd {
+  game;
+  canvas;
+
+  constructor(game) {
+    this.game = game;
+    this.canvas = document.getElementById("canvas");
+  }
+}
 ```
