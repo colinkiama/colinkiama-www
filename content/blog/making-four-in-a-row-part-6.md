@@ -109,16 +109,6 @@ Create a new fie called in the `src` directory called `FrontEnd.js`. This is whe
 Add the following code to the file you've just created:
 
 ```js
-import { Constants } from "./gameLogic/index.js";
-import { Board, StatusArea, PlayAgainButton } from "./components/index.js";
-import {
-  BoardConfig,
-  FrontEndConfig,
-  PlayAgainButtonConfig,
-  StatusAreaConfig,
-  StatusMessages,
-} from "./constants/index.js";
-
 export default class FrontEnd {
   constructor(game) {
     this.game = game;
@@ -143,3 +133,59 @@ export default class FrontEnd {
   }
 }
 ```
+
+Next, set 2 more fields called `width` and `height` to the canvas' width and height respectively:
+
+```js
+export default class FrontEnd {
+  game;
+  canvas;
+  width;
+  height;
+
+  constructor(game) {
+    this.game = game;
+    this.canvas = document.getElementById("canvas");
+    this.width = canvas.width;
+    this.height = canvas.height;
+  }
+}
+```
+
+This will come in handy later once you start drawing on the canvas.
+
+Lastly, set the background of the canvas:
+
+```js
+import { FrontEndConfig } from "./constants/index.js";
+
+export default class FrontEnd {
+  game;
+  canvas;
+  width;
+  height;
+
+  constructor(game) {
+    this.game = game;
+    this.canvas = document.getElementById("canvas");
+    this.canvas.style.background = FrontEndConfig.GAME_BACKGROUND_COLOR;
+    this.width = canvas.width;
+    this.height = canvas.height;
+  }
+}
+```
+
+Now let's see if you've referenced the canvas element properly.
+
+In `src/index.js`, update the code to create a new instance of the `FrontEnd` class:
+
+```js
+import { FourInARowGame } from "./gameLogic/index.js";
+import FrontEnd from "./FrontEnd.js";
+
+let frontEnd = new FrontEnd(new FourInARowGame());
+```
+
+If you run a HTTP server and check the address, it's pointing to, you should see a blue rectangle (That's the canvas you created!):
+
+![Image of canvas with blue background]()
