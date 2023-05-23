@@ -8,7 +8,7 @@ description = "Start working on the front-end of your Four-In-A-Row game!"
 
 First of all, great job following along with this series! You have completed the first 50% of this tutorial so far!
 
-In the [previous blog post](@/blog/making-four-in-a-row-part-5.md), reogranised the project in preparation for work on front-end of the game. This is the post where the work starts.
+In the [previous blog post](@/blog/making-four-in-a-row-part-5.md), reorganised the project in preparation for work on front-end of the game. This is the post where the work starts.
 
 Here's your goal at the end of this tutorial:
 
@@ -189,3 +189,111 @@ let frontEnd = new FrontEnd(new FourInARowGame());
 If you run a HTTP server and check the address, it's pointing to, you should see a blue rectangle (That's the canvas you created!):
 
 ![Image of canvas with blue background]()
+
+### Drawing on the canvas
+
+Let's proceed to drawing in the canvas. To do this you'll need to get a [2D canvas rendering context](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D). An easy way to imagine this is that you need to get a set of tools (paints, paintbrushes etc.) made for creating 2D drawings.
+
+You'll set this rendering context object in the `context` field of your `FrontEnd` class:
+
+```js
+import { FrontEndConfig } from "./constants/index.js";
+
+export default class FrontEnd {
+  game;
+  canvas;
+  width;
+  height;
+  context;
+
+  constructor(game) {
+    this.game = game;
+    this.canvas = document.getElementById("canvas");
+    this.canvas.style.background = FrontEndConfig.GAME_BACKGROUND_COLOR;
+    this.width = canvas.width;
+    this.height = canvas.height;
+    this.context = this.canvas.getContext("2d");
+  }
+}
+```
+
+Next up, you'll need to [scale the canvas for high resolution displays to prevent issues with blurry drawings](https://web.dev/canvas-hidpi).
+
+First, create a method called `enableHiDPIDisplaySupport()` in the `FrontEnd` class:
+
+```js
+export default class FrontEnd {
+  // ...
+  enableHiDPISupport() {
+    // Get the DPR and size of the canvas
+    const dpr = window.devicePixelRatio;
+    const rect = this.canvas.getBoundingClientRect();
+
+    // Set the "actual" size of the canvas
+    this.canvas.width = rect.width * dpr;
+    this.canvas.height = rect.height * dpr;
+
+    // Scale the context to ensure correct drawing operations
+    this.context.scale(dpr, dpr);
+
+    // Set the "drawn" size of the canvas
+    this.canvas.style.width = `${rect.width}px`;
+    this.canvas.style.height = `${rect.height}px`;
+  }
+}
+```
+
+Now call the `enableHiDPIDisplaySupport()` method it the `FrontEnd` class constructor:
+
+```js
+export default class FrontEnd {
+  constructor(game) {
+    this.game = game;
+    this.canvas = document.getElementById("canvas");
+    this.canvas.style.background = FrontEndConfig.GAME_BACKGROUND_COLOR;
+    this.width = canvas.width;
+    this.height = canvas.height;
+    this.context = this.canvas.getContext("2d");
+
+    this.enableHiDPIDisplaySupport();
+  }
+
+  // ...
+}
+```
+
+You're now ready to start drawing on the canvas.
+
+Create a method called `start()` in the `FrontEnd` class and draw a white rectangle with a width of `50` and a height of `100`:
+
+```js
+export default class FrontEnd {
+  constructor(game) {
+    // ...
+  }
+
+  start() {
+    this.context.fillStyle = "white";
+    this.context.fillRect(0, 0, 50, 100); // fillRect(x, y, width, height);
+  }
+}
+```
+
+Now go back to `src/index.js` and call the `start()` method on the `FrontEnd` class instance that you created:
+
+```js
+import { FourInARowGame } from "./gameLogic/index.js";
+import FrontEnd from "./FrontEnd.js";
+
+let frontEnd = new FrontEnd(new FourInARowGame());
+frontEnd.start();
+```
+
+Now, if you check your project with a http-server, in your browser, you'll see a blue canvas with a white rectangle drawn on it:
+![Image of canvas drawing with white rectangle over blue background]()
+
+Congratulations, you've covered te basics of drawing using the HTML5 Canvas API!
+
+In the next post, you'll draw te game board on the canvas.
+
+That's all for now! 👋️
