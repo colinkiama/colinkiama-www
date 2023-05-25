@@ -6,11 +6,11 @@ description = "Start working on the front-end of your Four-In-A-Row game!"
 
 ## Intro
 
-First of all, great job following along with this series! You have completed the first 50% of this tutorial so far!
+First of all, great job following along with this series! You've completed the first 50% of this tutorial so far!
 
-In the [previous blog post](@/blog/making-four-in-a-row-part-5.md), reorganised the project in preparation for work on front-end of the game. This is the post where the work starts.
+In the [previous blog post](@/blog/making-four-in-a-row-part-5.md), you reorganised the project in preparation for work on the front-end of the game. This is the post where the work starts.
 
-Here's your goal at the end of this tutorial:
+Here's your expected outcome at the end of this tutorial:
 
 ![A four-in-a-row game where the yellow player has won with a diagonal win](https://ik.imagekit.io/mune/tr:w-320,h-480/four-in-a-row-win.png)
 
@@ -24,7 +24,7 @@ This post will be focused on setting up the canvas where each part of the game w
 
 ## Setting up constants (again)
 
-The same way you created a constants file for the game logic, you'll need to also create one for the front-end.
+The same way you created a constants file for the game logic, you'll also need to create one for the front-end.
 
 Create a new directory in `src` called `constants` then, inside the directory you've just created (`src/constants`), create a called `index.js` with these contents:
 
@@ -104,7 +104,7 @@ First you'll need to add the `<canvas>` element to the `<body>` of the page. It'
 
 Next, you'll reference the `<canvas>` element that you've added to the page from JavaScript.
 
-Create a new fie called in the `src` directory called `FrontEnd.js`. This is where the majority of the logic of the front-end of the game will be handled from.
+Create a new fie called in the `src` directory called `FrontEnd.js`. This will handle the front-end logic of the game.
 
 Add the following code to the file you've just created:
 
@@ -116,7 +116,7 @@ export default class FrontEnd {
 }
 ```
 
-The constructor of the `FrontEnd` class has a parameter called "game" which is for an instance of the `FourInARowGame` class. A reference to the `FourInARowGame` instance will be stored in the `FrontEnd`class as one of its fields called `game`. This will be used to update and retrieve the core game's state.
+The constructor of the `FrontEnd` class has a parameter called `game` which contains an instance of the `FourInARowGame` class. The `FourInARowGame` instance will be stored in the `FrontEnd` class in the `game` field. This will be used to update and retrieve the core game's state.
 
 Next you'll set up the canvas.
 
@@ -186,13 +186,13 @@ import FrontEnd from "./FrontEnd.js";
 let frontEnd = new FrontEnd(new FourInARowGame());
 ```
 
-If you run a HTTP server and check the address, it's pointing to, you should see a blue rectangle (That's the canvas you created!):
+If you run a HTTP server and check the address it's pointing to, you should see a blue rectangle (That's the canvas you've created!):
 
 ![Image of canvas with blue background]()
 
 ### Drawing on the canvas
 
-Let's proceed to drawing in the canvas. To do this you'll need to get a [2D canvas rendering context](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D). An easy way to imagine this is that you need to get a set of tools (paints, paintbrushes etc.) made for creating 2D drawings.
+Let's proceed to drawing on the canvas. To do this you'll need to get a [2D canvas rendering context](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D). Another way to think about this is that you're getting a set of art supplies (paints, paintbrushes, stencils etc.) made for creating 2D drawings.
 
 You'll set this rendering context object in the `context` field of your `FrontEnd` class:
 
@@ -217,7 +217,7 @@ export default class FrontEnd {
 }
 ```
 
-Next up, you'll need to [scale the canvas for high resolution displays to prevent issues with blurry drawings](https://web.dev/canvas-hidpi).
+Next up, you'll need to [scale the canvas for high resolution displays to prevent issues with blurry drawings](https://web.dev/canvas-hidipi).
 
 First, create a method called `enableHiDPIDisplaySupport()` in the `FrontEnd` class:
 
@@ -243,7 +243,7 @@ export default class FrontEnd {
 }
 ```
 
-Now call the `enableHiDPIDisplaySupport()` method it the `FrontEnd` class constructor:
+Now call the `enableHiDPIDisplaySupport()` method in the `FrontEnd` class constructor:
 
 ```js
 export default class FrontEnd {
@@ -292,8 +292,8 @@ frontEnd.start();
 Now, if you check your project with a http-server, in your browser, you'll see a blue canvas with a white rectangle drawn on it:
 ![Image of canvas drawing with white rectangle over blue background]()
 
-Congratulations, you've covered te basics of drawing using the HTML5 Canvas API!
+Congratulations, you've covered the basics of drawing using the HTML5 Canvas API!
 
-In the next post, you'll draw te game board on the canvas.
+In the next post, you'll draw the game board on the canvas.
 
 That's all for now! 👋️
