@@ -274,7 +274,7 @@ export default class FrontEnd {
 
   start() {
     this.context.fillStyle = "white";
-    this.context.fillRect(0, 0, 50, 100); // fillRect(x, y, width, height);
+    this.context.fillRect(20, 20, 50, 100); // fillRect(x, y, width, height);
   }
 }
 ```
