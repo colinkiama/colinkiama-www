@@ -12,7 +12,7 @@ In the [previous blog post](@/blog/making-four-in-a-row-part-5.md), you reorgani
 
 Here's your expected outcome at the end of this tutorial:
 
-![A four-in-a-row game where the yellow player has won with a diagonal win](https://ik.imagekit.io/mune/tr:w-320,h-480/four-in-a-row-win.png)
+![A four-in-a-row game where the yellow player has won with a diagonal win](https://ik.imagekit.io/mune/four-in-a-row-goal_ua2AQmcTE.png)
 
 Here's a breakdown of the image above:
 
@@ -188,7 +188,7 @@ let frontEnd = new FrontEnd(new FourInARowGame());
 
 If you run a HTTP server and check the address it's pointing to, you should see a blue rectangle (That's the canvas you've created!):
 
-![Image of canvas with blue background]()
+![Image of canvas with blue background](https://ik.imagekit.io/mune/four-in-a-row-canvas-setup_h3F8XfyjC.png?updatedAt=1685214594926)
 
 ### Drawing on the canvas
 
@@ -290,7 +290,8 @@ frontEnd.start();
 ```
 
 Now, if you check your project with a http-server, in your browser, you'll see a blue canvas with a white rectangle drawn on it:
-![Image of canvas drawing with white rectangle over blue background]()
+
+![Image of canvas drawing with white rectangle over blue background](https://ik.imagekit.io/mune/four-in-a-row-first-canvas-drawing_l-1NGyp-X.png?updatedAt=1685214594885)
 
 Congratulations, you've covered the basics of drawing using the HTML5 Canvas API!
 
