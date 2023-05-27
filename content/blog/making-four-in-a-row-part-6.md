@@ -1,6 +1,6 @@
 +++
 title = "Making Four-In-A-Row - Part 6: Blank Canvas"
-date = 2023-05-18T22:00:00Z
+date = 2023-05-27T20:22:00Z
 description = "Start working on the front-end of your Four-In-A-Row game!"
 +++
 
