@@ -73,8 +73,79 @@ export default class Board extends GameObject {
 }
 ```
 
-## Drawing the game board
-
 To test out whether the `GameObject` is being inherited by `GameObject` correctly, you'll recreate the last post's white rectangle drawing using the `Board` class.
 
-Now to do so, create a new 
+Add a method called `render` to the `Board` class that will render a white rectangle and restore the state of the context object:
+
+```js
+import GameObject from './GameObject.js';
+
+export default class Board extends GameObject {
+    render() {
+        this.context.save();
+        this.clear();
+        this.context.fillStyle = "white";
+        this.context.fillRect(this.x, this.y, this.width, this.height);
+        this.context.restore();
+    }
+}
+```
+
+Notice how the `x`, `y`, `width` and `height` fields were not defined in `Board`. This is because they were inherited from `GameObject`.
+
+Create a new file in `src/components` called `index.js` and fill it with the following contents:
+
+```js
+import Board from './Board.js';
+
+export { Board };
+```
+
+This code block above exports the `Board` class as a module, making it available to import from `src/components/index.js`. There will be more components in the future. This change will simplify the code required to import multiple components.  
+
+Return to the `FrontEnd` class. Import the `Board` class from `src/components/index.js`:
+
+```js
+import { FrontEndConfig } from "./constants/index.js";
+import { Board } from "./components/index.js";
+```
+
+Add a field called `board`:
+
+```js
+export default class FrontEnd {
+    game;
+    canvas;
+    width;
+    height;
+    context;
+    board;
+    
+    // ...
+}
+```
+
+Rewrite the `start()` method in the `Board` class:
+- Set the `board` field to a new instance of the `Board` class
+- Call the `render` method on `board`
+
+```js
+export default class FrontEnd {
+    // ..
+    
+    start() {
+        this.board = new Board(this.context, 20, 20, 50, 100);
+        this.board.render();
+    }
+}
+```
+
+Notice that the `Board` uses the same constructor defined in `GameObject`.
+
+If you check the game with your web server, you'll see the same white rectangle drawn on the canvas as the one you drew in the previous blog post.
+## Drawing the game board
+
+You've figured out how to create your own `GameObject` and draw it on the canvas. Now it's time to draw the actual game board.
+
+### Board Background
+
