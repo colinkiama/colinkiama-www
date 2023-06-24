@@ -66,7 +66,7 @@ export default class GameObject {
 Now that you've created the `GameObject` class, in the `src/components` directory, create a new file named "Board.js". After, in that file, create a `Board` class that inherits from the `GameObject` class:
 
 ```js
-import GameObject from './GameObject.js';
+import GameObject from "./GameObject.js";
 
 export default class Board extends GameObject {
 
@@ -78,7 +78,7 @@ To test out whether the `GameObject` is being inherited by `GameObject` correctl
 Add a method called `render` to the `Board` class that will render a white rectangle and restore the state of the context object:
 
 ```js
-import GameObject from './GameObject.js';
+import GameObject from "./GameObject.js";
 
 export default class Board extends GameObject {
     render() {
@@ -96,7 +96,7 @@ Notice how the `x`, `y`, `width` and `height` fields were not defined in `Board`
 Create a new file in `src/components` called `index.js` and fill it with the following contents:
 
 ```js
-import Board from './Board.js';
+import Board from "./Board.js";
 
 export { Board };
 ```
@@ -143,9 +143,74 @@ export default class FrontEnd {
 Notice that the `Board` uses the same constructor defined in `GameObject`.
 
 If you check the game with your web server, you'll see the same white rectangle drawn on the canvas as the one you drew in the previous blog post.
+
+![Copy white rectangle image from last blog post]()
 ## Drawing the game board
 
 You've figured out how to create your own `GameObject` and draw it on the canvas. Now it's time to draw the actual game board.
 
 ### Board Background
+
+In `src/components/Board.js`, import `BoardConfig` from the constants file:
+
+```js
+import GameObject from './GameObject.js';
+import { BoardConfig } from '../constants/index.js';
+```
+Then create a new method in the `Board` class called `renderBoardBackground()`. After: 
+- Move the code that draws the white rectangle into the `renderBoardBackground()` method
+- Replace the fill style with the `BACKGROUND_COLOR` field defined in the imported `BoardConfig` object.
+
+```js
+import GameObject from "./GameObject.js";
+import { BoardConfig } from "../constants/index.js";
+
+export default class Board extends GameObject {
+    render() {
+        this.context.save();
+        this.clear();
+        this.renderBoardBackground();
+        this.context.restore();
+    }
+
+    renderBoardBackground() {
+        this.context.fillStyle = BoardConfig.BACKGROUND_COLOR;
+        this.context.fillRect(this.x, this.y, this.width, this.height); 
+    }
+}
+```
+
+After, in the `FrontEnd` class, import `BoardConfig` from the `constants` file:
+
+```js
+import { FrontEndConfig, BoardConfig } from "./constants/index.js";
+```
+
+Add a method called `createBoard()` then do the following:
+- In `createBoard()`, create a local variable that stores a new instance of the `Board` class, calls the `render` method on it then returns it.
+- Rewrite the `start()` method so that it the `board` field is set to the result returned from calling the `createBoard()` method
+
+```js
+export default class FrontEnd {
+    // ..
+
+    start() {
+        this.board = this.createBoard();
+    }
+
+    createBoard() {
+        let board = new Board(this.context, BoardConfig.MARGIN_LEFT, BoardConfig.MARGIN_TOP, BoardConfig.WIDTH, BoardConfig.HEIGHT);
+        board.render();
+        return board;
+    }
+}
+```
+
+The board is now created with the positioning and dimensions that match from mockups of the game.
+
+Now, with a web server running, if you check your game in your browser, you'll see that a blue rectangle has been rendered on the canvas.
+
+![Image of game board background rendered on the canvas]()
+
+### Board Slots
 
