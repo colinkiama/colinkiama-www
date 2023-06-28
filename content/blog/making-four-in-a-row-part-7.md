@@ -144,7 +144,7 @@ Notice that the `Board` uses the same constructor defined in `GameObject`.
 
 If you check the game with your web server, you'll see the same white rectangle drawn on the canvas as the one you drew in the previous blog post.
 
-![Copy white rectangle image from last blog post]()
+![Copy white rectangle image from last blog post](https://ik.imagekit.io/mune/four-in-a-row-first-canvas-drawing_l-1NGyp-X.png?updatedAt=1685214594885)
 ## Drawing the game board
 
 You've figured out how to create your own `GameObject` and draw it on the canvas. Now it's time to draw the actual game board.
@@ -507,9 +507,7 @@ export default class FrontEnd {
     // ..
 
     start() {
-        this.statusArea = this.createStatusArea();
         this.board = this.createBoard();
-        this.playAgainButton = this.createPlayAgainButton();
 
         document.body.addEventListener('click', (clickEvent) => {
             this.board.handleClick(clickEvent);
@@ -572,8 +570,6 @@ export default class FrontEnd {
         if (this.gameOver || moveResult.status.value === Constants.MoveStatus.INVALID) {
             return;
         }
-
-        const indicatorColor = moveResult.status.value === Constants.MoveStatus.DRAW ? Constants.PlayerColor.NONE : this.game.currentTurn;
 
         this.board.render(this.game.currentBoard);
 
