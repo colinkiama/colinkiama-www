@@ -21,9 +21,9 @@ Looking back at the breakdown of the game's UI. There are three components that 
 2. Game Board
 3. Play Again Button
 
-All of these components have share things in common with each other:
-- Position
-- Dimensions
+All of these components share the following things in common with each other:
+- They have position
+- They have dimensions
 - All drawn on the canvas
 
 When referring to these components in a generalised way, we'll be considering these common traits and properties only. In the context of this game, the general name for these components will be "Game Object". The components listed above are all **game objects**.
@@ -32,11 +32,11 @@ To represent this relationship in code, you'll create a `GameObject` class. The 
 
 ### Creating the GameObject class
 
-Unlike with the HTML elements, you will have to implement the game objects' size and positioning yourself. You'll also have to draw the game objects yourself.
+Unlike with the HTML elements, you will have to implement the size and positioning of game objects yourself. You'll also have to draw the game objects yourself too.
 
-Create a directory under the `src` directory called "components".
+Create a directory under the `src` directory called `components`.
 
-In the `src/components` directory, create a new file called "GameObject.js".
+In the `src/components` directory, create a new file called `GameObject.js`.
 
 In `src/components/GameObject.js`, add the following to the file:
 
@@ -46,7 +46,7 @@ export default class GameObject {
     y;
     width;
     height;
-    context;
+    context; // CanvasRenderingContext2D
 
     constructor(context, x, y, width, height) {
         this.context = context;
@@ -63,7 +63,7 @@ export default class GameObject {
 ```
 ### Inheriting the GameObject class
 
-Now that you've created the `GameObject` class, in the `src/components` directory, create a new file named "Board.js". After, in that file, create a `Board` class that inherits from the `GameObject` class:
+Now that you've created the `GameObject` class, in the `src/components` directory, create a new file named `Board.js`. After, in that file, create a `Board` class that inherits from the `GameObject` class:
 
 ```js
 import GameObject from "./GameObject.js";
@@ -73,9 +73,9 @@ export default class Board extends GameObject {
 }
 ```
 
-To test out whether the `GameObject` is being inherited by `GameObject` correctly, you'll recreate the last post's white rectangle drawing using the `Board` class.
+To test out whether the `GameObject` is being inherited by `Board` correctly, you'll recreate the last post's white rectangle drawing using the `Board` class.
 
-Add a method called `render` to the `Board` class that will render a white rectangle and restore the state of the context object:
+Add a method called `render()` to the `Board` class that will render a white rectangle then restore the state of the context object:
 
 ```js
 import GameObject from "./GameObject.js";
@@ -101,7 +101,7 @@ import Board from "./Board.js";
 export { Board };
 ```
 
-This code block above exports the `Board` class as a module, making it available to import from `src/components/index.js`. There will be more components in the future. This change will simplify the code required to import multiple components.  
+This code block above exports the `Board` class as a module, making it available to import from `src/components/index.js`. There will be more components in the future. This change will simplify the code required to import multiple components over time.  
 
 Return to the `FrontEnd` class. Import the `Board` class from `src/components/index.js`:
 
@@ -127,7 +127,7 @@ export default class FrontEnd {
 
 Rewrite the `start()` method in the `Board` class:
 - Set the `board` field to a new instance of the `Board` class
-- Call the `render` method on `board`
+- Call the `render()` method on `board`
 
 ```js
 export default class FrontEnd {
@@ -147,7 +147,7 @@ If you check the game with your web server, you'll see the same white rectangle 
 ![Image of canvas drawing with white rectangle over blue background](https://ik.imagekit.io/mune/four-in-a-row-first-canvas-drawing_l-1NGyp-X.png?updatedAt=1685214594885)
 ## Drawing the game board
 
-You've figured out how to create your own `GameObject` and draw it on the canvas. Now it's time to draw the actual game board.
+Awesome! You've figured out how to create your own game object and draw it on the canvas. Now it's time to draw the actual game board.
 
 ### Board Background
 
@@ -157,7 +157,9 @@ In `src/components/Board.js`, import `BoardConfig` from the constants file:
 import GameObject from './GameObject.js';
 import { BoardConfig } from '../constants/index.js';
 ```
-Then create a new method in the `Board` class called `renderBoardBackground()`. After: 
+Then create a new method in the `Board` class called `renderBoardBackground()`. 
+
+After, perform the following steps: 
 - Move the code that draws the white rectangle into the `renderBoardBackground()` method
 - Replace the fill style with the `BACKGROUND_COLOR` field defined in the imported `BoardConfig` object.
 
@@ -180,15 +182,15 @@ export default class Board extends GameObject {
 }
 ```
 
-After, in the `FrontEnd` class, import `BoardConfig` from the `constants` file:
+In the `FrontEnd` class, import `BoardConfig` from the `constants` file:
 
 ```js
 import { FrontEndConfig, BoardConfig } from "./constants/index.js";
 ```
 
 Add a method called `createBoard()` then do the following:
-- In `createBoard()`, create a local variable that stores a new instance of the `Board` class, calls the `render` method on it then returns it.
-- Rewrite the `start()` method so that it the `board` field is set to the result returned from calling the `createBoard()` method
+- In `createBoard()`, create a local variable that stores a new instance of the `Board` class, calls the `render()` method on it then returns it.
+- Rewrite the `start()` method so that the `board` field is set to the result returned from calling the `createBoard()` method
 
 ```js
 export default class FrontEnd {
@@ -206,7 +208,7 @@ export default class FrontEnd {
 }
 ```
 
-The board is now created with the positioning and dimensions that match from mockups of the game.
+The board is now created with the positioning and dimensions from mockups of the game.
 
 Now, with a web server running, if you check your game in your browser, you'll see that a blue rectangle has been rendered on the canvas.
 
@@ -216,7 +218,7 @@ Now, with a web server running, if you check your game in your browser, you'll s
 
 Now you're ready to draw the slots on the board.
 
-Add a parameter called "nextBoard" to the `Board` class' `render` method:
+Add a parameter called `nextBoard` to the `Board` class' `render()` method:
 
 ```js
 export default class Board extends GameObject {
@@ -230,9 +232,9 @@ export default class Board extends GameObject {
     // ..
 ```
 
-`nextBoard` will contain the state of the board. An array of arrays of numbers that represent the state of the board. These will be used to render the board tokens in the slots.
+`nextBoard` will contain the state of the board. An array of arrays of numbers that represent the token in each board position. These will be used to render the board tokens in the slots.
 
-Next, create a method called `renderSlots(nextBoard)` to the `Board` class. To kep the upcoming drawing commands simple, you'll first start drawing the slots from a different point of origin. This way, you won't have to consider padding in later drawing commands in `renderSlots`. To do this, you'll use the `CanvasDrawingContext2D.translate()` method:
+Next, create a method called `renderSlots()` to the `Board` class. To keep the upcoming drawing commands simple, you'll modify the point of origin where you start drawing the slots. This way, you won't have to consider padding in later drawing commands in `renderSlots()`. To do this, you'll use the [`CanvasRenderingContext2D.translate()`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/translate)` method:
 
 ```js
 export default class Board extends GameObject {
@@ -269,7 +271,7 @@ import GameObject from "./GameObject.js";
 
 Loop through each slot on the board and:
 - Calculate the positioning:
-- Obtain the token colour to render the slot width
+- Obtain the token colour to render the slot with
 
 ```js
 for (let rowIndex = 0; rowIndex < Constants.BoardDimensions.ROWS; rowIndex++) {
@@ -302,7 +304,7 @@ for (let rowIndex = 0; rowIndex < Constants.BoardDimensions.ROWS; rowIndex++) {
 }
 ```
 
-You now have the values you need to render each slot. To do so add a method called `renderSlot` to the `Board` class:
+You now have the values you need to render each slot. To do so, add a method called `renderSlot()` to the `Board` class:
 
 ```js
 export default class Board extends GameObject {
@@ -323,7 +325,7 @@ export default class Board extends GameObject {
 }
 ```
 
-Now, call `renderSlot` right after the `switch` block in `renderSlots`:
+Now, call `renderSlot()` right after the `switch` block in `renderSlots()`:
 
 ```js
 renderSlots(nextBoard) {
@@ -366,7 +368,7 @@ renderSlots(nextBoard) {
 }
 ```
 
-Add call to `renderSlots()` in the `render()` method:
+Add a call to `renderSlots()` in the `render()` method:
 
 ```js
 render(nextBoard) {
@@ -378,7 +380,7 @@ render(nextBoard) {
 }
 ```
 
-Lastly, in the `FrontEnd` class, update the `board.render()` method call in `createBoard` so that you pass in the current board state:
+Lastly, in the `FrontEnd` class, update the `board.render()` method call in `createBoard()` so that you pass in the current board state:
 
 ```js
 export default class FrontEnd {
@@ -398,17 +400,19 @@ If you check your browser now while your server is running, you'll see empty slo
 
 ## Making the game playable
 
-You can attempt to hardcode your own board state argument when calling the `render` method a `board` object. The game will render the board state accordingly.
+You can attempt to hardcode your own board state argument when calling the `render()` method on the `board` variable. The game will render the board state accordingly.
 
-However, you currently aren't able to update the board state in-game. You can do this by listening to clicks.
+However, you currently aren't able to update the board state in-game. 
 
-Unlike with HTML elements, you can't just rely on the built-in DOM events system to handle clicks on our game objects. Since you'r drawing on the canvas, you'll have to handle the hit-detection yourself, and come up with your won way of event handling in these objects.
+One way to update the board state in-game is by responding to clicks on the canvas.
+
+Unlike with HTML elements, you can't just rely on the built-in DOM events system to handle clicks on our game objects. Since you're drawing on the canvas, you'll have to handle the hit-detection yourself, and come up with your own event handling interface.
 
 ### Introducing your event handling API
 
-In this game, you'll detect clicks by listening for the click event on the body of the page then passing the event data to relevant game objects to be processed.
+In this game, you'll detect clicks by listening for the click event on the body of the page then pass the event data to relevant game objects to be processed.
 
-To get started with this, add a new method to the `GameObject` class called `handleClick`:
+To get started with this, add a new method to the `GameObject` class called `handleClick()`:
 
 ```js
 export default class GameObject {
@@ -434,7 +438,7 @@ export default class GameObject {
 }
 ```
 
-`handleClick` will be overridden by the `GameObject` class' inheritors. The inheritors will add logic to the `handleClick` method for handling event data from clicks.
+`handleClick()` will be overridden by the `GameObject` class' inheritors. The inheritors will add logic to the `handleClick()` method for handling event data from clicks.
 
 ### Implementing your own event handling API
 
@@ -448,7 +452,7 @@ export default class Board extends GameObject {
 }
 ```
 
-After that, add a method called `setColumnSelectionHandler`, which will be used to set the logic that will run from the callback:
+After that, add a method called `setColumnSelectionHandler()`, which will be used to set the logic that will run from the callback:
 
 ```js
 export default class Board extends GameObject {
@@ -460,11 +464,11 @@ export default class Board extends GameObject {
 }
 ```
 
-You now have the prerequisites for overriding `handleClick` in the `Board` class.
+You now have the prerequisites for overriding `handleClick()` in the `Board` class.
 
 Add the following methods to the `Board` class:
-- `handleClick`
-- `trySelectColumn`
+- `handleClick()`
+- `trySelectColumn()`
 
 ```js
 export default class Board extends GameObject {
@@ -494,13 +498,13 @@ export default class Board extends GameObject {
 }
 ```
 
-The `trySelectColumn` method figures out if the player clicked a column. If the player clicked on the column, it will run the `columnSelected` callback with the selected column.
+The `trySelectColumn()` method figures out if the player clicked a column. If the player has clicked on a column, it will run the `columnSelected` callback with the selected column's position index. For example, the leftmost column would have an index of `0` and the third column would have an index of `2`.
 
 ### Adding the callback logic
 
-Finally, you'll setup the click events in the `FrontEnd` class and handle them.
+Finally, you'll set up the click events in the `FrontEnd` class and handle them.
 
-In the `start` method, add an event listener for clicks on the document's body. This will call the `handleClick` method on the board with event data:
+In the `start` method, add an event listener for clicks on the document's body. This will call the `handleClick()` method on the board with event data:
 
 ```js
 export default class FrontEnd {
@@ -555,7 +559,7 @@ import { Board } from "./components/index.js";
 import { Constants } from "./gameLogic/index.js";
 ```
 
-Create the following methods: `playMove` and `processMoveResult`:
+Create the following methods: `playMove()` and `processMoveResult()`:
 
 ```js
 export default class FrontEnd {
@@ -580,7 +584,7 @@ export default class FrontEnd {
 }
 ```
 
-In `createBoard`, add a line before the call to `render` in on the board. Call the `setColumnSelectionHandler` method:
+In `createBoard()`, add a line before the call to `render()` on the board. In that line, call the `setColumnSelectionHandler()` method:
 
 ```js
 export default class FrontEnd {
@@ -599,8 +603,8 @@ If you check your browser now while your server is running, you'll now be a able
 
 ## Conclusion
 
-Congratulations! This was a long post (maybe the longest in this blog series so far). hopefully it was worthwhile to you know that you've made a playable four-in-a-row game.
+Congratulations! This was a long post (maybe the longest in this blog series so far!). Hopefully it was worthwhile to you now that you've made a playable four-in-a-row game.
 
 However, it's not quite clear what's going on in the game. The board stops updating when a player wins or the game ends in a draw. There's no indication of the current status of the game.
 
-In the next post, you'll add the status area component to the game. This will enable players and spectators to be aware of the current status of the game at any time.
+In the next post, you'll fix that problem. You'll add the status area component to the game. This will enable players and spectators to be aware of the current status of the game at any time.
