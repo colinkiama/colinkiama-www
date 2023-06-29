@@ -234,7 +234,7 @@ export default class Board extends GameObject {
 
 `nextBoard` will contain the state of the board. An array of arrays of numbers that represent the token in each board position. These will be used to render the board tokens in the slots.
 
-Next, create a method called `renderSlots()` to the `Board` class. To keep the upcoming drawing commands simple, you'll modify the point of origin where you start drawing the slots. This way, you won't have to consider padding in later drawing commands in `renderSlots()`. To do this, you'll use the [`CanvasRenderingContext2D.translate()`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/translate)` method:
+Next, create a method called `renderSlots()` to the `Board` class. To keep the upcoming drawing commands simple, you'll modify the point of origin where you start drawing the slots. This way, you won't have to consider padding in later drawing commands in `renderSlots()`. To do this, you'll use the [`CanvasRenderingContext2D.translate()`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/translate) method:
 
 ```js
 export default class Board extends GameObject {
