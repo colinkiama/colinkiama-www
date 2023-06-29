@@ -73,7 +73,7 @@ If you don't see some sort of representation of an `FourInARow` instance object 
 
 ### Play a (fake) move
 
-Now, call the `playMove` method from the `FourInARow` instance, in the browser console window.
+Now, call the `playMove()` method from the `FourInARow` instance, in the browser console window.
 
 First, store the state machine in an easier to reference variable called `game`:
 
@@ -81,7 +81,7 @@ First, store the state machine in an easier to reference variable called `game`:
 let game = window.fourInARowGame;
 ```
 
-Then, call the `playMove` method with the `columnIndex` parameter set to `0`:
+Then, call the `playMove()` method with the `columnIndex` parameter set to `0`:
 
 ```js
 game.playMove(0);
@@ -349,7 +349,7 @@ First, enter the following line in your browser's console:
 let game = window.fourInARowGame;
 ```
 
-Now call the `playMove` method with the `columnIndex` parameter set to `1` instead of `0` to add the token to the second column on the game board:
+Now call the `playMove()` method with the `columnIndex` parameter set to `1` instead of `0` to add the token to the second column on the game board:
 
 ```js
 game.playMove(1);
