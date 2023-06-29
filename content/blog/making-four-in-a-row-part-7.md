@@ -144,7 +144,7 @@ Notice that the `Board` uses the same constructor defined in `GameObject`.
 
 If you check the game with your web server, you'll see the same white rectangle drawn on the canvas as the one you drew in the previous blog post.
 
-![Copy white rectangle image from last blog post](https://ik.imagekit.io/mune/four-in-a-row-first-canvas-drawing_l-1NGyp-X.png?updatedAt=1685214594885)
+![Image of canvas drawing with white rectangle over blue background](https://ik.imagekit.io/mune/four-in-a-row-first-canvas-drawing_l-1NGyp-X.png?updatedAt=1685214594885)
 ## Drawing the game board
 
 You've figured out how to create your own `GameObject` and draw it on the canvas. Now it's time to draw the actual game board.
@@ -210,7 +210,7 @@ The board is now created with the positioning and dimensions that match from moc
 
 Now, with a web server running, if you check your game in your browser, you'll see that a blue rectangle has been rendered on the canvas.
 
-![Image of game board background rendered on the canvas]()
+![Image of game board background rendered on the canvas](https://ik.imagekit.io/mune/four-in-a-row-board-background_1nm7LjJCA.png?updatedAt=1688023768343)
 
 ### Board Slots
 
@@ -394,7 +394,7 @@ export default class FrontEnd {
 
 If you check your browser now while your server is running, you'll see empty slots drawn on the board:
 
-![Canvas in browser featuring board with slots]()
+![Canvas in browser featuring board with slots](https://ik.imagekit.io/mune/four-in-a-row-board-with-slots_jN-DphejL.png?updatedAt=1688023768392)
 
 ## Making the game playable
 
@@ -594,6 +594,8 @@ export default class FrontEnd {
 ```
 
 If you check your browser now while your server is running, you'll now be a able to place tokens on the board, based which column you clicked on.
+
+![Canvas in browser featuring board with slots with a few slots around the bottom left filled with yellow and red tokens](https://ik.imagekit.io/mune/four-in-a-row-board-game-in-progress_Ux9392g5V.png?updatedAt=1688023768438)
 
 ## Conclusion
 
