@@ -211,12 +211,16 @@ export default class FrontEnd {
 Lastly, in `createBoard()`, update the call to the `Board` constructor to so that the board when the game board is rendered, it's shifted down below the status area:
 
 ```js
+export default class FrontEnd {
+    // ..
+
     createBoard() {
         let board = new Board(this.context, BoardConfig.MARGIN_LEFT, this.statusArea.height + BoardConfig.MARGIN_TOP, BoardConfig.WIDTH, BoardConfig.HEIGHT);
         board.setColumnSelectionHandler((columnIndex) => this.playMove(columnIndex));
         board.render(this.game.currentBoard);
         return board;
     }
+}
 ```
 
 If you check the game in your browser while a server is running, you'll see the indicator colour being rendered.
