@@ -234,3 +234,127 @@ It'll updated based on the current state of the game.
 ![Scenario 3 of game with player turn indicator]()
 
 ## Status Messages
+
+The status messages is the text portion of the status area.
+
+It is used to:
+- Display the current player's turn
+- Reveal which player has won a game
+- Shows when a game ends in a draw
+
+### Start Implementing Status Messages
+
+Add the `renderMessage()` method to the `StatusArea` class:
+
+```js
+export default class FrontEnd {
+    // ..
+
+    renderMessage(message) {
+        this.context.fillStyle = "white";
+        this.context.font = "bold 16px Arial";
+        this.context.textBaseline = "top";
+        this.context.textAlign = "center"; // Default value had vertical alignment issues. "center" fixes those in this case
+        const messageY = this.y + StatusAreaConfig.PADDING_TOP + StatusAreaConfig.INNER_MARGIN;
+        this.context.fillText(message, this.width / 2, messageY);
+    }
+}
+```
+
+Proceed by adding the `message` parameter to the `render()` method then calling `renderMessages` in `render()`:
+
+```js
+export default class StatusArea extends GameObject {
+    render(indicatorColor, message) {
+        this.context.save();
+        this.clear();
+
+        if (indicatorColor !== Constants.PlayerColor.NONE) {
+            this.renderPlayerTurnIndicator(indicatorColor);
+        }
+
+        this.renderMessage(message);
+        this.context.restore();
+    }
+
+    // ..
+```
+
+Once you've done that, switch back to the `src/FrontEnd.js` file. Import `StatusMessages` from the `constants` directory:
+
+```js
+import { FrontEndConfig, BoardConfig, StatusAreaConfig, StatusMessages } from "./constants/index.js";
+import { Board } from "./components/index.js";
+import { Constants } from "./gameLogic/index.js";
+```
+
+Now, add logic that determines which status message to display depending on the current state of the game. Add `pickStatusMessage()` to the `FrontEnd` class:
+
+```js
+export default class FrontEnd {
+    // ..
+
+    pickStatusMessage(status) {
+        switch (status) {
+            case Constants.GameStatus.WIN:
+                return this.game.currentTurn === Constants.PlayerColor.YELLOW ? StatusMessages.YELLOW_WIN : StatusMessages.RED_WIN;
+            case Constants.GameStatus.DRAW:
+                return StatusMessages.DRAW;
+            default:
+                // At this point, we can assume that the game is either has just started 
+                // or is still in progress.
+                return this.game.currentTurn === Constants.PlayerColor.YELLOW ? StatusMessages.YELLOW_TURN : StatusMessages.RED_TURN;
+        }
+    }
+}
+```
+
+Then in the `processMOveResult()` method, update the `render()` call on `statusArea` so that it has an additional argument passed in. This argument is a method call to `pickStatusMessage()` with the status value of `moveResult` passed in:
+
+```js
+export default class FrontEnd {
+    // ..
+
+    processMoveResult(moveResult) {
+        if (this.gameOver || moveResult.status.value === Constants.MoveStatus.INVALID) {
+            return;
+        }
+
+        const indicatorColor = moveResult.status.value === Constants.MoveStatus.DRAW ? Constants.PlayerColor.NONE : this.game.currentTurn;
+
+        this.statusArea.render(indicatorColor, this.pickStatusMessage(moveResult.status.value))
+        this.board.render(this.game.currentBoard);
+
+        if (moveResult.status.value === Constants.MoveStatus.WIN || moveResult.status.value === Constants.MoveStatus.DRAW) {
+            this.gameOver = true;
+        }
+    }
+}
+```
+Lastly repeat this same change in `createStatusArea()` except that the argument passed in to `pickStatusMessage()` will be the game's current status:
+
+```js
+export default class FrontEnd {
+    // ..
+
+    createStatusArea() {
+        let statusArea = new StatusArea(this.context, 0, 0, this.width, StatusAreaConfig.HEIGHT);
+        statusArea.render(this.game.currentTurn, this.pickStatusMessage(this.game.status));
+        return statusArea;
+    }
+}
+```
+
+If you check the game in your browser with a server running, you'll see that the status area will always reflect the current status of the game:
+- Player turn indicator will appear in states regarding a specific player
+- Status message will describe te current state of the game
+
+## Conclusion
+
+Congratulations on getting this far! It's now clear to understand what is happening during gameplay.
+
+Unfortunately, when the game ends, there's no way to start a new game without refreshing the page.
+
+In the next (and final) part of this tutorial, you'll solve this problem by adding the final component to the game, the play again button.
+
+Thanks for reading!
