@@ -16,7 +16,7 @@ Let's refer back to the mockup of the finished game:
 
 The status area is at the top. It's broken down into 2 parts:
 - Player Turn Indicator: Indicates the current player's turn via the associated player's colour being shown.
-- Status Message: Describes what is at each stage of the game (whose turn is it? Which player won? etc.)
+- Status Message: Describes what is happening at each stage of the game (whose turn is it? Which player won? etc.)
 
 Together they inform players and spectators about what is happening in the game.
 
@@ -37,8 +37,8 @@ export default class StatusArea extends GameObject {
 ## Player Turn Indicator
 
 The player turn indicator is a small circle that appears in the status area. It may have either of these states:
-- Display Yellow - Has a yellow colour when it's the yellow's player's turn of the yellow player has won the game.
-- Display Red - Has a red colour when it's the red player's turn or the red player has won the game.
+- Yellow - Has a yellow colour when it's the yellow's player's turn or the yellow player has won the game.
+- Red - Has a red colour when it's the red player's turn or the red player has won the game.
 - Invisible - The indicator is not visible when the game ends in a draw.
 
 Now that you know how the player turn indicator behaves, the next step for you is to add it to your game.
@@ -118,7 +118,7 @@ import StatusArea from './StatusArea.js';
 export { Board, StatusArea };
 ```
 
-Now what you've implemented the rendering logic of the player turn indicator, and exposed the `StatusArea` class through the `components` directory, you are now ready to start rendering the player turn indicator.
+Now what you've implemented the rendering logic of the player turn indicator and exposed the `StatusArea` class through the `components` directory, you are now ready to start rendering the player turn indicator.
 
 ### Render Player Turn Indicator
 
@@ -126,7 +126,7 @@ In `src/FrontEnd.js` import `StatusAreaConfig` and `StatusArea`:
 
 ```js
 import { FrontEndConfig, BoardConfig, StatusAreaConfig } from "./constants/index.js";
-import { Board } from "./components/index.js";
+import { Board, StatusArea } from "./components/index.js";
 import { Constants } from "./gameLogic/index.js";
 
 export default class FrontEnd {
@@ -166,7 +166,7 @@ export default class FrontEnd {
 }
 ```
 
-In `start()`, set `statusArea` to a new status area return from `createStatusArea()`:
+In `start()`, set `statusArea` to a new status area returned from `createStatusArea()`:
 
 ```js
 export default class FrontEnd {
@@ -201,7 +201,7 @@ export default class FrontEnd {
 }
 ```
 
-Then, update `processMoveResult()` so that it also determines the next player's turn, and passes in the colour of the next player to a call to the `render()` method on `statusArea`:
+Then, update `processMoveResult()` so that it also determines the next player's turn and passes in the colour of the next player to a call to the `render()` method on `statusArea`:
 
 ```js
 export default class FrontEnd {
@@ -247,7 +247,7 @@ It'll updated based on the current state of the game.
 
 ## Status Messages
 
-The status messages is the text portion of the status area.
+The status message is the text portion of the status area.
 
 It is used to:
 - Display the current player's turn
@@ -273,7 +273,7 @@ export default class FrontEnd {
 }
 ```
 
-Proceed by adding the `message` parameter to the `render()` method then calling `renderMessages` in `render()`:
+Proceed by adding the `message` parameter to the `render()` method then calling `renderMessage()` in `render()`:
 
 ```js
 export default class StatusArea extends GameObject {
@@ -309,7 +309,7 @@ export default class FrontEnd {
     pickStatusMessage(status) {
         switch (status) {
             case Constants.GameStatus.WIN:
-                // The game's changed to the next turn but the next turn can't be played yet so the winning player is the opposite of the current turn
+                // The game is on the the next turn but the somebody has won from the previous turn. The winning player is the opposite of the player who currently has a turn.
                 return this.game.currentTurn === Constants.PlayerColor.YELLOW ? StatusMessages.RED_WIN : StatusMessages.YELLOW_WIN;
             case Constants.GameStatus.DRAW:
                 return StatusMessages.DRAW;
