@@ -608,3 +608,5 @@ Congratulations! This was a long post (maybe the longest in this blog series so 
 However, it's not quite clear what's going on in the game. The board stops updating when a player wins or the game ends in a draw. There's no indication of the current status of the game.
 
 In the next post, you'll fix that problem. You'll add the status area component to the game. This will enable players and spectators to be aware of the current status of the game at any time.
+
+[Next Post](@/blog/making-four-in-a-row-part-8.md)

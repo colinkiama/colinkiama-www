@@ -298,3 +298,5 @@ Congratulations, you've covered the basics of drawing using the HTML5 Canvas API
 In the next post, you'll draw the game board on the canvas.
 
 That's all for now! 👋️
+
+[Next Post](@/blog/making-four-in-a-row-part-7.md)
