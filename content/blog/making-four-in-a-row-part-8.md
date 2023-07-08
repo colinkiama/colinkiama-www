@@ -122,7 +122,7 @@ Now what you've implemented the rendering logic of the player turn indicator, an
 
 ### Render Player Turn Indicator
 
-In `src/FrontEnd.js` import `StatusAreaConfig`:
+In `src/FrontEnd.js` import `StatusAreaConfig` and `StatusArea`:
 
 ```js
 import { FrontEndConfig, BoardConfig, StatusAreaConfig } from "./constants/index.js";
@@ -151,8 +151,6 @@ export default class FrontEnd {
 
 }
 ```
-
-
 
 Add `createStatusArea()` to the `FrontEnd` class:
 
@@ -185,6 +183,24 @@ export default class FrontEnd {
 }
 ```
 
+Add `determineIndicatorColor()` to the `FrontEnd` class:
+
+```js
+export default class FrontEnd {
+    // ..
+
+    determineIndicatorColor(moveResult) {
+        if (moveResult.status.value === Constants.MoveStatus.DRAW) {
+            return Constants.PlayerColor.NONE
+        } else if (moveResult.status.value === Constants.MoveStatus.WIN) {
+            return moveResult.winner;
+        } else {
+            return this.game.currentTurn;
+        }
+    }
+}
+```
+
 Then, update `processMoveResult()` so that it also determines the next player's turn, and passes in the colour of the next player to a call to the `render()` method on `statusArea`:
 
 ```js
@@ -196,7 +212,7 @@ export default class FrontEnd {
             return;
         }
 
-        const indicatorColor = moveResult.status.value === Constants.MoveStatus.DRAW ? Constants.PlayerColor.NONE : this.game.currentTurn;
+        const indicatorColor = this.determineIndicatorColor(moveResult);
 
         this.statusArea.render(indicatorColor);
         this.board.render(this.game.currentBoard);
@@ -297,19 +313,20 @@ export default class FrontEnd {
     pickStatusMessage(status) {
         switch (status) {
             case Constants.GameStatus.WIN:
-                return this.game.currentTurn === Constants.PlayerColor.YELLOW ? StatusMessages.YELLOW_WIN : StatusMessages.RED_WIN;
+                // The game's changed to the next turn but the next turn can't be played yet so the winning player is the opposite of the current turn
+                return this.game.currentTurn === Constants.PlayerColor.YELLOW ? StatusMessages.RED_WIN : StatusMessages.YELLOW_WIN;
             case Constants.GameStatus.DRAW:
                 return StatusMessages.DRAW;
-            default:
-                // At this point, we can assume that the game is either has just started 
-                // or is still in progress.
-                return this.game.currentTurn === Constants.PlayerColor.YELLOW ? StatusMessages.YELLOW_TURN : StatusMessages.RED_TURN;
         }
+
+        // At this point, we can assume that the game is either has just started 
+        // or is still in progress.
+        return this.game.currentTurn === Constants.PlayerColor.YELLOW ? StatusMessages.YELLOW_TURN : StatusMessages.RED_TURN;
     }
 }
 ```
 
-Then in the `processMOveResult()` method, update the `render()` call on `statusArea` so that it has an additional argument passed in. This argument is a method call to `pickStatusMessage()` with the status value of `moveResult` passed in:
+Then in the `processMoveResult()` method, update the `render()` call on `statusArea` so that it has an additional argument passed in. This argument is a method call to `pickStatusMessage()` with the status value of `moveResult` passed in:
 
 ```js
 export default class FrontEnd {
@@ -320,7 +337,7 @@ export default class FrontEnd {
             return;
         }
 
-        const indicatorColor = moveResult.status.value === Constants.MoveStatus.DRAW ? Constants.PlayerColor.NONE : this.game.currentTurn;
+        const indicatorColor = this.determineIndicatorColor(moveResult);
 
         this.statusArea.render(indicatorColor, this.pickStatusMessage(moveResult.status.value))
         this.board.render(this.game.currentBoard);
@@ -331,6 +348,7 @@ export default class FrontEnd {
     }
 }
 ```
+
 Lastly repeat this same change in `createStatusArea()` except that the argument passed in to `pickStatusMessage()` will be the game's current status:
 
 ```js
