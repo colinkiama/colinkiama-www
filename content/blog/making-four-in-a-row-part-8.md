@@ -361,7 +361,7 @@ export default class FrontEnd {
 
 If you check the game in your browser with a server running, you'll see that the status area will always reflect the current status of the game:
 - Player turn indicator will appear in states regarding a specific player
-- Status message will describe te current state of the game
+- Status message will describe the current state of the game
 
 ![Screenshot of yellow player's run with player turn indicator and status message indicating this in status area](https://ik.imagekit.io/mune/four-in-a-row-status-message_8h89jKXII.png?updatedAt=1688811167473)
 
