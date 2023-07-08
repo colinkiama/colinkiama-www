@@ -12,7 +12,7 @@ Welcome back! In the [previous blog post](@/blog/making-four-in-a-row-part-7.md)
 
 Let's refer back to the mockup of the finished game:
 
-![Image of game mockup]()
+![Image of game mockup](https://ik.imagekit.io/mune/four-in-a-row-goal_ua2AQmcTE.png)
 
 The status area is at the top. It's broken down into 2 parts:
 - Player Turn Indicator: Indicates the current player's turn via the associated player's colour being shown.
@@ -243,11 +243,7 @@ If you check the game in your browser while a server is running, you'll see the 
 
 It'll updated based on the current state of the game.
 
-![Scenario 1 of game with player turn indicator]()
-
-![Scenario 2 of game with player turn indicator]()
-
-![Scenario 3 of game with player turn indicator]()
+![Red player's turn on game board with player turn indicator displayed with a red colour](https://ik.imagekit.io/mune/four-in-a-row-player-turn-indicator_yk8A1O0mq.png?updatedAt=1688811167441)
 
 ## Status Messages
 
@@ -367,6 +363,8 @@ If you check the game in your browser with a server running, you'll see that the
 - Player turn indicator will appear in states regarding a specific player
 - Status message will describe te current state of the game
 
+![Screenshot of yellow player's run with player turn indicator and status message indicating this in status area](https://ik.imagekit.io/mune/four-in-a-row-status-message_8h89jKXII.png?updatedAt=1688811167473)
+
 ## Conclusion
 
 Congratulations on getting this far! It's now clear to understand what is happening during gameplay.
@@ -374,5 +372,3 @@ Congratulations on getting this far! It's now clear to understand what is happen
 Unfortunately, when the game ends, there's no way to start a new game without refreshing the page.
 
 In the next (and final) part of this tutorial, you'll solve this problem by adding the final component to the game, the play again button.
-
-Thanks for reading!
