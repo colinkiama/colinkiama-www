@@ -1,12 +1,12 @@
 +++
 title = "Making Four-In-A-Row - Part 9: Play Again"
-date = 2023-07-09T12:00:00Z
+date = 2023-07-09T13:12:00Z
 description = 'The Finale. Add a "Play Again" button your Four-In-A-Row game!'
 +++
 
 ## Intro
 
-In the [previous blog post](@/blog/making-four-in-a-row-part-8.md), you added the status area to the game. Players and spectators could now clearly understand what's happening at any time during gameplay.
+In the [previous blog post](@/blog/making-four-in-a-row-part-8.md), you added the status area to the game. Players and spectators now clearly understand what's happening at any time during gameplay.
 
 In this post, you'll add the ability to restart the game without having to refresh your browser.
 
@@ -17,11 +17,9 @@ You'll do this by adding a "Play Again" button to the game.
 Let's take one more look at the mockup of the finished game:
 ![Image of game mockup](https://ik.imagekit.io/mune/four-in-a-row-goal_ua2AQmcTE.png)
 
-The "Play Again" button is a the button.
-
-It's only visible when the game ends (a player wins or the game ends in a draw).
-
-When it's clicked on, the game restarts and the button disappears.
+The "Play Again" button is a button that:
+- Is only visible when the game ends (a player wins or the game ends in a draw).
+- Restarts the game and disappears when clicked on.
 
 ## Creating The PlayAgainButton class
 
@@ -67,7 +65,7 @@ export default class PlayAgainButton extends GameObject {
 }
 ```
 
-Thn, override the `clear()` method from `GameObject` to also take into account the button's borders:
+Then, override the `clear()` method from `GameObject` to also take into account the button's borders:
 
 ```js
 export default class PlayAgainButton extends GameObject {
@@ -213,7 +211,7 @@ It's great that the button shows up but nothing happens when you click on it. It
 
 ## Handling Input
 
-The "Play Again" button is only supposed to be visible when the game ends. Also , the `PlayAgainButton` class clicks similarly to the `Board class.
+The "Play Again" button is only supposed to be visible when the game ends. Also, the `PlayAgainButton` class handles clicks similarly to the `Board class.
 
 To get started with this, go back to `src/components/PlayAgainButton.js`. Add `buttonClicked` and `isEnabled` fields to the `PlayAgainButton` class:
 
@@ -296,7 +294,7 @@ export default class PlayAgainButton extends GameObject {
 }
 ```
 
-It checks if the location where a player clicked was actually where within the bounds of the button.
+It checks if the location where a player has clicked was actually within the bounds of the button.
 
 There's one more thing to add to the `PlayAgainButton` class now. It's the `hide()` method:
 
@@ -311,7 +309,7 @@ export default class PlayAgainButton extends GameObject {
 }
 ```
 
-There are quite a few things you've added to the `PlayAgainButton` class. Similar to when you added the handled clicks on the board, it will all make sense after making use of these changes in the `FrontEnd` class.
+There are quite a few things you've added to the `PlayAgainButton` class. Similar to when you handled clicks on the board, it will all make sense after making use of these changes in the `FrontEnd` class.
 
 
 In the `FrontEnd` class, update the `start()` method so that the click event handler callback also calls `handleClick()` on the `playAgainButton` field with the click event passed in:
@@ -407,10 +405,10 @@ export default class FrontEnd {
 }
 ```
 
-Now if you check the game in your browser with a server running, you'll have a fully four-in-a-row game that you can replay after completing a game.
+Now if you check the game in your browser with a server running, you'll have a fully playable four-in-a-row game that you can replay after completing a game.
 
 ## Conclusion
 
-Congratulations! You've finished the game. Feel free to modify it however you like. Maybe change how some of the components look. You could add animations too.
+Congratulations! You've finished the game. Feel free to modify it however you like. Maybe change how some of the components look? You could add animations too!
 
-The source code of the game is available here: https://github.com/colinkiama/four-in-a-row-game-walkthrough
+The source code of the game is available here: [https://github.com/colinkiama/four-in-a-row-game-walkthrough](https://github.com/colinkiama/four-in-a-row-game-walkthrough)
