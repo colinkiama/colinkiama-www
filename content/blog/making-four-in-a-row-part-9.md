@@ -107,6 +107,24 @@ export default class PlayAgainButton extends GameObject {
 }
 ```
 
+Add the `render()` method to the `PlayAgainButton` class:
+
+```js
+export default class PlayAgainButton extends GameObject {
+    render() {
+        this.context.save();
+        this.renderBackground();
+        this.context.restore();
+
+        this.context.save();
+        this.renderText();
+        this.context.restore();
+    }
+
+    // ..
+}
+```
+
 ## Rendering The Button
 
 You'll now add the "Play Again" button to the game.
@@ -163,6 +181,7 @@ export default class FrontEnd {
         let buttonX = this.width / 2 - PlayAgainButtonConfig.WIDTH / 2;
         let buttonY = this.height - PlayAgainButtonConfig.MARGIN_BOTTOM;
         let button = new PlayAgainButton(this.context, buttonX, buttonY, PlayAgainButtonConfig.WIDTH, PlayAgainButtonConfig.HEIGHT);
+        button.render();
         return button;
     }
 }
@@ -193,3 +212,197 @@ If you check the game in your browser with a server running, you'll see the "Pla
 It's great that the button shows up but nothing happens when you click on it. It's not supposed to show up at this stage of the game either 😂️. You'll fix these problems next.
 
 ## Handling Input
+
+The "Play Again" button is only supposed to be visible when the game ends. Also , the `PlayAgainButton` class clicks similarly to the `Board class.
+
+To get started with this, go back to `src/components/PlayAgainButton.js`. Add `buttonClicked` and `isEnabled` fields to the `PlayAgainButton` class:
+
+```js
+export default class PlayAgainButton extends GameObject {
+    buttonClicked;
+    isEnabled;
+
+    // ..
+}
+```
+
+Then add a constructor to the `PlayAgainButton` class. It will call the parent constructor then set the `isEnabled` field to `false`:
+
+```js
+export default class PlayAgainButton extends GameObject {
+    constructor(context, x, y, width, height) {
+        super(context, x, y, width, height);
+        this.isEnabled = false;
+    }
+
+    // ..
+}
+```
+
+Update `render()` so that it sets the `isEnabled` field to `true` at the end:
+
+```js
+export default class PlayAgainButton extends GameObject {
+    // .. 
+
+    render() {
+        this.context.save();
+        this.renderBackground();
+        this.context.restore();
+
+        this.context.save();
+        this.renderText();
+        this.context.restore();
+
+        this.isEnabled = true;
+    }
+}
+```
+
+To set the logic to run when the button is clicked, add `setClickHandler()` to the `PlayAgainButton` class:
+
+```js
+export default class PlayAgainButton extends GameObject {
+    // ..
+
+    setClickHandler(handler) {
+        this.buttonClicked = handler;
+    }
+}
+```
+
+Add `handleClick()` to process the click events that will be passed in:
+
+```js
+export default class PlayAgainButton extends GameObject {
+    // ..
+
+    handleClick(clickEvent) {
+        if (!this.isEnabled) {
+            return;
+        }
+
+        const wasButtonClicked = clickEvent.offsetX >= this.x
+            && clickEvent.offsetX <= this.x + this.width
+            && clickEvent.offsetY >= this.y
+            && clickEvent.offsetY <= this.y + this.height;
+
+        if (!wasButtonClicked) {
+            return;
+        }
+
+        this.buttonClicked();
+    }
+}
+```
+
+It checks if the location where a player clicked was actually where within the bounds of the button.
+
+There's one more thing to add to the `PlayAgainButton` class now. It's the `hide()` method:
+
+```js
+export default class PlayAgainButton extends GameObject {
+    // ..
+
+    hide() {
+        this.isEnabled = false;
+        this.clear();
+    }
+}
+```
+
+There are quite a few things you've added to the `PlayAgainButton` class. Similar to when you added the handled clicks on the board, it will all make sense after making use of these changes in the `FrontEnd` class.
+
+
+In the `FrontEnd` class, update the `start()` method so that the click event handler callback also calls `handleClick()` on the `playAgainButton` field with the click event passed in:
+
+```js
+export default class FrontEnd {
+    // .. 
+
+    start() {
+        this.statusArea = this.createStatusArea();
+        this.board = this.createBoard();
+        this.playAgainButton = this.createPlayAgainButton();
+
+        document.body.addEventListener('click', (clickEvent) => {
+            this.board.handleClick(clickEvent);
+            this.playAgainButton.handleClick(clickEvent);
+        });
+    }
+}
+```
+
+Then in `processMoveResult()`, call `render()` on the `playAgainButton` field if the game is over:
+
+```js
+export default class FrontEnd {
+    // .. 
+    processMoveResult(moveResult) {
+        if (this.gameOver || moveResult.status.value === Constants.MoveStatus.INVALID) {
+            return;
+        }
+
+        const indicatorColor = this.determineIndicatorColor(moveResult);
+
+        this.statusArea.render(indicatorColor, this.pickStatusMessage(moveResult.status.value))
+        this.board.render(this.game.currentBoard);
+
+
+        if (moveResult.status.value === Constants.MoveStatus.WIN || moveResult.status.value === Constants.MoveStatus.DRAW) {
+            this.gameOver = true;
+        }
+
+        if (this.gameOver) {
+            this.playAgainButton.render();
+        }
+    }
+}
+```
+
+Also, import `FourInARowGame`:
+
+```js
+import { FrontEndConfig, BoardConfig, StatusAreaConfig, StatusMessages, PlayAgainButtonConfig } from "./constants/index.js";
+import { Board, StatusArea, PlayAgainButton } from "./components/index.js";
+import { Constants, FourInARowGame } from "./gameLogic/index.js";
+
+
+export default class FrontEnd {
+    // ..
+}
+```
+Then, add a `reset()` method to the `FrontEnd` class:
+
+```js
+export default class FrontEnd {
+    // ..
+
+    reset() {
+        this.game = new FourInARowGame();
+        this.gameOver = false;
+
+        this.playAgainButton.hide();
+        this.statusArea.render(this.game.currentTurn, this.pickStatusMessage(this.game.status));
+        this.board.render(this.game.currentBoard);
+    }
+}
+```
+
+This is the main method that restarts the game.
+
+Lastly, in `createPlayAgainButton()`, remove the call to `render()` on `button` and call `setClickHandler()` on `button`. Call `reset()` in the callback:
+
+```js
+export default class FrontEnd {
+    // ..
+
+    createPlayAgainButton() {
+        let buttonX = this.width / 2 - PlayAgainButtonConfig.WIDTH / 2;
+        let buttonY = this.height - PlayAgainButtonConfig.MARGIN_BOTTOM;
+        let button = new PlayAgainButton(this.context, buttonX, buttonY, PlayAgainButtonConfig.WIDTH, PlayAgainButtonConfig.HEIGHT);
+        button.setClickHandler(() => this.reset());
+        return button;
+    }
+}
+```
