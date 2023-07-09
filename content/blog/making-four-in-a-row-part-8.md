@@ -372,3 +372,5 @@ Congratulations on getting this far! It's now clear to understand what is happen
 Unfortunately, when the game ends, there's no way to start a new game without refreshing the page.
 
 In the next (and final) part of this tutorial, you'll solve this problem by adding the final component to the game, the play again button.
+
+[Next Post](@/blog/making-four-in-a-row-part-9.md)
