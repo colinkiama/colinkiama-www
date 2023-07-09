@@ -207,7 +207,7 @@ export default class FrontEnd {
 
 If you check the game in your browser with a server running, you'll see the "Play Again" button on the canvas:
 
-![Image of start of the game with "Play Again" button displayed at the bottom of the canvas]()
+![Image of start of the game with "Play Again" button displayed at the bottom of the canvas](https://ik.imagekit.io/mune/four-in-a-row-play-again-button_xcOF7u-68.png?updatedAt=1688904064712)
 
 It's great that the button shows up but nothing happens when you click on it. It's not supposed to show up at this stage of the game either 😂️. You'll fix these problems next.
 
