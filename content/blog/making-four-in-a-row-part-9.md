@@ -152,7 +152,6 @@ export default class FrontEnd {
 Add the `playAgainButton` field to the `FrontEnd` class:
 
 ```js
-
 export default class FrontEnd {
     game;
     canvas;
@@ -165,7 +164,6 @@ export default class FrontEnd {
     gameOver;
 
     // ..
-
 }
 ```
 
@@ -211,7 +209,7 @@ It's great that the button shows up but nothing happens when you click on it. It
 
 ## Handling Input
 
-The "Play Again" button is only supposed to be visible when the game ends. Also, the `PlayAgainButton` class handles clicks similarly to the `Board class.
+The "Play Again" button is only supposed to be visible when the game ends. Also, the `PlayAgainButton` class handles clicks similarly to the `Board` class.
 
 To get started with this, go back to `src/components/PlayAgainButton.js`. Add `buttonClicked` and `isEnabled` fields to the `PlayAgainButton` class:
 
