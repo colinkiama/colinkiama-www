@@ -36,7 +36,7 @@ Note: I strongly recommend using a HTTP Server with live reload support. You'll 
 
 ### Directory Structure
 
-First, create a directory where you'll write the code the game. I suggest naming it "four-in-a-row".
+First, create a directory where you'll write the code for the game. I suggest naming it "four-in-a-row".
 
 Then, create this directory structure in the "four-in-a-row" project:
 
