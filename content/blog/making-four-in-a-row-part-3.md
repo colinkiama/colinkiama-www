@@ -13,7 +13,7 @@ Now you're ready to start implementing player moves and updating the state of th
 
 ## Creating the method
 
-You'll start off by creating a new method in the `FourInARowGame` class called `playMove()`:
+You'll start by creating a new method in the `FourInARowGame` class called `playMove()`:
 
 ```js
 export default class FourInARowGame {
@@ -38,12 +38,12 @@ export default class FourInARowGame {
 
 Note: You're just returning mock data for now. You'll properly implement this method later on.
 
-The `playMove()` method actually takes in a `columnIndex` argument. From this input, a move will be attempted and the result of the move will be evaluated and returned. The code example above shows a `MoveResult` object being returned in the `playMove()` method. A `MoveResult` can contain:
+The `playMove()` method takes in a `columnIndex` argument. From this input, a move will be attempted and the result of the move will be evaluated and returned. The code example above shows a `MoveResult` object being returned in the `playMove()` method. A `MoveResult` can contain:
 
 - The current state of the board after a move has been played
 - The winner
 - The status of the move
-- The win line - an array of positions of 4 consecutive tokens were located, if found.
+- The win line - an array of positions of 4 consecutive tokens were located if found.
 
 ## Interacting with your state machine
 
@@ -59,23 +59,23 @@ import FourInARowGame from "./FourInARowGame.js";
 window.fourInARowGame = new FourInARowGame();
 ```
 
-Now, ensure that the a HTTP server is running in the root of project and navigate to the server's address in your web browser.
+Now, ensure that an HTTP server is running from the root of your project and navigate to the server's address in your web browser.
 
-Open up the console your browser's developer tools (The keyboard shortcut to open in it Google Chrome is `CTRL` + `Shift` + `J`) in your web browser then enter in: `window.fourInARowGame`. You should see an output of the `FourInARowGame` instance object. In Google Chrome it looks like this:
+Open up the console in your browser's developer tools (The keyboard shortcut to open in it Google Chrome is `CTRL` + `Shift` + `J`) in your web browser then enter in: `window.fourInARowGame`. You should see an output of the `FourInARowGame` instance object. In Google Chrome it looks like this:
 
 ```js
 FourInARowGame {startingColor: 'yellow', currentTurn: 'yellow', status: 'start', board: Array(6)}
 ```
 
-There is also the options to expand the object so you can view more details about the object.
+There is also the option to expand the object so you can view more details about the object.
 
-If you don't see some sort of representation of an `FourInARow` instance object then please go over your code and check that you've followed the instructions correctly!
+If you don't see some sort of representation of a `FourInARow` instance object then please go over your code and check that you've followed the instructions correctly!
 
 ### Play a (fake) move
 
 Now, call the `playMove()` method from the `FourInARow` instance, in the browser console window.
 
-First, store the state machine in an easier to reference variable called `game`:
+First, store the state machine in an easier-to-reference variable called `game`:
 
 ```js
 let game = window.fourInARowGame;
@@ -173,7 +173,7 @@ performMove(columnIndex) {
 }
 ```
 
-The next thing you need to do is to actually perform the move on the board, to do this you'll create a method called `tryPerformMove()`:
+The next thing you need to do is to perform the move on the board, to do this you'll create a method called `tryPerformMove()`:
 
 ```js
 tryPerformMove(columnIndex, nextBoard) {
@@ -205,9 +205,9 @@ tryPerformMove(columnIndex, nextBoard) {
 }
 ```
 
-The method above checks the column in the board the player specified from the bottom to the top for an empty position then attempts to add the current player's token to the board position. Later it returns the result.
+The method above checks the column in the board the player specified from the bottom to the top for an empty position and then attempts to add the current player's token to the board position. Later it returns the result.
 
-There is a static method here called `playerColorToBoardToken` that was used, this sets the set's the value in the board position to a numeric value that is associated with the current player's colour.
+There is a static method here called `playerColorToBoardToken` that was used, this sets the value in the board position to a numeric value that is associated with the current player's colour.
 
 Add it to the `FourInARowGame` class too:
 
@@ -255,9 +255,9 @@ performMove(columnIndex) {
 
 If the value of the `moveAttemptResult.status` is `MoveStatus.Invalid` then you return a `MoveResult` which has the same structure as the move data you returned in your fake `playMove()` method implementation.
 
-Lastly, you need create a method called `evaluateGame()` which will be used to check if the status of the game has changed then returns a `MoveResult`.
+Lastly, you need to create a method called `evaluateGame()` which will be used to check if the status of the game has changed and then returns a `MoveResult`.
 
-For now, you'll just return the `MoveResult` of a successful move, that also indicates that the game is still in progress.
+For now, you'll just return the `MoveResult` of a successful move, which also indicates that the game is still in progress.
 
 ```js
 evaluateGame(board) {
@@ -340,8 +340,7 @@ You perform a move, update the current turn to the opposing player's turn then r
 ## Testing out your changes
 
 You added quite a few changes, let's test them out.
-
-Assuming your have a local HTTP server running at the root of the project, navigate to the server's address in your web browser and open the browser console window again.
+Assuming you have a local HTTP server running at the root of the project, navigate to the server's address in your web browser and open the browser console window again.
 
 First, enter the following line in your browser's console:
 
@@ -355,7 +354,7 @@ Now call the `playMove()` method with the `columnIndex` parameter set to `1` ins
 game.playMove(1);
 ```
 
-You should see a `MoveResult` object returned. If you expand the object then expand the `board` field, you'll see that the value `1` has been added to the bottom of the second column on the board.
+You should see a `MoveResult` object returned. If you expand the object and then expand the `board` field, you'll see that the value `1` has been added to the bottom of the second column on the board.
 
 If you do, congratulations!
 
