@@ -6,7 +6,7 @@ description = "Visibly track the current status of your Four-In-A-Row game!"
 
 ## Intro
 
-Welcome back! In the [previous blog post](@/blog/making-four-in-a-row-part-7.md), you drew the game board and made the game playable by clicking on board columns. In this post, you'll be adding the status area component to your four-in-a-row game.
+Welcome back! In the [previous blog post](@/blog/making-four-in-a-row-part-7.md), you drew the game board and made the game playable by clicking on the board columns. In this post, you'll be adding the status area component to your four-in-a-row game.
 
 ## Breaking Down The Status Area Component
 
@@ -15,7 +15,7 @@ Let's refer back to the mockup of the finished game:
 ![Image of game mockup](https://ik.imagekit.io/mune/four-in-a-row-goal_ua2AQmcTE.png)
 
 The status area is at the top. It's broken down into 2 parts:
-- Player Turn Indicator: Indicates the current player's turn via the associated player's colour being shown.
+- Player Turn Indicator: Indicates the current player's turn by showing the associated player's colour.
 - Status Message: Describes what is happening at each stage of the game (whose turn is it? Which player won? etc.)
 
 Together they inform players and spectators about what is happening in the game.
@@ -37,7 +37,7 @@ export default class StatusArea extends GameObject {
 ## Player Turn Indicator
 
 The player turn indicator is a small circle that appears in the status area. It may have either of these states:
-- Yellow - Has a yellow colour when it's the yellow's player's turn or the yellow player has won the game.
+- Yellow - Has a yellow colour when it's the yellow player's turn or the yellow player has won the game.
 - Red - Has a red colour when it's the red player's turn or the red player has won the game.
 - Invisible - The indicator is not visible when the game ends in a draw.
 
@@ -224,7 +224,7 @@ export default class FrontEnd {
 }
 ```
 
-Lastly, in `createBoard()`, update the call to the `Board` constructor to so that the board when the game board is rendered, it's shifted down below the status area:
+Lastly, in `createBoard()`, update the call to the `Board` constructor so that the board when the game board is rendered, it's shifted down below the status area:
 
 ```js
 export default class FrontEnd {
@@ -241,7 +241,7 @@ export default class FrontEnd {
 
 If you check the game in your browser while a server is running, you'll see the indicator colour being rendered.
 
-It'll updated based on the current state of the game.
+It'll update based on the current state of the game.
 
 ![Red player's turn on game board with player turn indicator displayed with a red colour](https://ik.imagekit.io/mune/four-in-a-row-player-turn-indicator_yk8A1O0mq.png?updatedAt=1688811167441)
 
@@ -345,7 +345,7 @@ export default class FrontEnd {
 }
 ```
 
-Lastly repeat this same change in `createStatusArea()` except that the argument passed in to `pickStatusMessage()` will be the game's current status:
+Lastly, repeat this same change in `createStatusArea()` except that the argument passed in to `pickStatusMessage()` will be the game's current status:
 
 ```js
 export default class FrontEnd {
@@ -360,10 +360,10 @@ export default class FrontEnd {
 ```
 
 If you check the game in your browser with a server running, you'll see that the status area will always reflect the current status of the game:
-- Player turn indicator will appear in states regarding a specific player
-- Status message will describe the current state of the game
+- The player turn indicator will appear in states regarding a specific player
+- The status message will describe the current state of the game
 
-![Screenshot of yellow player's run with player turn indicator and status message indicating this in status area](https://ik.imagekit.io/mune/four-in-a-row-status-message_8h89jKXII.png?updatedAt=1688811167473)
+![Screenshot of yellow player's run with player turn indicator and the status message indicating this in the status area](https://ik.imagekit.io/mune/four-in-a-row-status-message_8h89jKXII.png?updatedAt=1688811167473)
 
 ## Conclusion
 
