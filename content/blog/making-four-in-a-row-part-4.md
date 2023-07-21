@@ -12,17 +12,17 @@ Now you're ready to check for wins and draws in the game.
 
 ## Checking for Wins
 
-In four-in-a-row, there are three ways to for a player to win a game:
+In four-in-a-row, there are three ways for a player to win a game:
 
 1. Place 4 consecutive tokens horizontally
 2. Place 4 consecutive tokens vertically
 3. Place 4 consecutive tokens diagonally.
 
-Since the board in game has been created using an array of arrays, you can create check for consecutive tokens by iterating through the game board, checking each direction for win lines.
+Since the board in the game has been created using an array of arrays, you can check for consecutive tokens by iterating through the game board, checking each direction for win lines.
 
 ### Finding win lines
 
-While the directions to check for wins are different, we still are checking for the same number consecutive tokens in each direction so, we can create a method that checks for the win lines for you.
+While the directions to check for wins are different, we still are checking for the same number of consecutive tokens in each direction so, we can create a method that checks for the win lines for you.
 
 Add a static method to the `FourInARowGame` class called `tryFindWinLine`:
 
@@ -94,9 +94,9 @@ The method above counts checks for consecutive tokens from a starting position. 
 
 `startRowIndex` and `startColumnIndex` sets the start position.
 
-The `rowCountStep` and `columnCountStep` controls the direction win lines will be checked in. For example: A `rowCountStep` of `0` and a `columnCountStep` of `1` will check for a win line horizontally from the start position.
+The `rowCountStep` and `columnCountStep` control the direction win lines will be checked in. For example, A `rowCountStep` of `0` and a `columnCountStep` of `1` will check for a win line horizontally from the start position.
 
-There two other methods that are called in `checkForWinLine()`.
+Two other methods are called in `checkForWinLine()`.
 
 `FourInARowGame.checkIfOutBounds()` checks if a specified position is out of bounds. This allows us to stop checking for a win line early.
 
@@ -111,7 +111,7 @@ static checkIfOutOfBounds(row, column) {
 }
 ```
 
-The other method is the a another static one called `FourInARow.boardTokenToPlayerColor()` which turns board token values to player colour values.
+The other method is another static one called `FourInARow.boardTokenToPlayerColor()` which turns board token values to player colour values.
 
 Add it to the `FourInARowGame` class:
 
@@ -130,7 +130,7 @@ static boardTokenToPlayerColor(boardToken) {
 
 ### Checking for wins in all directions
 
-Now that you've created find win lines on the board, you're now ready to start checking if a player has won the game.
+Now that you've created methods to help you find win lines on the board, you're now ready to start checking if a player has won the game.
 
 Create a new static method to the `FourInARowGame` class called `checkForWin()`:
 
@@ -193,7 +193,9 @@ static checkForWin(board) {
 }
 ```
 
-This method above checks for win lines in all directions from each board position. It then returns a `WinCheckResult` which is made up of the a `winLine` which is a list of consecutive board positions and `winner`, which contains the who won the game.
+This method above checks for win lines in all directions from each board position. It then returns a `WinCheckResult` which is made up of:
+- a `winLine` which is a list of consecutive board positions 
+- a `winner`, which contains the who won the game.
 
 Notice how the `rowCountStep` and `columnCountStep` values are set for each direction.
 
@@ -292,7 +294,7 @@ static checkForFilledBoard(board) {
 }
 ```
 
-Now, make another update to the `evaluateGame()` method so that it checks for a draw and if true, returns an `MoveResult` object that indicates that the game has ended with a draw:
+Now, make another update to the `evaluateGame()` method so that it checks for a draw and if true, returns a `MoveResult` object that indicates that the game has ended with a draw:
 
 ```js
 evaluateGame(board) {
@@ -338,7 +340,7 @@ evaluateGame(board) {
 }
 ```
 
-Feel free to test out these changes out your self in your browser's console. The `MoveResult` object returned in the output will have a `status` field with a value of `draw`.
+Feel free to test out these changes yourself in your browser's console. The `MoveResult` object returned in the output will have a `status` field with a value of `draw`.
 
 If you encounter any errors or unexpected behaviour then please go over the code you've written so far and read over this post again.
 
