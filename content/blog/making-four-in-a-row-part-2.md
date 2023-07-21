@@ -13,11 +13,11 @@ Now let's start implementing the logic of the game.
 
 ## Rules Of The Game
 
-Four-in-a-row is a two-player game played on a 6 (rows) x 7 (columns) rack board, where the objective is to be the first player to form a vertical, horizontal or vertical line with four of your own tokens.
+Four-in-a-row is a two-player game played on a 6 (rows) x 7 (columns) rack board, where the objective is to be the first player to form a vertical, horizontal or vertical line with four of your tokens.
 
-The player who meets the objective first, wins. If the board is completely filled and there is no winner, the game ends in a draw.
+The player who meets the objective first, wins. If the board is filled and there is no winner, the game ends in a draw.
 
-Each token a player puts down falls down the lowest available space within a column.
+Each token a player puts down a column falls to the lowest available space within a column.
 
 ## Preparing to implement the logic
 
@@ -65,7 +65,7 @@ export const BoardToken = {
 
 ### Setting up the state machine
 
-Now you will create a state machine which represents a four-in-a-row-game.
+Now you will create a state machine which represents a four-in-a-row game.
 
 Create a new JavaScript file called `FourInARowGame.js` in `/src` and add the following to it:
 
@@ -154,7 +154,7 @@ Notice that `Uint8Array` was used instead of `Array` in the enclosed loop. This 
 
 This saves memory considering that there are 42 positions in a board.
 
-Now you can finish of initialising the `currentBoard` field:
+Now you can finish off initialising the `currentBoard` field:
 
 ```js
 export default class FourInARowGame {
