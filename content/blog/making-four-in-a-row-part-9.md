@@ -409,4 +409,4 @@ Now if you check the game in your browser with a server running, you'll have a f
 
 Congratulations! You've finished the game. Feel free to modify it however you like. Maybe change how some of the components look? You could add animations too!
 
-The source code of the game is available here: [https://github.com/colinkiama/four-in-a-row-game-walkthrough](https://github.com/colinkiama/four-in-a-row-game-walkthrough)
+The source code of the game is available here: [https://github.com/colinkiama/four-in-a-row-walkthrough](https://github.com/colinkiama/four-in-a-row-walkthrough)
