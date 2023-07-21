@@ -1,7 +1,7 @@
 +++
 title = "Making Four-In-A-Row - Part 9: Play Again"
 date = 2023-07-09T13:12:00Z
-description = 'The Finale. Add a "Play Again" button your Four-In-A-Row game!'
+description = 'The Finale. Add a "Play Again" button in your Four-In-A-Row game!'
 +++
 
 ## Intro
@@ -203,7 +203,7 @@ export default class FrontEnd {
 
 If you check the game in your browser with a server running, you'll see the "Play Again" button on the canvas:
 
-![Image of start of the game with "Play Again" button displayed at the bottom of the canvas](https://ik.imagekit.io/mune/four-in-a-row-play-again-button_xcOF7u-68.png?updatedAt=1688904064712)
+![Image of the beginning of the game with a "Play Again" button displayed at the bottom of the canvas](https://ik.imagekit.io/mune/four-in-a-row-play-again-button_xcOF7u-68.png?updatedAt=1688904064712)
 
 It's great that the button shows up but nothing happens when you click on it. It's not supposed to show up at this stage of the game either 😂️. You'll fix these problems next.
 
@@ -211,7 +211,7 @@ It's great that the button shows up but nothing happens when you click on it. It
 
 The "Play Again" button is only supposed to be visible when the game ends. Also, the `PlayAgainButton` class handles clicks similarly to the `Board` class.
 
-To get started with this, go back to `src/components/PlayAgainButton.js`. Add `buttonClicked` and `isEnabled` fields to the `PlayAgainButton` class:
+To get started with this, go back to `src/components/PlayAgainButton.js`. Add the `buttonClicked` and `isEnabled` fields to the `PlayAgainButton` class:
 
 ```js
 export default class PlayAgainButton extends GameObject {
@@ -222,7 +222,7 @@ export default class PlayAgainButton extends GameObject {
 }
 ```
 
-Then add a constructor to the `PlayAgainButton` class. It will call the parent constructor then set the `isEnabled` field to `false`:
+Then add a constructor to the `PlayAgainButton` class. It will call the parent constructor and then set the `isEnabled` field to `false`:
 
 ```js
 export default class PlayAgainButton extends GameObject {
