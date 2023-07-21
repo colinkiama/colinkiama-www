@@ -11,7 +11,7 @@ In the [previous blog post](@/blog/making-four-in-a-row-part-2.md), you set up y
 
 Now you're ready to start implementing player moves and updating the state of the game accordingly.
 
-## Creating the method
+## Creating The Method
 
 You'll start by creating a new method in the `FourInARowGame` class called `playMove()`:
 
@@ -45,9 +45,9 @@ The `playMove()` method takes in a `columnIndex` argument. From this input, a mo
 - The status of the move
 - The win line - an array of positions of 4 consecutive tokens were located if found.
 
-## Interacting with your state machine
+## Interacting With Your State Machine
 
-### Exposing your state machine object
+### Exposing Your State Machine Object
 
 Now, to try out your code, you'll interact with your Four-In-A-Row state machine in your browser.
 
@@ -71,7 +71,7 @@ There is also the option to expand the object so you can view more details about
 
 If you don't see some sort of representation of a `FourInARow` instance object then please go over your code and check that you've followed the instructions correctly!
 
-### Play a (fake) move
+### Play A (Fake) Move
 
 Now, call the `playMove()` method from the `FourInARow` instance, in the browser console window.
 
@@ -106,7 +106,7 @@ When expanded, you get more details:
 
 Now that you know the type of result that you're expecting after calling `playMove()`, let's properly implement the method so that it returns real data based on the state of the board.
 
-## Implementing the method (for real this time!)
+## Implementing The Method (For Real This Time!)
 
 Firstly, you'll update the `playMove()` method in your `FourInARowGame` class so that it checks the current status of the game before allowing the player to make a move.
 
@@ -337,7 +337,7 @@ playMove(columnIndex) {
 
 You perform a move, update the current turn to the opposing player's turn then return the results of the move.
 
-## Testing out your changes
+## Testing Out Your Changes
 
 You added quite a few changes, let's test them out.
 Assuming you have a local HTTP server running at the root of the project, navigate to the server's address in your web browser and open the browser console window again.

@@ -10,7 +10,7 @@ In the [previous blog post](@/blog/making-four-in-a-row-part-3.md), you implemen
 
 Now you're ready to check for wins and draws in the game.
 
-## Checking for Wins
+## Checking For Wins
 
 In four-in-a-row, there are three ways for a player to win a game:
 
@@ -20,7 +20,7 @@ In four-in-a-row, there are three ways for a player to win a game:
 
 Since the board in the game has been created using an array of arrays, you can check for consecutive tokens by iterating through the game board, checking each direction for win lines.
 
-### Finding win lines
+### Finding Win Lines
 
 While the directions to check for wins are different, we still are checking for the same number of consecutive tokens in each direction so, we can create a method that checks for the win lines for you.
 
@@ -128,7 +128,7 @@ static boardTokenToPlayerColor(boardToken) {
 }
 ```
 
-### Checking for wins in all directions
+### Checking For Wins In All Directions
 
 Now that you've created methods to help you find win lines on the board, you're now ready to start checking if a player has won the game.
 
@@ -199,7 +199,7 @@ This method above checks for win lines in all directions from each board positio
 
 Notice how the `rowCountStep` and `columnCountStep` values are set for each direction.
 
-### Allowing players to win
+### Allowing Players To Win
 
 Now that you have created a method that checks for wins, you can now detect wins and update the status of the game accordingly.
 
@@ -270,7 +270,7 @@ When a move results in a win, the move result object in the output will have the
 
 Subsequent calls to `playMove()` will produce the same output every time. The game is already over after all 😉.
 
-## Checking for a draw
+## Checking For A Draw
 
 Not every four-in-a-row game concludes with a win. There are cases where the board is filled with no winner. In these cases, the game ends in a draw.
 

@@ -27,7 +27,7 @@ export { Constants, FourInARowGame };
 
 From now on the core game logic will be stored in and referenced from `src/gameLogic`. The outside of `src/gameLogic` will be for the front end.
 
-## Importing from the game logic Module
+## Importing From The Game Logic Module
 
 You're now exporting your core game logic as a module from `src/gameLogic/index.js`. You'll now need to fix outdated imports of the `FourInARowGame` class.
 

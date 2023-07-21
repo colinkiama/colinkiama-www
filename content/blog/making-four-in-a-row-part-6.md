@@ -22,7 +22,7 @@ Here's a breakdown of the image above:
 
 This post will be focused on setting up the canvas - where each part of the game will be displayed on.
 
-## Setting up constants (again)
+## Setting Up Constants (Again)
 
 In the same way that you created a constants file for the game logic, you'll also need to create one for the front end.
 
@@ -78,9 +78,9 @@ export const PlayAgainButtonConfig = {
 };
 ```
 
-## Setting up the canvas
+## Setting Up The Canvas
 
-### Adding canvas to the body
+### Adding Canvas To The Body
 
 First, you'll need to add the `<canvas>` element to the `<body>` of the page. It'll need to have a `width` of 320, a `height` of 480, and an `id` of "canvas". You do this in `index.html`. It should look like this:
 
@@ -100,7 +100,7 @@ First, you'll need to add the `<canvas>` element to the `<body>` of the page. It
 </html>
 ```
 
-### Referencing the canvas in Javascript
+### Referencing The Canvas In Javascript
 
 Next, you'll reference the `<canvas>` element that you've added to the page from JavaScript.
 
@@ -190,7 +190,7 @@ If you run an HTTP server and check the address it's pointing to, you should see
 
 ![Image of canvas with blue background](https://ik.imagekit.io/mune/four-in-a-row-canvas-setup_h3F8XfyjC.png?updatedAt=1685214594926)
 
-### Drawing on the canvas
+### Drawing On The Canvas
 
 Let's proceed to draw on the canvas. To do this you'll need to get a [2D canvas rendering context](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D). Another way to think about this is that you're getting a set of art supplies (paints, paintbrushes, stencils, etc.) made for creating 2D drawings.
 

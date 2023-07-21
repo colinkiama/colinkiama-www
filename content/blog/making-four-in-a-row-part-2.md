@@ -19,7 +19,7 @@ The player who meets the objective first, wins. If the board is filled and there
 
 Each token a player puts down a column falls to the lowest available space within a column.
 
-## Preparing to implement the logic
+## Preparing To Implement The Logic
 
 ### Constants
 
@@ -63,7 +63,7 @@ export const BoardToken = {
 };
 ```
 
-### Setting up the state machine
+### Setting Up The State Machine
 
 Now you will create a state machine which represents a four-in-a-row game.
 
@@ -127,7 +127,7 @@ export default class FourInARowGame {
 }
 ```
 
-#### Initialising the board Field
+#### Initialising The Board Field
 
 Now, for the `currentBoard` field, you will initially set its value to an empty board; a single board in a game of Four-In-A-Row has 6 rows and 7 columns (42 positions in total). You'll use an array of arrays to represent this structure in JavaScript.
 
