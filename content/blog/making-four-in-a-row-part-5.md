@@ -8,9 +8,9 @@ description = "Making changes to the work you've done so far in preparation for 
 
 In the [previous blog post](@/blog/making-four-in-a-row-part-4.md), you checked for wins and draws in `FourInARowGame`.
 
-Now you'll be reorganising the work you've done so far in preparation the the HTML5 Canvas front-end that you'll be creating for the game.
+Now you'll be reorganising the work you've done so far in preparation for the HTML5 Canvas front-end that you'll be creating for the game.
 
-## Creating Game Logic Directory
+## Creating The Game Logic Directory
 
 First, create a new directory in the `src` directory called `gameLogic`.
 
@@ -25,7 +25,7 @@ import * as Constants from "./constants/index.js";
 export { Constants, FourInARowGame };
 ```
 
-From now on the core game logic will be stored in and referenced from `src/gameLogic`. The outside of `src/gameLogic` will be for the front-end.
+From now on the core game logic will be stored in and referenced from `src/gameLogic`. The outside of `src/gameLogic` will be for the front end.
 
 ## Importing from the game logic Module
 
@@ -43,6 +43,6 @@ If you test the code in your web browser's console, you should still be able to 
 
 If not, please make sure that you've followed the instructions in this post correctly!
 
-Great! Now, you're ready to start working on the front-end in the next post.
+Great! Now, you're ready to start working on the front end in the next post.
 
 [Next Post](@/blog/making-four-in-a-row-part-6.md)
