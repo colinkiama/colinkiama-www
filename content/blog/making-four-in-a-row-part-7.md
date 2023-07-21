@@ -10,18 +10,18 @@ Welcome back! In the [previous blog post](@/blog/making-four-in-a-row-part-6.md)
 
 ## Game Objects
 
-### What is a game object?
+### What Is A Game Object?
 
-The game features multiple drawings on the canvas. These distinct drawings take up space both horizontally and vertically. They may be made up of other smaller related drawings. These distinct drawings will be referred as "game objects".
+The game features multiple drawings on the canvas. These distinct drawings take up space both horizontally and vertically. They may be made up of other smaller related drawings. These distinct drawings will be referred to as "game objects".
 
-### Why do we need game objects?
+### Why Do We Need Game Objects?
 
-Looking back at the breakdown of the game's UI. There are three components that can be identified:
+Looking back at the breakdown of the game's UI. Three components can be identified:
 1. Status Area
 2. Game Board
 3. Play Again Button
 
-All of these components share the following things in common with each other:
+All of these components share the following things in common:
 - They have position
 - They have dimensions
 - All drawn on the canvas
@@ -30,7 +30,7 @@ When referring to these components in a generalised way, we'll be considering th
 
 To represent this relationship in code, you'll create a `GameObject` class. The component classes will inherit from the `GameObject` class. This will avoid you from rewriting the common logic and properties shared across all the components.
 
-### Creating the GameObject class
+### Creating The GameObject Class
 
 Unlike with the HTML elements, you will have to implement the size and positioning of game objects yourself. You'll also have to draw the game objects yourself too.
 
@@ -61,7 +61,7 @@ export default class GameObject {
     }
 }
 ```
-### Inheriting the GameObject class
+### Inheriting The GameObject Class
 
 Now that you've created the `GameObject` class, in the `src/components` directory, create a new file named `Board.js`. After, in that file, create a `Board` class that inherits from the `GameObject` class:
 
@@ -75,7 +75,7 @@ export default class Board extends GameObject {
 
 To test out whether the `GameObject` is being inherited by `Board` correctly, you'll recreate the last post's white rectangle drawing using the `Board` class.
 
-Add a method called `render()` to the `Board` class that will render a white rectangle then restore the state of the context object:
+Add a method called `render()` to the `Board` class that will render a white rectangle and then restore the state of the context object:
 
 ```js
 import GameObject from "./GameObject.js";
@@ -91,7 +91,7 @@ export default class Board extends GameObject {
 }
 ```
 
-Notice how the `x`, `y`, `width` and `height` fields were not defined in `Board`. This is because they were inherited from `GameObject`.
+Notice how the `x`, `y`, `width`, and `height` fields were not defined in `Board`. This is because they were inherited from `GameObject`.
 
 Create a new file in `src/components` called `index.js` and fill it with the following contents:
 
@@ -144,10 +144,10 @@ Notice that the `Board` uses the same constructor defined in `GameObject`.
 
 If you check the game with your web server, you'll see the same white rectangle drawn on the canvas as the one you drew in the previous blog post.
 
-![Image of canvas drawing with white rectangle over blue background](https://ik.imagekit.io/mune/four-in-a-row-first-canvas-drawing_l-1NGyp-X.png?updatedAt=1685214594885)
-## Drawing the game board
+![Image of canvas drawing with a white rectangle over a blue background](https://ik.imagekit.io/mune/four-in-a-row-first-canvas-drawing_l-1NGyp-X.png?updatedAt=1685214594885)
+## Drawing The Game Board
 
-Awesome! You've figured out how to create your own game object and draw it on the canvas. Now it's time to draw the actual game board.
+Awesome! You've figured out how to create your game object and draw it on the canvas. Now it's time to draw the actual game board.
 
 ### Board Background
 
@@ -232,9 +232,9 @@ export default class Board extends GameObject {
     // ..
 ```
 
-`nextBoard` will contain the state of the board. An array of arrays of numbers that represent the token in each board position. These will be used to render the board tokens in the slots.
+`nextBoard` will contain the state of the board. It's an array of arrays of numbers representing the tokens in each board position. These will be used to render the board tokens in the slots.
 
-Next, create a method called `renderSlots()` to the `Board` class. To keep the upcoming drawing commands simple, you'll modify the point of origin where you start drawing the slots. This way, you won't have to consider padding in later drawing commands in `renderSlots()`. To do this, you'll use the [`CanvasRenderingContext2D.translate()`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/translate) method:
+Next, add a method called `renderSlots()` to the `Board` class. To keep the upcoming drawing commands simple, you'll modify the point of origin where you start drawing the slots. This way, you won't have to consider padding in later drawing commands in `renderSlots()`. To do this, you'll use the [`CanvasRenderingContext2D.translate()`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/translate) method:
 
 ```js
 export default class Board extends GameObject {
@@ -248,7 +248,7 @@ export default class Board extends GameObject {
 
 Start drawing the slots.
 
-Set the stroke colour and line-width:
+Set the stroke colour and line width:
 
 ```js
 this.context.strokeStyle = BoardConfig.SLOT_OUTLINE_COLOR;
@@ -396,21 +396,21 @@ export default class FrontEnd {
 
 If you check your browser now while your server is running, you'll see empty slots drawn on the board:
 
-![Canvas in browser featuring board with slots](https://ik.imagekit.io/mune/four-in-a-row-board-with-slots_jN-DphejL.png?updatedAt=1688023768392)
+![Canvas in browser featuring the board with slots](https://ik.imagekit.io/mune/four-in-a-row-board-with-slots_jN-DphejL.png?updatedAt=1688023768392)
 
-## Making the game playable
+## Making The Game Playable
 
-You can attempt to hardcode your own board state argument when calling the `render()` method on the `board` variable. The game will render the board state accordingly.
+You can attempt to hardcode a board state argument when calling the `render()` method on the `board` variable. The game will render the board state accordingly.
 
 However, you currently aren't able to update the board state in-game. 
 
 One way to update the board state in-game is by responding to clicks on the canvas.
 
-Unlike with HTML elements, you can't just rely on the built-in DOM events system to handle clicks on our game objects. Since you're drawing on the canvas, you'll have to handle the hit-detection yourself, and come up with your own event handling interface.
+Unlike with HTML elements, you can't just rely on the built-in DOM events system to handle clicks on our game objects. Since you're drawing on the canvas, you'll have to handle the hit detection yourself and come up with your own event-handling interface.
 
-### Introducing your event handling API
+### Introducing Your Event Handling API
 
-In this game, you'll detect clicks by listening for the click event on the body of the page then pass the event data to relevant game objects to be processed.
+In this game, you'll detect clicks by listening for the click event on the body of the page and then pass on the event data to relevant game objects to be processed.
 
 To get started with this, add a new method to the `GameObject` class called `handleClick()`:
 
@@ -440,7 +440,7 @@ export default class GameObject {
 
 `handleClick()` will be overridden by the `GameObject` class' inheritors. The inheritors will add logic to the `handleClick()` method for handling event data from clicks.
 
-### Implementing your own event handling API
+### Implementing Your Event Handling API
 
 Now, in the `Board` class, add a field called `columnSelected`. This will be used to store a callback. The callback will contain logic to run that will be defined in the `FrontEnd` class:
 
@@ -498,7 +498,7 @@ export default class Board extends GameObject {
 }
 ```
 
-The `trySelectColumn()` method figures out if the player clicked a column. If the player has clicked on a column, it will run the `columnSelected` callback with the selected column's position index. For example, the leftmost column would have an index of `0` and the third column would have an index of `2`.
+The `trySelectColumn()` method figures out if the player clicked a column. If the player has clicked on a column, it will run the `columnSelected` callback with the selected column's position index. For example, the leftmost column would have an index of `0`, and the third column would have an index of `2`.
 
 ### Adding the callback logic
 
@@ -597,13 +597,13 @@ export default class FrontEnd {
 }
 ```
 
-If you check your browser now while your server is running, you'll now be a able to place tokens on the board, based which column you clicked on.
+If you check your browser now while your server is running, you'll now be able to place tokens on the board, based on which column you clicked on.
 
-![Canvas in browser featuring board with slots with a few slots around the bottom left filled with yellow and red tokens](https://ik.imagekit.io/mune/four-in-a-row-board-game-in-progress_Ux9392g5V.png?updatedAt=1688023768438)
+![Canvas in a browser featuring a board with slots with a few slots around the bottom left filled with yellow and red tokens](https://ik.imagekit.io/mune/four-in-a-row-board-game-in-progress_Ux9392g5V.png?updatedAt=1688023768438)
 
 ## Conclusion
 
-Congratulations! This was a long post (maybe the longest in this blog series so far!). Hopefully it was worthwhile to you now that you've made a playable four-in-a-row game.
+Congratulations! This was a long post (maybe the longest in this blog series so far!). Hopefully, it was worthwhile to you now that you've made a playable four-in-a-row game.
 
 However, it's not quite clear what's going on in the game. The board stops updating when a player wins or the game ends in a draw. There's no indication of the current status of the game.
 
