@@ -8,7 +8,7 @@ description = "Start working on the front-end of your Four-In-A-Row game!"
 
 First of all, great job following along with this series! You've completed the first 50% of this tutorial so far!
 
-In the [previous blog post](@/blog/making-four-in-a-row-part-5.md), you reorganised the project in preparation for work on the front-end of the game. This is the post where the work starts.
+In the [previous blog post](@/blog/making-four-in-a-row-part-5.md), you reorganised the project in preparation for work on the front end of the game. This is the post where the work starts.
 
 Here's your expected outcome at the end of this tutorial:
 
@@ -20,11 +20,11 @@ Here's a breakdown of the image above:
 - Middle part: Game Board - Displays where players have placed their tokens in the game.
 - Bottom Part: Play Again Button: Restarts the game. Shows up when the game is over.
 
-This post will be focused on setting up the canvas where each part of the game will be displayed on.
+This post will be focused on setting up the canvas - where each part of the game will be displayed on.
 
 ## Setting up constants (again)
 
-The same way you created a constants file for the game logic, you'll also need to create one for the front-end.
+In the same way that you created a constants file for the game logic, you'll also need to create one for the front end.
 
 Create a new directory in `src` called `constants` then, inside the directory you've just created (`src/constants`), create a called `index.js` with these contents:
 
@@ -82,7 +82,7 @@ export const PlayAgainButtonConfig = {
 
 ### Adding canvas to the body
 
-First you'll need to add the `<canvas>` element to the `<body>` of the page. It'll need to have a `width` of 320, a `height` of 480 and and an `id` of "canvas". You do this in `index.html`. It should look like this:
+First, you'll need to add the `<canvas>` element to the `<body>` of the page. It'll need to have a `width` of 320, a `height` of 480, and an `id` of "canvas". You do this in `index.html`. It should look like this:
 
 ```html
 <!DOCTYPE html>
@@ -104,7 +104,7 @@ First you'll need to add the `<canvas>` element to the `<body>` of the page. It'
 
 Next, you'll reference the `<canvas>` element that you've added to the page from JavaScript.
 
-Create a new fie called in the `src` directory called `FrontEnd.js`. This will handle the front-end logic of the game.
+Create a new file called in the `src` directory called `FrontEnd.js`. This will handle the front-end logic of the game.
 
 Add the following code to the file you've just created:
 
@@ -118,9 +118,9 @@ export default class FrontEnd {
 
 The constructor of the `FrontEnd` class has a parameter called `game` which contains an instance of the `FourInARowGame` class. The `FourInARowGame` instance will be stored in the `FrontEnd` class in the `game` field. This will be used to update and retrieve the core game's state.
 
-Next you'll set up the canvas.
+Next, you'll set up the canvas.
 
-First, in the `FrontEnd` class's constructor, obtain a reference to the canvas element on the page and store it in a class field called `canvas`:
+In the `FrontEnd` class's constructor, obtain a reference to the canvas element on the page and store it in a class field called `canvas`:
 
 ```js
 export default class FrontEnd {
@@ -186,13 +186,13 @@ import FrontEnd from "./FrontEnd.js";
 let frontEnd = new FrontEnd(new FourInARowGame());
 ```
 
-If you run a HTTP server and check the address it's pointing to, you should see a blue rectangle (That's the canvas you've created!):
+If you run an HTTP server and check the address it's pointing to, you should see a blue rectangle (That's the canvas you've created!):
 
 ![Image of canvas with blue background](https://ik.imagekit.io/mune/four-in-a-row-canvas-setup_h3F8XfyjC.png?updatedAt=1685214594926)
 
 ### Drawing on the canvas
 
-Let's proceed to drawing on the canvas. To do this you'll need to get a [2D canvas rendering context](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D). Another way to think about this is that you're getting a set of art supplies (paints, paintbrushes, stencils etc.) made for creating 2D drawings.
+Let's proceed to draw on the canvas. To do this you'll need to get a [2D canvas rendering context](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D). Another way to think about this is that you're getting a set of art supplies (paints, paintbrushes, stencils, etc.) made for creating 2D drawings.
 
 You'll set this rendering context object in the `context` field of your `FrontEnd` class:
 
@@ -217,7 +217,7 @@ export default class FrontEnd {
 }
 ```
 
-Next up, you'll need to [scale the canvas for high resolution displays to prevent issues with blurry drawings](https://web.dev/canvas-hidipi).
+Next up, you'll need to [scale the canvas for high-resolution displays to prevent issues with blurry drawings](https://web.dev/canvas-hidipi).
 
 First, create a method called `enableHiDPIDisplaySupport()` in the `FrontEnd` class:
 
@@ -289,9 +289,9 @@ let frontEnd = new FrontEnd(new FourInARowGame());
 frontEnd.start();
 ```
 
-Now, if you check your project with a http-server, in your browser, you'll see a blue canvas with a white rectangle drawn on it:
+Now, if you check your project with an HTTP server, in your browser, you'll see a blue canvas with a white rectangle drawn on it:
 
-![Image of canvas drawing with white rectangle over blue background](https://ik.imagekit.io/mune/four-in-a-row-first-canvas-drawing_l-1NGyp-X.png?updatedAt=1685214594885)
+![Image of canvas drawing with a white rectangle over a blue background](https://ik.imagekit.io/mune/four-in-a-row-first-canvas-drawing_l-1NGyp-X.png?updatedAt=1685214594885)
 
 Congratulations, you've covered the basics of drawing using the HTML5 Canvas API!
 
