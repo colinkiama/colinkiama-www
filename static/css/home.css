@@ -5,35 +5,3 @@ h1 {
 h2 {
     font-size: 1.3rem;
 }
-
-.profile-header {
-    transition: flex-direction 0.5s ease;
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-}
-
-.profile-header img {
-    transition-property: width, height;
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
-    width: 7.5rem;
-    height: 7.5rem;
-    border-radius: 100%;
-}
-
-@media (min-width: 650px) {
-    .profile-header {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .profile-header img {
-        /* Match section header top margin for */
-        margin-top: 1.5em;
-    }
-
-    .profile-header > :last-child {
-        margin-left: 3rem;
-    }
-}

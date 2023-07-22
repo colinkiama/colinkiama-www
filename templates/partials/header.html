@@ -1,7 +1,11 @@
 <header>
 	<div class="container">
 		<nav>
-			<div id="site-name">Colin Kiama</div>
+
+			<div id="site-name">
+				<img src="{{ config.extra.portrait|safe }}" alt="Portrait of me (Colin Kiama) smiling.">
+				Colin Kiama
+			</div>
 			<ul>
 				<li>
 					<a href="{{ get_url(path='/') }}">Home</a>

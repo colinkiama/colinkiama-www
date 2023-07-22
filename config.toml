@@ -34,7 +34,7 @@ highlight_themes_css = [
 # Put all your custom variables here
 favicon_link = "https://ik.imagekit.io/mune/mune-favicon_BOoehMPQtVAo.png"
 webring_slug = "colinkiama"
-portrait = "https://ik.imagekit.io/mune/mune-portrait_2Uy7ATEsei_PG.jpeg"
+portrait = "https://ik.imagekit.io/mune/mune-portrait_2Uy7ATEsei_PG.jpeg?tr=w-24,h-24"
 
 [extra.socials]
 email = "mailto:colinkiama@gmail.com"

@@ -439,6 +439,19 @@ header nav {
 
 #site-name {
   margin-top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#site-name img {
+  transition-property: width, height;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  margin-right: 0.5rem;
 }
 
 header nav ul,
