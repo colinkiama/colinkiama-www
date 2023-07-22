@@ -42,3 +42,11 @@ section.featured {
     font-family: "Dancing Script";
     font-weight: var(--font-weight-bold);
 }
+
+@media (prefers-color-scheme: dark) {
+    .beautiful {
+        background: linear-gradient(45deg, var(--accent-color), #39e2c6, #8eec14);
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+}
