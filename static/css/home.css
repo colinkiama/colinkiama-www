@@ -37,7 +37,7 @@ section.featured {
 }
 
 .delightful {
+    color: var(--accent-color);
     font-family: "Dancing Script";
     font-weight: 700;
-    color: var(--accent-color);
 }
