@@ -274,7 +274,7 @@ h5,
 h6,
 #site-name,
 #back-to-top,
-#newsletter-form .form-title {
+.newsletter-form .form-title {
   font-weight: var(--font-weight-regular);
   margin-top: 1em;
   margin-bottom: 0.65em;
@@ -295,7 +295,7 @@ h3,
 }
 
 h4,
-#newsletter-form .form-title {
+.newsletter-form .form-title {
   font-size: 1.125rem;
 }
 
@@ -324,7 +324,7 @@ strong {
   h6,
   #site-name,
   #back-to-top,
-  #newsletter-form .form-title {
+  .newsletter-form .form-title {
     font-variation-settings: "wght" var(--font-weight-regular);
   }
 
@@ -554,7 +554,7 @@ body > footer a:focus-visible {
   margin-bottom: 1.25rem;
 }
 
-#newsletter-form {
+.newsletter-form {
   display: block;
 }
 
@@ -576,7 +576,7 @@ input::placeholder {
   color: var(--input-placeholder-text-color);
 }
 
-#newsletter-form input {
+.newsletter-form input {
   transition: border-color 0.3s ease;
   border: 2px solid transparent;
   outline: none;
@@ -588,7 +588,7 @@ input[type="email"] {
   margin-left: 0;
 }
 
-#newsletter-form input[type="email"]:focus {
+.newsletter-form input[type="email"]:focus {
   border: 2px solid #060606;
 }
 
@@ -610,12 +610,12 @@ input[type="submit"]:focus {
   background-color: var(--button-hover-color);
 }
 
-#newsletter-form input[type="submit"] {
+.newsletter-form input[type="submit"] {
   font-weight: var(--font-weight-medium);
   transition: background-color 0.5s ease;
 }
 
-#newsletter-form input[type="submit"]:focus {
+.newsletter-form input[type="submit"]:focus {
   border: 2px solid white;
   outline: none;
 }
@@ -679,19 +679,19 @@ input[type="submit"]:focus {
     font-family: "Inter Variable", Arial, Helvetica, sans-serif;
   }
 
-  #newsletter-form input[type="submit"] {
+  .newsletter-form input[type="submit"] {
     font-variation-settings: "wght" var(--font-weight-medium);
   }
 }
 
 @media (min-width: 30rem) {
-  #newsletter-form input[type="email"],
-  #newsletter-form input[type="submit"] {
+  .newsletter-form input[type="email"],
+  .newsletter-form input[type="submit"] {
     display: inline-block;
     margin-top: 0;
   }
 
-  #newsletter-form input[type="submit"] {
+  .newsletter-form input[type="submit"] {
     margin-left: 0.75rem;
   }
 }
