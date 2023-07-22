@@ -7,8 +7,24 @@
       url("/fonts/DancingScript-Bold.woff2") format("woff");
 }
 
+.beautiful {
+    font-weight: var(--font-weight-bold);
+    font-variation-settings: 'wght' var(--font-weight-bold);
+    background: linear-gradient(45deg, var(--accent-color), #7239B3, #FF385A);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent
+}
+
+.delightful {
+    color: var(--accent-color);
+    font-family: "Dancing Script";
+    font-weight: var(--font-weight-bold);
+}
+
 section.featured {
-    margin-top: 2rem;
+    border-top: solid 1px var(--section-border-color);
+    margin-top: 1.5rem;
 }
 
 .featured ul {
@@ -28,20 +44,7 @@ section.featured {
     margin-top: 2rem;
 }
 
-.beautiful {
-    font-weight: var(--font-weight-bold);
-    font-variation-settings: 'wght' var(--font-weight-bold);
-    background: linear-gradient(45deg, var(--accent-color), #7239B3, #FF385A);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent
-}
 
-.delightful {
-    color: var(--accent-color);
-    font-family: "Dancing Script";
-    font-weight: var(--font-weight-bold);
-}
 
 @media (prefers-color-scheme: dark) {
     .beautiful {
