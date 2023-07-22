@@ -18,7 +18,7 @@
         },
         {
             "title": "Vala-Lint Visual Studio Code Extension",
-            "url": "https://github.com/vala-lang/vala-lint"
+            "url": "https://github.com/colinkiama/vala-lint-vscode"
         }
     ]
 }
