@@ -34,11 +34,11 @@
 
   --button-color: #0a4276;
 
-  --button-hover-color: #0e5597;
+  --button-hover-color: #2782d7;
   --form-button-hover-color: #000000;
 
   --button-color-dark: #0a4276;
-  --button-hover-color-dark: #000000;
+  --button-hover-color-dark: #195a97;
   
 
   --input-placeholder-text-color: #7e7e7e;
@@ -647,7 +647,16 @@ input[type="submit"]:focus {
   font-weight: var(--font-weight-medium);
   transition: background-color 0.5s ease;
   background-color: var(--button-color);
+  border: 2px solid transparent;
 }
+
+.newsletter-form input[type="submit"]:hover,
+.newsletter-form input[type="submit"]:focus {
+  background-color: var(--button-hover-color);
+  border: 2px solid black;
+  outline: none;
+}
+
 
 
 body > footer .newsletter-form input[type="email"] {
@@ -809,5 +818,14 @@ h6:focus .zola-anchor {
   main .newsletter-form input[type="email"]:focus {
     background-color: #363636;
     border: solid 2px #d0d0d0;
+  }
+
+  main .newsletter-form input[type="submit"]:hover,
+  main .newsletter-form input[type="submit"]:focus {
+    background-color: var(--button-hover-color-dark);
+  }
+
+  main .newsletter-form input[type="submit"]:focus {
+    border: solid 2px #ffffff
   }
 }
