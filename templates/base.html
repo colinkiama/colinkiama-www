@@ -29,13 +29,18 @@
 	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 	<meta name="theme-color" content="#1071CB" media="(prefers-color-scheme: light)">
 	<meta name="theme-color" content="#7239B3" media="(prefers-color-scheme: dark)">
+
+	{% if config.base_url == "https://colinkiama.com" %}
+	<script defer data-domain="colinkiama.com" src="https://plausible.io/js/script.js"></script>
+	{% endif %}
+
 	{% block head %} {% endblock head %}
 </head>
 <body id="top">
 	<a id="bypass-block" href="#main-content">Skip to main content</a>
 
 	{% include "partials/header.html" %}
-
+	
 	<main id="main-content">
 		<div class="container">
 		{% block main_content %} {% endblock main_content %}
