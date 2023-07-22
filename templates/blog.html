@@ -46,3 +46,9 @@
 </section>
 
 {% endblock main_content %}
+
+{% block aside_block %}
+<aside>
+	{{ newsletter_macros::sign_up_block(title="Find out when I publish my next blog post <em>before anyone else!</em>") }}
+</aside>
+{% endblock aside_block %}
