@@ -64,3 +64,9 @@
 	<a href="{{ get_url(path='@/contact-me/index.md') }}">Contact me</a>
 </section>
 {% endblock main_content %}
+
+{% block aside_block %}
+<aside>
+	{{ newsletter_macros::sign_up_block(title="Find out about by next project <em>before anyone else!</em>") }}
+</aside>
+{% endblock aside_block %}
