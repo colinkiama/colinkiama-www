@@ -680,12 +680,14 @@ input[type="submit"]:focus {
 }
 
 .newsletter-form input[type="submit"]:hover,
-.newsletter-form input[type="submit"]:focus {
+.newsletter-form input[type="submit"]:focus  {
   background-color: var(--button-hover-color);
-  border: 2px solid black;
   outline: none;
 }
 
+.newsletter-form input[type="submit"]:focus {
+  border: 2px solid black;
+}
 
 
 body > footer .newsletter-form input[type="email"] {
