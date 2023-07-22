@@ -8,15 +8,26 @@
 {% endblock %}
 
 {% block main_content %}
+{% set featured_data = load_data(path="data/featured.json", format="json") %}
+
 <header>
 	<h1>I create beautiful, delightful solutions that contribute back to the human experience.</h1>
 	{{ newsletter_macros::sign_up_block(title="Subscribe to <em>be the first</em> to know about upcoming projects") }}
 </header>
 
-<section class="profile-header">
+<section class="featured">
 	<header>
 		<h2>I code, design mockups and write about topics that interest me</h2>
 	</header>
+	<ul>
+		{% for item in featured_data.items %}
+		<li>
+			<a href="{{ item.url }}">
+				{{ item.title }}
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
 </section>
 
 <section>
