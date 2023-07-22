@@ -6,17 +6,7 @@ command = "zola build --base-url $DEPLOY_PRIME_URL"
 
 [build.environment]
 # Set the version name that you want to use and Netlify will automatically use it.
-ZOLA_VERSION = "0.15.3"
-
-# If skip_processing = true, all other settings are ignored
-[build.processing]
-  skip_processing = false
-[build.processing.css]
-  bundle = true
-  minify = true
-[build.processing.js]
-  bundle = true
-  minify = true
+ZOLA_VERSION = "0.17.2"
 
 # The magic for deploying previews of branches.
 # We need to override the base url with whatever url Netlify assigns to our
