@@ -1,5 +1,14 @@
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+}
+
 .profile-header {
-    /* transition: flex-direction 0.5s ease; */
+    transition: flex-direction 0.5s ease;
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
 }
@@ -13,23 +22,15 @@
     border-radius: 100%;
 }
 
-@media (min-width: 320px) {
-    .profile-header img {
-        width: 10rem;
-        height: 10rem;
-    }
-}
-
 @media (min-width: 650px) {
     .profile-header {
         flex-direction: row;
+        align-items: center;
     }
 
     .profile-header img {
         /* Match section header top margin for */
         margin-top: 1.5em;
-        width: 12rem;
-        height: 12rem;
     }
 
     .profile-header > :last-child {

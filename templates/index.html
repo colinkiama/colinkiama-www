@@ -9,7 +9,8 @@
 
 {% block main_content %}
 <header>
-	<h1>I code, design, write blog posts and more...</h1>
+	<h1>I create beautiful, delightful solutions that contribute back to the human experience.</h1>
+	{{ newsletter_macros::sign_up_block(title="Subscribe to <em>be the first</em> to know about upcoming projects") }}
 </header>
 
 <section class="profile-header">
@@ -17,22 +18,9 @@
 
 	<div>
 		<header>
-			<h2>Hi I'm Colin and <span class="stand-out">I can:</span></h2>
+			<h2>I code, design mockups and write about topics that interest me</h2>
 		</header>
-
-		<ul>
-			<li>Make your next website</li>
-			<li>Create your next app</li>
-			<li>Write documentation for you</li>
-			<li>Create designs for you</li>
-			<li>...and other tech-related tasks too</li>
-		</ul>
-
-		<div class="call-out">
-			<a href="{{ get_url(path='@/portfolio/index.md')|safe }}" class="-cta">See what I've made</a>
-		</div>
 	</div>
-
 </section>
 
 <section>
@@ -40,9 +28,8 @@
 		<h2>Want to work with me?</h2>
 	</header>
 
-	<p>Here are ways that you can contact me:</p>
+	<a href="{{ get_url(path='/contact-me') }}">Contact me</a>
 
-	{% include "partials/social-links.html" %}
 
 </section>
 {% endblock main_content %}
