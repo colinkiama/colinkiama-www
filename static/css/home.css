@@ -22,3 +22,7 @@ section.featured {
 .featured ul li {
     margin-top: 0.25rem;
 }
+
+.cta {
+    margin-top: 2rem;
+}
