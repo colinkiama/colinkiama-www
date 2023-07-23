@@ -769,7 +769,7 @@ body > footer .newsletter-form input[type="submit"]:focus {
 }
 
 @media (min-width: 30rem) {
-  .newsletter-form input[type="email"],
+  .email-label,
   .newsletter-form input[type="submit"] {
     display: inline-block;
     margin-top: 0;
