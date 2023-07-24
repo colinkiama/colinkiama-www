@@ -1,6 +1,6 @@
 +++
 title = "My Writing Process"
-description = "How I went from writing on ocassion to being able to write daily posts"
+description = "How I went from writing on occassion to being able to write daily posts"
 date = 2023-07-24T23:00:00Z
 +++
 
