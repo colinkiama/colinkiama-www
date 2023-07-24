@@ -15,27 +15,10 @@
 
 <section>
 	<header>
-		<h2>Games</h2>
+		<h2>Projects</h2>
 	</header>
 	<ul class="portfolio">
-		{% for item in portfolio_data.games.items %}
-		<li>
-			<a href="{{ item.link }}">
-				{{ image_macros::portfolio_image(src=item.thumbnail, alt=item.thumbnail_alt_text) }}
-				{{ item.title }}
-			</a>
-			{{ item.content|safe }}
-		</li>
-		{% endfor %}
-	</ul>
-</section>
-
-<section>
-	<header>
-		<h2>Apps and Websites</h2>
-	</header>
-	<ul class="portfolio">
-		{% for item in portfolio_data.apps_and_websites.items %}
+		{% for item in portfolio_data.items %}
 		<li>
 			<a href="{{ item.link }}">
 				{{ image_macros::portfolio_image(src=item.thumbnail, alt=item.thumbnail_alt_text) }}

@@ -1,5 +1,4 @@
 {
-  "apps_and_websites": {
     "items": [
       {
         "title": "Vala Website (2022)",
@@ -45,29 +44,6 @@
         "thumbnail_alt_text": "A program allowing the user to type in it, with a circular timer going down.",
         "link": "https://www.microsoft.com/store/apps/9NNZQ38B48ZJ?cid=colinkiamaSite",
         "content": "<p>A Windows 10 Application for times when your ideas aren't coming together/you need to focus.</p><p>Start a session where you have to keep typing within a regular interval or risk all your work fading away right in front of you then save your work at the end.</p><a href=\"https://www.producthunt.com/posts/dysprose-2-0?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-dysprose&#0045;2&#0045;0\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=174828&theme=light\" alt=\"Dysprose&#0032;2&#0046;0 - Keep&#0032;writing&#0032;or&#0032;else&#0044;&#0032;all&#0032;your&#0032;work&#0032;fades&#0032;away&#0046;&#0032;Forever&#0046; | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>"
-      },
-      {
-        "title": "Audio Trimmer",
-        "type": "app",
-        "date": "2020-11-12T00:39:00Z",
-        "thumbnail": "https://ik.imagekit.io/mune/audio-trimmer_vrTCsM7fcU9-.png",
-        "thumbnail_alt_text": "A program allowing the user to select parts of audio to keep with trimming controls",
-        "link": "https://www.microsoft.com/store/apps/9P98V42MC8Z4?cid=colinkiamaSite",
-        "content": "<p>A Windows 10 Application that gives users a simple, seamless way to trim audio files.</p><p>The app takes care of copying metadata and supporting file formats so all the user has to worry about is keeping the parts of an audio file that they want!</p><a href=\"https:\/\/www.producthunt.com\/posts\/audio-trimmer?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-audio&#0045;trimmer\" target=\"_blank\"><img src=\"https:\/\/api.producthunt.com\/widgets\/embed-image\/v1\/featured.svg?post_id=158686&theme=light\" alt=\"Audio&#0032;Trimmer - The&#0032;simplest&#0032;way&#0032;to&#0032;trim&#0032;your&#0032;audio&#0032;files | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" \/><\/a>"
       }
     ]
-  },
-  "games": {
-    "items": [
-      {
-        "title": "Ninjump",
-        "date": "2022-07-15T18:00:00Z",
-        "type": "website",
-        "thumbnail": "https://ik.imagekit.io/mune/ninjump-hero-image_rsGyQtV9R.png",
-        "thumbnail_alt_text": "Ninjump Hero Image",
-        "link": "https://colinkiama.itch.io/ninjump",
-        "content": "<p>This is my first game jam submission to the <a href=\"https://itch.io/jam/one-minute-game-jam-9\">One Minute Jam</a>.</p><p>This game was made using the Phaser 3 game engine.</p> <p>Jump from wall to stay up, while avoiding bricks along the way. However, don't try to jump too quickly or you'll slip!</p><p>Avoid as many bricks as you can. Good luck!</p></li></ul>"
-      }
-    ]
-  }
 }
