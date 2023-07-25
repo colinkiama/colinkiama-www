@@ -25,6 +25,11 @@
 	margin-top: 0;
 }
 
+.github-link {
+	margin-top: 0.1rem;
+}
+
+
 @supports (font-variation-settings: normal) {
 	.portfolio li > a:first-child {
 		font-variation-settings: 'wght' var(--font-weight-regular);

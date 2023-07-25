@@ -12,6 +12,7 @@
   --font-weight-black: 900;
 
   --base-font-size: 16px;
+  --base-line-height: 1.333;
   --max-container-width: 720px;
   --mobile-padding: 1.25rem;
   --desktop-padding: 2.5rem;
@@ -225,7 +226,7 @@ body {
   height: 100%;
   min-height: 100vh;
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  line-height: 1.5;
+  line-height: var(--base-line-height);
   font-size: var(--base-font-size);
   color: var(--foreground-color);
   background-color: var(--background-color);
@@ -278,8 +279,8 @@ h6,
 #back-to-top,
 .newsletter-form .form-title {
   font-weight: var(--font-weight-regular);
-  margin-top: 1em;
-  margin-bottom: 0.65em;
+  margin-top: 0.85em;
+  margin-bottom: 0.333em;
 }
 
 h1 {
@@ -310,7 +311,8 @@ h6 {
 }
 
 p {
-  margin-bottom: 0.85em;
+  margin-bottom: 0.5em;
+  line-height: 1.5;
 }
 
 strong {
@@ -530,6 +532,10 @@ svg.icon {
   height: 1.5rem;
 }
 
+.social-links {
+  margin-top: 0.75rem;
+}
+
 .social-links li {
   display: flex;
   margin-top: 0.5rem;
@@ -579,6 +585,7 @@ body > footer a:focus-visible {
 
 .icon-link {
   display: inline-flex;
+  line-height: 1.5;
 }
 
 .icon-link svg {
@@ -603,8 +610,9 @@ body > footer a:focus-visible {
 
 .extra-site-links {
   border-bottom: 1px solid var(--footer-section-border-color);
-  padding-bottom: 1rem;
+  margin-top: 0.5rem;
   margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
 }
 
 .newsletter-form {
@@ -626,7 +634,7 @@ label {
 
 input {
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  line-height: 1.5;
+  line-height: inherit;
   font-size: var(--base-font-size);
   border-radius: 0.25rem;
   padding: 0.4375rem 0.75rem;
@@ -709,7 +717,7 @@ body > footer .newsletter-form input[type="submit"]:focus {
 }
 
 .zola-credit {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
