@@ -32,6 +32,10 @@ article footer {
   list-style-position: outside;
 }
 
+.post-item p {
+  margin-bottom: 0rem;
+}
+
 .reading-time {
   display: block;
 }
