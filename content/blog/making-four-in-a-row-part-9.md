@@ -15,6 +15,7 @@ You'll do this by adding a "Play Again" button to the game.
 ## What Is The Play Again Button?
 
 Let's take one more look at the mockup of the finished game:
+
 ![Image of game mockup](https://ik.imagekit.io/mune/four-in-a-row-goal_ua2AQmcTE.png)
 
 The "Play Again" button is a button that:
