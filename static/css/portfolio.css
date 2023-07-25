@@ -14,11 +14,11 @@
 .portfolio li > a:first-child {
   font-size: 1.25rem;
   font-weight: var(--font-weight-regular);
-  margin-bottom: 0.65em;
+  margin-bottom: 0.3em;
 }
 
 .portfolio li > a:first-child img {
-  margin-bottom: 0.72em;
+  margin-bottom: 0.1em;
 }
 
 .portfolio > li:first-child {
