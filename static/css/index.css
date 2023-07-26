@@ -468,6 +468,7 @@ header nav {
   display: flex;
   flex-direction: row;
   align-items: center;
+  font-weight: var(--font-weight-medium);
 }
 
 #site-name img {
@@ -796,6 +797,7 @@ body > footer .newsletter-form input[type="submit"]:focus {
     font-family: "Inter Variable", Arial, Helvetica, sans-serif;
   }
 
+  #site-name,
   .newsletter-form input[type="submit"] {
     font-variation-settings: "wght" var(--font-weight-medium);
   }
