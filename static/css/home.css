@@ -10,13 +10,14 @@
 .beautiful {
     font-weight: var(--font-weight-bold);
     font-variation-settings: 'wght' var(--font-weight-bold);
+    transition: background-image 0.5s ease;
     background: linear-gradient(45deg, var(--accent-color), #7239B3, #FF385A);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent
 }
-
 .delightful {
+    transition: color 0.5s ease;
     color: var(--accent-color);
     font-family: "Dancing Script";
     font-weight: var(--font-weight-bold);
@@ -43,8 +44,6 @@ section.featured {
 .cta {
     margin-top: 1.5rem;
 }
-
-
 
 @media (prefers-color-scheme: dark) {
     .beautiful {
