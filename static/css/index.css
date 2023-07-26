@@ -360,7 +360,7 @@ strong {
   }
 
   .newsletter-form em {
-    font-variation-settings: "wght" var(--font-weight-semi-bold);
+    font-variation-settings: "wght" var(--font-weight-medium);
   }
 
 }
@@ -645,7 +645,7 @@ body > footer a:focus-visible {
 
 .newsletter-form em {
   font-style: normal;
-  font-weight: var(--font-weight-semi-bold);
+  font-weight: var(--font-weight-medium);
   text-decoration: underline;
   display: inline-block;
 }
