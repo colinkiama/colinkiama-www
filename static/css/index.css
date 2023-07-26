@@ -675,14 +675,13 @@ input::placeholder {
   outline: none;
 }
 
-
 input[type="email"] {
+  transition: background-color 0.5s ease;
   width: 100%;
   max-width: 250px;
   margin-left: 0;
   margin-top: 0.2rem;
 }
-
 
 .newsletter-form input[type="email"]:focus {
   border: 2px solid #060606;
@@ -899,5 +898,43 @@ h6:focus .zola-anchor {
 
   main .newsletter-form input[type="submit"]:focus {
     border: solid 2px #ffffff
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition-property: none;
+    transition-duration: 0s;
+    transition-timing-function: ease;
+  }
+
+  a {
+    transition: none;
+  }
+
+  #site-name img {
+    transition-property: none;
+    transition-duration: 0s;
+  }
+
+  body > footer {
+    transition: none;
+  }
+
+  .newsletter-form input {
+    transition: none;
+  }
+
+  input[type="email"] {
+    transition: none;
+  }
+
+  input[type="submit"] {
+    transition-property: none;
+    transition-duration: 0s;
+  }
+
+  .newsletter-form input[type="submit"] {
+    transition: none;
   }
 }

@@ -171,3 +171,9 @@ pre code {
     color: var(--secondary-text-color-dark);
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .code-copier svg {
+    transition: none;
+  }
+}

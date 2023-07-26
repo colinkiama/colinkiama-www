@@ -16,6 +16,7 @@
     -webkit-background-clip: text;
     color: transparent
 }
+
 .delightful {
     transition: color 0.5s ease;
     color: var(--accent-color);
@@ -50,5 +51,15 @@ section.featured {
         background: linear-gradient(45deg, var(--accent-color), #39e2c6, #8eec14);
         background-clip: text;
         -webkit-background-clip: text;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .beautiful {
+        transition: none;
+    }
+
+    .delightful {
+        transition: none;
     }
 }
