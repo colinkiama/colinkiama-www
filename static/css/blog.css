@@ -4,6 +4,9 @@
 
   --code-block-copy-button-color: #1a1a1a;
   --code-block-copy-button-color-dark: #fafafa;
+
+  --secondary-text-color: #5b5b5b;
+  --secondary-text-color-dark: #b3b3b3;
 }
 
 section footer {
@@ -33,7 +36,12 @@ article footer {
 }
 
 .post-item p {
-  margin-bottom: 0rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-timestamp,
+.reading-time {
+  color: var(--secondary-text-color)
 }
 
 .reading-time {
@@ -156,5 +164,10 @@ pre code {
 
   pre {
     border: 1px solid #333333;
+  }
+
+  .post-timestamp,
+  .reading-time {
+    color: var(--secondary-text-color-dark);
   }
 }
