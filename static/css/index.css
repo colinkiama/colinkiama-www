@@ -284,7 +284,7 @@ h6,
 
 h1 {
   font-size: 1.75rem;
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semi-bold);
 }
 
 h2 {
@@ -332,7 +332,7 @@ strong {
 
 @supports (font-variation-settings: normal) {
   h1 {
-    font-variation-settings: 'wght' var(--font-weight-bold);
+    font-variation-settings: 'wght' var(--font-weight-semi-bold);
   }
 
   h2 {

@@ -8,8 +8,8 @@
 }
 
 .beautiful {
-    font-weight: var(--font-weight-bold);
-    font-variation-settings: 'wght' var(--font-weight-bold);
+    font-weight: var(--font-weight-semi-bold);
+    font-variation-settings: 'wght' var(--font-weight-semi-bold);
     transition: background-image 0.5s ease;
     background: linear-gradient(45deg, var(--accent-color), #7239B3, #FF385A);
     background-clip: text;
