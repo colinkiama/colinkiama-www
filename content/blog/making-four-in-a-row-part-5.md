@@ -1,5 +1,5 @@
 +++
-title = "Making Four-In-A-Row - Part 5: Reorganisation"
+title = "Making Four-In-A-Row Using JavaScript - Part 5: Reorganisation"
 date = 2023-05-14T21:00:00Z
 description = "Making changes to the work you've done so far in preparation for your four-in-a-row game's HTML5 Canvas front-end."
 +++

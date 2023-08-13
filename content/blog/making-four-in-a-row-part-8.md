@@ -1,5 +1,5 @@
 +++
-title = "Making Four-In-A-Row - Part 8: Status Updates"
+title = "Making Four-In-A-Row Using JavaScript - Part 8: Status Updates"
 date = 2023-07-08T11:30:00Z
 description = "Visibly track the current status of your Four-In-A-Row game!"
 +++

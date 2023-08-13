@@ -1,5 +1,5 @@
 +++
-title = "Making Four-In-A-Row - Part 9: Play Again"
+title = "Making Four-In-A-Row Using JavaScript - Part 9: Play Again"
 date = 2023-07-09T13:12:00Z
 description = 'The Finale. Add a "Play Again" button in your Four-In-A-Row game!'
 +++

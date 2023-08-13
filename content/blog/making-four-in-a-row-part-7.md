@@ -1,5 +1,5 @@
 +++
-title = "Making Four-In-A-Row - Part 7: Drawing The Board"
+title = "Making Four-In-A-Row Using JavaScript - Part 7: Drawing The Board"
 date = 2023-06-29T18:58:00Z
 description = "Draw the game board in your Four-In-A-Row game!"
 +++

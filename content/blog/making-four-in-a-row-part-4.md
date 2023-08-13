@@ -1,5 +1,5 @@
 +++
-title = "Making Four-In-A-Row - Part 4: Winning Ways and Tedious Ties"
+title = "Making Four-In-A-Row Using JavaScript - Part 4: Winning Ways and Tedious Ties"
 date = 2023-04-30T05:17:00Z
 description = "Detecting wins and draws in your Four-In-A-Row game!"
 +++
