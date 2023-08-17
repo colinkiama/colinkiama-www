@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{# Structure #}
+
+{#
+# 1. Description of newsletter
+# 2. Newsletter signup macro
+# 3. RSS subscription link (your buttondown link with '/rss' appended to it!)
+# 4. List archives (buttondown, substack and medium!)
+#}
+
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block head %}
+{{ head_macros::og_data(title=page.title, description=page.description) }}
+{% endblock %}
+
+{% block main_content %}
+<header>
+	<h1>{{ page.title }}</h1>
+    In my weekly newsletter, you will:
+    
+    <ul>
+        <li>Find out about my upcoming projects before anybody else!</li>
+        <li>Discover beautiful, delightful creations that I've found each week.</li>
+        <li>Learn more about me.</li>
+    </ul>
+    
+    {{ newsletter_macros::sign_up_block(title="Subscribe for all of this <strong>every Wednesday</strong>!") }}
+
+    <a href="{{ config.extra.newsletter.buttondown_rss }}">Subscribe via RSS</a>
+</header>
+
+<section class="separate">
+    <header>
+        <h2>Archives</h2>
+        <p>View past newsletter issues and subscribe to the newsletter on these platforms:</p>
+    </header>
+    <ul>
+        <li><a href="{{ config.extra.newsletter.buttondown }}">Buttondown</a></li>
+        <li><a href="{{ config.extra.newsletter.substack }}">Substack</a></li>
+        <li><a href="{{ config.extra.newsletter.medium }}">Medium</a></li>
+    </ul>
+</section>
+
+
+{% endblock main_content %}

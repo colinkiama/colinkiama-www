@@ -49,3 +49,9 @@ twitch = "https://www.twitch.tv/colinkiama7"
 
 [extra.blog]
 email = "colinkiama@gmail.com"
+
+[extra.newsletter]
+buttondown = "https://buttondown.email/colinkiama?utm_source=colinkiama.com"
+buttondown_rss = "https://buttondown.email/colinkiama/rss"
+substack = "https://colinkiama.substack.com?utm_source=colinkiama.com"
+medium = "https://medium.com/@colinkiama?utm_source=colinkiama.com"

@@ -1,6 +1,9 @@
 {% macro sign_up_block(title) %}
 <form class="newsletter-form" action="https://buttondown.email/api/emails/embed-subscribe/colinkiama" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.email/colinkiama', 'popupwindow')" class="embeddable-buttondown-form">
+	{% if title != "" %}
 	<p class="form-title">{{title|safe}}</p>
+	{% endif %}
+	
 	<div class="main-form">
 		<label class="email-label">
 			Email:<br>

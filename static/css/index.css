@@ -545,6 +545,24 @@ section footer {
   margin-top: 2rem;
 }
 
+section.separate {
+  border-top: solid 1px var(--section-border-color);
+  margin-top: 1.5rem;
+}
+
+.separate ul {
+  list-style-type: none;
+list-style-position: outside;
+}
+
+.separate ul li:first-child {
+  margin-top: 0;
+}
+
+.separate ul li {
+  margin-top: 0.25rem;
+}
+
 article {
   padding-bottom: 1.5rem;
 }
@@ -639,6 +657,13 @@ body > footer a:focus-visible {
   margin-top: 0.5rem;
   margin-bottom: 1.25rem;
   padding-bottom: 1rem;
+}
+
+main .extra-site-links {
+  border-bottom: 0;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  padding-bottom: 0rem;
 }
 
 .newsletter-form {

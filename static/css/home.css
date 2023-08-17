@@ -24,24 +24,6 @@
     font-weight: var(--font-weight-bold);
 }
 
-section.featured {
-    border-top: solid 1px var(--section-border-color);
-    margin-top: 1.5rem;
-}
-
-.featured ul {
-    list-style-type: none;
-	list-style-position: outside;
-}
-
-.featured ul li:first-child {
-    margin-top: 0;
-}
-
-.featured ul li {
-    margin-top: 0.25rem;
-}
-
 .cta {
     margin-top: 1.5rem;
 }
