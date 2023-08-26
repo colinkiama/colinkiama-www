@@ -1,5 +1,5 @@
 {% macro sign_up_block(title) %}
-<form class="newsletter-form" action="https://buttondown.email/api/emails/embed-subscribe/colinkiama" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.email/colinkiama', 'popupwindow')" class="embeddable-buttondown-form">
+<form action="https://buttondown.email/api/emails/embed-subscribe/colinkiama" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.email/colinkiama', 'popupwindow')" class="embeddable-buttondown-form newsletter-form">
 	{% if title != "" %}
 	<p class="form-title">{{title|safe}}</p>
 	{% endif %}
