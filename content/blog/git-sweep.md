@@ -24,7 +24,7 @@ Here's the command to set the alias with the `git config` command:
 git config --global alias.sweep "! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '\$2 == \"[gone]\" {print \$1}' | xargs -r git branch -D"
 ```
 
-Here's what the config file should look like the aliases added:
+Here's what the config file should look like with the alias added:
 
 ```ini
 [alias]
@@ -32,4 +32,4 @@ sweep = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstrea
 ```
 
 ## Special Thanks
-Thank you [Erik Schierboom](https://www.erikschierboom.com) for providing the solution. Hopefully this gets added directly into git one day. This alias is super useful for maintaining your repositories.
+Thank you [Erik Schierboom](https://www.erikschierboom.com) for providing the solution. Hopefully, this gets added directly into git one day. This alias is super useful for maintaining your repositories.
