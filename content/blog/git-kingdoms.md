@@ -34,7 +34,7 @@ Even donating doesn’t entitle you to make demands about the direction of the p
 
 To make their lives easier, maintainers may add contributions guidelines and issue templates to their projects. This also helps contributors provide more detailed and useful information to maintainers about issues. These templates may also trigger automations too.
 
-# Status Quo
+## Status Quo
 
 As you can see, there are plenty of tasks that maintainers do in projects. Some of them are doing these tasks in their free time.
 
