@@ -13,7 +13,7 @@ I used to think that I was the only one who felt like this but after [asking peo
 
 The downside of people feeling too intimidated to contribute to projects is that we miss out on many contributions that could advance open-source projects forward.
 
-On the flip side, there are bad actors in the open-source community who don’t feel intimidated. These people waster maintainers’ time and slow down projects.
+On the flip side, there are bad actors in the open-source community who don’t feel intimidated. These people waste maintainers’ time and slow down projects.
 
 Hopefully, this guide will make maintainers’ lives easier by encouraging higher quality contributions.
 
