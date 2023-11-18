@@ -1,5 +1,5 @@
 +++
-title = "Git Kingdoms"
+title = "Git Kingdoms - Feel confident about contributing to open-source projects"
 date = 2023-11-13T19:00:00Z
 description = 'An opinionated guide on becoming comfortable with contributing to open-source projects'
 +++
