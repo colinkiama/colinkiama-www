@@ -1,11 +1,11 @@
 repo_name: colinkiama/colinkiama-www
-report_id: 50ba527f96f4188aa05228d5e62168f0
+report_id: 9788ae858fb2edf8aa8964691e8f2fbe
 repo_type: Public
-timestamp: '2023-11-12T07:10:42+00:00'
+timestamp: '2023-12-14T10:28:19+00:00'
 requested_by: colinkiama
 provider: github
 branch: main
-detected_tools_count: 4
+detected_tools_count: 5
 tools:
 - name: CSS 3
   description: The latest evolution of the Cascading Style Sheets language
@@ -47,3 +47,12 @@ tools:
   detection_source: netlify.toml
   last_updated_by: Colin Kiama
   last_updated_on: 2020-11-13 00:11:29.000000000 Z
+- name: HTML
+  description: Hypertext Markup Language for creating web pages.
+  website_url: http://
+  open_source: false
+  hosted_saas: false
+  image_url: https://img.stackshare.io/service/2270/no-img-open-source.png
+  detection_source: templates/404.html
+  last_updated_by: Colin Kiama
+  last_updated_on: 2022-09-04 07:49:22.000000000 Z
