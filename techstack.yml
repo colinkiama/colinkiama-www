@@ -1,7 +1,8 @@
 repo_name: colinkiama/colinkiama-www
-report_id: 9788ae858fb2edf8aa8964691e8f2fbe
+report_id: 50ba527f96f4188aa05228d5e62168f0
+version: 0.1
 repo_type: Public
-timestamp: '2023-12-14T10:28:19+00:00'
+timestamp: '2024-01-05T08:49:37+00:00'
 requested_by: colinkiama
 provider: github
 branch: main
@@ -15,6 +16,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/colinkiama/colinkiama-www
   detection_source: Repo Metadata
 - name: JavaScript
   description: Lightweight, interpreted, object-oriented language with first-class
@@ -25,6 +27,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/colinkiama/colinkiama-www
   detection_source: Repo Metadata
 - name: Git
   description: Fast, scalable, distributed revision control system
@@ -34,6 +37,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/colinkiama/colinkiama-www
   detection_source: Repo Metadata
 - name: Netlify
   description: Build, deploy and host your static site or app with a drag and drop
@@ -44,6 +48,7 @@ tools:
   category: Application Utilities
   sub_category: Static Web Hosting
   image_url: https://img.stackshare.io/service/2748/default_5dfbb146cf22182bca88c7d07f2515a5888fc12a.jpg
+  detection_source_url: https://github.com/colinkiama/colinkiama-www/blob/main/netlify.toml
   detection_source: netlify.toml
   last_updated_by: Colin Kiama
   last_updated_on: 2020-11-13 00:11:29.000000000 Z
@@ -53,6 +58,7 @@ tools:
   open_source: false
   hosted_saas: false
   image_url: https://img.stackshare.io/service/2270/no-img-open-source.png
+  detection_source_url: https://github.com/colinkiama/colinkiama-www/blob/main/templates/404.html
   detection_source: templates/404.html
   last_updated_by: Colin Kiama
   last_updated_on: 2022-09-04 07:49:22.000000000 Z
