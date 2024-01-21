@@ -19,14 +19,14 @@
 {% block main_content %}
 <header>
 	<h1>{{ page.title }}</h1>
-    In my weekly newsletter, you will:
-    
+    In my newsletter, you will:
+
     <ul>
         <li>Find out about my upcoming projects before anybody else!</li>
         <li>Discover beautiful, delightful creations that I've found each week.</li>
         <li>Learn more about me.</li>
     </ul>
-    
+
     {{ newsletter_macros::sign_up_block(title="Subscribe for all of this <strong>every Wednesday</strong>!") }}
 
     <a href="{{ config.extra.newsletter.buttondown_rss }}">Subscribe via RSS</a>
