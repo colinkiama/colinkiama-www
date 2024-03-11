@@ -7,6 +7,7 @@ insert_anchor_links = "right"
 ## Products
 
 - [Jailtime](#jailtime)
+- [Ninjump](#ninjump)
 
 ### Jailtime {#jailtime}
 
@@ -22,3 +23,16 @@ insert_anchor_links = "right"
 
 - No information is shared
 
+### Ninjump {#ninjump}
+
+#### What information is collected?
+
+- None
+
+#### How is this information used?
+
+- N/A - There is no information collected to use
+
+#### What information is shared?
+
+- No information is shared
