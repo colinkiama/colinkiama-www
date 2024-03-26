@@ -10,7 +10,7 @@ At least one of these things have happened:
 
 Take a break, do your favourite hobbies, go on a holiday, sort yourself out, sort your life out. 
 
-You do your best work when you love what you’m feel good about yourself and when your are happy 😄!
+You do your best work when you love what you do, feel good about yourself and when your are in a positive mood 😄!
 
 ## 2. You went straight to learning about how to do a task without starting it first
 
