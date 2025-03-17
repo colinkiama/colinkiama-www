@@ -1,24 +1,16 @@
 {
     "items": [
         {
+            "title": "Last One Flying (Retro Arcade Space Shooter Game)",
+            "url": "https://colinkiama.itch.io/last-one-flying"
+        },
+        {
             "title": "Vala Programming Language Website",
             "url": "https://vala.dev"
         },
         {
-            "title": "Pomodoro Timer UWP (Microsoft Store App)",
-            "url": "https://www.producthunt.com/products/pomodoro-timer-uwp#pomodoro-timer-uwp"
-        },
-        {
             "title": "Four-In-A-Row HTML5 Canvas Game Tutorial",
             "url": "https://www.colinkiama.com/blog/making-four-in-a-row-part-1/"
-        },
-        {
-            "title": "Dysprose (Microsoft Store App) - Writer's Block Remedy",
-            "url": "https://www.producthunt.com/products/dysprose-2-0#dysprose-2-0"
-        },
-        {
-            "title": "Vala-Lint Visual Studio Code Extension",
-            "url": "https://github.com/colinkiama/vala-lint-vscode"
         }
     ]
 }
