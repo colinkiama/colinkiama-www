@@ -25,3 +25,5 @@ description = "I create beautiful, delightful solutions that contribute back to 
 {% end %}
 
 ---
+
+{{ contact_me() }}
