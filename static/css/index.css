@@ -545,7 +545,7 @@ section footer {
   margin-top: 2rem;
 }
 
-section.separate {
+hr {
   border-top: solid 1px var(--section-border-color);
   margin-top: 1.5rem;
 }
