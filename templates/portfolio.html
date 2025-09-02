@@ -8,6 +8,7 @@
 {% endblock head%}
 
 {% block main_content %}
+{{ page.content|safe }}
 {% set portfolio_data = load_data(path="data/portfolio.json", format="json") %}
 <header>
 	<h1>Portfolio</h1>
