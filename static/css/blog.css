@@ -54,7 +54,7 @@ article header + p {
 
 pre {
   padding: 1rem;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   overflow: auto;
   text-align: left;
   border: 1px solid #d4d4d4;

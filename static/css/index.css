@@ -184,6 +184,10 @@ img {
   width: 100%;
 }
 
+img:not(.badges img)  {
+  border-radius: 0.25rem;
+}
+
 /* Remove default iOS Form Styling */
 textarea,
 input.text,
