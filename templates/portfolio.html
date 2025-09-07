@@ -21,11 +21,18 @@
 	<ul class="portfolio">
 		{% for item in paginator.pages %}
 		<li>
-			<a href="{{ item.extra.link }}">
+			<a href="{{ item.permalink }}">
 				{{ image_macros::portfolio_image(src=item.extra.thumbnail, alt=item.extra.thumbnail_alt_text) }}
 				{{ item.title }}
 			</a>
-			{{ item.content|safe }}
+			{{ item.description|safe }}
+			{% if item.extra.badges %}
+				<div class="badges">
+					{% for badge in item.extra.badges %}
+					{{ badge|safe }}
+					{% endfor %}
+				</div>
+			{% endif %}
 		</li>
 		{% endfor %}
 	</ul>

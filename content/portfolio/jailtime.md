@@ -1,6 +1,7 @@
 +++
 title = "Jailtime"
 date = 2022-04-10T20:31:00Z
+description = "A browser extension that blocks websites by allowing you to add sites to a block list, making you more productive!"
 [extra]
 thumbnail = "https://ik.imagekit.io/mune/jailtime-portfolio-image_nmSI6BHbB.png"
 thumbnail_alt_text = "Jailtime - Blocks websites and helps keep you focused"

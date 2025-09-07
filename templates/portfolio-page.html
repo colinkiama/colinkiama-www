@@ -1,0 +1,32 @@
+{% extends "blog.html" %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block head %}
+{{ head_macros::article_og_data(article=page) }}
+<link rel="stylesheet" href="/css/blog.css">
+<link rel="stylesheet" href="/css/syntax-theme-light.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="/css/syntax-theme-dark.css" media="(prefers-color-scheme: dark)">
+{% endblock head %}
+
+{% block main_content %}
+<article>
+  <header>
+    <h1>{{page.title}}</h1>
+    <time class="post-timestamp" datetime="{{page.date}}">{{ page.date | date }}</time>
+  </header>
+  {{ page.content | safe }}
+
+  <footer>
+    <a
+      href="mailto:{{ config.extra.blog.email }}?subject=Comment on '{{ page.title }}'&body=%0A%0APost link:%20{{ page.permalink }}">Comment
+      via email</a>.
+  </footer>
+</article>
+{% endblock main_content %}
+
+{% block aside_block %}
+<aside>
+	{{ newsletter_macros::sign_up_block(title="Find out when I publish my next blog post <em>before anyone else!</em>") }}
+</aside>
+{% endblock aside_block %}
