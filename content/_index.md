@@ -21,7 +21,7 @@ description = "I create beautiful, delightful solutions that contribute back to 
 
 
 {% cta() %}
-[See what else I've made](@/portfolio/index.md)
+[See what else I've made](@/portfolio/_index.md)
 {% end %}
 
 ---

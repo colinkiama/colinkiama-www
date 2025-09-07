@@ -1,5 +1,3 @@
-{% set portfolio_data = load_data(path="data/portfolio.json", format="json") %}
-
 <li>
     <a href="{{ item.link }}">
         {{ image_macros::portfolio_image(src=item.thumbnail, alt=item.thumbnail_alt_text) }}

@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
-{% block title %}{{ page.title }}{% endblock %}
+{% block title %}{{ section.title }}{% endblock %}
 
 {% block head %}
-{{ head_macros::og_data(title=page.title, description=page.description) }}
+{{ head_macros::og_data(title=section.title, description=section.description) }}
 <link rel="stylesheet" href="/css/portfolio.css">
 {% endblock head%}
 
 {% block main_content %}
-{{ page.content|safe }}
-{% set portfolio_data = load_data(path="data/portfolio.json", format="json") %}
+{{ section.content|safe }}
+
 <header>
 	<h1>Portfolio</h1>
 </header>
@@ -19,10 +19,10 @@
 		<h2>Projects</h2>
 	</header>
 	<ul class="portfolio">
-		{% for item in portfolio_data.items %}
+		{% for item in paginator.pages %}
 		<li>
-			<a href="{{ item.link }}">
-				{{ image_macros::portfolio_image(src=item.thumbnail, alt=item.thumbnail_alt_text) }}
+			<a href="{{ item.extra.link }}">
+				{{ image_macros::portfolio_image(src=item.extra.thumbnail, alt=item.extra.thumbnail_alt_text) }}
 				{{ item.title }}
 			</a>
 			{{ item.content|safe }}
