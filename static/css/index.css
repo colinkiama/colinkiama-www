@@ -619,6 +619,8 @@ body > footer {
   transition: background 0.5s ease;
   background: var(--footer-background-color);
   color: white;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 
 body > footer a {
