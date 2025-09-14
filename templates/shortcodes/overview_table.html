@@ -6,27 +6,35 @@
     <tbody>
         <tr>
             <th scope="row">Name</td>
-            <td>Last One Flying</td>
+            <td>{{ page.extra.name }}</td>
         </tr>
         <tr>
             <th scope="row">Client</td>
-            <td>Colin Kiama</td>
+            <td>{{ page.extra.client }}</td>
         </tr>
         <tr>
             <th scope="row">Project Link</td>
-            <td><a href="https://colinkiama.itch.io/last-one-flying">https://colinkiama.itch.io/last-one-flying</td>
+            <td><a href="{{ page.extra.link }}">{{ page.extra.link }}</td>
         </tr>
         <tr>
             <th scope="row">Project Type</td>
-            <td>Game</td>
+            <td>{{ page.extra.project_type }}</td>
         </tr>
         <tr>
             <th scope="row">Technologies</td>
-            <td>Javascript, <a href="https://phaser.io">Phaser.js</a>, <a href="https://bun.sh">Bun</a></td>
+            <td>
+                {% for tech in page.extra.technologies %}
+                {{ tech|safe}}{% if not loop.last %},{% endif %}
+                {% endfor%}
+            </td>
         </tr>
         <tr>
             <th scope="row">Categories</td>
-            <td>Action, Arcade</td>
+            <td>
+                {% for category in page.extra.categories %}
+                {{ category|safe }}{% if not loop.last %},{% endif %}
+                {% endfor %}
+            </td>
         </tr>
     </tbody>
 </table>
