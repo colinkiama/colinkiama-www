@@ -9,6 +9,10 @@ link = "https://www.microsoft.com/store/apps/9NNZQ38B48ZJ?cid=colinkiamaSite"
 badges=["<a href=\"https://www.producthunt.com/posts/dysprose-2-0?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-dysprose-2-0\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=174828&theme=light\" alt=\"Dysprose 2.0 - Keep writing or else, all your work fades away. Forever. | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\"></a>"]
 +++
 
+{% portfolio_page_header() %}
+# Dysprose
+{% end %}
+
 A Windows 10 Application for times when your ideas aren't coming together/you need to focus.
 
 Start a session where you have to keep typing within a regular interval or risk all your work fading away right in front of you then save your work at the end.

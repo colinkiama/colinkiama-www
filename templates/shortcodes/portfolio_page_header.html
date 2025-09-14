@@ -1,0 +1,4 @@
+<header>
+    {{ body|markdown|safe }}
+    <time class="post-timestamp" datetime="{{page.date}}">{{ page.date | date }}</time>
+</header>

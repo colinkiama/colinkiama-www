@@ -8,4 +8,8 @@ thumbnail_alt_text = "Yachting Partners Inernational home page"
 link = "https://www.ypiyachts.com"
 +++
 
+{% portfolio_page_header() %}
+# Yachting Partners International (2021 Redesign)
+{% end %}
+
 <p>Covers all aspects of yacht services such as brokerage, chartering and management. I was the front-end developer for this project.</p>
