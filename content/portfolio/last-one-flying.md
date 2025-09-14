@@ -18,4 +18,4 @@ I created a retro-inspired arcade space shooter game. I made it using the with t
 
 <!-- Overview table (check outline in your journal for details, will make it using a shortcode) --->
 
-{{ overview_table() }}
+{{ overview_table()}}
