@@ -31,11 +31,10 @@ In Last One Flying, is bombarded with waves of enemy spaceships charging and sho
 
 The main objective of the game is to shot down as many enemies as possible to achieve the highest score.
 
-<!-- Show GIF of game over screen with high score celebration -->
 
-However, if the player only has three livs. Each time they are hit, they lose one. When all of their lives are lost, it's game over!
+However, if the player only has three lives. Each time they are hit, they lose one. When all of their lives are lost, it's game over!
 
-<!-- Show GIF of player dying and the game over screen appearing -->
+<!-- Show GIF of the game over screen appearing wih new high score celebration -->
 
 A big inspiration for this game was [Asteroids](https://en.wikipedia.org/wiki/Asteroids_(video_game)), an arcade shooter game that was release in 1979.
 
@@ -59,7 +58,7 @@ All of the menus in the game have a floating, hovering titles which is a metapho
 
 The in-game HUD shows (from left-to-right) HUD shows the pause button, player's health and the player's score
 
-<!-- Image of in-game HUD with "NEW" label added to the score (New high score indicator) -->
+<!-- Image of in-game HUD with "BEST" label added to the score (New high score indicator) -->
 
 The health indicator is inspired by [Halo: Combat Evolved (2001)](https://en.wikipedia.org/wiki/Halo:_Combat_Evolved)
 
