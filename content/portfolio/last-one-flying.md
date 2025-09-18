@@ -54,7 +54,7 @@ User interface is mostly fixed with text. I use another space-inspired font call
 
 All of the menus in the game have a floating, hovering titles which is a metaphor for "floating in space".
 
-<!-- GIF of main menu with floating title -->
+<!-- GIF of pause menu with floating title -->
 
 The in-game HUD shows (from left-to-right) HUD shows the pause button, player's health and the player's score
 
