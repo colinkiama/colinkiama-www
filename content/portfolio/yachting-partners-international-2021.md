@@ -17,6 +17,8 @@ categories=["Travel"]
 # Yachting Partners International (2021 Redesign)
 {% end %}
 
+![Yachting Partners Inernational home page](https://ik.imagekit.io/mune/ypi-yachts_iqKpffMvif.png)
+
 <p>Covers all aspects of yacht services such as brokerage, chartering and management. I was the front-end developer for this project.</p>
 
 {{ overview_table()}}

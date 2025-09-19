@@ -17,6 +17,8 @@ categories=["Programming Language", "Web"]
 # Vala Website (2022)
 {% end %}
 
+![Vala Hero Image](https://ik.imagekit.io/mune/vala-www-capture_ahfD-0S9X.png)
+
 <p>I created a website for a programming language called Vala.</p><p>It replaces an old set of wiki pages with a website that: <ul><li>Showcases Vala projects and features</li><li>Shows off the language's branding</li> <li>Is optimised for speed</li><li>Has improved accessibility (especially regarding navigation and colour contrast).</li></ul>
 
 {{ overview_table()}}

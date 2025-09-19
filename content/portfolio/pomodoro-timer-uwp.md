@@ -19,6 +19,8 @@ badges=["<a href=\"https://www.producthunt.com/posts/pomodoro-timer-uwp?utm_sour
 # Pomodoro Timer UWP
 {% end %}
 
+![A program with a timer showing the current time left in minutes and seconds.](https://ik.imagekit.io/mune/pomodoro-timer_GDR4r4_faNPO.png)
+
 A pomodoro timer app with features like "always-on-top" mode, background support and the ability to customise your each interval and how many sessions you'll have.
 
 {{ overview_table()}}

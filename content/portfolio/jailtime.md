@@ -17,6 +17,8 @@ categories=["Programming Language", "Web"]
 # Jailtime
 {% end %}
 
+![Jailtime - Blocks websites and helps keep you focused](https://ik.imagekit.io/mune/jailtime-portfolio-image_nmSI6BHbB.png)
+
 <p>A browser extension that blocks websites by allowing you to add sites to a block list, making you more productive!</p><p> Available on both Google Chrome and Mozilla Firefox.</p>
 
 {{ overview_table()}}

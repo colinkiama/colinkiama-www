@@ -17,6 +17,7 @@ categories=["Action", "Arcade"]
 # Last One Flying
 {% end %}
 
+![Last One Flying](https://ik.imagekit.io/mune/last-one-flying-portfolio-image_GVMfVm8gAp.png?updatedAt=1758314561146)
 I created a retro-inspired arcade space shooter game. I made it using the with the [Phaser Game Framework](https://phaser.io).
 
 [Play now for free on itch.io](https://colinkiama.itch.io/last-one-flying)

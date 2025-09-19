@@ -18,6 +18,8 @@ badges=["<a href=\"https://www.producthunt.com/posts/dysprose-2-0?utm_source=bad
 # Dysprose
 {% end %}
 
+![A program allowing the user to type in it, with a circular timer going down.](https://ik.imagekit.io/mune/dysprose_nXbwI-fnPCNS.png)
+
 A Windows 10 Application for times when your ideas aren't coming together/you need to focus.
 
 Start a session where you have to keep typing within a regular interval or risk all your work fading away right in front of you then save your work at the end.
