@@ -29,8 +29,34 @@
 	margin-top: 0.35rem;
 }
 
+.overview-table {
+	border-radius: 0.25rem;
+	border: 1px solid grey;
+	padding: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.overview-table caption {
+	font-weight: var(--font-weight-semi-bold);
+}
+
+.overview-table th {
+	font-weight: var(--font-weight-medium);
+	text-align: left;
+}
+
+
 @supports (font-variation-settings: normal) {
 	.portfolio li > a:first-child {
 		font-variation-settings: 'wght' var(--font-weight-medium);
+	}
+
+
+	.overview-table caption {
+		font-variation-settings:'wght' var(--font-weight-semi-bold);
+	}
+
+	.overview-table th {
+		font-variation-settings:'wght' var(--font-weight-semi-bold);
 	}
 }
