@@ -487,7 +487,8 @@ header nav {
 
 header nav ul,
 .social-links,
-.extra-site-links {
+.extra-site-links,
+.featured-projects ~ ul {
   list-style-type: none;
   list-style-position: outside;
 }
@@ -559,11 +560,14 @@ ul.no-indent {
 list-style-position: outside;
 }
 
-ul.no-indent li:first-child {
+
+ul.no-indent li:first-child,
+.featured-projects ~ ul li:first-child {
   margin-top: 0;
 }
 
-ul.no-indent li {
+ul.no-indent li,
+.featured-projects ~ ul li {
   margin-top: 0.25rem;
 }
 

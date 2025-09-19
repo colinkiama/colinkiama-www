@@ -12,8 +12,7 @@ description = "I create beautiful, delightful solutions that contribute back to 
 
 ---
 
-## Featured Projects    
-
+## Featured Projects {.featured-projects}
 
 - [Last One Flying (Retro Arcade Space Shooter Game)](https://colinkiama.itch.io/last-one-flying)
 - [Vala Programming Language Website](https://vala.dev)
