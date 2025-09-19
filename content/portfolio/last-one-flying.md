@@ -55,7 +55,7 @@ User interface is mostly fixed with text. I use another space-inspired font call
 
 All of the menus in the game have a floating, hovering titles which is a metaphor for "floating in space".
 
-![A looping GIF of the game's pause menu. The menu title "Game Paused is slowing hovering vertically](https://ik.imagekit.io/mune/last-one-flying-game-paused_b-I3BGb31.gif?updatedAt=1758043595377)
+![A looping GIF of the game's pause menu. The menu title "Game Paused is slowing hovering vertically](https://ik.imagekit.io/mune/last-one-flying-game-paused_b-I3BGb31.gif?updatedAt=1758308506244)
 
 The in-game HUD shows (from left-to-right) HUD shows the pause button, player's health and the player's score
 
@@ -63,7 +63,7 @@ The in-game HUD shows (from left-to-right) HUD shows the pause button, player's 
 
 The health indicator is inspired by [Halo: Combat Evolved (2001)](https://en.wikipedia.org/wiki/Halo:_Combat_Evolved)
 
-![](https://ik.imagekit.io/mune/last-one-flying-halo-health-indicator_RfBoqt6fb.png?updatedAt=1758046055805) ![](https://ik.imagekit.io/mune/last-one-flying-health-indicator_IYWTmQtV6.png?updatedAt=1758045964623)
+![Halo: Combat Evolved Health Indicator](https://ik.imagekit.io/mune/last-one-flying-halo-health-indicator_RfBoqt6fb.png?updatedAt=1758046055805) ![Last One Flying Health Indicator](https://ik.imagekit.io/mune/last-one-flying-health-indicator_IYWTmQtV6.png?updatedAt=1758045964623)
 
 ## Soundtrack
 
