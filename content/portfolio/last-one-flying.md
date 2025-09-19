@@ -9,7 +9,7 @@ name = "Last One Flying"
 client = "Colin Kiama"
 link = "https://colinkiama.itch.io/last-one-flying"
 project_type = "Game"
-technologies=["JavaScript", "<a href=\"https://phaser.io\">Phaser.js</a>", "<a href=\"https://bun.sh\">Bun</a>"]
+technologies=["<a href=\"https://phaser.io\">Phaser.js</a>", "<a href=\"https://bun.sh\">Bun</a>", "JavaScript", ]
 categories=["Action", "Arcade"]
 +++
 

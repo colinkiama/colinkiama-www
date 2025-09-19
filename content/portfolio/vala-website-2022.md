@@ -9,7 +9,7 @@ name = "Vala Website (2022)"
 client = "Vala Community"
 link = "https://vala.dev"
 project_type = "Website"
-technologies=["JavaScript", "HTML", "CSS", "<a href=\"https://getzola.org\">Zola</a>", "<a href=\"https://keats.github.io/tera/\">Tera</a>"]
+technologies=["<a href=\"https://getzola.org\">Zola</a>", "<a href=\"https://keats.github.io/tera/\">Tera</a>", "JavaScript", "HTML", "CSS", ]
 categories=["Programming Language", "Web"]
 +++
 
