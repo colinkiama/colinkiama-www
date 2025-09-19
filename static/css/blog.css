@@ -21,6 +21,8 @@ iframe {
 
 iframe {
   min-height: 200px;
+  border: 0;
+  border-radius: 0.25rem;
 }
 
 article footer {
