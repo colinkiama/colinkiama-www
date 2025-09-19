@@ -23,6 +23,8 @@ I created a retro-inspired arcade space shooter game. I made it using the with t
 
 {{ overview_table()}}
 
+{{youtube(id="SqKuKr5OydQ")}}
+
 ## Gameplay
 
 In Last One Flying, is bombarded with waves of enemy spaceships charging and shooting at them.
