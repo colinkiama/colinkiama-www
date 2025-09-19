@@ -34,6 +34,7 @@
 	border: 1px solid grey;
 	padding: 0.5rem;
 	margin-bottom: 1rem;
+	width: 100%;
 }
 
 .overview-table caption {
@@ -45,6 +46,9 @@
 	text-align: left;
 }
 
+.overview-table td {
+	word-break: break-all;
+}
 
 @supports (font-variation-settings: normal) {
 	.portfolio li > a:first-child {
