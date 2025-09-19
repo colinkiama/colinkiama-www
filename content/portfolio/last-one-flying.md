@@ -3,7 +3,7 @@ title = "Last One Flying"
 date = 2025-03-17T18:30:00Z
 description = "I created a retro-inspired arcade space shooter game. Made with the Phaser Game Framework."
 [extra]
-thumbnail = "https://ik.imagekit.io/mune/last-one-flying-portfolio-image_GVMfVm8gAp.png"
+thumbnail = "https://ik.imagekit.io/mune/last-one-flying-gameplay_x9m2-BeKo.gif?updatedAt=1758306529668"
 thumbnail_alt_text = "Last One Flying"
 name = "Last One Flying"
 client = "Colin Kiama"
