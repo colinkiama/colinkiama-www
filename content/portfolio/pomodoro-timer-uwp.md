@@ -9,7 +9,7 @@ name = "Pomodoro Timer UWP"
 client = "Colin Kiama"
 link = "https://www.microsoft.com/store/apps/9PJSR2QK1V1V?cid=colinkiamaSite"
 project_type = "App"
-technologies=["<a href=\"https://learn.microsoft.com/en-gb/windows/uwp/\">UWP</a>", "C#", "XAML"]
+technologies=["<a href=\"https://learn.microsoft.com/en-gb/windows/uwp/\">UWP</a>", "<a href=\"https://learn.microsoft.com/en-us/windows/apps/winui/\">WinUI</a>", "C#", "XAML"]
 categories=["Productivity"]
 
 badges=["<a href=\"https://www.producthunt.com/posts/pomodoro-timer-uwp?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-pomodoro-timer-uwp\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=136007&theme=light\" alt=\"Pomodoro Timer UWP - Be more productive with your time | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\"></a>"]
