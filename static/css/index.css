@@ -184,6 +184,10 @@ img {
   width: 100%;
 }
 
+img:not(.badges img)  {
+  border-radius: 0.25rem;
+}
+
 /* Remove default iOS Form Styling */
 textarea,
 input.text,
@@ -483,7 +487,8 @@ header nav {
 
 header nav ul,
 .social-links,
-.extra-site-links {
+.extra-site-links,
+.featured-projects ~ ul {
   list-style-type: none;
   list-style-position: outside;
 }
@@ -545,21 +550,24 @@ section footer {
   margin-top: 2rem;
 }
 
-section.separate {
+hr {
   border-top: solid 1px var(--section-border-color);
   margin-top: 1.5rem;
 }
 
-.separate ul {
+ul.no-indent {
   list-style-type: none;
 list-style-position: outside;
 }
 
-.separate ul li:first-child {
+
+ul.no-indent li:first-child,
+.featured-projects ~ ul li:first-child {
   margin-top: 0;
 }
 
-.separate ul li {
+ul.no-indent li,
+.featured-projects ~ ul li {
   margin-top: 0.25rem;
 }
 
@@ -607,10 +615,16 @@ a svg {
   border: 2px solid var(--section-border-color);
 }
 
+.badges {
+  margin-top: 1rem;
+}
+
 body > footer {
   transition: background 0.5s ease;
   background: var(--footer-background-color);
   color: white;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 
 body > footer a {
