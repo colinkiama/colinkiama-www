@@ -14,9 +14,9 @@ description = "I create beautiful, delightful solutions that contribute back to 
 
 ## Featured Projects {.featured-projects}
 
-- [Last One Flying (Retro Arcade Space Shooter Game)](https://colinkiama.itch.io/last-one-flying)
-- [Vala Programming Language Website](https://vala.dev)
-- [Four-In-A-Row HTML5 Canvas Game Tutorial](https://www.colinkiama.com/blog/making-four-in-a-row-part-1/)
+- [Last One Flying (Retro Arcade Space Shooter Game)](@/portfolio/last-one-flying.md)
+- [Vala Programming Language Website](@/portfolio/vala-website-2022.md)
+- [Four-In-A-Row HTML5 Canvas Game Tutorial](@/blog/making-four-in-a-row-part-1.md)
 
 
 {% cta() %}
