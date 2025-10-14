@@ -23,6 +23,25 @@ I found a GitHub issue about redesigining the app and decided to give it a try!
 
 {{ overview_table()}}
 
+## The Problem
+
+The client wants a "minimal-looking UI design" and my constraints are that the general layout structure of the app has to remain the same:
+
+<!-- GitHub Issue Post #1 screen shot -->
+<!-- GitHub Issue Post #2 screen shot -->
+<!-- GitHub Issue Post #3 screen shot -->
+
+### Breaking Down "Minimal" Design
+
+*Minimalism* is a movement about reducing art to its essentials. When applying this to UI design we end prioritising how the user can quickly and comfortably see and interact with UI elements over adding heavy details to the UI elements themsleves.
+
+A notable example of minimalist design is Apple's iOS 7 operating system.
+
+<!-- iOS 7 screenshot 1 -->
+<!-- iOS 7 screenshot 2 -->
+
+The update stripped away details details, textures and depth from the interface, giving focus to the essential elements of the interface.
+
 ## My Responsibilities
 
 - UI Design
