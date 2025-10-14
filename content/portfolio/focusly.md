@@ -40,7 +40,26 @@ A notable example of minimalist design is Apple's iOS 7 operating system.
 <!-- iOS 7 screenshot 1 -->
 <!-- iOS 7 screenshot 2 -->
 
-The update stripped away details details, textures and depth from the interface, giving focus to the essential elements of the interface.
+The update stripped away details, textures and depth from the interface, giving focus to the essential elements of the interface.
+
+### Similar Products
+
+Before coming up with the solution, I wanted to check out similar apps for inspiration. My hope was that looking at these apps would help me think about how minimalism could be applied in various parts of Focusly.
+
+#### Headspace
+
+<!-- Headspace 2022 screenshot -->
+0
+<!-- What is Headspace? -->
+<!-- What minimalist touches have you identified with Headspace -->
+
+
+#### Forest
+
+<!-- Forest 2022 screenshot -->
+<!-- What is Forest -->
+<!-- What minimalist touches have you identified with Forest -->
+
 
 ## My Responsibilities
 
