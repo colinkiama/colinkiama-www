@@ -52,10 +52,11 @@ Before coming up with the solution, I wanted to check out similar apps for inspi
 
 Headspace is a mental health app with expert-led and guidance.
 
-<!-- What minimalist touches have you identified with Headspace -->
-
-
-
+Touches I've noticed:
+- Home screen of the app has a limited colour palette: White background with an orange accent colour. 
+- Individual UI elements may have other colours however outside of images, they take up a small amount of space compared to the white background.
+- There's a noticable amount of spacing being used, especially between heading and UI/list item elements.
+- Within the section items, there's plenty of padding between the container and child elements.
 
 #### Forest
 
