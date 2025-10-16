@@ -49,16 +49,25 @@ Before coming up with the solution, I wanted to check out similar apps for inspi
 #### Headspace
 
 <!-- Headspace 2022 screenshot -->
-0
-<!-- What is Headspace? -->
+
+Headspace is a mental health app with expert-led and guidance.
+
 <!-- What minimalist touches have you identified with Headspace -->
+
+
 
 
 #### Forest
 
 <!-- Forest 2022 screenshot -->
-<!-- What is Forest -->
-<!-- What minimalist touches have you identified with Forest -->
+
+Forest is a productivity app that helps you to avoid interacting with your phone, to stay focused in other aspects of your life.
+
+Touches I've noticed:
+- The timer screen of the app has quite a bit of whitespace, making it easy to scan the information of the screen
+- There's timer clock is represented with text only. There are no giant timer graphics. It's quite straight forward.
+- There's a limited colour palette, just white text over a green background. However there is a graphic of a seedling going into a tree.
+	- Diving deeper into the colours, the choice of green that is being used (`#53a386`) isn't too vibrant, its mute and mellow. Somewhat calming even.
 
 
 ## My Responsibilities
