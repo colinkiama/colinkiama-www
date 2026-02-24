@@ -12,23 +12,20 @@ generate_feeds = true
 
 feed_filenames = ["rss.xml"]
 
-[markdown]
+# Syntax highlighting configuration (optional)
+[markdown.highlighting]
 
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-extra_syntaxes_and_themes = ["highlight_themes"]
-highlight_code = true
+# Whether to use inline hex colours (`inline`) or CSS classes (`class`) 
+style = "class"
 
-highlight_theme = "css"
-highlight_themes_css = [
-  { theme = "monokai-light", filename = "css/syntax-theme-light.css" },
-  { theme = "monokai-dark-soda", filename = "css/syntax-theme-dark.css" },
+# 2. If you want light/dark themes, use the 2 fields below instead. See the syntax highlighting page for the possible choices.
+light_theme = "Monokai Light"
+dark_theme = "Monokai Dark Soda"
+
+extra_themes = [
+  "highlight_themes/monokai-light.json",
+  "highlight_themes/monokai-dark-soda.json",
 ]
-
-
-# The theme to use for code highlighting.
-# See below for list of allowed values.
-# highlight_theme = "visual-studio-dark"
 
 [extra]
 # Put all your custom variables here
