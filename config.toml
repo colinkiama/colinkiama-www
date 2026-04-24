@@ -32,6 +32,7 @@ extra_themes = [
 favicon_link = "https://ik.imagekit.io/mune/mune-favicon_BOoehMPQtVAo.png"
 webring_slug = "colinkiama"
 portrait = "https://ik.imagekit.io/mune/mune-portrait_2Uy7ATEsei_PG.jpeg?tr=w-24,h-24"
+company_projects_url = "https://quicksnapmedia.com"
 
 [extra.socials]
 email = "mailto:colinkiama@gmail.com"
